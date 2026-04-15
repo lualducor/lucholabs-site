@@ -25,7 +25,7 @@ export default function CurrentlyBuildingCard() {
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
         {currentlyBuilding.map(t => (
-          <span key={t} style={pill('rgba(34,197,94,0.8)')}>{t}</span>
+          <span key={t} translate="no" style={pill('rgba(34,197,94,0.8)')}>{t}</span>
         ))}
       </div>
       <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)', margin: 0, lineHeight: 1.5 }}>

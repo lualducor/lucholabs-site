@@ -52,7 +52,7 @@ export default function ProjectsSection() {
                   padding: '2px 8px', borderRadius: '4px',
                   border: '1px solid rgba(255,255,255,0.08)',
                   color: 'rgba(255,255,255,0.35)',
-                }}>{t}</span>
+                }} translate="no">{t}</span>
               ))}
             </div>
           </div>

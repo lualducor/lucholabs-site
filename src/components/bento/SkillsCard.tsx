@@ -7,7 +7,7 @@ export default function SkillsCard() {
       <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>Skills</h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
         {skills.map(s => (
-          <span key={s} style={pill('rgba(255,255,255,0.35)')}>{s}</span>
+          <span key={s} translate="no" style={pill('rgba(255,255,255,0.35)')}>{s}</span>
         ))}
       </div>
     </div>
