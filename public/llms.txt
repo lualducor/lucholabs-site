@@ -1,0 +1,33 @@
+# LuchoLabs.dev — llms.txt
+# Luis Alberto Duarte Cortés — Systems Engineer & Automation
+
+## About
+Luis Alberto Duarte Cortés is a Systems Engineer from Bogotá, Colombia specializing in automation workflows, REST API integrations, Python scripting, and AI-assisted tooling. C1 English (IELTS Academic 7.0, British Council). Remote-ready for US and LATAM timezones.
+
+Graduated with a Meritorious Thesis from Universidad ECCI (B.Sc. Systems Engineering, 2024). The thesis — an open-source voice-recognition accessibility tool for hearing-impaired users — was adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences in Bogotá (2023).
+
+## Skills
+Automation: n8n, Make, Zapier
+Programming: Python, REST APIs, FastAPI, Webhooks
+Tools: Postman, Jira, Linux, Windows
+QA: Regression Testing, Bug Triage, Technical Writing
+
+## Projects
+- Boveda: Local-first personal finance dashboard for Colombian bank accounts. Stack: Python, FastAPI, SQLite, SQLAlchemy, React.
+- Anti-Phishing Shield: Open source email phishing protection tool designed for elderly/non-technical users.
+- AI 3D Print Optimizer: Developer tool using AI to recommend slicing parameters for 3D printing.
+
+## Experience
+- Freelance Systems Engineer (Apr 2024–Present): Automation workflows, API integrations, open-source accessibility tooling
+- QA Tester, Funktronic Labs (Remote, 2024): Manual regression/sanity testing for a US game studio
+- Technical Support Analyst, Magis SAS (Bogotá, 2023): Tier 2 support, infrastructure, networking
+- IT Support Technician, Spooky House (Bogotá, 2014–2018): Hardware/software support, POS systems
+
+## Contact
+Email: lualducor@gmail.com
+LinkedIn: https://www.linkedin.com/in/luis-alberto-duarte-97748171/
+GitHub: https://github.com/lualducor
+Website: https://lucholabs.dev
+
+## Location
+Bogotá, Colombia — Available for US & European time zones
