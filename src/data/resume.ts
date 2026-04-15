@@ -101,6 +101,15 @@ export const projects = [
     status: 'Prototype',
     statusColor: 'rgba(148,163,184,0.7)',
   },
+  {
+    name: 'Urban Disruption Intelligence',
+    tagline: 'Real-time infrastructure disruption intelligence for Colombian cities',
+    description:
+      'A WhatsApp-first system sitting between Colombia\'s public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'WhatsApp API', 'OpenStreetMap', 'Leaflet'],
+    status: 'Planning · Discovery',
+    statusColor: 'rgba(251,191,36,0.7)',
+  },
 ]
 
 export const contact = [
