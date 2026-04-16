@@ -63,14 +63,6 @@ export const experience = [
       'Delivered Tier 2 application support for internal systems across Windows and Linux environments, ensuring uptime and operational continuity. Escalated complex incidents with thorough technical documentation. Configured and secured firewalls and network infrastructure; supported a key procurement bid by ensuring infrastructure was spec-ready on deadline.',
     tags: ['Technical Support', 'Windows', 'Linux', 'Networking', 'Incident Management'],
   },
-  {
-    company: 'Spooky House',
-    role: 'IT Support Technician',
-    period: 'Bogotá · 2014 – 2018',
-    description:
-      'Provided on-call hardware and software support — diagnosing and repairing computers, POS systems, and peripherals. Handled preventive and corrective maintenance, reducing equipment downtime. Advised on equipment procurement and supported the store\'s transition to digital content and social media operations.',
-    tags: ['IT Support', 'Hardware', 'POS Systems', 'Networking'],
-  },
 ]
 
 export const projects = [

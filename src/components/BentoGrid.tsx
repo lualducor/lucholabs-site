@@ -4,6 +4,8 @@ import CurrentlyBuildingCard from './bento/CurrentlyBuildingCard'
 import MiniExperienceCard from './bento/MiniExperienceCard'
 import SkillsCard from './bento/SkillsCard'
 import ThesisBanner from './bento/ThesisBanner'
+import SpeakingPhotoCard from './bento/SpeakingPhotoCard'
+import UpcomingTalkCard from './bento/UpcomingTalkCard'
 import { stats, bentExperience } from '../data/resume'
 
 export default function BentoGrid() {
@@ -38,6 +40,14 @@ export default function BentoGrid() {
 
         {/* Skills */}
         <SkillsCard />
+
+        {/* Speaking photo — spans 2 cols on desktop */}
+        <div className="bento-speaking">
+          <SpeakingPhotoCard />
+        </div>
+
+        {/* Upcoming talk */}
+        <UpcomingTalkCard />
       </div>
 
       {/* Thesis banner — always full width */}
@@ -70,6 +80,11 @@ export default function BentoGrid() {
           grid-row: 2;
         }
 
+        /* Speaking photo: cols 1–2 on desktop */
+        .bento-speaking {
+          grid-column: 1 / 3;
+        }
+
         /* Tablet: 2 columns, stack differently */
         @media (min-width: 640px) and (max-width: 1023px) {
           .bento-grid {
@@ -81,6 +96,10 @@ export default function BentoGrid() {
             grid-row: auto;
           }
           .bento-building {
+            grid-column: 1 / 3;
+            grid-row: auto;
+          }
+          .bento-speaking {
             grid-column: 1 / 3;
             grid-row: auto;
           }
@@ -96,6 +115,10 @@ export default function BentoGrid() {
             grid-row: auto;
           }
           .bento-building {
+            grid-column: 1;
+            grid-row: auto;
+          }
+          .bento-speaking {
             grid-column: 1;
             grid-row: auto;
           }
