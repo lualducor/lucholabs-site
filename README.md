@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# lucholabs.dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal engineering site for **Luis Alberto Duarte Cortés** — Automation Engineer based in Bogotá, Colombia. The site is a technical lab presence, not a portfolio. It documents ongoing projects and professional positioning.
 
-Currently, two official plugins are available:
+Live: [lucholabs-site.vercel.app](https://lucholabs-site.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tool | Why |
+|------|-----|
+| **Vite** | Fast dev server and build tooling; zero config for a static SPA |
+| **React 19** | Component model; minimal overhead for a single-page site |
+| **TypeScript** | Type safety for data-driven sections (resume.ts → components) |
+| **Tailwind CSS 4** | Utility-first styling without a stylesheet to maintain |
+| **shadcn/ui + Radix** | Accessible primitives with zero visual opinion imposed |
+| **SSR pre-render** | `scripts/prerender.mjs` bakes full HTML at build time for SEO crawlability |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+cd CLAUDE/Websites/lucholabs/lucholabs-site
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+npm install
+npm run dev        # Dev server at http://localhost:5173
+npm run build      # tsc → vite build → SSR prerender → dist/
+npm run lint       # ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Update content
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+All copy lives in [`src/data/resume.ts`](src/data/resume.ts). No component changes are needed for:
+
+- Name, title, location
+- Skills list
+- Experience entries (company, role, period, description, tags)
+- Projects (name, tagline, description, stack, status)
+- Contact links
+
+Edit `resume.ts` and the change propagates everywhere automatically.
+
+---
+
+## Deploy
+
+Deployed on **Vercel** via GitHub integration.
+
+- Push to `main` → auto-deploy
+- Production URL: `https://lucholabs-site.vercel.app`
+- Post-deploy health check hits the production URL
+
+No manual deploy steps required. The build runs `npm run build` which includes the SSR pre-render step (`scripts/prerender.mjs`) that injects server-rendered HTML into `dist/index.html` before upload.

@@ -71,7 +71,7 @@ export default function ContactSection() {
             Open to remote roles
           </p>
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6 }}>
-            Based in Bogotá, Colombia. Available for US & European time zones. Solutions Engineering, Technical Support, Automation.
+            Based in Bogotá, Colombia. Available for US & European time zones. Automation Engineering · API Integration · Remote
           </p>
         </div>
       </div>

@@ -56,22 +56,6 @@ export default function Nav() {
         lucholabs.dev
       </span>
 
-      <span
-        title="Coming soon"
-        aria-label="The Lab — coming soon"
-        style={{
-          fontSize: '12px',
-          fontFamily: 'ui-monospace, monospace',
-          color: 'rgba(255,255,255,0.2)',
-          padding: '4px 12px',
-          border: '1px solid rgba(255,255,255,0.05)',
-          borderRadius: '999px',
-          cursor: 'default',
-          userSelect: 'none',
-        }}
-      >
-        The Lab ↗
-      </span>
     </nav>
   )
 }

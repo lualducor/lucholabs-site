@@ -1,6 +1,6 @@
 export const identity = {
   name: 'Luis Alberto Duarte Cortés',
-  title: 'Systems Engineer · Tech Ops & Automation',
+  title: 'Automation Engineer · I find where operations break and build the fix',
   location: 'Bogotá · Remote · C1 English',
   cvUrl: 'https://drive.google.com/file/d/1P2uIt4PFxqIJooIKnxUeu2Sdu2LaHIrn/view?usp=drive_link',
   photo: '/photo.jpg',
@@ -30,9 +30,9 @@ export const bentExperience = [
 ]
 
 export const skills = [
-  'n8n', 'Make', 'Zapier', 'Python', 'REST APIs', 'Webhooks',
-  'Postman', 'FastAPI', 'Linux', 'Windows', 'QA',
-  'Regression Testing', 'Bug Triage', 'Jira', 'Technical Writing', 'Troubleshooting',
+  'n8n', 'Python', 'FastAPI', 'REST APIs', 'Webhooks',
+  'Make', 'Zapier', 'Postman', 'Linux', 'QA',
+  'Regression Testing', 'Bug Triage', 'Jira', 'Technical Writing',
 ]
 
 export const thesis =
@@ -75,6 +75,15 @@ export const experience = [
 
 export const projects = [
   {
+    name: 'Urban Disruption Intelligence',
+    tagline: 'Real-time infrastructure disruption intelligence for Colombian cities',
+    description:
+      'A WhatsApp-first system sitting between Colombia\'s public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'WhatsApp API', 'OpenStreetMap', 'Leaflet'],
+    status: 'In Progress',
+    statusColor: 'rgba(34,197,94,0.7)',
+  },
+  {
     name: 'Boveda',
     tagline: 'Personal finance dashboard for Colombian bank accounts',
     description:
@@ -100,15 +109,6 @@ export const projects = [
     stack: ['Python', 'AI APIs', 'STL Analysis', 'CLI'],
     status: 'Prototype',
     statusColor: 'rgba(148,163,184,0.7)',
-  },
-  {
-    name: 'Urban Disruption Intelligence',
-    tagline: 'Real-time infrastructure disruption intelligence for Colombian cities',
-    description:
-      'A WhatsApp-first system sitting between Colombia\'s public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.',
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'WhatsApp API', 'OpenStreetMap', 'Leaflet'],
-    status: 'Planning · Discovery',
-    statusColor: 'rgba(251,191,36,0.7)',
   },
 ]
 
