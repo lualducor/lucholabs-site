@@ -1,4 +1,4 @@
-import { contact } from '../data/resume'
+import { contact, contactMeta } from '../data/resume'
 
 export default function ContactSection() {
   return (
@@ -68,11 +68,28 @@ export default function ContactSection() {
             Availability
           </p>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', fontWeight: 500, marginBottom: '8px' }}>
-            Open to remote roles
+            {contactMeta.availability}
           </p>
-          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6 }}>
-            Based in Bogotá, Colombia. Available for US & European time zones. Automation Engineering · API Integration · Remote
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginBottom: contactMeta.calUrl !== undefined ? '16px' : '0' }}>
+            Based in Bogotá, Colombia. Available for US & European time zones. {contactMeta.cta}
           </p>
+          {contactMeta.calUrl !== undefined && (
+            <a
+              href={contactMeta.calUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                fontSize: '13px', fontFamily: 'ui-monospace, monospace',
+                color: '#22c55e', textDecoration: 'none',
+                padding: '8px 16px',
+                border: '1px solid rgba(34,197,94,0.4)',
+                borderRadius: '8px',
+              }}
+            >
+              Schedule a Call →
+            </a>
+          )}
         </div>
       </div>
 
