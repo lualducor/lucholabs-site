@@ -6,6 +6,7 @@ import { ReadingTime } from '../components/blog/ReadingTime'
 import { SeriesBanner } from '../components/blog/SeriesBanner'
 import { TagBadge } from '../components/blog/TagBadge'
 import { getPostBySlug, getSeriesByName } from '../lib/blog/loader'
+import '../styles/blog.css'
 
 const mdxModules = import.meta.glob<{ default: ComponentType }>('../../content/posts/*.mdx')
 const mdxModulesForSsr = import.meta.glob<{ default: ComponentType }>(
