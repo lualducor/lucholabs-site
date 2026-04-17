@@ -36,9 +36,11 @@ export default function ExperienceSection() {
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: 0 }}>
                 {exp.description}
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {exp.tags.map(t => (
                   <span key={t} style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
                     fontSize: '11px', fontFamily: 'ui-monospace, monospace',
                     padding: '2px 8px', borderRadius: '4px',
                     border: '1px solid rgba(255,255,255,0.08)',

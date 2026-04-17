@@ -53,9 +53,11 @@ export default function ProjectsSection() {
                 {p.description}
               </p>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {p.stack.map(t => (
                   <span key={t} translate="no" style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
                     fontSize: '10px', fontFamily: 'ui-monospace, monospace',
                     padding: '2px 8px', borderRadius: '4px',
                     border: '1px solid rgba(255,255,255,0.08)',
