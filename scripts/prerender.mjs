@@ -18,7 +18,7 @@ const ssrDir = resolve(root, 'dist-ssr')
 const { render } = await import(resolve(ssrDir, 'entry-server.js'))
 
 // Render app to HTML string
-const appHtml = render()
+const appHtml = render('/')
 
 // Read the built client HTML template
 const template = readFileSync(resolve(distDir, 'index.html'), 'utf-8')
