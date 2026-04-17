@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import BentoGrid from './components/BentoGrid'
 import ThesisSection from './components/ThesisSection'
 import SpeakingSection from './components/SpeakingSection'
+import CertificatesSection from './components/CertificatesSection'
 import ExperienceSection from './components/ExperienceSection'
 import ProjectsSection from './components/ProjectsSection'
 import ContactSection from './components/ContactSection'
@@ -24,6 +25,7 @@ export default function App() {
         <BentoGrid />
         <ThesisSection />
         <SpeakingSection />
+        <CertificatesSection />
         <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
