@@ -2,6 +2,14 @@ import { speaking } from '../data/resume'
 import { talkBadgeLabel, talkBadgeIsPulsing } from '../utils/format'
 
 export default function SpeakingSection() {
+  const featuredPastTalk = speaking.find(talk => talk.status === 'past' && talk.photo)
+  const featuredUpcomingTalk = speaking.find(talk => talk.status === 'upcoming')
+  const talks = speaking.filter(
+    talk => talk !== featuredPastTalk && talk !== featuredUpcomingTalk,
+  )
+
+  if (talks.length === 0) return null
+
   return (
     <section aria-label="Speaking" style={{ marginBottom: '80px' }}>
       <h2 style={{
@@ -13,7 +21,7 @@ export default function SpeakingSection() {
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {speaking.map(talk => {
+        {talks.map(talk => {
           const label = talkBadgeLabel(talk.status)
           const pulsing = talkBadgeIsPulsing(talk.status)
 

@@ -18,6 +18,8 @@ export const mono: CSSProperties = {
 }
 
 export const pill = (color: string): CSSProperties => ({
+  display: 'inline-flex',
+  alignItems: 'center',
   fontSize: '11px',
   fontFamily: 'ui-monospace, monospace',
   padding: '3px 10px',
