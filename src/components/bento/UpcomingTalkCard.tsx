@@ -1,6 +1,10 @@
 import { card, mono } from './styles'
+import { speaking } from '../../data/resume'
 
 export default function UpcomingTalkCard() {
+  const talk = speaking.find(t => t.status === 'upcoming')
+  if (!talk) return null
+
   return (
     <div style={{
       ...card,
@@ -19,10 +23,10 @@ export default function UpcomingTalkCard() {
         }} />
       </div>
       <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', fontWeight: 500, margin: 0, lineHeight: 1.4 }}>
-        AI &amp; Cybersecurity Forum · Bogotá · May 2025
+        {talk.event} · {talk.location} · {talk.date}
       </p>
       <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: 0 }}>
-        Cybersecurity in the Golden Era of AI: agent models, emerging threats, and prompt injection attacks.
+        {talk.topic}
       </p>
     </div>
   )

@@ -1,3 +1,5 @@
+import { thesis } from '../../data/resume'
+
 export default function ThesisBanner() {
   return (
     <div style={{
@@ -6,13 +8,9 @@ export default function ThesisBanner() {
       borderRadius: '16px',
       padding: '32px 40px',
     }}>
-      {/* Header row */}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-        <h2 style={{
-          fontSize: '16px', fontWeight: 600, color: '#ffffff',
-          letterSpacing: '-0.02em', margin: 0,
-        }}>
-          Meritorious Thesis — Open Source Accessibility Tool
+        <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#ffffff', letterSpacing: '-0.02em', margin: 0 }}>
+          {thesis.title} — {thesis.subtitle}
         </h2>
         <span style={{
           fontFamily: 'ui-monospace, monospace', fontSize: '11px',
@@ -22,41 +20,23 @@ export default function ThesisBanner() {
           borderRadius: '999px', padding: '3px 10px',
           whiteSpace: 'nowrap',
         }}>
-          Live · In Use · 2024–Present
+          {thesis.status}
         </span>
       </div>
 
-      {/* Story */}
-      <p style={{
-        fontSize: '14px', color: 'rgba(255,255,255,0.55)',
-        lineHeight: 1.75, margin: '0 0 24px 0',
-        maxWidth: '860px',
-      }}>
-        During my final semester at Universidad ECCI, I worked alongside a hearing-impaired classmate
-        who struggled to follow lectures in real time. There was no tooling. No solution. So I built one.
-        The system runs on an NGINX server with a Node.js layer connected to Mozilla DeepSpeech, extended
-        with a custom dictionary engine tuned for academic Spanish. It generates live subtitles from the
-        teacher's voice directly to the student's screen — and stores a full text transcript for later
-        review. Built entirely on open source software. Zero licensing cost. Deployable by any institution.
-        Adopted by SENA Regional Amazonas and Universidad ECCI in 2024 — and still running today at
-        academic events and presentations across both institutions. Speaking at the AI &amp; Cybersecurity
-        Forum, Bogotá — May 2025 on cybersecurity in the golden era of AI.
+      <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, margin: '0 0 24px 0', maxWidth: '860px' }}>
+        {thesis.impact}
       </p>
 
-      {/* Tags */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        {['Node.js', 'DeepSpeech', 'NGINX', 'Open Source', 'Accessibility'].map(tag => (
-          <span
-            key={tag}
-            translate="no"
-            style={{
-              fontFamily: 'ui-monospace, monospace', fontSize: '11px',
-              color: 'rgba(255,255,255,0.35)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '999px', padding: '3px 10px',
-              whiteSpace: 'nowrap',
-            }}
-          >
+        {thesis.stack.map(tag => (
+          <span key={tag} translate="no" style={{
+            fontFamily: 'ui-monospace, monospace', fontSize: '11px',
+            color: 'rgba(255,255,255,0.35)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            borderRadius: '999px', padding: '3px 10px',
+            whiteSpace: 'nowrap',
+          }}>
             {tag}
           </span>
         ))}

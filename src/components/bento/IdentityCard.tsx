@@ -27,7 +27,7 @@ export default function IdentityCard() {
         <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.4, margin: 0 }}>
           {identity.title}
         </p>
-        <p style={{ ...mono, marginTop: '2px' }}>{identity.location}</p>
+        <p style={{ ...mono, marginTop: '2px' }}>{identity.subtitle}</p>
       </div>
 
       <a

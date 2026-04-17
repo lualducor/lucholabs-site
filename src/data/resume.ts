@@ -1,8 +1,8 @@
 export const identity = {
   name: 'Luis Alberto Duarte Cortés',
-  title: 'Automation Engineer · I find where operations break and build the fix',
-  location: 'Bogotá · Remote · C1 English',
-  cvUrl: 'https://drive.google.com/file/d/1P2uIt4PFxqIJooIKnxUeu2Sdu2LaHIrn/view?usp=drive_link',
+  title: 'I build AI-powered systems and automation infrastructure',
+  subtitle: 'Bogotá · Remote · C1 English',
+  cvUrl: '/CV/lucholabs.pdf',
   photo: '/photo.jpg',
 }
 
@@ -29,22 +29,59 @@ export const bentExperience = [
   { company: 'Magis SAS', role: 'Tech Support Analyst', period: 'Bogotá · 2023' },
 ]
 
-export const skills = [
-  'n8n', 'Python', 'FastAPI', 'REST APIs', 'Webhooks',
-  'Make', 'Zapier', 'Postman', 'Linux', 'QA',
-  'Regression Testing', 'Bug Triage', 'Jira', 'Technical Writing',
-]
+export const skills = {
+  core: ['Python', 'FastAPI', 'n8n', 'REST APIs', 'Linux'],
+  tooling: ['PostgreSQL', 'SQLAlchemy', 'Webhooks', 'Postman', 'Make'],
+}
 
-export const thesis =
-  '★ Meritorious Thesis · Open Source Hearing-Impaired Accessibility Tool · B.Sc Systems Engineering · Adopted by SENA & Universidad ECCI · 2024'
+export const thesis = {
+  title: 'Meritorious Thesis',
+  subtitle: 'Open-Source Live Captioning System for Hearing-Impaired Students',
+  institution: 'Universidad ECCI — B.Sc. Systems Engineering',
+  status: 'Live · In Use · 2024–Present',
+  adoptedBy: ['SENA Regional Amazonas', 'Universidad ECCI'],
+  stack: ['Node.js', 'Mozilla DeepSpeech', 'NGINX', 'Custom Dictionary Engine'],
+  impact:
+    "Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.",
+  repoUrl: undefined as string | undefined,
+}
+
+export type TalkStatus = 'past' | 'upcoming'
+
+export interface Talk {
+  status: TalkStatus
+  event: string
+  location: string
+  date: string
+  topic: string
+  photo?: string
+}
+
+export const speaking: Talk[] = [
+  {
+    status: 'past',
+    event: 'Cybersecurity Forum',
+    location: 'Bogotá',
+    date: '2025',
+    topic: 'Egresado panelist on network security and infrastructure.',
+    photo: '/speaking.jpg',
+  },
+  {
+    status: 'upcoming',
+    event: 'AI & Cybersecurity Forum',
+    location: 'Bogotá',
+    date: 'May 2026',
+    topic: 'Cybersecurity in the Golden Era of AI: agent models, emerging threats, and prompt injection attacks.',
+  },
+]
 
 export const experience = [
   {
     company: 'Self-Employed',
-    role: 'Freelance Systems Engineer',
+    role: 'Freelance Automation Engineer',
     period: 'Bogotá · Apr 2024 – Present',
     description:
-      'Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences (2023).',
+      'Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences.',
     tags: ['Automation', 'n8n', 'Python', 'APIs', 'Open Source', 'Accessibility'],
   },
   {
@@ -65,12 +102,34 @@ export const experience = [
   },
 ]
 
-export const projects = [
+export interface Project {
+  name: string
+  tagline: string
+  description: string
+  stack: string[]
+  status: string
+  statusColor: string
+  repoUrl?: string
+  demoUrl?: string
+}
+
+export const projects: Project[] = [
+  {
+    name: 'Product Review Classifier',
+    tagline: 'LLM-powered review classification pipeline built on n8n and Groq',
+    description:
+      'Automated product review classification system built as an AI Automation Engineering capstone. Uses n8n as the workflow orchestrator with Groq API (llama-3.1-8b-instant) for LLM inference — classifying incoming reviews by sentiment and category without manual intervention.',
+    stack: ['n8n', 'Groq API', 'Python', 'LLM'],
+    status: 'Shipped',
+    statusColor: 'rgba(99,102,241,0.7)',
+    repoUrl: undefined,
+    demoUrl: undefined,
+  },
   {
     name: 'Urban Disruption Intelligence',
     tagline: 'Real-time infrastructure disruption intelligence for Colombian cities',
     description:
-      'A WhatsApp-first system sitting between Colombia\'s public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.',
+      "A WhatsApp-first system sitting between Colombia's public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.",
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'WhatsApp API', 'OpenStreetMap', 'Leaflet'],
     status: 'In Progress',
     statusColor: 'rgba(34,197,94,0.7)',
@@ -108,4 +167,27 @@ export const contact = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/luis-alberto-duarte-97748171/?skipRedirect=true' },
   { label: 'GitHub', href: 'https://github.com/lualducor' },
   { label: 'Email', href: 'mailto:lualducor@gmail.com' },
+]
+
+export const contactMeta = {
+  availability: 'Open to remote roles',
+  cta: 'Available for project-based contracts and async collaboration.',
+  calUrl: undefined as string | undefined,
+}
+
+export interface Certificate {
+  title: string
+  issuer: string
+  date: string
+  topics: string[]
+  credentialUrl?: string
+}
+
+export const certificates: Certificate[] = [
+  {
+    title: 'AI Automation Engineering',
+    issuer: 'Coderhouse',
+    date: '2025',
+    topics: ['Python', 'FastAPI', 'n8n', 'LLM Integrations', 'Groq API'],
+  },
 ]
