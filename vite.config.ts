@@ -23,20 +23,36 @@ function stubCssInSsr(): Plugin {
   }
 }
 
+function stripFrontmatterInMdx(): Plugin {
+  return {
+    name: 'strip-frontmatter-in-mdx',
+    enforce: 'pre',
+    transform(code, id) {
+      if (!id.endsWith('.mdx')) return null
+
+      return code.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
-    mdx({
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [
-        rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
-        [rehypePrettyCode, {
-          theme: 'one-dark-pro',
-          keepBackground: true,
-        }],
-      ],
-    }),
+    stripFrontmatterInMdx(),
+    {
+      ...mdx({
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+          rehypeSlug,
+          [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+          [rehypePrettyCode, {
+            theme: 'one-dark-pro',
+            keepBackground: true,
+          }],
+        ],
+      }),
+      enforce: 'pre',
+    },
     react({
       include: /\.(mdx|js|jsx|ts|tsx)$/,
     }),
