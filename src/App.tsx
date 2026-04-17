@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import BentoGrid from './components/BentoGrid'
+import ThesisSection from './components/ThesisSection'
 import ExperienceSection from './components/ExperienceSection'
 import ProjectsSection from './components/ProjectsSection'
 import ContactSection from './components/ContactSection'
@@ -20,6 +21,7 @@ export default function App() {
       <Nav />
       <main style={{ maxWidth: '1152px', margin: '0 auto', padding: '96px 24px 64px' }}>
         <BentoGrid />
+        <ThesisSection />
         <ExperienceSection />
         <ProjectsSection />
         <ContactSection />

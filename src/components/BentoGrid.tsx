@@ -3,7 +3,6 @@ import StatCard from './bento/StatCard'
 import CurrentlyBuildingCard from './bento/CurrentlyBuildingCard'
 import MiniExperienceCard from './bento/MiniExperienceCard'
 import SkillsCard from './bento/SkillsCard'
-import ThesisBanner from './bento/ThesisBanner'
 import SpeakingPhotoCard from './bento/SpeakingPhotoCard'
 import UpcomingTalkCard from './bento/UpcomingTalkCard'
 import { stats, bentExperience } from '../data/resume'
@@ -48,11 +47,6 @@ export default function BentoGrid() {
 
         {/* Upcoming talk */}
         <UpcomingTalkCard />
-      </div>
-
-      {/* Thesis banner — always full width */}
-      <div style={{ marginTop: '12px' }}>
-        <ThesisBanner />
       </div>
 
       <style>{`
