@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,9 +28,8 @@ export default function Nav() {
         transition: 'all 0.2s ease',
       }}
     >
-      <span
-        title="Coming soon"
-        aria-label="Blog — coming soon"
+      <Link
+        to="/blog"
         style={{
           fontSize: '12px',
           fontFamily: 'ui-monospace, monospace',
@@ -37,24 +37,25 @@ export default function Nav() {
           padding: '4px 12px',
           border: '1px solid rgba(255,255,255,0.05)',
           borderRadius: '999px',
-          cursor: 'default',
-          userSelect: 'none',
+          textDecoration: 'none',
         }}
       >
         Blog ↗
-      </span>
+      </Link>
 
-      <span
+      <Link
+        to="/"
         style={{
           fontFamily: 'ui-monospace, monospace',
           fontSize: '14px',
           fontWeight: 500,
           color: '#ffffff',
           letterSpacing: '-0.02em',
+          textDecoration: 'none',
         }}
       >
         lucholabs.dev
-      </span>
+      </Link>
 
     </nav>
   )

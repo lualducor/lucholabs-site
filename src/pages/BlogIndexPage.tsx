@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BlogNav } from '../components/blog/BlogNav'
 import { PostCard } from '../components/blog/PostCard'
 import { TagBadge } from '../components/blog/TagBadge'
@@ -7,6 +8,10 @@ const posts = getAllPosts()
 const tags = getAllTags()
 
 export function BlogIndexPage() {
+  useEffect(() => {
+    document.title = 'Blog — LuchoLabs'
+  }, [])
+
   return (
     <>
       <BlogNav />
