@@ -6,7 +6,7 @@
   "scripts": {
     "predev": "node scripts/build-post-index.mjs",
     "dev": "vite",
-    "build": "node scripts/build-post-index.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/generate-rss.mjs",
+    "build": "node scripts/build-post-index.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
