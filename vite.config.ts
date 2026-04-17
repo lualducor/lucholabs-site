@@ -27,8 +27,4 @@ export default defineConfig(({ isSsrBuild }) => ({
   ssr: {
     noExternal: [],
   },
-  test: {
-    globals: true,
-    environment: 'node',
-  },
 }))
