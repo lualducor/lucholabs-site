@@ -1,4 +1,4 @@
-import { useEffect, useState, type ComponentType } from 'react'
+import { useEffect, type ComponentType } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { BlogNav } from '../components/blog/BlogNav'
 import { PostDate } from '../components/blog/PostDate'
@@ -8,7 +8,6 @@ import { TagBadge } from '../components/blog/TagBadge'
 import { getPostBySlug, getSeriesByName } from '../lib/blog/loader'
 import '../styles/blog.css'
 
-const mdxModules = import.meta.glob<{ default: ComponentType }>('../../content/posts/*.mdx')
 const mdxModulesForSsr = import.meta.glob<{ default: ComponentType }>(
   '../../content/posts/*.mdx',
   { eager: true },
@@ -20,39 +19,13 @@ export function BlogPostPage() {
   const seriesGroup = post?.frontmatter.series
     ? getSeriesByName(post.frontmatter.series)
     : undefined
-  const initialContent = post
-    ? mdxModulesForSsr[`../../content/posts/${post.slug}.mdx`]?.default ?? null
+  const MDXContent = post
+    ? (mdxModulesForSsr[`../../content/posts/${post.slug}.mdx`]?.default ?? null)
     : null
-  const [lazyContent, setLazyContent] = useState<ComponentType | null>(null)
-  const [loadedSlug, setLoadedSlug] = useState<string | null>(null)
-
-  useEffect(() => {
-    if (!post || initialContent) return
-
-    let cancelled = false
-    const loader = mdxModules[`../../content/posts/${post.slug}.mdx`]
-
-    if (!loader) {
-      return
-    }
-
-    void loader().then(module => {
-      if (!cancelled) {
-        setLoadedSlug(post.slug)
-        setLazyContent(() => module.default)
-      }
-    })
-
-    return () => {
-      cancelled = true
-    }
-  }, [initialContent, post])
 
   useEffect(() => {
     if (post) document.title = `${post.frontmatter.title} — LuchoLabs`
   }, [post])
-
-  const MDXContent = initialContent ?? (loadedSlug === post?.slug ? lazyContent : null)
 
   if (!post) {
     return (
