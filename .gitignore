@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 .gstack/
 .vercel
+src/lib/blog/posts.generated.json
