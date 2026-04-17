@@ -2,7 +2,7 @@ export const identity = {
   name: 'Luis Alberto Duarte Cortés',
   title: 'I build AI-powered systems and automation infrastructure',
   subtitle: 'Bogotá · Remote · C1 English',
-  cvUrl: '/CV/lucholabs.pdf',
+  cvUrl: '/cv/Lucholabs.pdf',
   photo: '/photo.jpg',
 }
 
@@ -63,7 +63,7 @@ export const speaking: Talk[] = [
     event: 'Cybersecurity Forum',
     location: 'Bogotá',
     date: '2025',
-    topic: 'Egresado panelist on network security and infrastructure.',
+    topic: 'Panelist on network security and infrastructure.',
     photo: '/speaking.jpg',
   },
   {
