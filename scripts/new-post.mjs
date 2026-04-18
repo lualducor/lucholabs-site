@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'node:fs'
 import { execSync, spawnSync } from 'node:child_process'
-import { createInterface } from 'node:readline/promises'
+import { createInterface } from 'node:readline'
 import { stdin, stdout } from 'node:process'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
@@ -21,16 +21,39 @@ function today() {
   return new Date().toISOString().slice(0, 10)
 }
 
-async function prompt(rl, question) {
-  const ans = await rl.question(question)
-  return ans.trim()
+function readAllLines() {
+  return new Promise((resolve) => {
+    const lines = []
+    const rl = createInterface({ input: stdin, terminal: false })
+    rl.on('line', (l) => lines.push(l))
+    rl.once('close', () => resolve(lines))
+  })
+}
+
+function makePrompter(lines) {
+  let idx = 0
+  return async function prompt(question) {
+    process.stdout.write(question)
+    const ans = lines[idx++] ?? ''
+    if (!process.stdout.isTTY) process.stdout.write(ans + '\n')
+    return ans.trim()
+  }
+}
+
+function makeInteractivePrompter(rl) {
+  return function prompt(question) {
+    return new Promise((resolve) => {
+      rl.question(question, (ans) => resolve(ans.trim()))
+    })
+  }
 }
 
 function openEditor(initial) {
   const editor = process.env.EDITOR || 'vim'
   const tmp = join(tmpdir(), `lucholabs-post-${Date.now()}.md`)
   writeFileSync(tmp, initial, 'utf-8')
-  const res = spawnSync(editor, [tmp], { stdio: 'inherit' })
+  // Run through sh so EDITOR can be a shell expression (e.g. "code --wait")
+  const res = spawnSync('sh', ['-c', editor + ' "$@"', '--', tmp], { stdio: 'inherit' })
   if (res.status !== 0) {
     unlinkSync(tmp)
     throw new Error(`Editor exited with status ${res.status}`)
@@ -56,16 +79,26 @@ function buildFrontmatter({ title, slug, description, tags }) {
 }
 
 async function main() {
-  const rl = createInterface({ input: stdin, output: stdout })
+  let prompt
+  let closeInput = () => {}
 
-  const title = await prompt(rl, 'Title: ')
-  if (!title) { rl.close(); console.error('Title required.'); process.exit(1) }
+  if (process.stdin.isTTY) {
+    const rl = createInterface({ input: stdin, output: stdout })
+    prompt = makeInteractivePrompter(rl)
+    closeInput = () => rl.close()
+  } else {
+    const lines = await readAllLines()
+    prompt = makePrompter(lines)
+  }
 
-  const tags = await prompt(rl, 'Tags (comma-separated): ')
-  const description = await prompt(rl, 'Description: ')
-  if (!description) { rl.close(); console.error('Description required.'); process.exit(1) }
+  const title = await prompt('Title: ')
+  if (!title) { closeInput(); console.error('Title required.'); process.exit(1) }
 
-  rl.close()
+  const tags = await prompt('Tags (comma-separated): ')
+  const description = await prompt('Description: ')
+  if (!description) { closeInput(); console.error('Description required.'); process.exit(1) }
+
+  closeInput()
 
   const slug = slugify(title)
   const filepath = join(POSTS_DIR, `${slug}.mdx`)
