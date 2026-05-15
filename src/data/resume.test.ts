@@ -125,9 +125,13 @@ describe('certificates', () => {
   })
 })
 
-// 13. First project has status 'Shipped'
-describe('projects — ordering', () => {
-  it('first project has status "Shipped"', () => {
-    expect(projects[0].status).toBe('Shipped')
+// 13. Projects match the active lab inventory
+describe('projects — current inventory', () => {
+  it('contains the active project set from /lab and excludes archived/deleted entries', () => {
+    expect(projects.map(project => project.name)).toEqual([
+      'Boveda',
+      'Anti-Phishing Shield',
+      'SUPERFARM',
+    ])
   })
 })

@@ -15,8 +15,7 @@ QA: Regression Testing, Bug Triage, Technical Writing
 ## Projects
 - Boveda: Local-first personal finance dashboard for Colombian bank accounts. Stack: Python, FastAPI, SQLite, SQLAlchemy, React.
 - Anti-Phishing Shield: Open source email phishing protection tool designed for elderly/non-technical users.
-- AI 3D Print Optimizer: Developer tool using AI to recommend slicing parameters for 3D printing.
-- Urban Disruption Intelligence (Planning): WhatsApp-first real-time infrastructure disruption intelligence for Colombian cities — water, electricity, and gas outage tracking with community-validated restoration signals. Stack: Python, FastAPI, PostgreSQL, PostGIS, WhatsApp API, OpenStreetMap, Leaflet.
+- SUPERFARM: Open agricultural intelligence infrastructure for modular farm agents, shared farm memory, telemetry, and orchestration. Stack: Python, multi-agent systems, GIS, IoT, LLMs.
 
 ## Experience
 - Freelance Systems Engineer (Apr 2024–Present): Automation workflows, API integrations, open-source accessibility tooling
@@ -29,6 +28,7 @@ Email: lualducor@gmail.com
 LinkedIn: https://www.linkedin.com/in/luis-alberto-duarte-97748171/
 GitHub: https://github.com/lualducor
 Website: https://lucholabs.dev
+Lab: https://lucholabs.dev/lab
 
 ## Location
 Bogotá, Colombia — Available for US & European time zones

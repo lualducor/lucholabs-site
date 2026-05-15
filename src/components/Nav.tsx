@@ -28,20 +28,37 @@ export default function Nav() {
         transition: 'all 0.2s ease',
       }}
     >
-      <Link
-        to="/blog"
-        style={{
-          fontSize: '12px',
-          fontFamily: 'ui-monospace, monospace',
-          color: 'rgba(255,255,255,0.2)',
-          padding: '4px 12px',
-          border: '1px solid rgba(255,255,255,0.05)',
-          borderRadius: '999px',
-          textDecoration: 'none',
-        }}
-      >
-        Blog ↗
-      </Link>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link
+          to="/blog"
+          style={{
+            fontSize: '12px',
+            fontFamily: 'ui-monospace, monospace',
+            color: 'rgba(255,255,255,0.2)',
+            padding: '4px 12px',
+            border: '1px solid rgba(255,255,255,0.05)',
+            borderRadius: '999px',
+            textDecoration: 'none',
+          }}
+        >
+          Blog ↗
+        </Link>
+
+        <a
+          href="/lab"
+          style={{
+            fontSize: '12px',
+            fontFamily: 'ui-monospace, monospace',
+            color: 'rgba(255,255,255,0.2)',
+            padding: '4px 12px',
+            border: '1px solid rgba(255,255,255,0.05)',
+            borderRadius: '999px',
+            textDecoration: 'none',
+          }}
+        >
+          LAB ↗
+        </a>
+      </div>
 
       <Link
         to="/"
