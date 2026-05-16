@@ -1,0 +1,47 @@
+{
+  "version": 97,
+  "categories": [
+    {
+      "id": "lucholabs",
+      "name": "LuchoLabs",
+      "shortcuts": [
+        {
+          "id": "new-post",
+          "name": "New blog post",
+          "description": "Create and publish a new post on lucholabs.dev/blog",
+          "icon": "flat_color_pen_blue",
+          "executionType": "app",
+          "method": "PUT",
+          "url": "https://api.github.com/repos/lualducor/lucholabs-site/contents/content/posts/{{slug}}.mdx",
+          "authentication": "none",
+          "requestBodyType": "custom_text",
+          "contentType": "application/json",
+          "bodyContent": "{\n  \"message\": \"blog: new post — {{title}}\",\n  \"content\": \"{{file_base64}}\",\n  \"branch\": \"main\"\n}",
+          "headers": [
+            { "key": "Authorization", "value": "Bearer {{GITHUB_TOKEN}}" },
+            { "key": "Accept", "value": "application/vnd.github+json" },
+            { "key": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ],
+          "codeOnPrepare": "const title = await askForInput({ title: 'Title', message: 'Post title' });\nconst tags  = await askForInput({ title: 'Tags', message: 'Comma-separated', initialValue: '' });\nconst desc  = await askForInput({ title: 'Description', message: 'One-line description' });\nconst body  = await askForInput({ title: 'Body', message: 'Markdown content', type: 'multiline' });\n\nconst slug = title.toLowerCase()\n  .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n  .replace(/[^a-z0-9]+/g, '-')\n  .replace(/^-+|-+$/g, '')\n  .slice(0, 80);\nif (!slug) { showToast('Title must have letters or digits'); abort(); }\n\nconst d = new Date();\nconst yyyy = d.getUTCFullYear();\nconst mm = String(d.getUTCMonth() + 1).padStart(2, '0');\nconst dd = String(d.getUTCDate()).padStart(2, '0');\nconst date = `${yyyy}-${mm}-${dd}`;\n\nconst tagList = tags.split(',').map(t => t.trim()).filter(Boolean);\nconst tagLine = tagList.length ? `[${tagList.map(t => '\"' + t.replace(/\"/g, '\\\\\"') + '\"').join(', ')}]` : '[]';\n\nconst escapedTitle = title.replace(/\"/g, '\\\\\"');\nconst escapedDesc  = desc.replace(/\"/g, '\\\\\"');\nconst content = `---\\ntitle: \"${escapedTitle}\"\\ndate: \"${date}\"\\nslug: \"${slug}\"\\ndescription: \"${escapedDesc}\"\\ntags: ${tagLine}\\ndraft: false\\n---\\n\\n${body.trim()}\\n`;\n\nconst b64 = base64encode(content);\n\nsetVariable('title', title);\nsetVariable('slug', slug);\nsetVariable('file_base64', b64);",
+          "codeOnSuccess": "const code = response.statusCode;\nif (code >= 200 && code < 300) {\n  const slug = getVariable('slug');\n  showToast(`Posted! lucholabs.dev/blog/${slug}`);\n} else {\n  showToast(`GitHub ${code}: ${response.body.slice(0, 200)}`);\n}",
+          "codeOnFailure": "showToast(`Network error: ${networkError || 'unknown'}`);"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "id": "GITHUB_TOKEN",
+      "key": "GITHUB_TOKEN",
+      "type": "constant",
+      "value": "REPLACE_WITH_YOUR_TOKEN",
+      "urlEncode": false,
+      "jsonEncode": false,
+      "excludeValueFromExport": true,
+      "title": "GitHub Personal Access Token"
+    },
+    { "id": "title", "key": "title", "type": "constant", "value": "", "excludeValueFromExport": true },
+    { "id": "slug", "key": "slug", "type": "constant", "value": "", "excludeValueFromExport": true },
+    { "id": "file_base64", "key": "file_base64", "type": "constant", "value": "", "excludeValueFromExport": true }
+  ]
+}

@@ -50,6 +50,24 @@ public/
   blog/og/                Per-post Open Graph images (1200x630)
 ```
 
+## Managing posts
+
+### Create
+
+From desktop:
+
+```
+npm run new-post
+```
+
+Prompts for title, tags, and description. Opens `$EDITOR` for the post body (uses `$EDITOR` env var, falls back to `vim`). On save, writes `content/posts/{slug}.mdx` with frontmatter, commits, and pushes. Vercel auto-deploys in ~1-2 minutes.
+
+From Android: an HTTP Shortcut hits the GitHub Contents API directly — no server, no Vercel function. See `docs/android-publishing.md` for one-time setup.
+
+### Edit and delete
+
+Use GitHub's web UI — it already has a file browser, markdown editor with preview, and a delete button with confirmation. See `docs/editing-posts.md` for the full flow.
+
 ## Status
 
 Active. Posts and project entries updated continuously. Source open under MIT.

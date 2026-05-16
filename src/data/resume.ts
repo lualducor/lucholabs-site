@@ -22,7 +22,7 @@ export const stats = [
   },
 ]
 
-export const currentlyBuilding = ['Boveda', 'Anti-Phishing Shield', 'Automation Workflows', '3D Tools']
+export const currentlyBuilding = ['Boveda', 'Anti-Phishing Shield', 'SUPERFARM', 'Automation Workflows']
 
 export const bentExperience = [
   { company: 'Funktronic Labs', role: 'QA Tester', period: 'Remote · 2024' },
@@ -115,26 +115,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: 'Product Review Classifier',
-    tagline: 'LLM-powered review classification pipeline built on n8n and Groq',
-    description:
-      'Automated product review classification system built as an AI Automation Engineering capstone. Uses n8n as the workflow orchestrator with Groq API (llama-3.1-8b-instant) for LLM inference — classifying incoming reviews by sentiment and category without manual intervention.',
-    stack: ['n8n', 'Groq API', 'Python', 'LLM'],
-    status: 'Shipped',
-    statusColor: 'rgba(99,102,241,0.7)',
-    repoUrl: undefined,
-    demoUrl: undefined,
-  },
-  {
-    name: 'Urban Disruption Intelligence',
-    tagline: 'Real-time infrastructure disruption intelligence for Colombian cities',
-    description:
-      "A WhatsApp-first system sitting between Colombia's public utility providers (water, electricity, gas) and citizens — delivering faster, more reliable disruption status than any official channel through community-validated restoration tracking.",
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'WhatsApp API', 'OpenStreetMap', 'Leaflet'],
-    status: 'In Progress',
-    statusColor: 'rgba(34,197,94,0.7)',
-  },
-  {
     name: 'Boveda',
     tagline: 'Personal finance dashboard for Colombian bank accounts',
     description:
@@ -153,13 +133,13 @@ export const projects: Project[] = [
     statusColor: 'rgba(148,163,184,0.7)',
   },
   {
-    name: 'AI 3D Print Optimizer',
-    tagline: 'AI-assisted slicing parameter recommendations',
+    name: 'SUPERFARM',
+    tagline: 'Open agricultural intelligence infrastructure',
     description:
-      'Developer tooling experiment exploring how AI models can analyze STL files and recommend slicing parameters to improve 3D print quality and reliability.',
-    stack: ['Python', 'AI APIs', 'STL Analysis', 'CLI'],
-    status: 'Prototype',
-    statusColor: 'rgba(148,163,184,0.7)',
+      'An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.',
+    stack: ['Python', 'Multi-Agent Systems', 'GIS', 'IoT', 'LLMs', 'Open Source'],
+    status: 'Research',
+    statusColor: 'rgba(221,221,221,0.7)',
   },
 ]
 
