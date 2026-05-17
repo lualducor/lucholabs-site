@@ -1,54 +1,63 @@
 import { describe, it, expect } from 'vitest'
 import {
-  projects,
-  experience,
-  identity,
-  skills,
-  thesis,
-  contact,
-  speaking,
+  activeProjects,
   certificates,
+  contact,
+  experience,
+  faq,
+  headlineProject,
+  identity,
+  killedProjects,
+  manifesto,
+  projects,
+  skills,
+  speaking,
+  thesis,
 } from './resume'
 
-// 1. Every project has required fields and at least one stack item
 describe('projects — required fields', () => {
   it('every project has non-empty name, tagline, description, and at least one stack item', () => {
-    for (const p of projects) {
-      expect(p.name, `${p.name}: name`).toBeTruthy()
-      expect(p.tagline, `${p.name}: tagline`).toBeTruthy()
-      expect(p.description, `${p.name}: description`).toBeTruthy()
-      expect(p.stack.length, `${p.name}: stack`).toBeGreaterThan(0)
+    for (const project of projects) {
+      expect(project.name, `${project.name}: name`).toBeTruthy()
+      expect(project.tagline, `${project.name}: tagline`).toBeTruthy()
+      expect(project.description, `${project.name}: description`).toBeTruthy()
+      expect(project.stack.length, `${project.name}: stack`).toBeGreaterThan(0)
     }
   })
 })
 
-// 2. Every experience entry has required fields
 describe('experience — required fields', () => {
   it('every entry has company, role, period, description, and at least one tag', () => {
-    for (const e of experience) {
-      expect(e.company, `${e.company}: company`).toBeTruthy()
-      expect(e.role, `${e.company}: role`).toBeTruthy()
-      expect(e.period, `${e.company}: period`).toBeTruthy()
-      expect(e.description, `${e.company}: description`).toBeTruthy()
-      expect(e.tags.length, `${e.company}: tags`).toBeGreaterThan(0)
+    for (const entry of experience) {
+      expect(entry.company, `${entry.company}: company`).toBeTruthy()
+      expect(entry.role, `${entry.company}: role`).toBeTruthy()
+      expect(entry.period, `${entry.company}: period`).toBeTruthy()
+      expect(entry.description, `${entry.company}: description`).toBeTruthy()
+      expect(entry.tags.length, `${entry.company}: tags`).toBeGreaterThan(0)
     }
   })
 })
 
-// 3. identity.title is non-empty and under 100 characters
 describe('identity', () => {
   it('title is non-empty and under 100 characters', () => {
     expect(identity.title).toBeTruthy()
     expect(identity.title.length).toBeLessThan(100)
   })
 
-  // 4. identity.cvUrl starts with /
   it('cvUrl starts with / (self-hosted)', () => {
     expect(identity.cvUrl.startsWith('/')).toBe(true)
   })
+
+  it('image includes url, width, height, and caption', () => {
+    expect(identity.image).toMatchObject({
+      url: '/photo.jpg',
+      width: 192,
+      height: 192,
+      caption: 'Luis Alberto Duarte Cortés',
+    })
+  })
 })
 
-// 5. skills.core and skills.tooling each have between 3 and 8 items
 describe('skills', () => {
   it('core has between 3 and 8 items', () => {
     expect(skills.core.length).toBeGreaterThanOrEqual(3)
@@ -61,8 +70,6 @@ describe('skills', () => {
   })
 })
 
-// 6. thesis.adoptedBy has at least one institution
-// 7. thesis.impact does not contain '2025'
 describe('thesis', () => {
   it('adoptedBy has at least one institution', () => {
     expect(thesis.adoptedBy.length).toBeGreaterThan(0)
@@ -73,65 +80,91 @@ describe('thesis', () => {
   })
 })
 
-// 8. contact has LinkedIn, GitHub, and Email entries with non-empty hrefs
 describe('contact', () => {
   it('has LinkedIn, GitHub, and Email with non-empty hrefs', () => {
     for (const label of ['LinkedIn', 'GitHub', 'Email']) {
-      const entry = contact.find(c => c.label === label)
+      const entry = contact.find(contactEntry => contactEntry.label === label)
       expect(entry, `missing ${label}`).toBeDefined()
       expect(entry!.href, `${label}: empty href`).toBeTruthy()
     }
   })
 })
 
-// 9. No project repoUrl or demoUrl is an empty string
 describe('projects — link fields', () => {
   it('repoUrl and demoUrl are either undefined or a non-empty string', () => {
-    for (const p of projects) {
-      expect(p.repoUrl, `${p.name}: repoUrl`).not.toBe('')
-      expect(p.demoUrl, `${p.name}: demoUrl`).not.toBe('')
+    for (const project of projects) {
+      expect(project.repoUrl, `${project.name}: repoUrl`).not.toBe('')
+      expect(project.demoUrl, `${project.name}: demoUrl`).not.toBe('')
     }
   })
 })
 
-// 10. Every speaking entry has required fields
-// 11. Every speaking entry has status 'past' or 'upcoming'
 describe('speaking', () => {
   it('every talk has non-empty event, location, date, and topic', () => {
-    for (const t of speaking) {
-      expect(t.event, `${t.event}: event`).toBeTruthy()
-      expect(t.location, `${t.event}: location`).toBeTruthy()
-      expect(t.date, `${t.event}: date`).toBeTruthy()
-      expect(t.topic, `${t.event}: topic`).toBeTruthy()
+    for (const talk of speaking) {
+      expect(talk.event, `${talk.event}: event`).toBeTruthy()
+      expect(talk.location, `${talk.event}: location`).toBeTruthy()
+      expect(talk.date, `${talk.event}: date`).toBeTruthy()
+      expect(talk.topic, `${talk.event}: topic`).toBeTruthy()
     }
   })
 
   it('every talk has status of "past" or "upcoming"', () => {
-    for (const t of speaking) {
-      expect(['past', 'upcoming']).toContain(t.status)
+    for (const talk of speaking) {
+      expect(['past', 'upcoming']).toContain(talk.status)
     }
   })
 })
 
-// 12. certificates has at least one entry with non-empty title, issuer, and date
 describe('certificates', () => {
   it('has at least one entry with non-empty title, issuer, and date', () => {
     expect(certificates.length).toBeGreaterThan(0)
-    for (const c of certificates) {
-      expect(c.title, `${c.title}: title`).toBeTruthy()
-      expect(c.issuer, `${c.title}: issuer`).toBeTruthy()
-      expect(c.date, `${c.title}: date`).toBeTruthy()
+    for (const certificate of certificates) {
+      expect(certificate.title, `${certificate.title}: title`).toBeTruthy()
+      expect(certificate.issuer, `${certificate.title}: issuer`).toBeTruthy()
+      expect(certificate.date, `${certificate.title}: date`).toBeTruthy()
     }
   })
 })
 
-// 13. Projects match the active lab inventory
-describe('projects — current inventory', () => {
-  it('contains the active project set from /lab and excludes archived/deleted entries', () => {
-    expect(projects.map(project => project.name)).toEqual([
+describe('projects — derived collections', () => {
+  it('activeProjects returns non-killed, non-archived projects', () => {
+    expect(activeProjects).toHaveLength(3)
+    expect(activeProjects.every(project => !project.isKilled && !project.isArchived)).toBe(true)
+    expect(activeProjects.map(project => project.name)).toEqual([
       'Boveda',
       'Anti-Phishing Shield',
       'SUPERFARM',
     ])
+  })
+
+  it('killedProjects returns haycorte and klipper-copilot', () => {
+    expect(killedProjects).toHaveLength(2)
+    expect(killedProjects.map(project => project.slug)).toEqual([
+      'haycorte',
+      'klipper-copilot',
+    ])
+  })
+
+  it('headlineProject is boveda', () => {
+    expect(headlineProject?.slug).toBe('boveda')
+  })
+})
+
+describe('manifesto and faq', () => {
+  it('manifesto has four entries', () => {
+    expect(manifesto).toHaveLength(4)
+  })
+
+  it('faq has six entries', () => {
+    expect(faq).toHaveLength(6)
+  })
+
+  it('each manifesto citationProjectSlug matches a real project slug', () => {
+    const projectSlugs = new Set(projects.map(project => project.slug))
+
+    for (const entry of manifesto) {
+      expect(projectSlugs.has(entry.citationProjectSlug)).toBe(true)
+    }
   })
 })

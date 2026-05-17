@@ -1,0 +1,433 @@
+{
+  "$schema": "./content.schema.json",
+  "meta": {
+    "lastUpdated": "2026-05-16",
+    "version": 2,
+    "note": "Canonical source of truth for both CV (lucholabs.dev) and Lab (lucholabs.dev/lab). Edit this file; resume.ts and THELAB consume it."
+  },
+  "identity": {
+    "name": "Luis Alberto Duarte Cortés",
+    "title": "I build accessibility and trust infrastructure for Spanish-speaking users.",
+    "roleLine": "Systems engineer · AI security speaker · Open-source author",
+    "subtitle": "Bogotá · Remote · C1 English",
+    "cvUrl": "/cv/Lucholabs.pdf",
+    "photo": "/photo.jpg",
+    "image": {
+      "url": "/photo.jpg",
+      "width": 192,
+      "height": 192,
+      "caption": "Luis Alberto Duarte Cortés"
+    },
+    "subMark": "",
+    "latamLine": ""
+  },
+  "stats": [
+    {
+      "label": "English C1",
+      "sub": "IELTS Academic 7.0 · British Council",
+      "subColor": "rgba(34,197,94,0.6)",
+      "category": "Language"
+    },
+    {
+      "label": "Remote Ready",
+      "sub": "US & LATAM Timezones · Full Time",
+      "subColor": "rgba(255,255,255,0.4)",
+      "category": "Availability",
+      "pulse": true
+    }
+  ],
+  "currentlyBuilding": ["Boveda", "Anti-Phishing Shield", "SUPERFARM", "Automation Workflows"],
+  "bentExperience": [
+    { "company": "Funktronic Labs", "role": "QA Tester", "period": "Remote · 2024" },
+    { "company": "Magis SAS", "role": "Tech Support Analyst", "period": "Bogotá · 2023" }
+  ],
+  "skills": {
+    "core": ["Python", "FastAPI", "n8n", "REST APIs", "Linux"],
+    "tooling": ["PostgreSQL", "SQLAlchemy", "Webhooks", "Postman", "Make"]
+  },
+  "thesis": {
+    "title": "Meritorious Thesis",
+    "subtitle": "Open-Source Live Captioning System for Hearing-Impaired Students",
+    "institution": "Universidad ECCI — B.Sc. Systems Engineering",
+    "status": "Live · In Use · 2024–Present",
+    "adoptedBy": ["SENA Regional Amazonas", "Universidad ECCI"],
+    "stack": ["Node.js", "Mozilla DeepSpeech", "NGINX", "Custom Dictionary Engine"],
+    "impact": "Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone."
+  },
+  "speaking": [
+    {
+      "status": "past",
+      "event": "AI & Cybersecurity Forum",
+      "location": "Bogotá",
+      "date": "May 2026",
+      "topic": "Panelist on \"Cybersecurity in the Golden Era of AI\" — agent models, emerging threats, and prompt injection attacks.",
+      "photo": "/talks/ai-cybersecurity-2026/hero.jpg",
+      "recapUrl": "/talks/ai-cybersecurity-2026"
+    },
+    {
+      "status": "past",
+      "event": "Cybersecurity Forum",
+      "location": "Bogotá",
+      "date": "2025",
+      "topic": "Panelist on network security and infrastructure.",
+      "photo": "/speaking.jpg"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Self-Employed",
+      "role": "Freelance Automation Engineer",
+      "period": "Bogotá · Apr 2024 – Present",
+      "description": "Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences.",
+      "tags": ["Automation", "n8n", "Python", "APIs", "Open Source", "Accessibility"]
+    },
+    {
+      "company": "Funktronic Labs",
+      "role": "QA Tester (Contract)",
+      "period": "Remote · Jan 2024 – Dec 2024",
+      "description": "Executed manual regression and sanity testing across software builds for a US-based game development studio. Documented structured bug reports with reproduction steps, severity ratings, and expected vs actual behavior. Served as bridge between engineering and end-user experience, retesting patches to confirm resolution.",
+      "tags": ["QA", "Regression Testing", "Bug Tracking", "Remote", "Technical Docs"]
+    },
+    {
+      "company": "Magis SAS",
+      "role": "Technical Support Analyst",
+      "period": "Bogotá · Jun 2023 – Dec 2023",
+      "description": "Delivered Tier 2 application support for internal systems across Windows and Linux environments, ensuring uptime and operational continuity. Escalated complex incidents with thorough technical documentation. Configured and secured firewalls and network infrastructure; supported a key procurement bid by ensuring infrastructure was spec-ready on deadline.",
+      "tags": ["Technical Support", "Windows", "Linux", "Networking", "Incident Management"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Boveda",
+      "slug": "boveda",
+      "tagline": "Personal finance dashboard for Colombian bank accounts",
+      "description": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+      "stack": ["Python", "FastAPI", "SQLite", "SQLAlchemy", "React"],
+      "status": "In Progress",
+      "statusColor": "rgba(34,197,94,0.7)",
+      "featuredOnCv": true,
+      "featuredOnLab": true,
+      "isHeadline": true,
+      "isArchived": false,
+      "isKilled": false,
+      "cvTagline": "Personal finance dashboard for Colombian bank accounts",
+      "cvDescription": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+      "labTagline": "Personal finance dashboard for Colombian bank accounts",
+      "labDescription": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+      "labQuote": "",
+      "labFeatures": [],
+      "labVision": "",
+      "links": {
+        "github": null,
+        "demo": null,
+        "paper": null
+      },
+      "repoUrl": null
+    },
+    {
+      "name": "Anti-Phishing Shield",
+      "slug": "anti-phishing-shield",
+      "tagline": "Open source email phishing protection for elderly users",
+      "description": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+      "stack": ["Python", "Open Source", "Email Analysis", "Accessibility"],
+      "status": "Prototype",
+      "statusColor": "rgba(148,163,184,0.7)",
+      "featuredOnCv": true,
+      "featuredOnLab": true,
+      "isHeadline": false,
+      "isArchived": false,
+      "isKilled": false,
+      "cvTagline": "Open source email phishing protection for elderly users",
+      "cvDescription": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+      "labTagline": "Open source email phishing protection for elderly users",
+      "labDescription": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+      "labQuote": "",
+      "labFeatures": [],
+      "labVision": "",
+      "links": {
+        "github": null,
+        "demo": null,
+        "paper": null
+      },
+      "repoUrl": null
+    },
+    {
+      "name": "SUPERFARM",
+      "slug": "superfarm",
+      "tagline": "Open agricultural intelligence infrastructure",
+      "description": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "stack": ["Python", "Multi-Agent Systems", "GIS", "IoT", "LLMs", "Open Source"],
+      "status": "Research",
+      "statusColor": "rgba(221,221,221,0.7)",
+      "featuredOnCv": true,
+      "featuredOnLab": true,
+      "isHeadline": false,
+      "isArchived": false,
+      "isKilled": false,
+      "cvTagline": "Open agricultural intelligence infrastructure",
+      "cvDescription": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "labTagline": "Open agricultural intelligence infrastructure",
+      "labDescription": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "labQuote": "",
+      "labFeatures": [],
+      "labVision": "",
+      "links": {
+        "github": null,
+        "demo": null,
+        "paper": null
+      },
+      "repoUrl": null
+    },
+    {
+      "name": "haycorte",
+      "slug": "haycorte",
+      "tagline": "Urban disruption intelligence for Bogotá utility outages",
+      "description": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá.",
+      "stack": ["Python", "WhatsApp API", "PostgreSQL"],
+      "status": "Killed",
+      "statusColor": "red",
+      "featuredOnCv": false,
+      "featuredOnLab": true,
+      "isHeadline": false,
+      "isArchived": true,
+      "isKilled": true,
+      "cvTagline": "",
+      "cvDescription": "",
+      "labTagline": "Urban disruption intelligence for Bogotá utility outages.",
+      "labDescription": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas).",
+      "labQuote": "Real communication problem; the gap is real. The business shape isn't.",
+      "labFeatures": [
+        "Infrastructure dependence",
+        "Business-structure mismatch",
+        "Episodic engagement",
+        "Capital vs. operational burden"
+      ],
+      "labVision": "strategically interesting as a future utility-data layer. for now: archived.",
+      "links": {
+        "github": null,
+        "demo": null,
+        "paper": null
+      },
+      "repoUrl": null
+    },
+    {
+      "name": "klipper-copilot",
+      "slug": "klipper-copilot",
+      "tagline": "3D-printing AI copilot for Klipper firmware",
+      "description": "AI-assisted optimization layer for 3D printing workflows.",
+      "stack": ["Python", "Klipper", "LLM APIs"],
+      "status": "Killed",
+      "statusColor": "red",
+      "featuredOnCv": false,
+      "featuredOnLab": true,
+      "isHeadline": false,
+      "isArchived": true,
+      "isKilled": true,
+      "cvTagline": "",
+      "cvDescription": "",
+      "labTagline": "3D-printing AI copilot for Klipper firmware.",
+      "labDescription": "AI-assisted optimization layer for 3D printing workflows on Klipper-based machines.",
+      "labQuote": "Optimizing 3D prints is a small enough niche that maintaining the copilot costs more than the printers it helps.",
+      "labFeatures": [
+        "Niche audience",
+        "Maintenance overhead",
+        "Hardware fragmentation",
+        "Limited willingness-to-pay"
+      ],
+      "labVision": "archived as a learning project. potential future revival if the 3D-print ecosystem consolidates.",
+      "links": {
+        "github": null,
+        "demo": null,
+        "paper": null
+      },
+      "repoUrl": null
+    }
+  ],
+  "manifesto": [
+    {
+      "title": "Systems Thinking",
+      "body": "I build infrastructure, not interfaces. Backend-first thinking applied to AI, automation, and data systems. Local-first by default — see Boveda.",
+      "citationProjectSlug": "boveda"
+    },
+    {
+      "title": "AI as Infrastructure",
+      "body": "AI agents need adversarial-tested guardrails before they touch users. Threat modeling and prompt-injection defense are first-class concerns — see Anti-Phishing Shield.",
+      "citationProjectSlug": "anti-phishing-shield"
+    },
+    {
+      "title": "Cross-Domain Vision",
+      "body": "Fintech, cybersecurity, agriculture — the same systems-thinking compounds across verticals — see SUPERFARM.",
+      "citationProjectSlug": "superfarm"
+    },
+    {
+      "title": "Builder-Lab Identity",
+      "body": "I publish what I learn and post-mortem what I kill. The dead experiments matter as much as the live ones — see haycorte and klipper-copilot.",
+      "citationProjectSlug": "haycorte"
+    }
+  ],
+  "nowNext": {
+    "now": ["Boveda", "Anti-Phishing Shield", "Automation Workflows"],
+    "next": ["AI & Cybersecurity Forum — Bogotá, May 2026 (panel)"],
+    "recentCommits": []
+  },
+  "contact": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/luis-alberto-duarte-97748171/" },
+    { "label": "GitHub", "href": "https://github.com/lualducor" },
+    { "label": "Email", "href": "mailto:lualducor@gmail.com" }
+  ],
+  "contactMeta": {
+    "availability": "Open to full-time remote Solutions / Forward-Deployed Engineer roles at AI-native companies.",
+    "cta": "Also available for speaking engagements (talks, panels, podcasts) on AI security & prompt injection. Selective freelance work considered.",
+    "hireHeadline": "HIRE ME",
+    "speakingHeadline": "BOOK ME TO SPEAK",
+    "speakingCta": "Available for talks, panels, podcasts on AI security & prompt injection.",
+    "freelanceLine": "Also taking selective freelance work — DM with details.",
+    "notForLine": ""
+  },
+  "certificates": [
+    {
+      "title": "AI Automation Engineering",
+      "issuer": "Coderhouse",
+      "date": "2025",
+      "topics": ["Python", "FastAPI", "n8n", "LLM Integrations", "Groq API"],
+      "credentialUrl": null
+    }
+  ],
+  "talks": [
+    {
+      "slug": "ai-cybersecurity-2026",
+      "event": "AI & Cybersecurity Forum",
+      "location": "Bogotá, Colombia",
+      "date": "May 2026",
+      "absoluteDate": "2026-05-16",
+      "title": "Cybersecurity in the Golden Era of AI",
+      "subtitle": "Panel on agent models, emerging threats, and prompt injection attacks",
+      "format": "Panel discussion",
+      "role": "Panelist",
+      "abstract": [
+        "On May 16, 2026 I served as a panelist at the AI & Cybersecurity Forum in Bogotá. The panel — four engineers plus a moderator — covered \"Cybersecurity in the Golden Era of AI,\" focused on agent models, emerging threats, and prompt injection attacks.",
+        "The conversation traced how traditional security frameworks struggle to capture the unique risks of LLM-powered systems, and where engineering teams should concentrate mitigation effort as agent autonomy increases.",
+        "This page is the canonical record of the appearance. The full recording, slides, and a written recap will be added as they come together."
+      ],
+      "heroPhoto": "/talks/ai-cybersecurity-2026/hero.jpg",
+      "heroPhotoAlt": "Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.",
+      "videoUrl": null,
+      "slidesUrl": null,
+      "keyTakeaways": [],
+      "resources": [],
+      "gallery": [
+        { "src": "/talks/ai-cybersecurity-2026/speaking-proof.jpg", "alt": "Luis Alberto Duarte Cortés speaking on the panel, microphone in hand." },
+        { "src": "/talks/ai-cybersecurity-2026/speaking-alt.jpg", "alt": "Luis Alberto Duarte Cortés mid-answer with a hand gesture during the panel." },
+        { "src": "/talks/ai-cybersecurity-2026/humanizing.jpg", "alt": "Panel reacting with laughter after an answer." },
+        { "src": "/talks/ai-cybersecurity-2026/gallery/02-event-in-motion.jpg", "alt": "Moderator standing while addressing the panel." },
+        { "src": "/talks/ai-cybersecurity-2026/gallery/05-audience-context.jpg", "alt": "Wider shot showing panel with audience members visible." }
+      ],
+      "relatedBlogSlug": null,
+      "labAnchorUrl": null
+    }
+  ],
+  "faq": [
+    {
+      "question": "What does Luis Alberto Duarte Cortés specialize in?",
+      "answer": ""
+    },
+    {
+      "question": "Is Luis Alberto Duarte Cortés available for remote work?",
+      "answer": ""
+    },
+    {
+      "question": "What is the LuchoLabs meritorious thesis project?",
+      "answer": ""
+    },
+    {
+      "question": "What speaking topics does Luis cover?",
+      "answer": ""
+    },
+    {
+      "question": "What is Boveda and why does it matter?",
+      "answer": ""
+    },
+    {
+      "question": "How do I hire Luis for a project?",
+      "answer": ""
+    }
+  ],
+  "urlNamespaces": {
+    "services": {
+      "title": "Services",
+      "tagline": "",
+      "body": ""
+    },
+    "case-studies": {
+      "title": "Case Studies",
+      "tagline": "",
+      "body": ""
+    },
+    "print": {
+      "title": "Print CV",
+      "tagline": "",
+      "body": ""
+    }
+  },
+  "seo": {
+    "/": {
+      "title": "",
+      "description": "",
+      "ogImage": "/og-image.jpg"
+    },
+    "/blog": {
+      "title": "Blog",
+      "description": "Build logs, postmortems, AI experiments."
+    },
+    "/lab": {
+      "title": "Lab",
+      "description": ""
+    },
+    "/services": {
+      "title": "Services",
+      "description": ""
+    },
+    "/case-studies": {
+      "title": "Case Studies",
+      "description": ""
+    },
+    "/print": {
+      "title": "Print CV",
+      "description": ""
+    }
+  },
+  "metrics": {
+    "kpis": {
+      "cv": {
+        "primary": "cta_click_hire",
+        "secondary": ["cta_click_speak", "email_capture"]
+      },
+      "lab": {
+        "primary": "lab_scroll_75",
+        "secondary": ["lab_to_blog_click", "lab_to_cv_click"]
+      },
+      "blog": {
+        "primary": "blog_post_completion",
+        "secondary": ["email_capture", "blog_3_session_views"]
+      },
+      "talks": {
+        "primary": "talk_video_play",
+        "secondary": ["talk_slides_download", "talk_to_services_click"]
+      }
+    },
+    "events": [
+      "pageview",
+      "cta_click_hire",
+      "cta_click_speak",
+      "email_capture",
+      "lab_scroll_75",
+      "lab_to_blog_click",
+      "lab_to_cv_click",
+      "blog_post_completion",
+      "blog_3_session_views",
+      "talk_video_play",
+      "talk_slides_download",
+      "talk_to_services_click"
+    ]
+  }
+}
