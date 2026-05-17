@@ -7,10 +7,14 @@ export default function SpeakingPhotoCard() {
 
   return (
     <div style={{ ...card, padding: 0, overflow: 'hidden', gap: 0 }}>
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+      <div
+        className="aspect-[4/3]"
+        style={{ position: 'relative', width: '100%', overflow: 'hidden' }}
+      >
         <img
           src={talk.photo}
           alt={`${talk.event} · ${talk.location} · ${talk.date}`}
+          loading="lazy"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
       </div>

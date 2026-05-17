@@ -3,7 +3,7 @@ import { skills } from '../../data/resume'
 
 export default function SkillsCard() {
   return (
-    <div style={{ ...card, gap: '14px' }}>
+    <div id="skills" style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
       <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>Skills</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

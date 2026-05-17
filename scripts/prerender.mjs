@@ -8,9 +8,12 @@
 import { readFileSync, writeFileSync, rmSync, mkdirSync } from 'fs'
 import { resolve, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import contentJson from '../src/data/content.json' with { type: 'json' }
 
 const SITE_URL = 'https://lucholabs.dev'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`
+const PERSON_ID = `${SITE_URL}/#person`
+const WEBSITE_ID = `${SITE_URL}/#website`
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -23,7 +26,7 @@ const posts = JSON.parse(readFileSync(postsIndexPath, 'utf-8'))
   .filter(post => !post.frontmatter.draft)
 const tags = [...new Set(posts.flatMap(post => post.frontmatter.tags ?? []))].sort()
 
-const { render } = await import(resolve(ssrDir, 'entry-server.js'))
+const { render, profilePageSchema } = await import(resolve(ssrDir, 'entry-server.js'))
 
 const homeMeta = {
   title: 'Luis Alberto Duarte Cortés — AI Systems & Automation Engineer | lucholabs.dev',
@@ -41,6 +44,135 @@ const blogIndexMeta = {
   ogType: 'website',
 }
 
+// TODO(user): once THELAB ships, add /lab to sitemap and add a Vercel rewrite for /lab/:path*
+
+function toAbsoluteUrl(url) {
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  return url.startsWith('/') ? `${SITE_URL}${url}` : `${SITE_URL}/${url}`
+}
+
+function toSectionUrl(section, slug) {
+  const cleanSlug = slug.replace(/^\/+|\/+$/g, '')
+  return `${SITE_URL}/${section}/${cleanSlug}`
+}
+
+function locationSchema(location) {
+  const [addressLocality, addressCountry] = location
+    .split(',')
+    .map(part => part.trim())
+    .filter(Boolean)
+
+  return {
+    '@type': 'Place',
+    name: location,
+    address: {
+      '@type': 'PostalAddress',
+      ...(addressLocality ? { addressLocality } : {}),
+      ...(addressCountry ? { addressCountry } : {}),
+    },
+  }
+}
+
+function personSchema(identity) {
+  const sameAs = (contentJson.contact ?? [])
+    .map(entry => entry.href)
+    .filter(href => href.startsWith('https://'))
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': PERSON_ID,
+    name: identity.name,
+    url: SITE_URL,
+    image: {
+      '@type': 'ImageObject',
+      url: toAbsoluteUrl(identity.photo),
+      width: 192,
+      height: 192,
+      caption: identity.name,
+    },
+    jobTitle: 'AI Systems & Automation Engineer',
+    description:
+      'Freelance automation engineer building AI-powered systems and integration infrastructure. Based in Bogotá, available remote for US & European time zones.',
+    sameAs,
+  }
+}
+
+function webSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    name: 'LuchoLabs',
+    url: SITE_URL,
+    description:
+      'Personal engineering site of Luis Alberto Duarte Cortés — automation, AI systems, and build logs.',
+    author: { '@id': PERSON_ID },
+  }
+}
+
+function articleSchema(post) {
+  const url = toSectionUrl('blog', post.slug)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    url,
+    headline: post.frontmatter.title,
+    datePublished: post.frontmatter.date,
+    description: post.frontmatter.description,
+    author: { '@id': PERSON_ID },
+    publisher: { '@id': PERSON_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+  }
+}
+
+function eventSchema(talk) {
+  const url = toSectionUrl('talks', talk.slug)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    '@id': `${url}#event`,
+    url,
+    name: talk.title,
+    startDate: talk.absoluteDate,
+    performer: { '@id': PERSON_ID },
+    location: locationSchema(talk.location),
+  }
+}
+
+function faqSchema(faqs) {
+  if (!faqs?.length) return null
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+}
+
+function breadcrumbSchema(crumbs) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: toAbsoluteUrl(crumb.url),
+    })),
+  }
+}
+
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, character => (
     {
@@ -53,7 +185,23 @@ function escapeHtml(value) {
   ))
 }
 
+function truncateTitle(title, max = 60) {
+  const normalizedTitle = String(title).trim()
+  if (normalizedTitle.length <= max) return normalizedTitle
+
+  const slicedTitle = normalizedTitle.slice(0, max).trimEnd()
+  const lastSpace = slicedTitle.lastIndexOf(' ')
+
+  if (lastSpace > Math.floor(max * 0.6)) {
+    return slicedTitle.slice(0, lastSpace).trimEnd()
+  }
+
+  return slicedTitle
+}
+
 function injectMetadata(html, meta) {
+  const twitterTitle = truncateTitle(meta.title)
+
   return html
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(meta.title)}</title>`)
     .replace(
@@ -86,7 +234,7 @@ function injectMetadata(html, meta) {
     )
     .replace(
       /<meta name="twitter:title" content="[^"]*" \/>/,
-      `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`,
+      `<meta name="twitter:title" content="${escapeHtml(twitterTitle)}" />`,
     )
     .replace(
       /<meta name="twitter:description" content="[^"]*" \/>/,
@@ -102,21 +250,47 @@ function injectMetadata(html, meta) {
     )
 }
 
-function injectAppHtml(html, appHtml) {
-  return html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+function injectJsonLd(html, jsonLdObjects) {
+  const scripts = (jsonLdObjects ?? [])
+    .filter(object => object && typeof object === 'object' && Object.keys(object).length > 0)
+    .map(object => (
+      `    <script type="application/ld+json">${JSON.stringify(object).replace(/</g, '\\u003c')}</script>`
+    ))
+
+  if (scripts.length === 0) return html
+  return html.replace('</head>', `${scripts.join('\n')}\n  </head>`)
 }
 
-function renderRoute(url, outputPath, meta) {
+function injectAppHtml(html, appHtml) {
+  const preloadPattern = /<link rel="preload"[^>]*>/g
+  const preloadLinks = appHtml.match(preloadPattern) ?? []
+  const appMarkup = appHtml.replace(preloadPattern, '')
+  const htmlWithPreloads = preloadLinks.length > 0
+    ? html.replace('</head>', `    ${preloadLinks.join('\n    ')}\n  </head>`)
+    : html
+
+  return htmlWithPreloads.replace('<div id="root"></div>', `<div id="root">${appMarkup}</div>`)
+}
+
+function renderRoute(url, outputPath, meta, jsonLd = []) {
   const appHtml = render(url)
   const withAppHtml = injectAppHtml(template, appHtml)
   const withMetadata = injectMetadata(withAppHtml, meta)
+  const withJsonLd = injectJsonLd(withMetadata, jsonLd)
 
   mkdirSync(dirname(outputPath), { recursive: true })
-  writeFileSync(outputPath, withMetadata)
+  writeFileSync(outputPath, withJsonLd)
   console.log(`✓ Pre-rendered ${url} → ${outputPath}`)
 }
 
-renderRoute('/', resolve(distDir, 'index.html'), homeMeta)
+// Keep `/` with a trailing slash. Every other canonical/route stays slashless.
+renderRoute('/', resolve(distDir, 'index.html'), homeMeta, [
+  personSchema(contentJson.identity),
+  profilePageSchema(contentJson.identity, contentJson.meta?.lastUpdated),
+  webSiteSchema(),
+  faqSchema(contentJson.faq ?? []),
+  breadcrumbSchema([{ name: 'Home', url: SITE_URL }]),
+])
 renderRoute('/blog', resolve(distDir, 'blog', 'index.html'), blogIndexMeta)
 
 for (const post of posts) {
@@ -128,7 +302,14 @@ for (const post of posts) {
       ? `${SITE_URL}/blog/og/${post.frontmatter.ogImage}`
       : DEFAULT_OG_IMAGE,
     ogType: 'article',
-  })
+  }, [
+    articleSchema(post),
+    breadcrumbSchema([
+      { name: 'Home', url: SITE_URL },
+      { name: 'Blog', url: `${SITE_URL}/blog` },
+      { name: post.frontmatter.title, url: `${SITE_URL}/blog/${post.slug}` },
+    ]),
+  ])
 }
 
 for (const tag of tags) {
@@ -139,7 +320,30 @@ for (const tag of tags) {
     canonical: `${SITE_URL}/blog/tag/${encodedTag}`,
     ogImage: DEFAULT_OG_IMAGE,
     ogType: 'website',
-  })
+  }, [
+    breadcrumbSchema([
+      { name: 'Home', url: SITE_URL },
+      { name: 'Blog', url: `${SITE_URL}/blog` },
+      { name: `#${tag}`, url: `${SITE_URL}/blog/tag/${encodedTag}` },
+    ]),
+  ])
+}
+
+for (const talk of contentJson.talks ?? []) {
+  renderRoute(`/talks/${talk.slug}`, resolve(distDir, 'talks', talk.slug, 'index.html'), {
+    title: `${talk.title} — LuchoLabs`,
+    description: talk.abstract?.[0] ?? talk.subtitle ?? '',
+    canonical: `${SITE_URL}/talks/${talk.slug}`,
+    ogImage: talk.heroPhoto ? `${SITE_URL}${talk.heroPhoto}` : DEFAULT_OG_IMAGE,
+    ogType: 'article',
+  }, [
+    eventSchema(talk),
+    breadcrumbSchema([
+      { name: 'Home', url: SITE_URL },
+      { name: 'Talks', url: `${SITE_URL}/talks` },
+      { name: talk.title, url: `${SITE_URL}/talks/${talk.slug}` },
+    ]),
+  ])
 }
 
 rmSync(ssrDir, { recursive: true, force: true })

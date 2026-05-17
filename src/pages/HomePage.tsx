@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import BentoGrid from '../components/BentoGrid'
+import ManifestoTeaserSection from '../components/ManifestoTeaserSection'
 import ThesisSection from '../components/ThesisSection'
 import SpeakingSection from '../components/SpeakingSection'
 import CertificatesSection from '../components/CertificatesSection'
 import ExperienceSection from '../components/ExperienceSection'
 import ProjectsSection from '../components/ProjectsSection'
+import EmailCaptureBlock from '../components/EmailCaptureBlock'
 import ContactSection from '../components/ContactSection'
+import { loadContent } from '../data/loader'
+
+const { manifesto } = loadContent()
 
 export function HomePage() {
   const [showHint, setShowHint] = useState(true)
@@ -22,11 +27,13 @@ export function HomePage() {
       <Nav />
       <main style={{ maxWidth: '1152px', margin: '0 auto', padding: '96px 24px 64px' }}>
         <BentoGrid />
+        <ManifestoTeaserSection manifesto={manifesto} />
         <ThesisSection />
         <SpeakingSection />
         <CertificatesSection />
         <ExperienceSection />
         <ProjectsSection />
+        <EmailCaptureBlock />
         <ContactSection />
       </main>
 

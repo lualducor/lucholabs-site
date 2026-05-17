@@ -11,7 +11,7 @@ export default function SpeakingSection() {
   if (talks.length === 0) return null
 
   return (
-    <section aria-label="Speaking" style={{ marginBottom: '80px' }}>
+    <section id="speaking" aria-label="Speaking" style={{ marginBottom: '80px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
