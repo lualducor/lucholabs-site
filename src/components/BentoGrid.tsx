@@ -4,7 +4,7 @@ import CurrentlyBuildingCard from './bento/CurrentlyBuildingCard'
 import MiniExperienceCard from './bento/MiniExperienceCard'
 import SkillsCard from './bento/SkillsCard'
 import SpeakingPhotoCard from './bento/SpeakingPhotoCard'
-import UpcomingTalkCard from './bento/UpcomingTalkCard'
+import RecentTalkCard from './bento/RecentTalkCard'
 import { stats, bentExperience } from '../data/resume'
 
 export default function BentoGrid() {
@@ -46,7 +46,7 @@ export default function BentoGrid() {
         </div>
 
         {/* Upcoming talk */}
-        <UpcomingTalkCard />
+        <RecentTalkCard />
       </div>
 
       <style>{`

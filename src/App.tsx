@@ -1,18 +1,58 @@
-import { Route, Routes } from 'react-router-dom'
+import React, { Suspense, useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { trackPageview } from './lib/analytics'
 import { HomePage } from './pages/HomePage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
-import { BlogPostPage } from './pages/BlogPostPage'
 import { BlogTagPage } from './pages/BlogTagPage'
+import { TalkPage } from './pages/TalkPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { ServicesPage } from './pages/placeholders/ServicesPage'
+import { CaseStudiesIndexPage } from './pages/placeholders/CaseStudiesIndexPage'
+import { CaseStudyPage } from './pages/placeholders/CaseStudyPage'
+import { PrintPage } from './pages/placeholders/PrintPage'
+
+const BlogPostPage = React.lazy(() =>
+  import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })),
+)
+
+function BlogPostRoute() {
+  return (
+    <Suspense fallback={null}>
+      <BlogPostPage />
+    </Suspense>
+  )
+}
+
+function PageviewTracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    trackPageview(location.pathname)
+  }, [location.pathname])
+
+  return null
+}
 
 export default function App() {
   return (
     <div style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
+      <PageviewTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/es" element={<HomePage />} />
+        <Route path="/es/" element={<HomePage />} />
         <Route path="/blog" element={<BlogIndexPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/es/blog" element={<BlogIndexPage />} />
+        <Route path="/blog/:slug" element={<BlogPostRoute />} />
+        <Route path="/es/blog/:slug" element={<BlogPostRoute />} />
         <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
+        <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
+        <Route path="/talks/:slug" element={<TalkPage />} />
+        <Route path="/es/talks/:slug" element={<TalkPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+        <Route path="/print" element={<PrintPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
