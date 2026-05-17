@@ -24,32 +24,32 @@ const conversions = [
     quality: 80,
   },
   {
-    src: 'public/talks/ai-cyber-2026/hero.jpg',
-    dest: 'public/talks/ai-cyber-2026/hero.webp',
+    src: 'public/talks/ai-cybersecurity-2026/hero.jpg',
+    dest: 'public/talks/ai-cybersecurity-2026/hero.webp',
     resize: { width: 1200, fit: 'inside' },
     quality: 80,
   },
   {
-    src: 'public/talks/ai-cyber-2026/humanizing.jpg',
-    dest: 'public/talks/ai-cyber-2026/humanizing.webp',
+    src: 'public/talks/ai-cybersecurity-2026/humanizing.jpg',
+    dest: 'public/talks/ai-cybersecurity-2026/humanizing.webp',
     resize: { width: 1200, fit: 'inside' },
     quality: 80,
   },
   {
-    src: 'public/talks/ai-cyber-2026/speaking-alt.jpg',
-    dest: 'public/talks/ai-cyber-2026/speaking-alt.webp',
+    src: 'public/talks/ai-cybersecurity-2026/speaking-alt.jpg',
+    dest: 'public/talks/ai-cybersecurity-2026/speaking-alt.webp',
     resize: { width: 1200, fit: 'inside' },
     quality: 80,
   },
   {
-    src: 'public/talks/ai-cyber-2026/speaking-proof.jpg',
-    dest: 'public/talks/ai-cyber-2026/speaking-proof.webp',
+    src: 'public/talks/ai-cybersecurity-2026/speaking-proof.jpg',
+    dest: 'public/talks/ai-cybersecurity-2026/speaking-proof.webp',
     resize: { width: 1200, fit: 'inside' },
     quality: 80,
   },
 ]
 
-const galleryDir = 'public/talks/ai-cyber-2026/gallery'
+const galleryDir = 'public/talks/ai-cybersecurity-2026/gallery'
 
 if (fs.existsSync(galleryDir)) {
   for (const entry of fs.readdirSync(galleryDir, { withFileTypes: true })) {
