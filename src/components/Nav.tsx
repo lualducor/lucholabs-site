@@ -27,7 +27,6 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
   const isSpanishRoute = pathname === '/es' || pathname.startsWith('/es/')
-  const blogRoute = isSpanishRoute ? '/es/blog' : '/blog'
   const homeRoute = isSpanishRoute ? '/es/' : '/'
   const localeToggleLabel = isSpanishRoute ? 'EN' : 'ES'
   const localeToggleRoute = isSpanishRoute ? getEnRoute(pathname) : getEsRoute(pathname)
@@ -68,24 +67,10 @@ export default function Nav() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifySelf: 'start' }}>
-          <Link
-            to={blogRoute}
-            style={{
-              fontSize: '16px',
-              lineHeight: '24px',
-              fontFamily: 'ui-monospace, monospace',
-              color: 'rgba(255,255,255,0.2)',
-              padding: '10px 16px',
-              border: '1px solid rgba(255,255,255,0.05)',
-              borderRadius: '999px',
-              textDecoration: 'none',
-            }}
-          >
-            Blog ↗
-          </Link>
-
+          {/* Blog hidden from primary nav until 2+ substantive posts exist.
+              Index still reachable at /blog via direct URL + sitemap. */}
           <a
-            href="/lab"
+            href={isSpanishRoute ? '/es/lab' : '/lab'}
             style={{
               fontSize: '16px',
               lineHeight: '24px',
