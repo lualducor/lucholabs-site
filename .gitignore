@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 .gstack/
 .vercel
+.codex
 src/lib/blog/posts.generated.json
 graphify-out/

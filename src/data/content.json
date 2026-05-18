@@ -18,8 +18,8 @@
       "height": 192,
       "caption": "Luis Alberto Duarte Cortés"
     },
-    "subMark": "",
-    "latamLine": ""
+    "subMark": "forward-deployed engineering",
+    "latamLine": "Forward-deployed engineer — LATAM native, US time-zone overlap"
   },
   "stats": [
     {
@@ -111,9 +111,9 @@
       "isArchived": false,
       "isKilled": false,
       "cvTagline": "Personal finance dashboard for Colombian bank accounts",
-      "cvDescription": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+      "cvDescription": "Boveda is a local-first personal finance dashboard built for Colombian bank accounts. Colombian banks don't expose transaction APIs, so every existing budgeting tool requires cloud access or credential sharing. Boveda takes a different approach: it parses statement exports (PDF, XLSX, CSV) from Bancolombia, Nequi, and Daviplata, extracts structured transaction data using rule-based parsers per bank, and stores everything locally in SQLite with zero cloud sync. The backend runs on Python 3.12, FastAPI, and SQLAlchemy with Alembic migrations. Each bank has its own parser module handling format inconsistencies, implicit sign inference, and category tagging without machine learning. The API serves structured financial data to a React frontend in progress. Full pytest coverage across parser and API layers. Local-first by design: no credential exposure, no third-party data access, no subscription required to understand your own finances.",
       "labTagline": "Personal finance dashboard for Colombian bank accounts",
-      "labDescription": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+      "labDescription": "Boveda started as a personal frustration: I wanted to track my finances but every tool required trusting a third party with my bank credentials or uploading statements to a cloud dashboard. The solution was to keep the data where it belongs — on the device. The core is a set of bank-specific statement parsers (Bancolombia, Nequi, Daviplata) that handle the quirks of each bank's export format: implicit credit/debit signs, inconsistent column names, encoding edge cases. Parsed transactions land in a local SQLite database served through a FastAPI REST API. The architecture is intentionally boring: Python 3.12, SQLAlchemy, Alembic, pytest. No AI, no cloud, no magic. The project is also a forcing function for understanding a real structural gap in Colombian fintech: banks don't expose APIs, which means users either share credentials or stay unaware of their spending. Local-first isn't a preference here — it's the only architecture that doesn't compromise user privacy.",
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -138,9 +138,9 @@
       "isArchived": false,
       "isKilled": false,
       "cvTagline": "Open source email phishing protection for elderly users",
-      "cvDescription": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+      "cvDescription": "Anti-Phishing Shield is an open source phishing detection tool built specifically for elderly and non-technical users. Most security tools produce jargon-heavy output that the highest-risk population can't act on. This tool inverts that: analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The detection layer evaluates sender metadata, URL structure, urgency language patterns, and brand impersonation signals. Results are presented as a simple risk rating with a one-sentence explanation — no security vocabulary required. Designed for community deployment in elder care contexts, family networks, and NGOs working with digital literacy programs in Latin America. Open source, runs without cloud dependencies. Built with Python. Current status: functional prototype with analysis pipeline for email headers, link inspection, and urgency-language scoring. Outputs are available in Spanish and English to serve LATAM users directly.",
       "labTagline": "Open source email phishing protection for elderly users",
-      "labDescription": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+      "labDescription": "Most phishing protection is built for enterprise IT teams — it lives in corporate email gateways that users never see. The population most targeted by phishing (elderly users, first-generation internet users, digitally underserved communities in LATAM) gets zero benefit from enterprise security tooling. Anti-Phishing Shield is built for that population. The tool analyzes suspicious emails and links and translates findings into plain language: not 'potential header spoofing detected' but 'this email is pretending to be from your bank — do not click the link.' Detection logic evaluates sender metadata, URL structure, urgency signals, and brand impersonation patterns. Output is a risk rating and a one-sentence action. The project is intentionally open source and designed for community deployment by NGOs, family networks, and local digital literacy programs. It was built because the problem is real, the risk is concentrated in under-served populations, and the existing solutions don't reach them.",
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -165,9 +165,9 @@
       "isArchived": false,
       "isKilled": false,
       "cvTagline": "Open agricultural intelligence infrastructure",
-      "cvDescription": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "cvDescription": "SUPERFARM is an open-source runtime and orchestration layer for agricultural AI agents. Modern precision agriculture generates constant sensor data — soil moisture, crop health, weather, equipment telemetry — but most AI tools treat each stream in isolation. SUPERFARM connects them through shared farm memory: a structured context layer that specialist agents read and write, enabling cross-domain reasoning between a soil moisture agent and a crop disease agent. The architecture supports pluggable model routing (swap LLM providers without rewiring agents), persistent telemetry for auditability, and modular specialist agents that extend without touching the core runtime. Designed for small and medium farms in LATAM that can't afford enterprise precision agriculture platforms but can run open-source tooling on affordable hardware. Built with Python, designed for edge deployment. Current status: research and architecture phase, core orchestration layer under development.",
       "labTagline": "Open agricultural intelligence infrastructure",
-      "labDescription": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "labDescription": "Agriculture produces more data than almost any other sector and uses almost none of it well. SUPERFARM is an attempt to close that ratio for farmers who don't have enterprise budgets. The core insight is shared farm memory — a structured context layer that AI agents read and write, so specialist agents coordinate rather than operate in silos. A soil sensor agent, a pest detection agent, and a weather pattern agent all write to the same context. A planning agent reads all of it and reasons across domains. The orchestration layer handles model routing (swap the underlying LLM without rewiring your agents), telemetry (audit what the system decided and why), and module isolation (a broken agent doesn't take down the farm). The target user is a medium-scale farmer in LATAM with reasonable connectivity and a limited budget — not an enterprise with a dedicated data science team. The project asks what infrastructure-as-agricultural-intelligence looks like when built from the ground up for that user.",
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -191,10 +191,10 @@
       "isHeadline": false,
       "isArchived": true,
       "isKilled": true,
-      "cvTagline": "",
-      "cvDescription": "",
+      "cvTagline": "Urban utility outage alerting for Bogotá — killed 2024",
+      "cvDescription": "Haycorte was a WhatsApp-first service that surfaced real-time water, electricity, and gas outage data for Bogotá neighborhoods by scraping public utility schedules. Built to solve a real communication gap. Killed after validating that the distribution problem — getting users to install a WhatsApp bot before they needed it, not after their water cut out — required a marketing investment inconsistent with the project's scope. The infrastructure worked; the business shape didn't.",
       "labTagline": "Urban disruption intelligence for Bogotá utility outages.",
-      "labDescription": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas).",
+      "labDescription": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá. Real communication problem; the gap is real. The distribution problem killed it: getting users to install a WhatsApp bot before they need it — not after their water cuts out — requires sustained marketing that wasn't justified by the project's scope. Archived as a validated insight, not a failure of execution.",
       "labQuote": "Real communication problem; the gap is real. The business shape isn't.",
       "labFeatures": [
         "Infrastructure dependence",
@@ -223,10 +223,10 @@
       "isHeadline": false,
       "isArchived": true,
       "isKilled": true,
-      "cvTagline": "",
-      "cvDescription": "",
+      "cvTagline": "AI copilot for Klipper 3D printer firmware — killed 2024",
+      "cvDescription": "Klipper Copilot was an AI-assisted optimization layer for 3D printing workflows on Klipper-based printers, automating calibration suggestions and slicer parameter tuning. Killed after discovering that the target user population — advanced 3D printing enthusiasts — had already developed strong manual workflows and actively resisted automation of the tuning process. The problem existed; the willingness to delegate it didn't.",
       "labTagline": "3D-printing AI copilot for Klipper firmware.",
-      "labDescription": "AI-assisted optimization layer for 3D printing workflows on Klipper-based machines.",
+      "labDescription": "AI-assisted optimization layer for 3D printing workflows on Klipper-based machines. Killed after discovering that advanced Klipper users had already built strong manual tuning workflows and actively resisted handing them off. The niche was real but the audience's relationship with that niche made automation feel like a loss of control, not a gain. Archived as a lesson in audience-problem fit.",
       "labQuote": "Optimizing 3D prints is a small enough niche that maintaining the copilot costs more than the printers it helps.",
       "labFeatures": [
         "Niche audience",
@@ -266,9 +266,9 @@
     }
   ],
   "nowNext": {
-    "now": ["Boveda", "Anti-Phishing Shield", "Automation Workflows"],
-    "next": ["AI & Cybersecurity Forum — Bogotá, May 2026 (panel)"],
-    "recentCommits": []
+    "now": ["Boveda — backend complete, React frontend next", "lucholabs.dev restructure shipping", "Anti-Phishing Shield — prototype phase", "Automation client work"],
+    "next": ["Merge feat/post-workflow — deploy updated site", "Deploy THELAB deck to lucholabs.dev/lab", "First cornerstone blog post — Boveda build log"],
+    "recentCommits": ["fix(images): correct slug folder + generate talk WebP variants", "feat(restructure): Phase 1A/2B/2C/3A/3D — measurement + SEO + components", "feat(talks): /talks/:slug route + TalkPage infra + Phase 1B perf"]
   },
   "contact": [
     { "label": "LinkedIn", "href": "https://www.linkedin.com/in/luis-alberto-duarte-97748171/" },
@@ -282,7 +282,7 @@
     "speakingHeadline": "BOOK ME TO SPEAK",
     "speakingCta": "Available for talks, panels, podcasts on AI security & prompt injection.",
     "freelanceLine": "Also taking selective freelance work — DM with details.",
-    "notForLine": ""
+    "notForLine": "Not a content creator. Not a generalist freelancer. Not building agencies."
   },
   "certificates": [
     {
@@ -313,7 +313,13 @@
       "heroPhotoAlt": "Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.",
       "videoUrl": null,
       "slidesUrl": null,
-      "keyTakeaways": [],
+      "keyTakeaways": [
+        "Traditional threat frameworks weren't designed for LLM autonomy. STRIDE and similar models treat the AI as a tool, not an actor. Agentic systems need threat models where the model itself is an attack surface with its own trust boundary.",
+        "Prompt injection is the SQL injection of the AI era — it is not a model problem, it is an input validation problem. External content (emails, web pages, user messages) must be treated as untrusted input even when processed by an AI agent.",
+        "The most dangerous agentic deployments are those where humans trust the output without reading it. The security perimeter follows the trust boundary, not the system boundary.",
+        "Most AI security failures in production aren't exotic. They're agentic systems with over-broad tool permissions executing instructions injected from user-controlled content — a well-understood category of vulnerability running on new infrastructure.",
+        "Defense-in-depth for AI agents means minimal tool permissions, output validation before irreversible actions, human-in-the-loop for high-stakes operations, and adversarial red-teaming before production deployment."
+      ],
       "resources": [],
       "gallery": [
         { "src": "/talks/ai-cybersecurity-2026/speaking-proof.jpg", "alt": "Luis Alberto Duarte Cortés speaking on the panel, microphone in hand." },
@@ -329,27 +335,27 @@
   "faq": [
     {
       "question": "What does Luis Alberto Duarte Cortés specialize in?",
-      "answer": ""
+      "answer": "Luis Alberto Duarte Cortés specializes in AI systems, automation infrastructure, and API integration engineering. He builds backend-first automation pipelines using Python, FastAPI, and n8n, with a focus on AI agent deployment, prompt injection defense, and local-first data systems. He is based in Bogotá, Colombia, and works remotely with companies in US and LATAM time zones."
     },
     {
       "question": "Is Luis Alberto Duarte Cortés available for remote work?",
-      "answer": ""
+      "answer": "Yes. Luis is open to full-time remote roles at AI-native companies, with particular interest in Solutions Engineering and Forward-Deployed Engineering positions. He is based in Bogotá, Colombia (UTC-5), with natural overlap across US Eastern and European morning hours. He holds an IELTS Academic 7.0 (C1 English) and communicates daily in English."
     },
     {
       "question": "What is the LuchoLabs meritorious thesis project?",
-      "answer": ""
+      "answer": "Luis's undergraduate thesis at Universidad ECCI was a real-time captioning system for hearing-impaired university students. The system generates live subtitles from a lecturer's voice directly to a student's screen and stores a full session transcript for later review. It runs entirely on open-source software with no licensing cost. The thesis received a Meritorious distinction and has been adopted by two Colombian academic institutions: SENA Regional Amazonas and Universidad ECCI."
     },
     {
       "question": "What speaking topics does Luis cover?",
-      "answer": ""
+      "answer": "Luis speaks on AI infrastructure, cybersecurity in the era of agentic AI systems, and prompt injection defense. He served as a panelist at the AI & Cybersecurity Forum in Bogotá in May 2026, where the panel covered agent models, emerging threats, and where engineering teams should concentrate mitigation effort as AI autonomy increases. He is available for talks, panels, and podcasts on AI security and infrastructure."
     },
     {
       "question": "What is Boveda and why does it matter?",
-      "answer": ""
+      "answer": "Boveda is a local-first personal finance dashboard built for Colombian bank accounts. Colombian banks don't expose transaction APIs, so most budgeting tools require users to share banking credentials with a third party. Boveda parses statement exports directly from Bancolombia, Nequi, and Daviplata, extracts structured transaction data using rule-based parsers, and stores everything locally in SQLite — no cloud sync, no credential exposure. It matters because financial data privacy should be the default, not a premium feature."
     },
     {
       "question": "How do I hire Luis for a project?",
-      "answer": ""
+      "answer": "Reach out via email at lualducor@gmail.com or through LinkedIn. Luis is open to full-time remote Solutions Engineering and Forward-Deployed Engineering roles at AI-native companies. For speaking engagements, panels, or podcasts on AI security, use the same contact channels. Selective freelance work is considered for well-scoped automation and API integration projects."
     }
   ],
   "urlNamespaces": {
