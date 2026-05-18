@@ -9,6 +9,7 @@ export default function IdentityCard() {
   const subMark = t(identity.subMark, locale)
   const latamLine = t(identity.latamLine, locale)
   const imageSrc = identity.image.url || identity.photo
+  const webpSrc = imageSrc.replace(/\.jpe?g$/, '.webp')
   const heroTitle = identity.title
   const heroSubtitle = identity.subtitle?.trim()
 
@@ -21,15 +22,18 @@ export default function IdentityCard() {
         boxShadow: '0 0 20px rgba(34,197,94,0.15)',
         overflow: 'hidden', flexShrink: 0,
       }}>
-        <img
-          src={imageSrc}
-          alt={identity.image.caption || identity.name}
-          width={96}
-          height={96}
-          fetchPriority="high"
-          loading="eager"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-        />
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          <img
+            src={imageSrc}
+            alt={identity.image.caption || identity.name}
+            width={96}
+            height={96}
+            fetchPriority="high"
+            loading="eager"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+          />
+        </picture>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>

@@ -120,6 +120,11 @@ export default function Nav() {
           to={localeToggleRoute}
           style={{
             justifySelf: 'end',
+            minHeight: '44px',
+            minWidth: '44px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             fontSize: '12px',
             lineHeight: '18px',
             fontFamily: 'ui-monospace, monospace',
