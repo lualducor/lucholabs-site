@@ -9,6 +9,7 @@ const posts = JSON.parse(readFileSync(INDEX_PATH, 'utf-8'))
 
 const tags = [...new Set(posts.flatMap(post => post.frontmatter.tags ?? []))]
 const siteLastmod = contentJson.meta?.lastUpdated ?? new Date().toISOString().slice(0, 10)
+const formatDateOnly = value => value.slice(0, 10)
 
 const routes = [
   { url: '/', lastmod: siteLastmod },
@@ -20,12 +21,18 @@ const routes = [
   ...tags.map(tag => ({
     url: `/blog/tag/${tag}`,
   })),
-  // do NOT add /es/ URLs (excluded until CONTENT session ships Spanish content).
+  // do NOT add /es/ blog URLs (excluded until CONTENT session ships Spanish content).
   // TODO add /lab once THELAB Vercel deploy ships.
-  ...(contentJson.talks ?? []).map(talk => ({
-    url: `/talks/${talk.slug}`,
-    lastmod: talk.absoluteDate,
-  })),
+  ...(contentJson.talks ?? []).flatMap(talk => ([
+    {
+      url: `/talks/${talk.slug}`,
+      lastmod: formatDateOnly(talk.absoluteDate),
+    },
+    {
+      url: `/es/talks/${talk.slug}`,
+      lastmod: formatDateOnly(talk.absoluteDate),
+    },
+  ])),
 ]
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -25,6 +25,7 @@ const template = readFileSync(resolve(distDir, 'index.html'), 'utf-8')
 const posts = JSON.parse(readFileSync(postsIndexPath, 'utf-8'))
   .filter(post => !post.frontmatter.draft)
 const tags = [...new Set(posts.flatMap(post => post.frontmatter.tags ?? []))].sort()
+const talks = contentJson.talks ?? []
 
 const { render, profilePageSchema } = await import(resolve(ssrDir, 'entry-server.js'))
 
@@ -128,8 +129,8 @@ function articleSchema(post) {
   }
 }
 
-function eventSchema(talk) {
-  const url = toSectionUrl('talks', talk.slug)
+function eventSchema(talk, url = toSectionUrl('talks', talk.slug)) {
+  const description = talk.abstract?.[0] ?? talk.subtitle ?? ''
 
   return {
     '@context': 'https://schema.org',
@@ -138,7 +139,10 @@ function eventSchema(talk) {
     url,
     name: talk.title,
     startDate: talk.absoluteDate,
+    description,
+    image: talk.heroPhoto ? toAbsoluteUrl(talk.heroPhoto) : undefined,
     performer: { '@id': PERSON_ID },
+    organizer: { '@id': PERSON_ID },
     location: locationSchema(talk.location),
   }
 }
@@ -329,19 +333,39 @@ for (const tag of tags) {
   ])
 }
 
-for (const talk of contentJson.talks ?? []) {
+for (const talk of talks) {
+  const description = talk.abstract?.[0] ?? talk.subtitle ?? ''
+  const ogImage = talk.heroPhoto ? toAbsoluteUrl(talk.heroPhoto) : DEFAULT_OG_IMAGE
+  const englishUrl = `${SITE_URL}/talks/${talk.slug}`
+  const spanishUrl = `${SITE_URL}/es/talks/${talk.slug}`
+
   renderRoute(`/talks/${talk.slug}`, resolve(distDir, 'talks', talk.slug, 'index.html'), {
     title: `${talk.title} — LuchoLabs`,
-    description: talk.abstract?.[0] ?? talk.subtitle ?? '',
-    canonical: `${SITE_URL}/talks/${talk.slug}`,
-    ogImage: talk.heroPhoto ? `${SITE_URL}${talk.heroPhoto}` : DEFAULT_OG_IMAGE,
+    description,
+    canonical: englishUrl,
+    ogImage,
     ogType: 'article',
   }, [
-    eventSchema(talk),
+    eventSchema(talk, englishUrl),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL },
       { name: 'Talks', url: `${SITE_URL}/talks` },
-      { name: talk.title, url: `${SITE_URL}/talks/${talk.slug}` },
+      { name: talk.title, url: englishUrl },
+    ]),
+  ])
+
+  renderRoute(`/es/talks/${talk.slug}`, resolve(distDir, 'es', 'talks', talk.slug, 'index.html'), {
+    title: `${talk.title} — LuchoLabs`,
+    description,
+    canonical: spanishUrl,
+    ogImage,
+    ogType: 'article',
+  }, [
+    eventSchema(talk, spanishUrl),
+    breadcrumbSchema([
+      { name: 'Home', url: `${SITE_URL}/es/` },
+      { name: 'Talks', url: `${SITE_URL}/es/talks` },
+      { name: talk.title, url: spanishUrl },
     ]),
   ])
 }

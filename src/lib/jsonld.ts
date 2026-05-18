@@ -16,6 +16,9 @@ export type EventSchemaInput = {
   title: string
   absoluteDate: string
   location: string
+  description?: string
+  heroPhoto?: string
+  url?: string
 }
 
 export type FaqSchemaInput = {
@@ -125,7 +128,7 @@ export function articleSchema(post: ArticleSchemaInput) {
 }
 
 export function eventSchema(talk: EventSchemaInput) {
-  const url = toSectionUrl('talks', talk.slug)
+  const url = talk.url ?? toSectionUrl('talks', talk.slug)
 
   return {
     '@context': 'https://schema.org',
@@ -134,7 +137,10 @@ export function eventSchema(talk: EventSchemaInput) {
     url,
     name: talk.title,
     startDate: talk.absoluteDate,
+    description: talk.description,
+    image: talk.heroPhoto ? toAbsoluteUrl(talk.heroPhoto) : undefined,
     performer: { '@id': PERSON_ID },
+    organizer: { '@id': PERSON_ID },
     location: locationSchema(talk.location),
   }
 }
