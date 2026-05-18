@@ -22,7 +22,8 @@ const routes = [
     url: `/blog/tag/${tag}`,
   })),
   // do NOT add /es/ blog URLs (excluded until CONTENT session ships Spanish content).
-  // TODO add /lab once THELAB Vercel deploy ships.
+  { url: '/lab', lastmod: siteLastmod },
+  { url: '/es/lab', lastmod: siteLastmod },
   ...(contentJson.talks ?? []).flatMap(talk => ([
     {
       url: `/talks/${talk.slug}`,

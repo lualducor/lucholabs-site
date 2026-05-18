@@ -22,6 +22,10 @@
     }
   ],
   "rewrites": [
+    { "source": "/lab", "destination": "https://thelab-six.vercel.app/" },
+    { "source": "/lab/(.*)", "destination": "https://thelab-six.vercel.app/$1" },
+    { "source": "/es/lab", "destination": "https://thelab-six.vercel.app/es" },
+    { "source": "/es/lab/(.*)", "destination": "https://thelab-six.vercel.app/es/$1" },
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }
