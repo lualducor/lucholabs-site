@@ -7,7 +7,6 @@ import SpeakingSection from '../components/SpeakingSection'
 import CertificatesSection from '../components/CertificatesSection'
 import ExperienceSection from '../components/ExperienceSection'
 import ProjectsSection from '../components/ProjectsSection'
-import EmailCaptureBlock from '../components/EmailCaptureBlock'
 import ContactSection from '../components/ContactSection'
 import { loadContent } from '../data/loader'
 
@@ -25,15 +24,14 @@ export function HomePage() {
   return (
     <>
       <Nav />
-      <main style={{ maxWidth: '1152px', margin: '0 auto', padding: '96px 24px 64px' }}>
+      <main style={{ maxWidth: '1152px', margin: '0 auto', padding: '144px 24px 64px' }}>
         <BentoGrid />
-        <ManifestoTeaserSection manifesto={manifesto} />
         <ThesisSection />
-        <SpeakingSection />
-        <CertificatesSection />
         <ExperienceSection />
         <ProjectsSection />
-        <EmailCaptureBlock />
+        <SpeakingSection />
+        <CertificatesSection />
+        <ManifestoTeaserSection manifesto={manifesto} />
         <ContactSection />
       </main>
 

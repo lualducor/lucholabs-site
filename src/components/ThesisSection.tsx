@@ -5,7 +5,7 @@ export default function ThesisSection() {
     <section
       aria-label="Meritorious Thesis"
       style={{
-        marginBottom: '80px',
+        marginBottom: '48px',
         borderRadius: '20px',
         border: '1px solid rgba(34,197,94,0.15)',
         backgroundColor: 'rgba(34,197,94,0.03)',

@@ -5,116 +5,90 @@ import MiniExperienceCard from './bento/MiniExperienceCard'
 import SkillsCard from './bento/SkillsCard'
 import SpeakingPhotoCard from './bento/SpeakingPhotoCard'
 import RecentTalkCard from './bento/RecentTalkCard'
+import ProjectsCard from './bento/ProjectsCard'
 import { stats, bentExperience } from '../data/resume'
 
 export default function BentoGrid() {
+  const [stat1, stat2] = stats
+  const [exp1, exp2] = bentExperience
+
   return (
-    <section style={{ marginBottom: '80px' }}>
+    <section
+      style={{
+        marginBottom: '48px',
+        padding: '20px',
+        borderRadius: '24px',
+        background: 'linear-gradient(160deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.012) 45%, rgba(255,255,255,0) 100%)',
+      }}
+    >
       {/*
-        Breakpoints:
-          < 640px  → 1 column (mobile)
-          640–1023px → 2 columns (tablet)
-          ≥ 1024px → 3 columns (desktop)
+        Masonry-style 3 column flex layout, height-balanced.
+        Column composition picks cards whose natural heights add up close to each
+        other, so the three column bottoms align without forcing big internal voids.
+        Last card in each column flex-grows to absorb the small residual gap and
+        produce a flat bottom edge before the next section.
       */}
       <div className="bento-grid">
-        {/* Identity — tall card, spans 2 rows on desktop */}
-        <div className="bento-identity">
+        <div className="bento-col bento-col-1">
           <IdentityCard />
+          {exp1 && <MiniExperienceCard {...exp1} />}
+          {exp2 && <MiniExperienceCard {...exp2} />}
         </div>
 
-        {/* Stat cards */}
-        {stats.map(s => (
-          <StatCard key={s.label} {...s} />
-        ))}
-
-        {/* Currently Building — spans 2 cols on desktop */}
-        <div className="bento-building">
-          <CurrentlyBuildingCard />
-        </div>
-
-        {/* Mini experience cards */}
-        {bentExperience.map(e => (
-          <MiniExperienceCard key={e.company} {...e} />
-        ))}
-
-        {/* Skills */}
-        <SkillsCard />
-
-        {/* Speaking photo — spans 2 cols on desktop */}
-        <div className="bento-speaking">
+        <div className="bento-col bento-col-2">
+          {stat1 && <StatCard {...stat1} />}
           <SpeakingPhotoCard />
+          {stat2 && <StatCard {...stat2} />}
         </div>
 
-        {/* Upcoming talk */}
-        <RecentTalkCard />
+        <div className="bento-col bento-col-3">
+          <CurrentlyBuildingCard />
+          <SkillsCard />
+          <RecentTalkCard />
+          <ProjectsCard />
+        </div>
       </div>
 
       <style>{`
         .bento-grid {
-          display: grid;
+          display: flex;
+          flex-direction: row;
           gap: 12px;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: auto auto auto;
+          align-items: stretch;
         }
-
-        /* Identity card: col 1, rows 1–2 */
-        .bento-identity {
-          grid-column: 1;
-          grid-row: 1 / 3;
+        .bento-col {
+          flex: 1 1 0;
+          min-width: 0;
           display: flex;
           flex-direction: column;
+          gap: 12px;
         }
-        .bento-identity > * {
-          flex: 1;
-        }
-
-        /* Currently Building: cols 2–3 on desktop */
-        .bento-building {
-          grid-column: 2 / 4;
-          grid-row: 2;
-        }
-
-        /* Speaking photo: cols 1–2 on desktop */
-        .bento-speaking {
-          grid-column: 1 / 3;
+        /* Make the last card in each column absorb residual space so column
+           bottoms align flush. NOW and Projects already handle stretching via
+           internal marginTop/divider distribution. The mini-exp at the bottom
+           of col 1 stretches a tiny amount and stays visually fine. */
+        .bento-col > :last-child {
+          flex: 1 1 auto;
         }
 
-        /* Tablet: 2 columns, stack differently */
+        /* Tablet: 2 columns. */
         @media (min-width: 640px) and (max-width: 1023px) {
           .bento-grid {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
+            flex-wrap: wrap;
           }
-          .bento-identity {
-            grid-column: 1 / 3;
-            grid-row: auto;
-          }
-          .bento-building {
-            grid-column: 1 / 3;
-            grid-row: auto;
-          }
-          .bento-speaking {
-            grid-column: 1 / 3;
-            grid-row: auto;
-          }
+          .bento-col-1 { flex-basis: calc(50% - 6px); }
+          .bento-col-2 { flex-basis: calc(50% - 6px); }
+          .bento-col-3 { flex-basis: 100%; flex-direction: row; flex-wrap: wrap; }
+          .bento-col-3 > * { flex: 1 1 calc(50% - 6px); }
         }
 
-        /* Mobile: single column */
+        /* Mobile: 1 column. */
         @media (max-width: 639px) {
           .bento-grid {
-            grid-template-columns: 1fr;
+            flex-direction: column;
           }
-          .bento-identity {
-            grid-column: 1;
-            grid-row: auto;
-          }
-          .bento-building {
-            grid-column: 1;
-            grid-row: auto;
-          }
-          .bento-speaking {
-            grid-column: 1;
-            grid-row: auto;
+          .bento-col {
+            flex: 1 1 auto;
           }
         }
       `}</style>

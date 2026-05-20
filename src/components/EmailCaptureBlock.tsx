@@ -14,15 +14,43 @@ export default function EmailCaptureBlock({
   subheadline = 'Build logs, postmortems, occasional rants. No spam.',
 }: EmailCaptureBlockProps) {
   return (
-    <section aria-label="Email updates" className="mb-20 rounded-[20px] border border-white/8 bg-white/[0.03] p-6 sm:p-8">
-      <div className="max-w-2xl">
-        <p className="mb-3 font-mono text-[11px] font-normal uppercase tracking-[0.1em] text-white/45">
+    <section
+      aria-label="Email updates"
+      style={{
+        marginBottom: '80px',
+        padding: '32px',
+        borderRadius: '20px',
+        border: '1px solid rgba(255,255,255,0.08)',
+        backgroundColor: 'rgba(255,255,255,0.03)',
+      }}
+    >
+      <div style={{ maxWidth: '640px' }}>
+        <p style={{
+          fontFamily: 'ui-monospace, monospace',
+          fontSize: '11px',
+          color: 'rgba(255,255,255,0.45)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          margin: '0 0 12px 0',
+        }}>
           Updates
         </p>
-        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-white sm:text-[28px]">
+        <h2 style={{
+          fontSize: '28px',
+          fontWeight: 600,
+          color: '#ffffff',
+          letterSpacing: '-0.02em',
+          lineHeight: 1.2,
+          margin: 0,
+        }}>
           {headline}
         </h2>
-        <p className="mt-3 text-sm leading-7 text-white/60">
+        <p style={{
+          fontSize: '14px',
+          color: 'rgba(255,255,255,0.6)',
+          lineHeight: 1.6,
+          margin: '12px 0 0 0',
+        }}>
           {subheadline}
         </p>
       </div>
@@ -31,7 +59,13 @@ export default function EmailCaptureBlock({
         action="mailto:lualducor@gmail.com?subject=Subscribe&body=Subscribe%20me%20to%20updates%20at%20lucholabs.dev"
         method="post"
         encType="text/plain"
-        className="mt-6 flex flex-col gap-3 sm:flex-row"
+        style={{
+          marginTop: '24px',
+          display: 'flex',
+          flexDirection: 'row',
+          gap: '12px',
+          flexWrap: 'wrap',
+        }}
         onSubmit={() => {
           track('email_capture', { variant, location: window.location.pathname })
         }}
@@ -41,11 +75,38 @@ export default function EmailCaptureBlock({
           name="email"
           required
           placeholder="you@company.com"
-          className="min-h-11 flex-1 rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-white/30 focus:border-white/25"
+          style={{
+            flex: '1 1 240px',
+            minHeight: '44px',
+            padding: '12px 16px',
+            fontSize: '14px',
+            color: '#ffffff',
+            backgroundColor: 'rgba(0,0,0,0.25)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: '12px',
+            outline: 'none',
+          }}
         />
         <button
           type="submit"
-          className="min-h-11 rounded-xl border border-white/12 bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/90"
+          style={{
+            minHeight: '44px',
+            padding: '12px 24px',
+            fontSize: '14px',
+            fontWeight: 500,
+            color: '#0a0a0a',
+            backgroundColor: '#ffffff',
+            border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            transition: 'background-color 0.15s',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.9)'
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#ffffff'
+          }}
         >
           Subscribe
         </button>

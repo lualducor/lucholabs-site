@@ -2,7 +2,7 @@ import { experience } from '../data/resume'
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" aria-label="Work experience" style={{ marginBottom: '80px', scrollMarginTop: '160px' }}>
+    <section id="experience" aria-label="Work experience" style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',

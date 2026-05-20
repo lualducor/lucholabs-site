@@ -36,7 +36,7 @@
       "pulse": true
     }
   ],
-  "currentlyBuilding": ["Boveda", "Anti-Phishing Shield", "SUPERFARM", "Automation Workflows"],
+  "currentlyBuilding": ["Boveda", "Anti-Phishing Shield", "SUPERFARM"],
   "bentExperience": [
     { "company": "Funktronic Labs", "role": "QA Tester", "period": "Remote · 2024" },
     { "company": "Magis SAS", "role": "Tech Support Analyst", "period": "Bogotá · 2023" }

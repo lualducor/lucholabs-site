@@ -2,7 +2,7 @@ import { certificates } from '../data/resume'
 
 export default function CertificatesSection() {
   return (
-    <section id="certificates" aria-label="Credentials" style={{ marginBottom: '80px', scrollMarginTop: '160px' }}>
+    <section id="certificates" aria-label="Credentials" style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',

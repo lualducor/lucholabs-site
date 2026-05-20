@@ -6,6 +6,8 @@ import { useLocation } from 'react-router-dom'
 export default function IdentityCard() {
   const { pathname } = useLocation()
   const locale = pathname === '/es' ? 'es' : getLocaleFromPath(pathname)
+  const labHref = locale === 'es' ? '/es/lab' : '/lab';
+  const labLabel = locale === 'es' ? 'IR A LOS LABS →' : 'GO TO THE LABS →';
   const subMark = t(identity.subMark, locale)
   const latamLine = t(identity.latamLine, locale)
   const imageSrc = identity.image.url || identity.photo
@@ -63,6 +65,36 @@ export default function IdentityCard() {
           <p style={{ ...mono, marginTop: '2px' }}>{identity.roleLine}</p>
         )}
       </div>
+
+      <a
+        href={labHref}
+        style={{
+          fontSize: '13px',
+          fontWeight: 600,
+          fontFamily: 'ui-monospace, monospace',
+          color: '#0a0a0a',
+          backgroundColor: '#22c55e',
+          textDecoration: 'none',
+          padding: '10px 24px',
+          border: '1px solid #22c55e',
+          borderRadius: '8px',
+          marginTop: '4px',
+          boxShadow: '0 0 24px rgba(34,197,94,0.25)',
+          transition: 'background-color 0.15s, border-color 0.15s, transform 0.15s',
+        }}
+        onMouseEnter={e => {
+          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#16a34a';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#16a34a';
+          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px)';
+        }}
+        onMouseLeave={e => {
+          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#22c55e';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#22c55e';
+          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)';
+        }}
+      >
+        {labLabel}
+      </a>
 
       <a
         href={identity.cvUrl}
