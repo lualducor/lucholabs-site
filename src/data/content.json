@@ -10,7 +10,7 @@
     "title": "I build accessibility and trust infrastructure for Spanish-speaking users.",
     "roleLine": "Systems engineer · AI security speaker · Open-source author",
     "subtitle": "Bogotá · Remote · C1 English",
-    "cvUrl": "/cv/Lucholabs.pdf",
+    "cvUrl": "/#experience",
     "photo": "/photo.jpg",
     "image": {
       "url": "/photo.jpg",
@@ -38,8 +38,7 @@
   ],
   "currentlyBuilding": ["Boveda", "Anti-Phishing Shield", "SUPERFARM"],
   "bentExperience": [
-    { "company": "Funktronic Labs", "role": "QA Tester", "period": "Remote · 2024" },
-    { "company": "Magis SAS", "role": "Tech Support Analyst", "period": "Bogotá · 2023" }
+    { "company": "Funktronic Labs", "role": "QA Tester", "period": "Remote · 2024" }
   ],
   "skills": {
     "core": ["Python", "FastAPI", "n8n", "REST APIs", "Linux"],
@@ -87,13 +86,6 @@
       "period": "Remote · Jan 2024 – Dec 2024",
       "description": "Executed manual regression and sanity testing across software builds for a US-based game development studio. Documented structured bug reports with reproduction steps, severity ratings, and expected vs actual behavior. Served as bridge between engineering and end-user experience, retesting patches to confirm resolution.",
       "tags": ["QA", "Regression Testing", "Bug Tracking", "Remote", "Technical Docs"]
-    },
-    {
-      "company": "Magis SAS",
-      "role": "Technical Support Analyst",
-      "period": "Bogotá · Jun 2023 – Dec 2023",
-      "description": "Delivered Tier 2 application support for internal systems across Windows and Linux environments, ensuring uptime and operational continuity. Escalated complex incidents with thorough technical documentation. Configured and secured firewalls and network infrastructure; supported a key procurement bid by ensuring infrastructure was spec-ready on deadline.",
-      "tags": ["Technical Support", "Windows", "Linux", "Networking", "Incident Management"]
     }
   ],
   "projects": [

@@ -98,8 +98,6 @@ export default function IdentityCard() {
 
       <a
         href={identity.cvUrl}
-        target="_blank"
-        rel="noopener noreferrer"
         style={{
           fontSize: '13px', fontFamily: 'ui-monospace, monospace',
           color: '#22c55e', textDecoration: 'none',
@@ -118,7 +116,7 @@ export default function IdentityCard() {
           el.style.borderColor = 'rgba(34,197,94,0.4)'
         }}
       >
-        Download CV →
+        View Experience →
       </a>
     </div>
   )

@@ -30,7 +30,6 @@ QA: Regression Testing, Bug Triage, Technical Writing
 ## Experience
 - Freelance Systems Engineer (Apr 2024–Present): Automation workflows, API integrations, open-source accessibility tooling
 - QA Tester, Funktronic Labs (Remote, 2024): Manual regression/sanity testing for a US game studio
-- Technical Support Analyst, Magis SAS (Bogotá, 2023): Tier 2 support, infrastructure, networking
 - IT Support Technician, Spooky House (Bogotá, 2014–2018): Hardware/software support, POS systems
 
 ## Contact
