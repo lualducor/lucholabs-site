@@ -1,0 +1,1229 @@
+LUCHOLABS + THELAB
+Transcripción de contenido EN -> ES para revisión
+Fecha: 2026-05-23
+
+Alcance:
+- Basado en el contenido público renderizado desde el código local.
+- Incluye: `lucholabs.dev` home, blog index, cadenas públicas auxiliares (`blog/tag`, `404`, estados de charla), la página pública `/talks/ai-cybersecurity-2026` y la landing de `THELAB`.
+- Excluye: comentarios de código, JSON-LD/schema, texto duplicado de `noscript`, y texto puramente técnico no visible.
+- Se dejan sin traducir por defecto: nombres propios, nombres de productos, URLs, hashes de commits y la mayoría de nombres de herramientas/tecnologías.
+
+Nota global:
+- "LAB", "The Lab", "Boveda", "SUPERFARM", "Anti-Phishing Shield", "Funktronic Labs", "SENA Regional Amazonas", "Universidad ECCI", y tecnologías como Python/FastAPI/React se mantienen como nombres propios.
+- Si quieres, luego hago una segunda pasada para convertir esto en copy final más comercial o más natural para Colombia/LATAM.
+
+============================================================
+LUCHOLABS.DEV
+============================================================
+
+[HOME]
+
+PAGE TITLE
+EN: Luis Alberto Duarte Cortés — AI Systems & Automation Engineer | lucholabs.dev
+ES: Luis Alberto Duarte Cortés — Ingeniero de sistemas de IA y automatización | lucholabs.dev
+
+META DESCRIPTION
+EN: I build AI-powered systems and automation infrastructure. Bogotá · Remote · C1 English.
+ES: Construyo sistemas impulsados por IA e infraestructura de automatización. Bogotá · Remoto · Inglés C1.
+
+NAV
+EN: LAB ↗
+ES: LAB ↗
+
+EN: Skills
+ES: Habilidades
+
+EN: Speaking
+ES: Charlas
+
+EN: Experience
+ES: Experiencia
+
+EN: Projects
+ES: Proyectos
+
+EN: Contact
+ES: Contacto
+
+EN: GO TO THE LABS →
+ES: IR AL LAB →
+
+EN: View Experience →
+ES: Ver experiencia →
+
+EN: scroll
+ES: desliza
+
+HERO
+EN: forward-deployed engineering
+ES: ingeniería forward-deployed
+
+EN: I build accessibility and trust infrastructure for Spanish-speaking users.
+ES: Construyo infraestructura de accesibilidad y confianza para usuarios hispanohablantes.
+
+EN: Bogotá · Remote · C1 English
+ES: Bogotá · Remoto · Inglés C1
+
+EN: Forward-deployed engineer — LATAM native, US time-zone overlap
+ES: Ingeniero forward-deployed — nativo de LATAM, con solapamiento horario con EE. UU.
+
+EN: Systems engineer · AI security speaker · Open-source author
+ES: Ingeniero de sistemas · conferencista en seguridad de IA · autor de código abierto
+
+MINI CARDS / BENTO
+EN: Language
+ES: Idioma
+
+EN: English C1
+ES: Inglés C1
+
+EN: Availability
+ES: Disponibilidad
+
+EN: Remote Ready
+ES: Listo para trabajo remoto
+
+EN: US & LATAM Timezones · Full Time
+ES: Husos horarios de EE. UU. y LATAM · Tiempo completo
+
+EN: Currently Building
+ES: Construyendo ahora
+
+EN: Active
+ES: Activo
+
+EN: Side projects exploring fintech, automation pipelines, accessibility tooling, and AI-assisted developer tools.
+ES: Proyectos paralelos que exploran fintech, pipelines de automatización, herramientas de accesibilidad y herramientas para desarrolladores asistidas por IA.
+
+EN: Skills
+ES: Habilidades
+
+EN: Core
+ES: Base
+
+EN: Tooling
+ES: Herramientas
+
+EN: Conference · May 2026
+ES: Conferencia · Mayo de 2026
+
+EN: AI & Cybersecurity Forum · Bogotá · May 2026 — Panelist on "Cybersecurity in the Golden Era of AI" — agent models, emerging threats, and prompt injection attacks.
+ES: AI & Cybersecurity Forum · Bogotá · Mayo de 2026 — Panelista en "Ciberseguridad en la era dorada de la IA" — modelos agénticos, amenazas emergentes y ataques de inyección de prompts.
+
+EN: Panelist · May 2026
+ES: Panelista · Mayo de 2026
+
+EN: Projects
+ES: Proyectos
+
+EN: Active
+ES: Activos
+
+EN: Dead
+ES: Muertos
+
+THESIS SECTION
+EN: Meritorious Thesis
+ES: Tesis meritoria
+
+EN: Open-Source Live Captioning System for Hearing-Impaired Students
+ES: Sistema de subtitulado en vivo de código abierto para estudiantes con discapacidad auditiva
+
+EN: Live · In Use · 2024–Present
+ES: Activo · En uso · 2024–Presente
+
+EN: Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
+ES: Construido durante el semestre final después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
+
+EN: Adopted by
+ES: Adoptado por
+
+EN: View Repo →
+ES: Ver repositorio →
+
+EXPERIENCE SECTION
+EN: Experience
+ES: Experiencia
+
+EN: Self-Employed
+ES: Independiente
+
+EN: Freelance Automation Engineer
+ES: Ingeniero freelance de automatización
+
+EN: Bogotá · Apr 2024 – Present
+ES: Bogotá · Abr 2024 – Presente
+
+EN: Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences.
+ES: Diseño y despliego flujos de automatización que integran APIs REST, webhooks y scripts en Python para reducir la carga operativa. Mantengo la herramienta de accesibilidad de reconocimiento de voz de código abierto adoptada por SENA Regional Amazonas y la Universidad ECCI. También participo como ponente en conferencias de ciberseguridad y seguridad de redes.
+
+EN: Automation
+ES: Automatización
+
+EN: Open Source
+ES: Código abierto
+
+EN: Accessibility
+ES: Accesibilidad
+
+EN: QA Tester (Contract)
+ES: QA Tester (contrato)
+
+EN: Remote · Jan 2024 – Dec 2024
+ES: Remoto · Ene 2024 – Dic 2024
+
+EN: Executed manual regression and sanity testing across software builds for a US-based game development studio. Documented structured bug reports with reproduction steps, severity ratings, and expected vs actual behavior. Served as bridge between engineering and end-user experience, retesting patches to confirm resolution.
+ES: Ejecuté pruebas manuales de regresión y sanity sobre builds de software para un estudio de desarrollo de videojuegos con base en EE. UU. Documenté reportes de bugs estructurados con pasos de reproducción, niveles de severidad y comportamiento esperado vs. real. Serví como puente entre ingeniería y experiencia de usuario final, volviendo a probar parches para confirmar su resolución.
+
+EN: Regression Testing
+ES: Pruebas de regresión
+
+EN: Bug Tracking
+ES: Seguimiento de bugs
+
+EN: Technical Docs
+ES: Documentación técnica
+
+PROJECTS SECTION
+EN: Headline Project
+ES: Proyecto principal
+
+EN: In Progress
+ES: En progreso
+
+EN: Personal finance dashboard for Colombian bank accounts
+ES: Panel de finanzas personales para cuentas bancarias colombianas
+
+EN: Boveda is a local-first personal finance dashboard built for Colombian bank accounts. Colombian banks don't expose transaction APIs, so every existing budgeting tool requires cloud access or credential sharing. Boveda takes a different approach: it parses statement exports (PDF, XLSX, CSV) from Bancolombia, Nequi, and Daviplata, extracts structured transaction data using rule-based parsers per bank, and stores everything locally in SQLite with zero cloud sync. The backend runs on Python 3.12, FastAPI, and SQLAlchemy with Alembic migrations. Each bank has its own parser module handling format inconsistencies, implicit sign inference, and category tagging without machine learning. The API serves structured financial data to a React frontend in progress. Full pytest coverage across parser and API layers. Local-first by design: no credential exposure, no third-party data access, no subscription required to understand your own finances.
+ES: Boveda es un panel de finanzas personales local-first construido para cuentas bancarias colombianas. Los bancos colombianos no exponen APIs de transacciones, así que toda herramienta de presupuesto existente exige acceso a la nube o compartir credenciales. Boveda toma un camino distinto: procesa exportaciones de extractos (PDF, XLSX, CSV) de Bancolombia, Nequi y Daviplata, extrae datos estructurados de transacciones mediante parsers basados en reglas por banco y guarda todo localmente en SQLite, sin sincronización en la nube. El backend corre sobre Python 3.12, FastAPI y SQLAlchemy con migraciones Alembic. Cada banco tiene su propio módulo parser para manejar inconsistencias de formato, inferencia implícita de signos y categorización sin machine learning. La API entrega datos financieros estructurados a un frontend en React todavía en desarrollo. Cobertura completa con pytest en las capas de parser y API. Local-first por diseño: sin exposición de credenciales, sin acceso de terceros a los datos y sin suscripción para entender tus propias finanzas.
+
+EN: Other experiments
+ES: Otros experimentos
+
+EN: Prototype
+ES: Prototipo
+
+EN: Open source email phishing protection for elderly users
+ES: Protección de phishing por correo, de código abierto, para adultos mayores
+
+EN: Research
+ES: Investigación
+
+EN: Open agricultural intelligence infrastructure
+ES: Infraestructura abierta de inteligencia agrícola
+
+SPEAKING SECTION
+EN: Speaking
+ES: Charlas
+
+EN: Speaker
+ES: Ponente
+
+EN: Panelist on network security and infrastructure.
+ES: Panelista sobre seguridad de redes e infraestructura.
+
+CREDENTIALS SECTION
+EN: Credentials
+ES: Credenciales
+
+EN: AI Automation Engineering
+ES: Ingeniería de automatización con IA
+
+EN: View Credential →
+ES: Ver credencial →
+
+LAB TEASER
+EN: Lab Philosophy
+ES: Filosofía del Lab
+
+EN: How I build.
+ES: Cómo construyo.
+
+EN: 4 principles
+ES: 4 principios
+
+EN: Infrastructure over interfaces. Local-first by default. The same systems lens across fintech, security, and agriculture.
+ES: Infraestructura por encima de interfaces. Local-first por defecto. La misma mirada sistémica en fintech, seguridad y agricultura.
+
+EN: Open the full manifesto →
+ES: Abrir el manifiesto completo →
+
+CONTACT SECTION
+EN: Contact
+ES: Contacto
+
+EN: LinkedIn
+ES: LinkedIn
+
+EN: GitHub
+ES: GitHub
+
+EN: Email
+ES: Correo
+
+EN: HIRE ME
+ES: CONTRÁTAME
+
+EN: Open to full-time remote Solutions / Forward-Deployed Engineer roles at AI-native companies.
+ES: Disponible para roles remotos de tiempo completo como ingeniero de soluciones / forward-deployed engineer en empresas AI-native.
+
+EN: Based in Bogotá, Colombia. Available for US & European time zones.
+ES: Con base en Bogotá, Colombia. Disponible para husos horarios de EE. UU. y Europa.
+
+EN: Hire →
+ES: Contratar →
+
+EN: BOOK ME TO SPEAK
+ES: INVÍTAME A DAR UNA CHARLA
+
+EN: Available for talks, panels, podcasts on AI security & prompt injection.
+ES: Disponible para charlas, paneles y podcasts sobre seguridad en IA e inyección de prompts.
+
+EN: Speak →
+ES: Invitar →
+
+EN: Not a content creator. Not a generalist freelancer. Not building agencies.
+ES: No soy creador de contenido. No soy freelancer generalista. No estoy construyendo agencias.
+
+EN: Also taking selective freelance work — DM with details.
+ES: También tomo trabajo freelance selectivo — escríbeme por DM con detalles.
+
+
+[BLOG INDEX]
+
+PAGE TITLE
+EN: Blog — LuchoLabs
+ES: Blog — LuchoLabs
+
+EN: Journal
+ES: Bitácora
+
+EN: Blog
+ES: Blog
+
+EN: Build logs, automation deep-dives, and AI experiments.
+ES: Bitácoras de construcción, análisis profundos de automatización y experimentos de IA.
+
+BLOG NAV / AUXILIARY PUBLIC STRINGS
+EN: RSS feed
+ES: Feed RSS
+
+EN: Posts tagged: #{tag}
+ES: Entradas etiquetadas: #{tag}
+
+EN: All posts
+ES: Todas las entradas
+
+EN: No posts found for this tag.
+ES: No se encontraron entradas para esta etiqueta.
+
+EN: Series: {series}
+ES: Serie: {series}
+
+
+[TALK PAGE: /talks/ai-cybersecurity-2026]
+
+PAGE TITLE
+EN: Cybersecurity in the Golden Era of AI — LuchoLabs
+ES: Ciberseguridad en la era dorada de la IA — LuchoLabs
+
+TALK NAV
+EN: Talk
+ES: Charla
+
+EN: Back to home
+ES: Volver al inicio
+
+EN: Home
+ES: Inicio
+
+HEADER
+EN: Panelist · AI & Cybersecurity Forum · May 2026
+ES: Panelista · AI & Cybersecurity Forum · Mayo de 2026
+
+EN: Cybersecurity in the Golden Era of AI
+ES: Ciberseguridad en la era dorada de la IA
+
+EN: Panel on agent models, emerging threats, and prompt injection attacks
+ES: Panel sobre modelos agénticos, amenazas emergentes y ataques de inyección de prompts
+
+EN: Panel discussion · Bogotá, Colombia · May 2026
+ES: Panel de discusión · Bogotá, Colombia · Mayo de 2026
+
+ABSTRACT
+EN: Abstract
+ES: Resumen
+
+EN: On May 16, 2026 I served as a panelist at the AI & Cybersecurity Forum in Bogotá. The panel — four engineers plus a moderator — covered "Cybersecurity in the Golden Era of AI," focused on agent models, emerging threats, and prompt injection attacks.
+ES: El 16 de mayo de 2026 participé como panelista en el AI & Cybersecurity Forum en Bogotá. El panel — cuatro ingenieros más un moderador — abordó "Ciberseguridad en la era dorada de la IA", centrado en modelos agénticos, amenazas emergentes y ataques de inyección de prompts.
+
+EN: The conversation traced how traditional security frameworks struggle to capture the unique risks of LLM-powered systems, and where engineering teams should concentrate mitigation effort as agent autonomy increases.
+ES: La conversación recorrió cómo los marcos tradicionales de seguridad tienen dificultades para capturar los riesgos únicos de los sistemas impulsados por LLMs, y en qué deberían concentrar el esfuerzo de mitigación los equipos de ingeniería a medida que aumenta la autonomía de los agentes.
+
+EN: This page is the canonical record of the appearance. The full recording, slides, and a written recap will be added as they come together.
+ES: Esta página es el registro canónico de la participación. La grabación completa, las diapositivas y un recap escrito se añadirán a medida que estén listos.
+
+RECORDING
+EN: Recording
+ES: Grabación
+
+EN: Recording upload in progress. Check back shortly, or read the recap when it lands on the blog.
+ES: La carga de la grabación está en progreso. Vuelve pronto, o lee el recap cuando se publique en el blog.
+
+KEY TAKEAWAYS
+EN: Key Takeaways
+ES: Ideas clave
+
+EN: Traditional threat frameworks weren't designed for LLM autonomy. STRIDE and similar models treat the AI as a tool, not an actor. Agentic systems need threat models where the model itself is an attack surface with its own trust boundary.
+ES: Los marcos tradicionales de amenazas no fueron diseñados para la autonomía de los LLMs. STRIDE y modelos similares tratan a la IA como una herramienta, no como un actor. Los sistemas agénticos necesitan modelos de amenaza donde el modelo mismo sea una superficie de ataque con su propio límite de confianza.
+
+EN: Prompt injection is the SQL injection of the AI era — it is not a model problem, it is an input validation problem. External content (emails, web pages, user messages) must be treated as untrusted input even when processed by an AI agent.
+ES: La inyección de prompts es la inyección SQL de la era de la IA: no es un problema del modelo, es un problema de validación de entradas. El contenido externo (correos, páginas web, mensajes de usuario) debe tratarse como entrada no confiable incluso cuando lo procesa un agente de IA.
+
+EN: The most dangerous agentic deployments are those where humans trust the output without reading it. The security perimeter follows the trust boundary, not the system boundary.
+ES: Los despliegues agénticos más peligrosos son aquellos en los que las personas confían en la salida sin leerla. El perímetro de seguridad sigue el límite de confianza, no el límite del sistema.
+
+EN: Most AI security failures in production aren't exotic. They're agentic systems with over-broad tool permissions executing instructions injected from user-controlled content — a well-understood category of vulnerability running on new infrastructure.
+ES: La mayoría de fallos de seguridad de IA en producción no son exóticos. Son sistemas agénticos con permisos de herramientas demasiado amplios ejecutando instrucciones inyectadas desde contenido controlado por usuarios: una categoría de vulnerabilidad bien entendida corriendo sobre infraestructura nueva.
+
+EN: Defense-in-depth for AI agents means minimal tool permissions, output validation before irreversible actions, human-in-the-loop for high-stakes operations, and adversarial red-teaming before production deployment.
+ES: La defensa en profundidad para agentes de IA implica permisos mínimos sobre herramientas, validación de salidas antes de acciones irreversibles, human-in-the-loop en operaciones de alto riesgo y red teaming adversarial antes del despliegue en producción.
+
+MEDIA / RELATED LABELS
+EN: Photos
+ES: Fotos
+
+EN: Resources
+ES: Recursos
+
+EN: Slides
+ES: Diapositivas
+
+EN: Download Slides (PDF) →
+ES: Descargar diapositivas (PDF) →
+
+EN: Related
+ES: Relacionado
+
+EN: Read the recap on the blog →
+ES: Leer el recap en el blog →
+
+EN: Recording upload in progress.
+ES: Carga de la grabación en progreso.
+
+TALK PAGE FALLBACKS / FUTURE ROUTES
+EN: Talk not found.
+ES: Charla no encontrada.
+
+EN: Back to home
+ES: Volver al inicio
+
+ACCESSIBILITY COPY / TALK IMAGE ALT TEXTS
+EN: Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.
+ES: Luis Alberto Duarte Cortés en el panel del AI & Cybersecurity Forum 2026 en Bogotá.
+
+EN: Luis Alberto Duarte Cortés speaking on the panel, microphone in hand.
+ES: Luis Alberto Duarte Cortés hablando en el panel, con micrófono en mano.
+
+EN: Luis Alberto Duarte Cortés mid-answer with a hand gesture during the panel.
+ES: Luis Alberto Duarte Cortés en plena respuesta, gesticulando con la mano durante el panel.
+
+EN: Panel reacting with laughter after an answer.
+ES: El panel reaccionando con risas después de una respuesta.
+
+EN: Moderator standing while addressing the panel.
+ES: Moderador de pie mientras se dirige al panel.
+
+EN: Wider shot showing panel with audience members visible.
+ES: Toma más abierta del panel con público visible.
+
+
+[404 / MISC PUBLIC STRINGS]
+
+EN: Not found
+ES: No encontrado
+
+EN: Back home
+ES: Volver al inicio
+
+============================================================
+THELAB
+============================================================
+
+[MAIN PAGE]
+
+PAGE TITLE
+EN: lucholabs.dev/lab — Luis Alberto Duarte Cortés — AI Systems & Automation Engineer
+ES: lucholabs.dev/lab — Luis Alberto Duarte Cortés — Ingeniero de sistemas de IA y automatización
+
+META DESCRIPTION
+EN: The /lab: live projects, manifesto, and archive of dead experiments. Built in Bogotá by an AI systems and automation engineer.
+ES: El /lab: proyectos vivos, manifiesto y archivo de experimentos caídos. Construido en Bogotá por un ingeniero de sistemas de IA y automatización.
+
+HEADER / HERO
+EN: Hero
+ES: Inicio
+
+EN: Blog ↗
+ES: Blog ↗
+
+EN: View CV ↗
+ES: Ver CV ↗
+
+EN: — LuchoLabs.dev · The Lab · v1.0
+ES: — LuchoLabs.dev · The Lab · v1.0
+
+EN: lucholabs.dev/lab
+ES: lucholabs.dev/lab
+
+EN: I build AI-powered systems and automation infrastructure.
+ES: Construyo sistemas impulsados por IA e infraestructura de automatización.
+
+EN: let's talk about:
+ES: hablemos de:
+
+EN: Bogotá · Remote · C1 English (IELTS Academic 7.0)
+ES: Bogotá · Remoto · Inglés C1 (IELTS Academic 7.0)
+
+EN: ↓ scroll
+ES: ↓ desliza
+
+MANIFESTO
+EN: Manifesto — what runs through every project
+ES: Manifiesto — lo que atraviesa cada proyecto
+
+EN: How I Build.
+ES: Cómo construyo.
+
+EN: 01. Systems Thinking
+ES: 01. Pensamiento sistémico
+
+EN: Real automation isn't writing scripts. It's finding the seam where a workflow leaks — friction between APIs, hidden manual steps, missing observability — and rebuilding it. The open-source live-captioning system in my thesis didn't optimize a model; it closed a tooling gap that locked hearing-impaired students out of lectures. The same lens runs through every project here.
+ES: La automatización real no consiste en escribir scripts. Consiste en encontrar la costura por donde un flujo se fuga — fricción entre APIs, pasos manuales ocultos, falta de observabilidad — y reconstruirlo. El sistema de subtitulado en vivo de código abierto de mi tesis no optimizó un modelo; cerró una brecha de herramientas que dejaba por fuera de las clases a estudiantes con discapacidad auditiva. La misma mirada atraviesa todos los proyectos aquí.
+
+EN: 02. AI as Infrastructure
+ES: 02. IA como infraestructura
+
+EN: LLMs aren't the product; they're a runtime. The Product Review Classifier runs Groq's llama-3.1-8b-instant behind n8n as a workflow primitive — like Postgres or Redis, but for natural language. The interesting work is wiring AI into systems where it has to be reliable, not where it has to be impressive.
+ES: Los LLMs no son el producto; son un runtime. Product Review Classifier usa llama-3.1-8b-instant de Groq detrás de n8n como una primitiva de flujo de trabajo: como Postgres o Redis, pero para lenguaje natural. El trabajo interesante es conectar IA a sistemas donde tenga que ser confiable, no donde tenga que impresionar.
+
+EN: 03. Cross-Domain Vision
+ES: 03. Visión transversa
+
+EN: Accessibility tooling adopted by two Colombian institutions. A WhatsApp-first utility-disruption layer for Bogotá. Local-first finance over Colombian bank exports. Phishing protection tuned for elderly users. The shape isn't a vertical; it's a refusal to over-specialize when the plumbing is missing everywhere.
+ES: Herramientas de accesibilidad adoptadas por dos instituciones colombianas. Una capa WhatsApp-first para interrupciones de servicios en Bogotá. Finanzas local-first sobre exportaciones bancarias colombianas. Protección contra phishing ajustada para adultos mayores. La forma no es un vertical; es una negativa a sobreespecializarse cuando la infraestructura base falta en todas partes.
+
+EN: 04. Builder-Lab Identity
+ES: 04. Identidad builder-lab
+
+EN: /lab is what it says. Some experiments are live (Boveda, Phishing Shield). Some shipped and quiet (Product Review Classifier). Some are archived because the math didn't work (HayCorte, Klipper Copilot — postmortems below). The credibility isn't a hit rate; it's the willingness to write the postmortem.
+ES: /lab es exactamente lo que dice. Algunos experimentos están vivos (Boveda, Phishing Shield). Algunos salieron y quedaron en silencio (Product Review Classifier). Algunos están archivados porque los números no dieron (HayCorte, Klipper Copilot — postmortems abajo). La credibilidad no es una tasa de aciertos; es la disposición a escribir el postmortem.
+
+THESIS
+EN: Thesis — the project that taught me cross-domain plumbing
+ES: Tesis — el proyecto que me enseñó a conectar dominios distintos
+
+EN: Captioning Lectures.
+ES: Subtitulado de clases.
+
+EN: Open-Source Live Captioning System for Hearing-Impaired Students
+ES: Sistema de subtitulado en vivo de código abierto para estudiantes con discapacidad auditiva
+
+EN: B.Sc. Systems Engineering · Universidad ECCI · 2024 · Meritorious
+ES: Ingeniería de Sistemas · Universidad ECCI · 2024 · Meritoria
+
+EN: Live · In Use · 2024–Present
+ES: Activo · En uso · 2024–Presente
+
+EN: Adopted by
+ES: Adoptado por
+
+EN: Stack
+ES: Stack
+
+EN: Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
+ES: Construido durante el semestre final después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
+
+EN: — the project that taught me what cross-domain plumbing really means.
+ES: — el proyecto que me enseñó lo que realmente significa conectar dominios distintos.
+
+STACK / TOOLS
+EN: Stack — primary runtime + tooling
+ES: Stack — runtime principal + herramientas
+
+EN: The Tools.
+ES: Las herramientas.
+
+EN: Core /
+ES: Base /
+
+EN: Tooling /
+ES: Herramientas /
+
+EN: Credentials — AI Automation Engineering · Coderhouse · 2025
+ES: Credenciales — Ingeniería de automatización con IA · Coderhouse · 2025
+
+PROJECT OVERVIEW
+EN: Projects — three ecosystems treating AI as infrastructure
+ES: Proyectos — tres ecosistemas que tratan la IA como infraestructura
+
+EN: Three Ecosystems.
+ES: Tres ecosistemas.
+
+EN: Fintech · Local-first OS
+ES: Fintech · SO local-first
+
+EN: Personal finance dashboard for Colombian bank accounts — local-first, programmable, yours.
+ES: Panel de finanzas personales para cuentas bancarias colombianas — local-first, programable, tuyo.
+
+EN: Dashboard → financial brain
+ES: Panel → cerebro financiero
+
+EN: Cybersecurity · Accessibility
+ES: Ciberseguridad · Accesibilidad
+
+EN: Open source email phishing protection for elderly users — plain-language warnings, family-installable.
+ES: Protección de phishing por correo, de código abierto, para adultos mayores — alertas en lenguaje claro, instalable por la familia.
+
+EN: Single check → ISP-level rollout
+ES: Revisión única → despliegue a nivel ISP
+
+EN: Agri-AI · Orchestration
+ES: Agro-IA · Orquestación
+
+EN: Open agricultural intelligence infrastructure — modular runtime for specialized agricultural agents.
+ES: Infraestructura abierta de inteligencia agrícola — runtime modular para agentes agrícolas especializados.
+
+EN: Harness → operating layer for agri
+ES: Harness → capa operativa para agro
+
+PROJECT: BOVEDA
+EN: BVD · 06 — Project
+ES: BVD · 06 — Proyecto
+
+EN: In Progress
+ES: En progreso
+
+EN: Personal finance dashboard for Colombian bank accounts.
+ES: Panel de finanzas personales para cuentas bancarias colombianas.
+
+EN: "Banks own your transactions. They shouldn't own how you understand them."
+ES: "Los bancos son dueños de tus transacciones. No deberían ser dueños de cómo las entiendes."
+
+EN: A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.
+ES: Un experimento fintech local-first que explora datos financieros estructurados, automatización basada en reglas y flujos programables construidos sobre exportaciones de extractos bancarios colombianos.
+
+EN: structured imports from Colombian bank statement exports
+ES: importaciones estructuradas desde exportaciones de extractos bancarios colombianos
+
+EN: rule-based categorization (no ML required for the boring 90%)
+ES: categorización basada en reglas (sin ML para el 90% aburrido)
+
+EN: programmable workflows on top of your real ledger
+ES: flujos programables sobre tu libro contable real
+
+EN: local-first storage — your data stays on your machine
+ES: almacenamiento local-first — tus datos se quedan en tu máquina
+
+EN: Long-term → local imports → rule layer → query DSL → fully programmable personal finance
+ES: Largo plazo → importaciones locales → capa de reglas → DSL de consulta → finanzas personales totalmente programables
+
+EN: — stack: Python · FastAPI · SQLite · SQLAlchemy · React
+ES: — stack: Python · FastAPI · SQLite · SQLAlchemy · React
+
+PROJECT: ANTI-PHISHING SHIELD
+EN: PHS · 07 — Project
+ES: PHS · 07 — Proyecto
+
+EN: Prototype
+ES: Prototipo
+
+EN: Open source email phishing protection for elderly users.
+ES: Protección de phishing por correo, de código abierto, para adultos mayores.
+
+EN: "Security tools built for engineers fail the people who need them most."
+ES: "Las herramientas de seguridad construidas para ingenieros fallan a las personas que más las necesitan."
+
+EN: An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.
+ES: Una herramienta de código abierto diseñada para ayudar a usuarios de la tercera edad a identificar y evitar ataques de phishing por correo. Analiza correos sospechosos y entrega alertas en lenguaje claro adaptadas para usuarios no técnicos.
+
+EN: plain-language risk explanations (no jargon, no scores)
+ES: explicaciones de riesgo en lenguaje claro (sin jerga, sin puntajes)
+
+EN: UX tuned for third-age users — large type, slow defaults
+ES: UX ajustada para usuarios de la tercera edad — tipografía grande, opciones por defecto más pausadas
+
+EN: open source so families can run it themselves
+ES: código abierto para que las familias puedan ejecutarlo por su cuenta
+
+EN: email-pattern analysis without sending content to third parties
+ES: análisis de patrones de correo sin enviar contenido a terceros
+
+EN: Long-term → single-email checks → email-account integration → family-installable forwarding inbox → ISP-level rollout
+ES: Largo plazo → revisión de un solo correo → integración con cuentas de correo → bandeja de reenvío instalable por la familia → despliegue a nivel ISP
+
+EN: — stack: Python · Open Source · Email Analysis · Accessibility
+ES: — stack: Python · Código abierto · Análisis de correo · Accesibilidad
+
+PROJECT: SUPERFARM
+EN: SFM · 08 — Project
+ES: SFM · 08 — Proyecto
+
+EN: Research
+ES: Investigación
+
+EN: Open agricultural intelligence infrastructure.
+ES: Infraestructura abierta de inteligencia agrícola.
+
+EN: "What if agricultural intelligence itself became modular, open, inspectable, and accessible?"
+ES: "¿Y si la inteligencia agrícola en sí misma se volviera modular, abierta, inspeccionable y accesible?"
+
+EN: An open-source runtime and orchestration harness for agricultural AI agents — not a chatbot, not a farm app, not another AI wrapper. A modular execution environment where specialized agricultural agents collaborate on shared farm memory, sensors, workflows, and historical context. A farm is a living operational ecosystem — climate, soil, water, animals, crops, finance, logistics, and decisions continuously affecting each other. The intelligence layer should be one too.
+ES: Un runtime y harness de orquestación de código abierto para agentes de IA agrícola: no un chatbot, no una app de granja, no otro wrapper de IA. Un entorno modular de ejecución donde agentes agrícolas especializados colaboran sobre memoria compartida de la finca, sensores, flujos de trabajo y contexto histórico. Una finca es un ecosistema operativo vivo — clima, suelo, agua, animales, cultivos, finanzas, logística y decisiones que se afectan continuamente entre sí. La capa de inteligencia también debería serlo.
+
+EN: agent runtime — specialized agricultural agents (SoilScientist, WeatherAgent, HydroponicsAdvisor, ChickenFarmer, CompostEngineer, FinancialAdvisor, IoTDesigner, ScaleUpStrategist) collaborate on the same farm
+ES: runtime de agentes — agentes agrícolas especializados (SoilScientist, WeatherAgent, HydroponicsAdvisor, ChickenFarmer, CompostEngineer, FinancialAdvisor, IoTDesigner, ScaleUpStrategist) colaboran sobre la misma finca
+
+EN: shared farm context — geography, climate, resources, infrastructure, finance, telemetry, and operational history as one persistent model
+ES: contexto compartido de la finca — geografía, clima, recursos, infraestructura, finanzas, telemetría e historial operativo como un solo modelo persistente
+
+EN: brain router — Claude, OpenAI, Gemini, Ollama, local models; pluggable per task
+ES: brain router — Claude, OpenAI, Gemini, Ollama, modelos locales; enchufable por tarea
+
+EN: tool layer — weather APIs, GIS, IoT sensors, telemetry, vector DBs, financial workflows
+ES: capa de herramientas — APIs del clima, GIS, sensores IoT, telemetría, bases de datos vectoriales y flujos financieros
+
+EN: open source by design — local deployment, inspectability, technological sovereignty
+ES: código abierto por diseño — despliegue local, inspeccionabilidad y soberanía tecnológica
+
+EN: Long-term → runtime foundation → specialized agents → sensor + telemetry integration → ecosystem expansion → open agricultural intelligence infrastructure
+ES: Largo plazo → base de runtime → agentes especializados → integración de sensores + telemetría → expansión del ecosistema → infraestructura abierta de inteligencia agrícola
+
+EN: — currently in architectural & research phase. validating runtime, orchestration, shared-context models, and modular agent execution.
+ES: — actualmente en fase arquitectónica y de investigación. Validando runtime, orquestación, modelos de contexto compartido y ejecución modular de agentes.
+
+EN: "Linux became OS infrastructure. Kubernetes became orchestration infrastructure. ROS became robotics infrastructure. SUPERFARM explores the same shape for agriculture."
+ES: "Linux se volvió infraestructura de sistema operativo. Kubernetes se volvió infraestructura de orquestación. ROS se volvió infraestructura de robótica. SUPERFARM explora esa misma forma para la agricultura."
+
+NOW & NEXT
+EN: The Lab — recent commits + what's next
+ES: The Lab — commits recientes y lo que sigue
+
+EN: Now & Next.
+ES: Ahora y lo siguiente.
+
+EN: chore: add Google Search Console verification file
+ES: chore: agregar archivo de verificación de Google Search Console
+
+EN: feat(blog): launch blog with MDX, SSR prerender, RSS, sitemap, and OG metadata
+ES: feat(blog): lanzar el blog con MDX, prerender SSR, RSS, sitemap y metadatos OG
+
+EN: fix(blog): resolve INEFFECTIVE_DYNAMIC_IMPORT via slug-keyed MDX loader map
+ES: fix(blog): resolver INEFFECTIVE_DYNAMIC_IMPORT mediante un mapa de cargadores MDX indexado por slug
+
+EN: chore: remove dead build.sh, ignore graphify-out directory
+ES: chore: eliminar build.sh obsoleto e ignorar el directorio graphify-out
+
+EN: feat(blog): final wiring — main nav blog link, page titles, 404 page
+ES: feat(blog): conexión final — enlace al blog en la navegación principal, títulos de página y página 404
+
+EN: chore(deploy): verify vercel.json rewrites handle blog routes
+ES: chore(deploy): verificar que los rewrites de vercel.json manejen las rutas del blog
+
+EN: feat(blog): add public/blog/og/ directory and OG image convention docs
+ES: feat(blog): agregar el directorio public/blog/og/ y la documentación de la convención de imágenes OG
+
+EN: feat(blog): add sitemap generator replacing static sitemap.xml
+ES: feat(blog): agregar generador de sitemap que reemplaza el sitemap.xml estático
+
+EN: Now /
+ES: Ahora /
+
+EN: Boveda · Anti-Phishing Shield · Automation Workflows
+ES: Boveda · Anti-Phishing Shield · Flujos de automatización
+
+EN: Next /
+ES: Sigue /
+
+EN: [talk] AI & Cybersecurity Forum — Bogotá, May 2026 — "Cybersecurity in the Golden Era of AI: agent models, emerging threats, and prompt injection attacks."
+ES: [charla] AI & Cybersecurity Forum — Bogotá, Mayo de 2026 — "Ciberseguridad en la era dorada de la IA: modelos agénticos, amenazas emergentes y ataques de inyección de prompts."
+
+EN: [talk · past] Cybersecurity Forum — Bogotá, 2025 — Panelist on network security and infrastructure
+ES: [charla · pasada] Cybersecurity Forum — Bogotá, 2025 — Panelista sobre seguridad de redes e infraestructura
+
+ARCHIVE
+EN: Archive — postmortems from experiments that died
+ES: Archivo — postmortems de experimentos que murieron
+
+EN: Dead Experiments.
+ES: Experimentos muertos.
+
+EN: "Most experiments die. The ones that live earned it."
+ES: "La mayoría de los experimentos mueren. Los que siguen vivos se lo ganaron."
+
+HAYCORTE
+EN: Killed
+ES: Cancelado
+
+EN: urban disruption intelligence — bogotá
+ES: inteligencia sobre disrupción urbana — bogotá
+
+EN: What it was
+ES: Qué era
+
+EN: WhatsApp-first infrastructure intelligence platform for utility outages (water / electricity / gas) in Bogotá. Bridged the gap between official utility info and how residents already share information in WhatsApp groups.
+ES: Plataforma WhatsApp-first de inteligencia de infraestructura para cortes de servicios (agua / electricidad / gas) en Bogotá. Cerraba la brecha entre la información oficial de servicios y la forma en que los residentes ya comparten información en grupos de WhatsApp.
+
+EN: Why it's strong
+ES: Por qué era fuerte
+
+EN: Real communication problem; the gap is real.
+ES: Problema de comunicación real; la brecha existe.
+
+EN: Why it died
+ES: Por qué murió
+
+EN: Infrastructure dependence. WhatsApp automation, utility scraping, geolocation, cloud APIs — none of it under your control. Continuous reliability required from day one because users only show up during stressful events; one scraper failure or blocked WA flow burns trust instantly.
+ES: Dependencia de infraestructura. Automatización en WhatsApp, scraping de servicios públicos, geolocalización, APIs en la nube: nada de eso está bajo tu control. Requería confiabilidad continua desde el día uno porque los usuarios solo aparecen durante eventos estresantes; un fallo del scraper o un flujo bloqueado en WhatsApp quema la confianza al instante.
+
+EN: Business-structure mismatch. Behaves like a public-utility layer; monetizes like SaaS. Individuals won't pay for outage info. The strongest path (building admins / property mgmt) needs manual sales, onboarding, local ops.
+ES: Desajuste entre producto y estructura de negocio. Se comporta como una capa de servicio público; monetiza como SaaS. Las personas no van a pagar por información sobre cortes. La ruta más fuerte (administradores de edificios / property management) exige ventas manuales, onboarding y operación local.
+
+EN: Episodic engagement. Users only care during outages. Retention depends on scheduled maintenance alerts and community participation, which delays self-sustainability.
+ES: Participación episódica. A los usuarios solo les importa durante los cortes. La retención depende de alertas de mantenimiento programado y de participación comunitaria, lo que retrasa la autosostenibilidad.
+
+EN: Capital vs. operational burden. Infrastructure-heavy with insufficient early revenue to justify the load. Without capital or a dedicated ops layer, it operates at a loss for too long.
+ES: Capital vs. carga operativa. Mucha infraestructura para ingresos tempranos insuficientes que justifiquen el peso. Sin capital o una capa operativa dedicada, funciona con pérdidas durante demasiado tiempo.
+
+EN: — strategically interesting as a future utility-data layer. for now: archived.
+ES: — estratégicamente interesante como futura capa de datos de servicios públicos. por ahora: archivado.
+
+KLIPPER-COPILOT
+EN: Killed
+ES: Cancelado
+
+EN: ai companion for orcaslicer + klipper
+ES: compañero de IA para orcaslicer + klipper
+
+EN: What it was
+ES: Qué era
+
+EN: An AI-assisted companion layer for OrcaSlicer and Klipper — analyzing slicer profiles, validating printer constraints, and recommending safer print settings for high-performance 3D printers.
+ES: Una capa de acompañamiento asistida por IA para OrcaSlicer y Klipper: analizaba perfiles del slicer, validaba restricciones de la impresora y recomendaba configuraciones de impresión más seguras para impresoras 3D de alto rendimiento.
+
+EN: Why it's strong
+ES: Por qué era fuerte
+
+EN: Real systems-engineering pain; tuning these printers is genuinely hard.
+ES: Dolor real de ingeniería de sistemas; ajustar estas impresoras es genuinamente difícil.
+
+EN: Why it died
+ES: Por qué murió
+
+EN: Infra cost > realistic revenue. Reliable optimization needs large datasets of printer configs and failures, telemetry ingestion, hardware-specific tuning models, and continuous testing across many printer variants. Support burden disproportionate to likely revenue.
+ES: Costo de infraestructura > ingreso realista. La optimización confiable necesita grandes datasets de configuraciones y fallas de impresoras, ingestión de telemetría, modelos de ajuste específicos por hardware y pruebas continuas sobre muchas variantes de impresora. La carga de soporte es desproporcionada frente al ingreso probable.
+
+EN: Audience economics. Target users (advanced hobbyists) are technically capable, price-sensitive, and resistant to subscriptions — hard acquisition and retention without a large community presence or distribution channel.
+ES: Economía de audiencia. Los usuarios objetivo (hobbistas avanzados) son técnicamente capaces, sensibles al precio y resistentes a las suscripciones: adquisición y retención difíciles sin una comunidad grande o un canal de distribución.
+
+EN: Trust-fragile category. Inconsistent recommendations or one failed print suggestion burns trust fast. High API and hosting costs while debugging edge cases make the early stage punishing.
+ES: Categoría frágil en confianza. Recomendaciones inconsistentes o una sola sugerencia fallida de impresión queman la confianza rápido. Los altos costos de API y hosting mientras se depuran edge cases vuelven la etapa temprana especialmente dura.
+
+EN: Strategic fit. Better classed as a systems-engineering experiment than a product right now; infrastructure and validation requirements exceed probable short-term return. A loss-making launch is strategically unrealistic at this stage.
+ES: Encaje estratégico. Hoy encaja mejor como experimento de ingeniería de sistemas que como producto; los requisitos de infraestructura y validación superan el retorno probable de corto plazo. Un lanzamiento perdiendo dinero es estratégicamente irrealista en esta etapa.
+
+EN: — technically interesting; product-market gravity insufficient. archived.
+ES: — técnicamente interesante; gravedad producto-mercado insuficiente. archivado.
+
+TRUST SECTION
+EN: Proof — credentials and adoption
+ES: Prueba — credenciales y adopción
+
+EN: Trust at a glance.
+ES: Confianza de un vistazo.
+
+EN: role → Freelance Automation Engineer · Self-employed · Apr 2024–Present
+ES: rol → Ingeniero freelance de automatización · Independiente · Abr 2024–Presente
+
+EN: role → QA Tester · Funktronic Labs (Remote) · 2024
+ES: rol → QA Tester · Funktronic Labs (Remoto) · 2024
+
+EN: cert → AI Automation Engineering · Coderhouse · 2025
+ES: cert → Ingeniería de automatización con IA · Coderhouse · 2025
+
+EN: thesis → Meritorious Thesis · Universidad ECCI · 2024 — adopted by SENA + ECCI
+ES: tesis → Tesis meritoria · Universidad ECCI · 2024 — adoptada por SENA + ECCI
+
+EN: full → View full CV ↗
+ES: completo → Ver CV completo ↗
+
+SPEAKING SECTION
+EN: Speaking — talks and panels
+ES: Charlas — conferencias y paneles
+
+EN: Speaking proof.
+ES: Evidencia de charlas.
+
+EN: 2026 → AI & Cybersecurity Forum · Bogotá · May 2026 · Panelist
+ES: 2026 → AI & Cybersecurity Forum · Bogotá · Mayo de 2026 · Panelista
+
+EN: 2025 → Cybersecurity Forum · Bogotá · 2025 · Panelist
+ES: 2025 → Cybersecurity Forum · Bogotá · 2025 · Panelista
+
+SUBSCRIBE SECTION
+EN: Subscribe — build logs and postmortems
+ES: Suscripción — bitácoras de construcción y postmortems
+
+EN: Notified when I publish.
+ES: Entérate cuando publique.
+
+EN: Subscribe ↗
+ES: Suscribirme ↗
+
+EN: Build logs, postmortems, occasional rants. No spam.
+ES: Bitácoras de construcción, postmortems y algún rant ocasional. Sin spam.
+
+CONNECT SECTION
+EN: Connect — channels
+ES: Contacto — canales
+
+EN: Let's Talk.
+ES: Hablemos.
+
+EN: git → github.com/lualducor
+ES: git → github.com/lualducor
+
+EN: in → linkedin.com/in/luis-alberto-duarte-97748171
+ES: in → linkedin.com/in/luis-alberto-duarte-97748171
+
+EN: mail → lualducor@gmail.com
+ES: mail → lualducor@gmail.com
+
+EN: write → lucholabs.dev/blog
+ES: escribo → lucholabs.dev/blog
+
+EN: Source · github.com/lualducor/THELAB
+ES: Código fuente · github.com/lualducor/THELAB
+
+
+[APPENDIX: THELAB TYPER LINE]
+
+La línea dinámica después de "let's talk about:" rota muchas palabras técnicas. No recomiendo traducir marcas, herramientas o nombres propios. Sí recomiendo traducir estas frases humanas:
+
+EN: local models
+ES: modelos locales
+
+EN: GIS systems
+ES: sistemas GIS
+
+EN: IoT sensors
+ES: sensores IoT
+
+EN: LLMs as runtime
+ES: LLMs como runtime
+
+EN: AI as infrastructure
+ES: IA como infraestructura
+
+EN: agent orchestration
+ES: orquestación de agentes
+
+EN: multi-agent systems
+ES: sistemas multiagente
+
+EN: shared memory
+ES: memoria compartida
+
+EN: model routing
+ES: enrutamiento de modelos
+
+EN: prompt injection
+ES: inyección de prompts
+
+EN: tool use
+ES: uso de herramientas
+
+EN: structured outputs
+ES: salidas estructuradas
+
+EN: function calling
+ES: llamada de funciones
+
+EN: workflow primitives
+ES: primitivas de flujo de trabajo
+
+EN: inference reliability
+ES: confiabilidad de inferencia
+
+EN: AI workflows
+ES: flujos de trabajo con IA
+
+EN: agent guardrails
+ES: guardrails para agentes
+
+EN: shared farm context
+ES: contexto compartido de la finca
+
+EN: operational memory
+ES: memoria operativa
+
+EN: specialized agents
+ES: agentes especializados
+
+EN: agricultural intelligence
+ES: inteligencia agrícola
+
+EN: personal finance
+ES: finanzas personales
+
+EN: Colombian banks
+ES: bancos colombianos
+
+EN: bank statement exports
+ES: exportaciones de extractos bancarios
+
+EN: rule-based categorization
+ES: categorización basada en reglas
+
+EN: programmable ledgers
+ES: libros contables programables
+
+EN: local-first data
+ES: datos local-first
+
+EN: query DSLs
+ES: DSLs de consulta
+
+EN: email phishing
+ES: phishing por correo
+
+EN: third-age UX
+ES: UX para adultos mayores
+
+EN: plain-language warnings
+ES: alertas en lenguaje claro
+
+EN: accessibility-first design
+ES: diseño con accesibilidad primero
+
+EN: open security tools
+ES: herramientas de seguridad abiertas
+
+EN: family-installable inboxes
+ES: bandejas instalables por la familia
+
+EN: modular runtimes
+ES: runtimes modulares
+
+EN: soil reasoning
+ES: razonamiento sobre suelos
+
+EN: weather agents
+ES: agentes meteorológicos
+
+EN: hydroponic planning
+ES: planificación hidropónica
+
+EN: livestock optimization
+ES: optimización ganadera
+
+EN: compost coordination
+ES: coordinación de compostaje
+
+EN: irrigation management
+ES: gestión de riego
+
+EN: financial forecasting
+ES: proyección financiera
+
+EN: crop analysis
+ES: análisis de cultivos
+
+EN: farm telemetry
+ES: telemetría agrícola
+
+EN: open agricultural standards
+ES: estándares agrícolas abiertos
+
+EN: utility outages
+ES: cortes de servicios
+
+EN: community validation
+ES: validación comunitaria
+
+EN: infrastructure intelligence
+ES: inteligencia de infraestructura
+
+EN: urban disruption
+ES: disrupción urbana
+
+EN: live captioning
+ES: subtitulado en vivo
+
+EN: speech recognition
+ES: reconocimiento de voz
+
+EN: accessibility for the hearing-impaired
+ES: accesibilidad para personas con discapacidad auditiva
+
+EN: classroom inclusion
+ES: inclusión en el aula
+
+EN: zero-licensing tooling
+ES: herramientas sin costo de licencia
+
+EN: open-source impact
+ES: impacto de código abierto
+
+EN: systems thinking
+ES: pensamiento sistémico
+
+EN: cross-domain work
+ES: trabajo entre dominios
+
+EN: the seams between APIs
+ES: las costuras entre APIs
+
+EN: where workflows leak
+ES: donde los flujos se fugan
+
+EN: observability
+ES: observabilidad
+
+EN: reliability over impressiveness
+ES: confiabilidad por encima del impacto visual
+
+EN: technological sovereignty
+ES: soberanía tecnológica
+
+EN: inspectability
+ES: inspeccionabilidad
+
+EN: local deployment
+ES: despliegue local
+
+EN: open source
+ES: código abierto
+
+EN: distributed research
+ES: investigación distribuida
+
+EN: democratized intelligence
+ES: inteligencia democratizada
+
+EN: augmenting decisions
+ES: apoyar decisiones
+
+EN: composable infrastructure
+ES: infraestructura componible
+
+EN: modular by default
+ES: modular por defecto
+
+EN: composable by design
+ES: componible por diseño
+
+EN: inspectable agents
+ES: agentes inspeccionables
+
+EN: portable runtimes
+ES: runtimes portables
+
+EN: retrieval as a primitive
+ES: retrieval como primitiva
+
+EN: structured imports
+ES: importaciones estructuradas
+
+EN: the boring 90%
+ES: el 90% aburrido
+
+EN: ambient automation
+ES: automatización ambiental
+
+EN: self-hostable AI
+ES: IA autoalojable
+
+EN: low-connectivity regions
+ES: regiones de baja conectividad
+
+EN: open by default
+ES: abierto por defecto
+
+EN: postmortems
+ES: postmortems
+
+EN: shipped quietly
+ES: lanzado en silencio
+
+EN: iteration
+ES: iteración
+
+EN: retros
+ES: retrospectivas
+
+EN: the willingness to write the postmortem
+ES: la disposición a escribir el postmortem
+
+EN: phosphor green
+ES: verde fósforo
+
+EN: matrix rain
+ES: lluvia de Matrix
+
+EN: terminals
+ES: terminales
+
+EN: monospace
+ES: monoespaciado
+
+EN: the console
+ES: la consola
+
+EN: remote-async
+ES: remoto asíncrono
+
+EN: C1 English
+ES: Inglés C1
+
+EN: prompt-injection defense
+ES: defensa contra inyección de prompts
+
+EN: agent threats
+ES: amenazas agénticas
+
+EN: the golden era of AI
+ES: la era dorada de la IA
+
+EN: emerging cybersecurity
+ES: ciberseguridad emergente
+
+EN: network security
+ES: seguridad de redes
+
+EN: infrastructure security
+ES: seguridad de infraestructura
+
+EN: regional realities
+ES: realidades regionales
+
+EN: microregions
+ES: microrregiones
+
+EN: cooperatives
+ES: cooperativas
+
+EN: shipping > announcing
+ES: publicar/desplegar > anunciar
+
+EN: the postmortem file
+ES: el archivo de postmortem
+
+EN: README-driven design
+ES: diseño guiado por README
+
+EN: saying no to scope
+ES: saber decir no al alcance
+
+EN: the willingness to delete
+ES: la disposición a borrar
