@@ -893,8 +893,8 @@ ES: Hablemos.
 EN: git → github.com/lualducor
 ES: git → github.com/lualducor
 
-EN: in → linkedin.com/in/luis-alberto-duarte-97748171
-ES: in → linkedin.com/in/luis-alberto-duarte-97748171
+EN: in → linkedin.com/in/luis-alberto-duarte-cortes-97748171
+ES: in → linkedin.com/in/luis-alberto-duarte-cortes-97748171
 
 EN: mail → lualducor@gmail.com
 ES: mail → lualducor@gmail.com

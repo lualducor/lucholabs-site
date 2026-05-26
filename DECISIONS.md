@@ -154,7 +154,7 @@ Panelist @ AI & Cybersecurity Forum 2026.
 ## Open decisions (not yet locked)
 
 - **GitHub bio final text** — pending paste of current GitHub bio so user can compare and confirm.
-- **LinkedIn vanity URL** — current is `luis-alberto-duarte-97748171`; user has not confirmed whether a vanity URL will be set.
+- **LinkedIn vanity URL** — current is `luis-alberto-duarte-cortes-97748171`; user has not confirmed whether a shorter vanity URL will be set.
 - **Thesis repository visibility** — unknown whether captioning code repo is public, private, or local-only. Needed for Phase 5C pinning.
 - **`lucholabs.dev` Vercel domain status** — whether custom domain is already pointing at the CV Vercel project.
 - **`lualducor/THELAB` push status** — whether the Lab repo is on GitHub yet.

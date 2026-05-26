@@ -74,4 +74,4 @@ Active. Posts and project entries updated continuously. Source open under MIT.
 
 ## Contact
 
-[lucholabs.dev/#contact](https://lucholabs.dev/#contact) · [LinkedIn](https://www.linkedin.com/in/luis-alberto-duarte-97748171/) · [GitHub](https://github.com/lualducor)
+[lucholabs.dev/#contact](https://lucholabs.dev/#contact) · [LinkedIn](https://www.linkedin.com/in/luis-alberto-duarte-cortes-97748171) · [GitHub](https://github.com/lualducor)

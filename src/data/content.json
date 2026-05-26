@@ -263,7 +263,7 @@
     "recentCommits": ["fix(images): correct slug folder + generate talk WebP variants", "feat(restructure): Phase 1A/2B/2C/3A/3D — measurement + SEO + components", "feat(talks): /talks/:slug route + TalkPage infra + Phase 1B perf"]
   },
   "contact": [
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/luis-alberto-duarte-97748171/" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/luis-alberto-duarte-cortes-97748171" },
     { "label": "GitHub", "href": "https://github.com/lualducor" },
     { "label": "Email", "href": "mailto:lualducor@gmail.com" }
   ],

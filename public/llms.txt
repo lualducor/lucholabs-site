@@ -34,7 +34,7 @@ QA: Regression Testing, Bug Triage, Technical Writing
 
 ## Contact
 Email: lualducor@gmail.com
-LinkedIn: https://www.linkedin.com/in/luis-alberto-duarte-97748171/
+LinkedIn: https://www.linkedin.com/in/luis-alberto-duarte-cortes-97748171
 GitHub: https://github.com/lualducor
 Website: https://lucholabs.dev
 Lab: https://lucholabs.dev/lab
