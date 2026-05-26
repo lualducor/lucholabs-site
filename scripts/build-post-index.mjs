@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import { validatePost } from './_validate-post.mjs'
 
 const POSTS_DIR = 'content/posts'
 const OUTPUT_PATH = 'src/lib/blog/posts.generated.json'
@@ -12,6 +13,7 @@ function loadPosts() {
   return files.map(file => {
     const raw = readFileSync(join(POSTS_DIR, file), 'utf-8')
     const { data, content } = matter(raw)
+    validatePost(data, file)
 
     const prose = content.replace(/```[\s\S]*?```/g, '')
     const stats = readingTime(prose)

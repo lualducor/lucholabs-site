@@ -27,3 +27,4 @@ dist-ssr
 .codex
 src/lib/blog/posts.generated.json
 graphify-out/
+public/blog/og/.cache.json

@@ -7,12 +7,13 @@
     "predev": "node scripts/build-post-index.mjs",
     "prebuild": "node scripts/validate-content.mjs",
     "dev": "vite",
-    "build": "node scripts/build-post-index.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
+    "build": "node scripts/build-post-index.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/generate-og-images.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview",
     "new-post": "node scripts/new-post.mjs",
+    "publish-post": "node scripts/publish-post.mjs",
     "validate-content": "ajv validate -s src/data/content.schema.json -d src/data/content.json --strict=false --spec=draft2020"
   },
   "dependencies": {

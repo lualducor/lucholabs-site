@@ -1,13 +1,11 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'node:fs'
-import { execSync, spawnSync } from 'node:child_process'
+import { spawnSync } from 'node:child_process'
 import { createInterface } from 'node:readline'
 import { stdin, stdout } from 'node:process'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 
 const POSTS_DIR = 'content/posts'
-const SITE_URL = 'https://lucholabs.dev'
-
 function slugify(title) {
   return title
     .toLowerCase()
@@ -72,7 +70,7 @@ function buildFrontmatter({ title, slug, description, tags }) {
     `slug: "${slug}"`,
     `description: "${description.replace(/"/g, '\\"')}"`,
     `tags: [${tagList.map(t => `"${t}"`).join(', ')}]`,
-    `draft: false`,
+    `draft: true`,
     '---',
     '',
   ].join('\n')
@@ -118,19 +116,10 @@ async function main() {
   mkdirSync(POSTS_DIR, { recursive: true })
   const content = buildFrontmatter({ title, slug, description, tags }) + body + '\n'
   writeFileSync(filepath, content, 'utf-8')
+  mkdirSync(`public/blog/img/${slug}`, { recursive: true })
   console.log(`✓ Wrote ${filepath}`)
-
-  try {
-    execSync(`git add ${filepath}`, { stdio: 'inherit' })
-    execSync(`git commit -m "blog: new post — ${title.replace(/"/g, '\\"')}"`, { stdio: 'inherit' })
-    execSync('git push', { stdio: 'inherit' })
-    console.log(`\n✓ Pushed. Post will be live in ~1-2 min at:\n  ${SITE_URL}/blog/${slug}`)
-  } catch (err) {
-    console.error('\nFile was written but git commit/push failed:')
-    console.error(err.message)
-    console.error('\nYou can recover by running git add/commit/push manually.')
-    process.exit(1)
-  }
+  console.log(`\n✓ Draft saved. Preview at: http://localhost:5173/blog/${slug}`)
+  console.log(`  Run "npm run publish-post -- ${slug}" when ready to go live.`)
 }
 
 main().catch(err => {
