@@ -6,60 +6,135 @@
   "$defs": {
     "LocaleString": {
       "oneOf": [
-        { "type": "string" },
+        {
+          "type": "string"
+        },
         {
           "type": "object",
-          "required": ["en", "es"],
+          "required": [
+            "en",
+            "es"
+          ],
           "additionalProperties": false,
           "properties": {
-            "en": { "type": "string" },
-            "es": { "type": "string" }
+            "en": {
+              "type": "string"
+            },
+            "es": {
+              "type": "string"
+            }
           }
         }
       ]
     },
     "ImageObject": {
       "type": "object",
-      "required": ["url", "width", "height", "caption"],
+      "required": [
+        "url",
+        "width",
+        "height",
+        "caption"
+      ],
       "additionalProperties": false,
       "properties": {
-        "url": { "type": "string" },
-        "width": { "type": "integer" },
-        "height": { "type": "integer" },
-        "caption": { "type": "string" }
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "caption": {
+          "type": "string"
+        }
       }
     },
     "NamespacePage": {
       "type": "object",
-      "required": ["title", "tagline", "body"],
+      "required": [
+        "title",
+        "tagline",
+        "body"
+      ],
       "additionalProperties": false,
       "properties": {
-        "title": { "type": "string" },
-        "tagline": { "type": "string" },
-        "body": { "type": "string" }
+        "title": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "tagline": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "body": {
+          "$ref": "#/$defs/LocaleString"
+        }
       }
     },
     "SeoEntry": {
       "type": "object",
-      "required": ["title", "description"],
+      "required": [
+        "title",
+        "description"
+      ],
       "additionalProperties": false,
       "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "ogImage": { "type": "string" }
+        "title": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "description": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "ogImage": {
+          "type": "string"
+        }
       }
     },
     "MetricBucket": {
       "type": "object",
-      "required": ["primary", "secondary"],
+      "required": [
+        "primary",
+        "secondary"
+      ],
       "additionalProperties": false,
       "properties": {
-        "primary": { "type": "string" },
+        "primary": {
+          "type": "string"
+        },
         "secondary": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
+    },
+    "LabCopy": {
+      "type": "object",
+      "properties": {
+        "relatedKicker": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "relatedLabel": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "archiveTitle": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "archiveDescription": {
+          "$ref": "#/$defs/LocaleString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LabBlock": {
+      "type": "object",
+      "properties": {
+        "copy": {
+          "$ref": "#/$defs/LabCopy"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "type": "object",
@@ -87,106 +162,248 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "meta": {
       "type": "object",
-      "required": ["lastUpdated", "version"],
+      "required": [
+        "lastUpdated",
+        "version"
+      ],
       "additionalProperties": false,
       "properties": {
-        "lastUpdated": { "type": "string", "format": "date" },
-        "version": { "type": "integer", "minimum": 1 },
-        "note": { "type": "string" }
+        "lastUpdated": {
+          "type": "string",
+          "format": "date"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "note": {
+          "type": "string"
+        }
       }
     },
     "identity": {
       "type": "object",
-      "required": ["name", "title", "subtitle", "cvUrl", "photo", "image", "subMark", "latamLine"],
+      "required": [
+        "name",
+        "title",
+        "subtitle",
+        "cvUrl",
+        "photo",
+        "image",
+        "subMark",
+        "latamLine"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "title": { "type": "string" },
-        "subtitle": { "type": "string" },
-        "roleLine": { "type": "string", "description": "Optional sub-headline beneath title. Reserved for D1 audience-rewrite phase." },
-        "cvUrl": { "type": "string" },
-        "photo": { "type": "string" },
-        "image": { "$ref": "#/$defs/ImageObject" },
-        "subMark": { "$ref": "#/$defs/LocaleString" },
-        "latamLine": { "$ref": "#/$defs/LocaleString" }
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "subtitle": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "roleLine": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "cvUrl": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/$defs/ImageObject"
+        },
+        "subMark": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "latamLine": {
+          "$ref": "#/$defs/LocaleString"
+        }
       }
     },
     "stats": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["label", "sub", "subColor", "category"],
+        "required": [
+          "label",
+          "sub",
+          "subColor",
+          "category"
+        ],
         "additionalProperties": false,
         "properties": {
-          "label": { "type": "string" },
-          "sub": { "type": "string" },
-          "subColor": { "type": "string" },
-          "category": { "type": "string" },
-          "pulse": { "type": "boolean" }
+          "label": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "sub": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "subColor": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "pulse": {
+            "type": "boolean"
+          }
         }
       }
     },
     "currentlyBuilding": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "bentExperience": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["company", "role", "period"],
+        "required": [
+          "company",
+          "role",
+          "period"
+        ],
         "additionalProperties": false,
         "properties": {
-          "company": { "type": "string" },
-          "role": { "type": "string" },
-          "period": { "type": "string" }
+          "company": {
+            "type": "string"
+          },
+          "role": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "period": {
+            "$ref": "#/$defs/LocaleString"
+          }
         }
       }
     },
     "skills": {
       "type": "object",
-      "required": ["core", "tooling"],
+      "required": [
+        "core",
+        "tooling"
+      ],
       "additionalProperties": false,
       "properties": {
-        "core": { "type": "array", "items": { "type": "string" } },
-        "tooling": { "type": "array", "items": { "type": "string" } }
+        "core": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        },
+        "tooling": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        }
       }
     },
     "thesis": {
       "type": "object",
-      "required": ["title", "subtitle", "institution", "status", "adoptedBy", "stack", "impact"],
+      "required": [
+        "title",
+        "subtitle",
+        "institution",
+        "status",
+        "adoptedBy",
+        "stack",
+        "impact"
+      ],
       "additionalProperties": false,
       "properties": {
-        "title": { "type": "string" },
-        "subtitle": { "type": "string" },
-        "institution": { "type": "string" },
-        "status": { "type": "string" },
-        "adoptedBy": { "type": "array", "items": { "type": "string" } },
-        "stack": { "type": "array", "items": { "type": "string" } },
-        "impact": { "type": "string" },
-        "publicationUrl": { "type": "string" },
-        "repoUrl": { "type": "string" }
+        "title": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "subtitle": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "institution": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "status": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "adoptedBy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stack": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "impact": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "publicationUrl": {
+          "type": "string"
+        },
+        "repoUrl": {
+          "type": "string"
+        }
       }
     },
     "speaking": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["status", "event", "location", "date", "topic"],
+        "required": [
+          "status",
+          "event",
+          "location",
+          "date",
+          "topic"
+        ],
         "additionalProperties": false,
         "properties": {
-          "status": { "type": "string", "enum": ["past", "upcoming"] },
-          "event": { "type": "string" },
-          "location": { "type": "string" },
-          "date": { "type": "string" },
-          "topic": { "type": "string" },
-          "photo": { "type": "string" },
-          "recapUrl": { "type": "string", "description": "Reserved for talk-page links (Phase 0.5C)." },
-          "videoUrl": { "type": "string", "description": "Reserved for YouTube embed (Phase 0.5E)." },
-          "slidesUrl": { "type": "string" }
+          "status": {
+            "type": "string",
+            "enum": [
+              "past",
+              "upcoming"
+            ]
+          },
+          "event": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "topic": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "recapUrl": {
+            "type": "string",
+            "description": "Reserved for talk-page links (Phase 0.5C)."
+          },
+          "videoUrl": {
+            "type": "string",
+            "description": "Reserved for YouTube embed (Phase 0.5E)."
+          },
+          "slidesUrl": {
+            "type": "string"
+          }
         }
       }
     },
@@ -194,14 +411,33 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["company", "role", "period", "description", "tags"],
+        "required": [
+          "company",
+          "role",
+          "period",
+          "description",
+          "tags"
+        ],
         "additionalProperties": false,
         "properties": {
-          "company": { "type": "string" },
-          "role": { "type": "string" },
-          "period": { "type": "string" },
-          "description": { "type": "string" },
-          "tags": { "type": "array", "items": { "type": "string" } }
+          "company": {
+            "type": "string"
+          },
+          "role": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "period": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "description": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/LocaleString"
+            }
+          }
         }
       }
     },
@@ -234,37 +470,111 @@
         ],
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string" },
-          "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-          "tagline": { "type": "string" },
-          "description": { "type": "string" },
-          "stack": { "type": "array", "items": { "type": "string" } },
-          "status": { "type": "string" },
-          "statusColor": { "type": "string" },
-          "featuredOnCv": { "type": "boolean" },
-          "featuredOnLab": { "type": "boolean" },
-          "isHeadline": { "type": "boolean" },
-          "isArchived": { "type": "boolean" },
-          "isKilled": { "type": "boolean" },
-          "cvTagline": { "type": "string" },
-          "cvDescription": { "type": "string" },
-          "labTagline": { "type": "string" },
-          "labDescription": { "type": "string" },
-          "labQuote": { "type": "string" },
-          "labFeatures": { "type": "array", "items": { "type": "string" } },
-          "labVision": { "type": "string" },
-          "links": {
-            "type": "object",
-            "required": ["github", "demo", "paper"],
-            "additionalProperties": false,
-            "properties": {
-              "github": { "type": ["string", "null"] },
-              "demo": { "type": ["string", "null"] },
-              "paper": { "type": ["string", "null"] }
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "tagline": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "description": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "stack": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
-          "repoUrl": { "type": ["string", "null"] },
-          "demoUrl": { "type": ["string", "null"] }
+          "status": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "statusColor": {
+            "type": "string"
+          },
+          "featuredOnCv": {
+            "type": "boolean"
+          },
+          "featuredOnLab": {
+            "type": "boolean"
+          },
+          "isHeadline": {
+            "type": "boolean"
+          },
+          "isArchived": {
+            "type": "boolean"
+          },
+          "isKilled": {
+            "type": "boolean"
+          },
+          "cvTagline": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "cvDescription": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "labTagline": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "labDescription": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "labQuote": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "labFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/LocaleString"
+            }
+          },
+          "labVision": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "links": {
+            "type": "object",
+            "required": [
+              "github",
+              "demo",
+              "paper"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "github": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "demo": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "paper": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "repoUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "demoUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
@@ -273,64 +583,142 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["title", "body", "citationProjectSlug"],
+        "required": [
+          "title",
+          "body",
+          "citationProjectSlug"
+        ],
         "additionalProperties": false,
         "properties": {
-          "title": { "type": "string" },
-          "body": { "$ref": "#/$defs/LocaleString" },
-          "citationProjectSlug": { "type": "string" }
+          "title": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "body": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "citationProjectSlug": {
+            "type": "string"
+          }
         }
       }
     },
     "nowNext": {
       "type": "object",
-      "required": ["now", "next", "recentCommits"],
+      "required": [
+        "now",
+        "next",
+        "recentCommits"
+      ],
       "additionalProperties": false,
       "properties": {
-        "now": { "type": "array", "items": { "type": "string" } },
-        "next": { "type": "array", "items": { "type": "string" } },
-        "recentCommits": { "type": "array", "items": { "type": "string" } }
+        "now": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        },
+        "next": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        },
+        "recentCommits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "contact": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["label", "href"],
+        "required": [
+          "label",
+          "href"
+        ],
         "additionalProperties": false,
         "properties": {
-          "label": { "type": "string" },
-          "href": { "type": "string" }
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
         }
       }
     },
     "contactMeta": {
       "type": "object",
-      "required": ["availability", "cta", "notForLine"],
+      "required": [
+        "availability",
+        "cta",
+        "notForLine"
+      ],
       "additionalProperties": false,
       "properties": {
-        "availability": { "type": "string", "description": "Primary CTA — FT roles per D1+D2." },
-        "cta": { "type": "string", "description": "Secondary CTA line — speaking & freelance per D2 dual mode." },
-        "calUrl": { "type": "string" },
-        "hireHeadline": { "type": "string", "description": "Block heading for FT-roles section (e.g. 'HIRE ME')." },
-        "speakingHeadline": { "type": "string", "description": "Block heading for speaking section (e.g. 'BOOK ME TO SPEAK')." },
-        "speakingCta": { "type": "string", "description": "Body line under speakingHeadline." },
-        "freelanceLine": { "type": "string", "description": "Tertiary line — freelance availability." },
-        "notForLine": { "$ref": "#/$defs/LocaleString" }
+        "availability": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "cta": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "calUrl": {
+          "type": "string"
+        },
+        "hireHeadline": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "speakingHeadline": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "speakingCta": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "freelanceLine": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "notForLine": {
+          "$ref": "#/$defs/LocaleString"
+        }
       }
     },
     "certificates": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["title", "issuer", "date", "topics", "credentialUrl"],
+        "required": [
+          "title",
+          "issuer",
+          "date",
+          "topics",
+          "credentialUrl"
+        ],
         "additionalProperties": false,
         "properties": {
-          "title": { "type": "string" },
-          "issuer": { "type": "string" },
-          "date": { "type": "string" },
-          "topics": { "type": "array", "items": { "type": "string" } },
-          "credentialUrl": { "type": ["string", "null"] }
+          "title": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/LocaleString"
+            }
+          },
+          "credentialUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
@@ -339,33 +727,95 @@
       "description": "Dedicated long-form pages for individual speaking appearances (consumed by /talks/:slug route).",
       "items": {
         "type": "object",
-        "required": ["slug", "event", "location", "date", "title", "abstract", "keyTakeaways"],
+        "required": [
+          "slug",
+          "event",
+          "location",
+          "date",
+          "title",
+          "abstract",
+          "keyTakeaways"
+        ],
         "additionalProperties": false,
         "properties": {
-          "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-          "event": { "type": "string" },
-          "location": { "type": "string" },
-          "date": { "type": "string", "description": "Human-readable, e.g. 'May 2026'." },
-          "absoluteDate": { "type": "string", "description": "ISO date (YYYY-MM-DD) for sorting and structured data." },
-          "title": { "type": "string" },
-          "subtitle": { "type": "string" },
-          "format": { "type": "string", "description": "Panel / Keynote / Workshop etc." },
-          "role": { "type": "string", "description": "Panelist / Speaker / Moderator." },
-          "abstract": { "type": "array", "items": { "type": "string" }, "description": "Paragraphs of long-form description." },
-          "heroPhoto": { "type": "string" },
-          "heroPhotoAlt": { "type": "string" },
-          "videoUrl": { "type": ["string", "null"], "description": "YouTube/Vimeo embed URL when available." },
-          "slidesUrl": { "type": ["string", "null"] },
-          "keyTakeaways": { "type": "array", "items": { "type": "string" } },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "event": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "description": "Human-readable, e.g. 'May 2026'."
+          },
+          "absoluteDate": {
+            "type": "string",
+            "description": "ISO date (YYYY-MM-DD) for sorting and structured data."
+          },
+          "title": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "subtitle": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "format": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "role": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "abstract": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/LocaleString"
+            },
+            "description": "Paragraphs of long-form description."
+          },
+          "heroPhoto": {
+            "type": "string"
+          },
+          "heroPhotoAlt": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "videoUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "YouTube/Vimeo embed URL when available."
+          },
+          "slidesUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "keyTakeaways": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/LocaleString"
+            }
+          },
           "resources": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["title", "url"],
+              "required": [
+                "title",
+                "url"
+              ],
               "additionalProperties": false,
               "properties": {
-                "title": { "type": "string" },
-                "url": { "type": "string" }
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -373,16 +823,33 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["src", "alt"],
+              "required": [
+                "src",
+                "alt"
+              ],
               "additionalProperties": false,
               "properties": {
-                "src": { "type": "string" },
-                "alt": { "type": "string" }
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "$ref": "#/$defs/LocaleString"
+                }
               }
             }
           },
-          "relatedBlogSlug": { "type": ["string", "null"] },
-          "labAnchorUrl": { "type": ["string", "null"] }
+          "relatedBlogSlug": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "labAnchorUrl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
@@ -390,66 +857,125 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["question", "answer"],
+        "required": [
+          "question",
+          "answer"
+        ],
         "additionalProperties": false,
         "properties": {
-          "question": { "type": "string" },
-          "answer": { "type": "string" }
+          "question": {
+            "$ref": "#/$defs/LocaleString"
+          },
+          "answer": {
+            "$ref": "#/$defs/LocaleString"
+          }
         }
       }
     },
     "urlNamespaces": {
       "type": "object",
-      "required": ["services", "case-studies", "print"],
+      "required": [
+        "services",
+        "case-studies",
+        "print"
+      ],
       "additionalProperties": false,
       "properties": {
-        "services": { "$ref": "#/$defs/NamespacePage" },
-        "case-studies": { "$ref": "#/$defs/NamespacePage" },
-        "print": { "$ref": "#/$defs/NamespacePage" }
+        "services": {
+          "$ref": "#/$defs/NamespacePage"
+        },
+        "case-studies": {
+          "$ref": "#/$defs/NamespacePage"
+        },
+        "print": {
+          "$ref": "#/$defs/NamespacePage"
+        }
       }
     },
     "seo": {
       "type": "object",
-      "required": ["/", "/blog", "/lab", "/services", "/case-studies", "/print"],
+      "required": [
+        "/",
+        "/blog",
+        "/lab",
+        "/services",
+        "/case-studies",
+        "/print"
+      ],
       "additionalProperties": false,
       "properties": {
         "/": {
           "allOf": [
-            { "$ref": "#/$defs/SeoEntry" },
+            {
+              "$ref": "#/$defs/SeoEntry"
+            },
             {
               "type": "object",
-              "required": ["ogImage"]
+              "required": [
+                "ogImage"
+              ]
             }
           ]
         },
-        "/blog": { "$ref": "#/$defs/SeoEntry" },
-        "/lab": { "$ref": "#/$defs/SeoEntry" },
-        "/services": { "$ref": "#/$defs/SeoEntry" },
-        "/case-studies": { "$ref": "#/$defs/SeoEntry" },
-        "/print": { "$ref": "#/$defs/SeoEntry" }
+        "/blog": {
+          "$ref": "#/$defs/SeoEntry"
+        },
+        "/lab": {
+          "$ref": "#/$defs/SeoEntry"
+        },
+        "/services": {
+          "$ref": "#/$defs/SeoEntry"
+        },
+        "/case-studies": {
+          "$ref": "#/$defs/SeoEntry"
+        },
+        "/print": {
+          "$ref": "#/$defs/SeoEntry"
+        }
       }
     },
     "metrics": {
       "type": "object",
-      "required": ["kpis", "events"],
+      "required": [
+        "kpis",
+        "events"
+      ],
       "additionalProperties": false,
       "properties": {
         "kpis": {
           "type": "object",
-          "required": ["cv", "lab", "blog", "talks"],
+          "required": [
+            "cv",
+            "lab",
+            "blog",
+            "talks"
+          ],
           "additionalProperties": false,
           "properties": {
-            "cv": { "$ref": "#/$defs/MetricBucket" },
-            "lab": { "$ref": "#/$defs/MetricBucket" },
-            "blog": { "$ref": "#/$defs/MetricBucket" },
-            "talks": { "$ref": "#/$defs/MetricBucket" }
+            "cv": {
+              "$ref": "#/$defs/MetricBucket"
+            },
+            "lab": {
+              "$ref": "#/$defs/MetricBucket"
+            },
+            "blog": {
+              "$ref": "#/$defs/MetricBucket"
+            },
+            "talks": {
+              "$ref": "#/$defs/MetricBucket"
+            }
           }
         },
         "events": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
+    },
+    "lab": {
+      "$ref": "#/$defs/LabBlock"
     }
   }
 }

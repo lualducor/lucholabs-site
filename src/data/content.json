@@ -7,9 +7,18 @@
   },
   "identity": {
     "name": "Luis Alberto Duarte Cortés",
-    "title": "I build accessibility and trust infrastructure for Spanish-speaking users.",
-    "roleLine": "Systems engineer · AI security speaker · Open-source author",
-    "subtitle": "Bogotá · Remote · C1 English",
+    "title": {
+      "en": "I build accessibility and trust infrastructure for Spanish-speaking users.",
+      "es": "Construyo infraestructura de accesibilidad y confianza para usuarios hispanohablantes."
+    },
+    "roleLine": {
+      "en": "Systems engineer · AI security speaker · Open-source author",
+      "es": "Ingeniero de sistemas · conferencista en seguridad de IA · autor de código abierto"
+    },
+    "subtitle": {
+      "en": "Bogotá · Remote · C1 English",
+      "es": "Bogotá · Remoto · Inglés C1"
+    },
     "cvUrl": "/#experience",
     "photo": "/photo.jpg",
     "image": {
@@ -18,40 +27,101 @@
       "height": 192,
       "caption": "Luis Alberto Duarte Cortés"
     },
-    "subMark": "forward-deployed engineering",
-    "latamLine": "Forward-deployed engineer — LATAM native, US time-zone overlap"
+    "subMark": {
+      "en": "forward-deployed engineering",
+      "es": "ingeniería forward-deployed"
+    },
+    "latamLine": {
+      "en": "Forward-deployed engineer — LATAM native, US time-zone overlap",
+      "es": "Ingeniero forward-deployed — nativo de LATAM, con solapamiento horario con EE. UU."
+    }
   },
   "stats": [
     {
-      "label": "English C1",
+      "label": {
+        "en": "English C1",
+        "es": "Inglés C1"
+      },
       "sub": "IELTS Academic 7.0 · British Council",
       "subColor": "rgba(34,197,94,0.6)",
-      "category": "Language"
+      "category": {
+        "en": "Language",
+        "es": "Idioma"
+      }
     },
     {
-      "label": "Remote Ready",
-      "sub": "US & LATAM Timezones · Full Time",
+      "label": {
+        "en": "Remote Ready",
+        "es": "Listo para trabajo remoto"
+      },
+      "sub": {
+        "en": "US & LATAM Timezones · Full Time",
+        "es": "Husos horarios de EE. UU. y LATAM · Tiempo completo"
+      },
       "subColor": "rgba(255,255,255,0.4)",
-      "category": "Availability",
+      "category": {
+        "en": "Availability",
+        "es": "Disponibilidad"
+      },
       "pulse": true
     }
   ],
-  "currentlyBuilding": ["Boveda", "Anti-Phishing Shield", "SUPERFARM"],
+  "currentlyBuilding": [
+    "Boveda",
+    "Anti-Phishing Shield",
+    "SUPERFARM"
+  ],
   "bentExperience": [
-    { "company": "Funktronic Labs", "role": "QA Tester", "period": "Remote · 2024" }
+    {
+      "company": "Funktronic Labs",
+      "role": "QA Tester",
+      "period": "Remote · 2024"
+    }
   ],
   "skills": {
-    "core": ["Python", "FastAPI", "n8n", "REST APIs", "Linux"],
-    "tooling": ["PostgreSQL", "SQLAlchemy", "Webhooks", "Postman", "Make"]
+    "core": [
+      "Python",
+      "FastAPI",
+      "n8n",
+      "REST APIs",
+      "Linux"
+    ],
+    "tooling": [
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Webhooks",
+      "Postman",
+      "Make"
+    ]
   },
   "thesis": {
-    "title": "Meritorious Thesis",
-    "subtitle": "Open-Source Live Captioning System for Hearing-Impaired Students",
+    "title": {
+      "en": "Meritorious Thesis",
+      "es": "Tesis meritoria"
+    },
+    "subtitle": {
+      "en": "Open-Source Live Captioning System for Hearing-Impaired Students",
+      "es": "Sistema de subtitulado de código abierto para estudiantes con discapacidad auditiva"
+    },
     "institution": "Universidad ECCI — B.Sc. Systems Engineering · Thesis work: 2022–2023 · Graduated 2024",
-    "status": "Meritorious · In Use",
-    "adoptedBy": ["SENA Regional Amazonas", "Universidad ECCI"],
-    "stack": ["Node.js", "Mozilla DeepSpeech", "NGINX", "Custom Dictionary Engine"],
-    "impact": "Built across 2022–2023 after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Completed before the 2024 graduation and awarded a Meritorious distinction. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.",
+    "status": {
+      "en": "Meritorious · In Use",
+      "es": "Meritoria · Actualmente en uso"
+    },
+    "adoptedBy": [
+      "SENA Regional Amazonas",
+      "Universidad ECCI"
+    ],
+    "stack": [
+      "Node.js",
+      "Mozilla DeepSpeech",
+      "NGINX",
+      "Custom Dictionary Engine"
+    ],
+    "impact": {
+      "en": "Built across 2022–2023 after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Completed before the 2024 graduation and awarded a Meritorious distinction. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.",
+      "es": "Construido entre 2022 y 2023 después de que una compañera con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Se completó antes del grado de 2024 y recibió distinción meritoria. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto."
+    },
     "publicationUrl": "https://repositorio.ecci.edu.co/entities/publication/7fd3d03e-a92f-4be0-8b53-f291f6337808"
   },
   "speaking": [
@@ -69,43 +139,119 @@
       "event": "Cybersecurity Forum",
       "location": "Bogotá",
       "date": "2025",
-      "topic": "Panelist on network security and infrastructure.",
+      "topic": {
+        "en": "Panelist on network security and infrastructure.",
+        "es": "Panelista sobre seguridad de redes e infraestructura."
+      },
       "photo": "/speaking.jpg"
     }
   ],
   "experience": [
     {
       "company": "Self-Employed",
-      "role": "Freelance Automation Engineer",
-      "period": "Bogotá · Apr 2024 – Present",
-      "description": "Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences.",
-      "tags": ["Automation", "n8n", "Python", "APIs", "Open Source", "Accessibility"]
+      "role": {
+        "en": "Freelance Automation Engineer",
+        "es": "Ingeniero freelance de automatización"
+      },
+      "period": {
+        "en": "Bogotá · Apr 2024 – Present",
+        "es": "Bogotá · Abr 2024 – Presente"
+      },
+      "description": {
+        "en": "Designing and deploying automation workflows integrating REST APIs, webhooks, and Python scripts to reduce operational overhead. Maintaining the open-source voice-recognition accessibility tool adopted by SENA Regional Amazonas and Universidad ECCI. Speaker at cybersecurity and network security conferences.",
+        "es": "Diseño y despliego flujos de automatización que integran APIs REST, webhooks y scripts en Python para reducir la carga operativa. Mantengo la herramienta de accesibilidad de reconocimiento de voz de código abierto adoptada por SENA Regional Amazonas y la Universidad ECCI. También participo como ponente en conferencias de ciberseguridad y seguridad de redes."
+      },
+      "tags": [
+        {
+          "en": "Automation",
+          "es": "Automatización"
+        },
+        "n8n",
+        "Python",
+        "APIs",
+        {
+          "en": "Open Source",
+          "es": "Código abierto"
+        },
+        {
+          "en": "Accessibility",
+          "es": "Accesibilidad"
+        }
+      ]
     },
     {
       "company": "Funktronic Labs",
-      "role": "QA Tester (Contract)",
-      "period": "Remote · Jan 2024 – Dec 2024",
-      "description": "Executed manual regression and sanity testing across software builds for a US-based game development studio. Documented structured bug reports with reproduction steps, severity ratings, and expected vs actual behavior. Served as bridge between engineering and end-user experience, retesting patches to confirm resolution.",
-      "tags": ["QA", "Regression Testing", "Bug Tracking", "Remote", "Technical Docs"]
+      "role": {
+        "en": "QA Tester (Contract)",
+        "es": "QA Tester (contrato)"
+      },
+      "period": {
+        "en": "Remote · Jan 2024 – Dec 2024",
+        "es": "Remoto · Ene 2024 – Dic 2024"
+      },
+      "description": {
+        "en": "Executed manual regression and sanity testing across software builds for a US-based game development studio. Documented structured bug reports with reproduction steps, severity ratings, and expected vs actual behavior. Served as bridge between engineering and end-user experience, retesting patches to confirm resolution.",
+        "es": "Ejecuté pruebas manuales de regresión y sanity sobre builds de software para un estudio de desarrollo de videojuegos con base en EE. UU. Documenté reportes de bugs estructurados con pasos de reproducción, niveles de severidad y comportamiento esperado vs. real. Serví como puente entre ingeniería y experiencia de usuario final, volviendo a probar parches para confirmar su resolución."
+      },
+      "tags": [
+        "QA",
+        {
+          "en": "Regression Testing",
+          "es": "Pruebas de regresión"
+        },
+        {
+          "en": "Bug Tracking",
+          "es": "Seguimiento de bugs"
+        },
+        "Remote",
+        {
+          "en": "Technical Docs",
+          "es": "Documentación técnica"
+        }
+      ]
     }
   ],
   "projects": [
     {
       "name": "Boveda",
       "slug": "boveda",
-      "tagline": "Personal finance dashboard for Colombian bank accounts",
-      "description": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
-      "stack": ["Python", "FastAPI", "SQLite", "SQLAlchemy", "React"],
-      "status": "In Progress",
+      "tagline": {
+        "en": "Personal finance dashboard for Colombian bank accounts",
+        "es": "Panel de finanzas personales para cuentas bancarias colombianas"
+      },
+      "description": {
+        "en": "A local-first fintech experiment exploring structured financial data, rule-based automation, and programmable workflows built on top of Colombian bank statement exports.",
+        "es": "Un experimento fintech local-first que explora datos financieros estructurados, automatización basada en reglas y flujos programables construidos sobre exportaciones de extractos bancarios colombianos."
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "SQLAlchemy",
+        "React"
+      ],
+      "status": {
+        "en": "In Progress",
+        "es": "En progreso"
+      },
       "statusColor": "rgba(34,197,94,0.7)",
       "featuredOnCv": true,
       "featuredOnLab": true,
       "isHeadline": true,
       "isArchived": false,
       "isKilled": false,
-      "cvTagline": "Personal finance dashboard for Colombian bank accounts",
-      "cvDescription": "Boveda is a local-first personal finance dashboard built for Colombian bank accounts. Colombian banks don't expose transaction APIs, so every existing budgeting tool requires cloud access or credential sharing. Boveda takes a different approach: it parses statement exports (PDF, XLSX, CSV) from Bancolombia, Nequi, and Daviplata, extracts structured transaction data using rule-based parsers per bank, and stores everything locally in SQLite with zero cloud sync. The backend runs on Python 3.12, FastAPI, and SQLAlchemy with Alembic migrations. Each bank has its own parser module handling format inconsistencies, implicit sign inference, and category tagging without machine learning. The API serves structured financial data to a React frontend in progress. Full pytest coverage across parser and API layers. Local-first by design: no credential exposure, no third-party data access, no subscription required to understand your own finances.",
-      "labTagline": "Personal finance dashboard for Colombian bank accounts",
+      "cvTagline": {
+        "en": "Personal finance dashboard for Colombian bank accounts",
+        "es": "Panel de finanzas personales para cuentas bancarias colombianas"
+      },
+      "cvDescription": {
+        "en": "Boveda is a local-first personal finance dashboard built for Colombian bank accounts. Colombian banks don't expose transaction APIs, so every existing budgeting tool requires cloud access or credential sharing. Boveda takes a different approach: it parses statement exports (PDF, XLSX, CSV) from Bancolombia, Nequi, and Daviplata, extracts structured transaction data using rule-based parsers per bank, and stores everything locally in SQLite with zero cloud sync. The backend runs on Python 3.12, FastAPI, and SQLAlchemy with Alembic migrations. Each bank has its own parser module handling format inconsistencies, implicit sign inference, and category tagging without machine learning. The API serves structured financial data to a React frontend in progress. Full pytest coverage across parser and API layers. Local-first by design: no credential exposure, no third-party data access, no subscription required to understand your own finances.",
+        "es": "Boveda es un panel de finanzas personales local-first construido para cuentas bancarias colombianas. Los bancos colombianos no exponen APIs de transacciones, así que toda herramienta de presupuesto existente exige acceso a la nube o compartir credenciales. Boveda toma un camino distinto: procesa exportaciones de extractos (PDF, XLSX, CSV) de Bancolombia, Nequi y Daviplata, extrae datos estructurados de transacciones mediante parsers basados en reglas por banco y guarda todo localmente en SQLite, sin sincronización en la nube. El backend corre sobre Python 3.12, FastAPI y SQLAlchemy con migraciones Alembic. Cada banco tiene su propio módulo parser para manejar inconsistencias de formato, inferencia implícita de signos y categorización sin machine learning. La API entrega datos financieros estructurados a un frontend en React todavía en desarrollo. Cobertura completa con pytest en las capas de parser y API. Local-first por diseño: sin exposición de credenciales, sin acceso de terceros a los datos y sin suscripción para entender tus propias finanzas."
+      },
+      "labTagline": {
+        "en": "Personal finance dashboard for Colombian bank accounts",
+        "es": "Panel de finanzas personales para cuentas bancarias colombianas"
+      },
       "labDescription": "Boveda started as a personal frustration: I wanted to track my finances but every tool required trusting a third party with my bank credentials or uploading statements to a cloud dashboard. The solution was to keep the data where it belongs — on the device. The core is a set of bank-specific statement parsers (Bancolombia, Nequi, Daviplata) that handle the quirks of each bank's export format: implicit credit/debit signs, inconsistent column names, encoding edge cases. Parsed transactions land in a local SQLite database served through a FastAPI REST API. The architecture is intentionally boring: Python 3.12, SQLAlchemy, Alembic, pytest. No AI, no cloud, no magic. The project is also a forcing function for understanding a real structural gap in Colombian fintech: banks don't expose APIs, which means users either share credentials or stay unaware of their spending. Local-first isn't a preference here — it's the only architecture that doesn't compromise user privacy.",
       "labQuote": "",
       "labFeatures": [],
@@ -120,19 +266,39 @@
     {
       "name": "Anti-Phishing Shield",
       "slug": "anti-phishing-shield",
-      "tagline": "Open source email phishing protection for elderly users",
-      "description": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
-      "stack": ["Python", "Open Source", "Email Analysis", "Accessibility"],
-      "status": "Prototype",
+      "tagline": {
+        "en": "Open source email phishing protection for elderly users",
+        "es": "Protección de phishing por correo, de código abierto, para adultos mayores"
+      },
+      "description": {
+        "en": "An open source tool designed to help third-age users identify and avoid email phishing attacks. Analyzes suspicious emails and provides plain-language warnings tailored for non-technical users.",
+        "es": "Una herramienta de código abierto diseñada para ayudar a usuarios de la tercera edad a identificar y evitar ataques de phishing por correo. Analiza correos sospechosos y entrega alertas en lenguaje claro adaptadas para usuarios no técnicos."
+      },
+      "stack": [
+        "Python",
+        "Open Source",
+        "Email Analysis",
+        "Accessibility"
+      ],
+      "status": {
+        "en": "Prototype",
+        "es": "Prototipo"
+      },
       "statusColor": "rgba(148,163,184,0.7)",
       "featuredOnCv": true,
       "featuredOnLab": true,
       "isHeadline": false,
       "isArchived": false,
       "isKilled": false,
-      "cvTagline": "Open source email phishing protection for elderly users",
+      "cvTagline": {
+        "en": "Open source email phishing protection for elderly users",
+        "es": "Protección de phishing por correo, de código abierto, para adultos mayores"
+      },
       "cvDescription": "Anti-Phishing Shield is an open source phishing detection tool built specifically for elderly and non-technical users. Most security tools produce jargon-heavy output that the highest-risk population can't act on. This tool inverts that: analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The detection layer evaluates sender metadata, URL structure, urgency language patterns, and brand impersonation signals. Results are presented as a simple risk rating with a one-sentence explanation — no security vocabulary required. Designed for community deployment in elder care contexts, family networks, and NGOs working with digital literacy programs in Latin America. Open source, runs without cloud dependencies. Built with Python. Current status: functional prototype with analysis pipeline for email headers, link inspection, and urgency-language scoring. Outputs are available in Spanish and English to serve LATAM users directly.",
-      "labTagline": "Open source email phishing protection for elderly users",
+      "labTagline": {
+        "en": "Open source email phishing protection for elderly users",
+        "es": "Protección de phishing por correo, de código abierto, para adultos mayores"
+      },
       "labDescription": "Most phishing protection is built for enterprise IT teams — it lives in corporate email gateways that users never see. The population most targeted by phishing (elderly users, first-generation internet users, digitally underserved communities in LATAM) gets zero benefit from enterprise security tooling. Anti-Phishing Shield is built for that population. The tool analyzes suspicious emails and links and translates findings into plain language: not 'potential header spoofing detected' but 'this email is pretending to be from your bank — do not click the link.' Detection logic evaluates sender metadata, URL structure, urgency signals, and brand impersonation patterns. Output is a risk rating and a one-sentence action. The project is intentionally open source and designed for community deployment by NGOs, family networks, and local digital literacy programs. It was built because the problem is real, the risk is concentrated in under-served populations, and the existing solutions don't reach them.",
       "labQuote": "",
       "labFeatures": [],
@@ -147,19 +313,38 @@
     {
       "name": "SUPERFARM",
       "slug": "superfarm",
-      "tagline": "Open agricultural intelligence infrastructure",
+      "tagline": {
+        "en": "Open agricultural intelligence infrastructure",
+        "es": "Infraestructura abierta de inteligencia agrícola"
+      },
       "description": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
-      "stack": ["Python", "Multi-Agent Systems", "GIS", "IoT", "LLMs", "Open Source"],
-      "status": "Research",
+      "stack": [
+        "Python",
+        "Multi-Agent Systems",
+        "GIS",
+        "IoT",
+        "LLMs",
+        "Open Source"
+      ],
+      "status": {
+        "en": "Research",
+        "es": "Investigación"
+      },
       "statusColor": "rgba(221,221,221,0.7)",
       "featuredOnCv": true,
       "featuredOnLab": true,
       "isHeadline": false,
       "isArchived": false,
       "isKilled": false,
-      "cvTagline": "Open agricultural intelligence infrastructure",
+      "cvTagline": {
+        "en": "Open agricultural intelligence infrastructure",
+        "es": "Infraestructura abierta de inteligencia agrícola"
+      },
       "cvDescription": "SUPERFARM is an open-source runtime and orchestration layer for agricultural AI agents. Modern precision agriculture generates constant sensor data — soil moisture, crop health, weather, equipment telemetry — but most AI tools treat each stream in isolation. SUPERFARM connects them through shared farm memory: a structured context layer that specialist agents read and write, enabling cross-domain reasoning between a soil moisture agent and a crop disease agent. The architecture supports pluggable model routing (swap LLM providers without rewiring agents), persistent telemetry for auditability, and modular specialist agents that extend without touching the core runtime. Designed for small and medium farms in LATAM that can't afford enterprise precision agriculture platforms but can run open-source tooling on affordable hardware. Built with Python, designed for edge deployment. Current status: research and architecture phase, core orchestration layer under development.",
-      "labTagline": "Open agricultural intelligence infrastructure",
+      "labTagline": {
+        "en": "Open agricultural intelligence infrastructure",
+        "es": "Infraestructura abierta de inteligencia agrícola"
+      },
       "labDescription": "Agriculture produces more data than almost any other sector and uses almost none of it well. SUPERFARM is an attempt to close that ratio for farmers who don't have enterprise budgets. The core insight is shared farm memory — a structured context layer that AI agents read and write, so specialist agents coordinate rather than operate in silos. A soil sensor agent, a pest detection agent, and a weather pattern agent all write to the same context. A planning agent reads all of it and reasons across domains. The orchestration layer handles model routing (swap the underlying LLM without rewiring your agents), telemetry (audit what the system decided and why), and module isolation (a broken agent doesn't take down the farm). The target user is a medium-scale farmer in LATAM with reasonable connectivity and a limited budget — not an enterprise with a dedicated data science team. The project asks what infrastructure-as-agricultural-intelligence looks like when built from the ground up for that user.",
       "labQuote": "",
       "labFeatures": [],
@@ -176,8 +361,15 @@
       "slug": "haycorte",
       "tagline": "Urban disruption intelligence for Bogotá utility outages",
       "description": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá.",
-      "stack": ["Python", "WhatsApp API", "PostgreSQL"],
-      "status": "Killed",
+      "stack": [
+        "Python",
+        "WhatsApp API",
+        "PostgreSQL"
+      ],
+      "status": {
+        "en": "Killed",
+        "es": "Cancelado"
+      },
       "statusColor": "red",
       "featuredOnCv": false,
       "featuredOnLab": true,
@@ -208,8 +400,15 @@
       "slug": "klipper-copilot",
       "tagline": "3D-printing AI copilot for Klipper firmware",
       "description": "AI-assisted optimization layer for 3D printing workflows.",
-      "stack": ["Python", "Klipper", "LLM APIs"],
-      "status": "Killed",
+      "stack": [
+        "Python",
+        "Klipper",
+        "LLM APIs"
+      ],
+      "status": {
+        "en": "Killed",
+        "es": "Cancelado"
+      },
       "statusColor": "red",
       "featuredOnCv": false,
       "featuredOnLab": true,
@@ -259,30 +458,79 @@
     }
   ],
   "nowNext": {
-    "now": ["Boveda — backend complete, React frontend next", "lucholabs.dev restructure shipping", "Anti-Phishing Shield — prototype phase", "Automation client work"],
-    "next": ["Merge feat/post-workflow — deploy updated site", "Deploy THELAB deck to lucholabs.dev/lab", "First cornerstone blog post — Boveda build log"],
-    "recentCommits": ["fix(images): correct slug folder + generate talk WebP variants", "feat(restructure): Phase 1A/2B/2C/3A/3D — measurement + SEO + components", "feat(talks): /talks/:slug route + TalkPage infra + Phase 1B perf"]
+    "now": [
+      "Boveda — backend complete, React frontend next",
+      "lucholabs.dev restructure shipping",
+      "Anti-Phishing Shield — prototype phase",
+      "Automation client work"
+    ],
+    "next": [
+      "Merge feat/post-workflow — deploy updated site",
+      "Deploy THELAB deck to lucholabs.dev/lab",
+      "First cornerstone blog post — Boveda build log"
+    ],
+    "recentCommits": [
+      "fix(images): correct slug folder + generate talk WebP variants",
+      "feat(restructure): Phase 1A/2B/2C/3A/3D — measurement + SEO + components",
+      "feat(talks): /talks/:slug route + TalkPage infra + Phase 1B perf"
+    ]
   },
   "contact": [
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/luis-alberto-duarte-cortes-97748171" },
-    { "label": "GitHub", "href": "https://github.com/lualducor" },
-    { "label": "Email", "href": "mailto:lualducor@gmail.com" }
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/luis-alberto-duarte-cortes-97748171"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/lualducor"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:lualducor@gmail.com"
+    }
   ],
   "contactMeta": {
-    "availability": "Open to full-time remote Solutions / Forward-Deployed Engineer roles at AI-native companies.",
+    "availability": {
+      "en": "Open to full-time remote Solutions / Forward-Deployed Engineer roles at AI-native companies.",
+      "es": "Disponible para roles remotos de tiempo completo como ingeniero de soluciones / forward-deployed engineer en empresas AI-native."
+    },
     "cta": "Also available for speaking engagements (talks, panels, podcasts) on AI security & prompt injection. Selective freelance work considered.",
-    "hireHeadline": "HIRE ME",
-    "speakingHeadline": "BOOK ME TO SPEAK",
-    "speakingCta": "Available for talks, panels, podcasts on AI security & prompt injection.",
-    "freelanceLine": "Also taking selective freelance work — DM with details.",
-    "notForLine": "Not a content creator. Not a generalist freelancer. Not building agencies."
+    "hireHeadline": {
+      "en": "HIRE ME",
+      "es": "CONTRÁTAME"
+    },
+    "speakingHeadline": {
+      "en": "BOOK ME TO SPEAK",
+      "es": "INVÍTAME A DAR UNA CHARLA"
+    },
+    "speakingCta": {
+      "en": "Available for talks, panels, podcasts on AI security & prompt injection.",
+      "es": "Disponible para charlas, paneles y podcasts sobre seguridad en IA e inyección de prompts."
+    },
+    "freelanceLine": {
+      "en": "Also taking selective freelance work — DM with details.",
+      "es": "También tomo trabajo freelance selectivo — escríbeme por DM con detalles."
+    },
+    "notForLine": {
+      "en": "Not a content creator. Not a generalist freelancer. Not building agencies.",
+      "es": "No soy creador de contenido. No soy freelancer generalista. No estoy construyendo agencias."
+    }
   },
   "certificates": [
     {
-      "title": "AI Automation Engineering",
+      "title": {
+        "en": "AI Automation Engineering",
+        "es": "Ingeniería de automatización con IA"
+      },
       "issuer": "Coderhouse",
       "date": "2025",
-      "topics": ["Python", "FastAPI", "n8n", "LLM Integrations", "Groq API"],
+      "topics": [
+        "Python",
+        "FastAPI",
+        "n8n",
+        "LLM Integrations",
+        "Groq API"
+      ],
       "credentialUrl": null
     }
   ],
@@ -293,33 +541,96 @@
       "location": "Bogotá, Colombia",
       "date": "May 2026",
       "absoluteDate": "2026-05-16",
-      "title": "Cybersecurity in the Golden Era of AI",
-      "subtitle": "Panel on agent models, emerging threats, and prompt injection attacks",
+      "title": {
+        "en": "Cybersecurity in the Golden Era of AI",
+        "es": "Ciberseguridad en la era dorada de la IA"
+      },
+      "subtitle": {
+        "en": "Panel on agent models, emerging threats, and prompt injection attacks",
+        "es": "Panel sobre modelos agénticos, amenazas emergentes y ataques de inyección de prompts"
+      },
       "format": "Panel discussion",
       "role": "Panelist",
       "abstract": [
-        "On May 16, 2026 I served as a panelist at the AI & Cybersecurity Forum in Bogotá. The panel — four engineers plus a moderator — covered \"Cybersecurity in the Golden Era of AI,\" focused on agent models, emerging threats, and prompt injection attacks.",
-        "The conversation traced how traditional security frameworks struggle to capture the unique risks of LLM-powered systems, and where engineering teams should concentrate mitigation effort as agent autonomy increases.",
-        "This page is the canonical record of the appearance. The full recording, slides, and a written recap will be added as they come together."
+        {
+          "en": "On May 16, 2026 I served as a panelist at the AI & Cybersecurity Forum in Bogotá. The panel — four engineers plus a moderator — covered \"Cybersecurity in the Golden Era of AI,\" focused on agent models, emerging threats, and prompt injection attacks.",
+          "es": "El 16 de mayo de 2026 participé como panelista en el AI & Cybersecurity Forum en Bogotá. El panel — cuatro ingenieros más un moderador — abordó \"Ciberseguridad en la era dorada de la IA\", centrado en modelos agénticos, amenazas emergentes y ataques de inyección de prompts."
+        },
+        {
+          "en": "The conversation traced how traditional security frameworks struggle to capture the unique risks of LLM-powered systems, and where engineering teams should concentrate mitigation effort as agent autonomy increases.",
+          "es": "La conversación recorrió cómo los marcos tradicionales de seguridad tienen dificultades para capturar los riesgos únicos de los sistemas impulsados por LLMs, y en qué deberían concentrar el esfuerzo de mitigación los equipos de ingeniería a medida que aumenta la autonomía de los agentes."
+        },
+        {
+          "en": "This page is the canonical record of the appearance. The full recording, slides, and a written recap will be added as they come together.",
+          "es": "Esta página es el registro canónico de la participación. La grabación completa, las diapositivas y un recap escrito se añadirán a medida que estén listos."
+        }
       ],
       "heroPhoto": "/talks/ai-cybersecurity-2026/hero.jpg",
-      "heroPhotoAlt": "Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.",
+      "heroPhotoAlt": {
+        "en": "Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.",
+        "es": "Luis Alberto Duarte Cortés en el panel del AI & Cybersecurity Forum 2026 en Bogotá."
+      },
       "videoUrl": null,
       "slidesUrl": null,
       "keyTakeaways": [
-        "Traditional threat frameworks weren't designed for LLM autonomy. STRIDE and similar models treat the AI as a tool, not an actor. Agentic systems need threat models where the model itself is an attack surface with its own trust boundary.",
-        "Prompt injection is the SQL injection of the AI era — it is not a model problem, it is an input validation problem. External content (emails, web pages, user messages) must be treated as untrusted input even when processed by an AI agent.",
-        "The most dangerous agentic deployments are those where humans trust the output without reading it. The security perimeter follows the trust boundary, not the system boundary.",
-        "Most AI security failures in production aren't exotic. They're agentic systems with over-broad tool permissions executing instructions injected from user-controlled content — a well-understood category of vulnerability running on new infrastructure.",
-        "Defense-in-depth for AI agents means minimal tool permissions, output validation before irreversible actions, human-in-the-loop for high-stakes operations, and adversarial red-teaming before production deployment."
+        {
+          "en": "Traditional threat frameworks weren't designed for LLM autonomy. STRIDE and similar models treat the AI as a tool, not an actor. Agentic systems need threat models where the model itself is an attack surface with its own trust boundary.",
+          "es": "Los marcos tradicionales de amenazas no fueron diseñados para la autonomía de los LLMs. STRIDE y modelos similares tratan a la IA como una herramienta, no como un actor. Los sistemas agénticos necesitan modelos de amenaza donde el modelo mismo sea una superficie de ataque con su propio límite de confianza."
+        },
+        {
+          "en": "Prompt injection is the SQL injection of the AI era — it is not a model problem, it is an input validation problem. External content (emails, web pages, user messages) must be treated as untrusted input even when processed by an AI agent.",
+          "es": "La inyección de prompts es la inyección SQL de la era de la IA: no es un problema del modelo, es un problema de validación de entradas. El contenido externo (correos, páginas web, mensajes de usuario) debe tratarse como entrada no confiable incluso cuando lo procesa un agente de IA."
+        },
+        {
+          "en": "The most dangerous agentic deployments are those where humans trust the output without reading it. The security perimeter follows the trust boundary, not the system boundary.",
+          "es": "Los despliegues agénticos más peligrosos son aquellos en los que las personas confían en la salida sin leerla. El perímetro de seguridad sigue el límite de confianza, no el límite del sistema."
+        },
+        {
+          "en": "Most AI security failures in production aren't exotic. They're agentic systems with over-broad tool permissions executing instructions injected from user-controlled content — a well-understood category of vulnerability running on new infrastructure.",
+          "es": "La mayoría de fallos de seguridad de IA en producción no son exóticos. Son sistemas agénticos con permisos de herramientas demasiado amplios ejecutando instrucciones inyectadas desde contenido controlado por usuarios: una categoría de vulnerabilidad bien entendida corriendo sobre infraestructura nueva."
+        },
+        {
+          "en": "Defense-in-depth for AI agents means minimal tool permissions, output validation before irreversible actions, human-in-the-loop for high-stakes operations, and adversarial red-teaming before production deployment.",
+          "es": "La defensa en profundidad para agentes de IA implica permisos mínimos sobre herramientas, validación de salidas antes de acciones irreversibles, human-in-the-loop en operaciones de alto riesgo y red teaming adversarial antes del despliegue en producción."
+        }
       ],
       "resources": [],
       "gallery": [
-        { "src": "/talks/ai-cybersecurity-2026/speaking-proof.jpg", "alt": "Luis Alberto Duarte Cortés speaking on the panel, microphone in hand." },
-        { "src": "/talks/ai-cybersecurity-2026/speaking-alt.jpg", "alt": "Luis Alberto Duarte Cortés mid-answer with a hand gesture during the panel." },
-        { "src": "/talks/ai-cybersecurity-2026/humanizing.jpg", "alt": "Panel reacting with laughter after an answer." },
-        { "src": "/talks/ai-cybersecurity-2026/gallery/02-event-in-motion.jpg", "alt": "Moderator standing while addressing the panel." },
-        { "src": "/talks/ai-cybersecurity-2026/gallery/05-audience-context.jpg", "alt": "Wider shot showing panel with audience members visible." }
+        {
+          "src": "/talks/ai-cybersecurity-2026/speaking-proof.jpg",
+          "alt": {
+            "en": "Luis Alberto Duarte Cortés speaking on the panel, microphone in hand.",
+            "es": "Luis Alberto Duarte Cortés hablando en el panel, con micrófono en mano."
+          }
+        },
+        {
+          "src": "/talks/ai-cybersecurity-2026/speaking-alt.jpg",
+          "alt": {
+            "en": "Luis Alberto Duarte Cortés mid-answer with a hand gesture during the panel.",
+            "es": "Luis Alberto Duarte Cortés en plena respuesta, gesticulando con la mano durante el panel."
+          }
+        },
+        {
+          "src": "/talks/ai-cybersecurity-2026/humanizing.jpg",
+          "alt": {
+            "en": "Panel reacting with laughter after an answer.",
+            "es": "El panel reaccionando con risas después de una respuesta."
+          }
+        },
+        {
+          "src": "/talks/ai-cybersecurity-2026/gallery/02-event-in-motion.jpg",
+          "alt": {
+            "en": "Moderator standing while addressing the panel.",
+            "es": "Moderador de pie mientras se dirige al panel."
+          }
+        },
+        {
+          "src": "/talks/ai-cybersecurity-2026/gallery/05-audience-context.jpg",
+          "alt": {
+            "en": "Wider shot showing panel with audience members visible.",
+            "es": "Toma más abierta del panel con público visible."
+          }
+        }
       ],
       "relatedBlogSlug": null,
       "labAnchorUrl": null
@@ -375,7 +686,10 @@
       "ogImage": "/og-image.jpg"
     },
     "/blog": {
-      "title": "Blog",
+      "title": {
+        "en": "Blog",
+        "es": "Blog"
+      },
       "description": "Build logs, postmortems, AI experiments."
     },
     "/lab": {
@@ -395,23 +709,55 @@
       "description": ""
     }
   },
+  "lab": {
+    "copy": {
+      "relatedKicker": {
+        "en": "CV projects section",
+        "es": "Sección de proyectos del CV"
+      },
+      "relatedLabel": {
+        "en": "Projects section",
+        "es": "Sección de proyectos"
+      },
+      "archiveTitle": {
+        "en": "Archive — lucholabs.dev/lab",
+        "es": "Archivo — lucholabs.dev/lab"
+      },
+      "archiveDescription": {
+        "en": "Postmortems for archived experiments from lucholabs.",
+        "es": "Postmortems de experimentos archivados de lucholabs."
+      }
+    }
+  },
   "metrics": {
     "kpis": {
       "cv": {
         "primary": "cta_click_hire",
-        "secondary": ["cta_click_speak", "email_capture"]
+        "secondary": [
+          "cta_click_speak",
+          "email_capture"
+        ]
       },
       "lab": {
         "primary": "lab_scroll_75",
-        "secondary": ["lab_to_blog_click", "lab_to_cv_click"]
+        "secondary": [
+          "lab_to_blog_click",
+          "lab_to_cv_click"
+        ]
       },
       "blog": {
         "primary": "blog_post_completion",
-        "secondary": ["email_capture", "blog_3_session_views"]
+        "secondary": [
+          "email_capture",
+          "blog_3_session_views"
+        ]
       },
       "talks": {
         "primary": "talk_video_play",
-        "secondary": ["talk_slides_download", "talk_to_services_click"]
+        "secondary": [
+          "talk_slides_download",
+          "talk_to_services_click"
+        ]
       }
     },
     "events": [

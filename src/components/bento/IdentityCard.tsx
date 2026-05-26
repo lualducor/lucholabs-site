@@ -12,8 +12,9 @@ export default function IdentityCard() {
   const latamLine = t(identity.latamLine, locale)
   const imageSrc = identity.image.url || identity.photo
   const webpSrc = imageSrc.replace(/\.jpe?g$/, '.webp')
-  const heroTitle = identity.title
-  const heroSubtitle = identity.subtitle?.trim()
+  const heroTitle = t(identity.title, locale)
+  const heroSubtitle = t(identity.subtitle, locale).trim()
+  const roleLine = identity.roleLine ? t(identity.roleLine, locale) : ''
 
   return (
     <div style={{ ...card, alignItems: 'center', textAlign: 'center', gap: '16px', justifyContent: 'center' }}>
@@ -61,8 +62,8 @@ export default function IdentityCard() {
             {latamLine}
           </p>
         )}
-        {identity.roleLine && (
-          <p style={{ ...mono, marginTop: '2px' }}>{identity.roleLine}</p>
+        {roleLine && (
+          <p style={{ ...mono, marginTop: '2px' }}>{roleLine}</p>
         )}
       </div>
 

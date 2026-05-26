@@ -1,6 +1,11 @@
+import { useLocation } from 'react-router-dom'
 import { thesis } from '../data/resume'
+import { getLocaleFromPath, t } from '../lib/locale'
 
 export default function ThesisSection() {
+  const location = useLocation()
+  const locale = getLocaleFromPath(location.pathname)
+
   return (
     <section
       aria-label="Meritorious Thesis"
@@ -30,13 +35,13 @@ export default function ThesisSection() {
             color: 'rgba(34,197,94,0.7)', textTransform: 'uppercase',
             letterSpacing: '0.1em', margin: '0 0 10px 0', fontWeight: 'normal',
           }}>
-            ★ {thesis.title}
+            ★ {t(thesis.title, locale)}
           </p>
           <h2 style={{
             fontSize: '20px', fontWeight: 600, color: '#ffffff',
             letterSpacing: '-0.02em', lineHeight: 1.3, margin: 0,
           }}>
-            {thesis.subtitle}
+            {t(thesis.subtitle, locale)}
           </h2>
         </div>
         <span style={{
@@ -47,7 +52,7 @@ export default function ThesisSection() {
           borderRadius: '999px', padding: '4px 12px',
           whiteSpace: 'nowrap', flexShrink: 0, alignSelf: 'flex-start',
         }}>
-          {thesis.status}
+          {t(thesis.status, locale)}
         </span>
       </div>
 
@@ -56,7 +61,7 @@ export default function ThesisSection() {
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.35)', marginBottom: '24px',
       }}>
-        {thesis.institution}
+        {t(thesis.institution, locale)}
       </p>
 
       {/* Impact body */}
@@ -64,7 +69,7 @@ export default function ThesisSection() {
         fontSize: '14px', color: 'rgba(255,255,255,0.6)',
         lineHeight: 1.8, margin: '0 0 28px 0', maxWidth: '800px',
       }}>
-        {thesis.impact}
+        {t(thesis.impact, locale)}
       </p>
 
       {/* Adopted by */}

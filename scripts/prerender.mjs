@@ -297,6 +297,21 @@ renderRoute('/', resolve(distDir, 'index.html'), homeMeta, [
 ])
 renderRoute('/blog', resolve(distDir, 'blog', 'index.html'), blogIndexMeta)
 
+renderRoute('/es/', resolve(distDir, 'es', 'index.html'), {
+  ...homeMeta,
+  canonical: `${SITE_URL}/es/`,
+}, [
+  personSchema(contentJson.identity),
+  profilePageSchema(contentJson.identity, contentJson.meta?.lastUpdated),
+  webSiteSchema(),
+  faqSchema(contentJson.faq ?? []),
+  breadcrumbSchema([{ name: 'Home', url: `${SITE_URL}/es/` }]),
+])
+renderRoute('/es/blog', resolve(distDir, 'es', 'blog', 'index.html'), {
+  ...blogIndexMeta,
+  canonical: `${SITE_URL}/es/blog`,
+})
+
 for (const post of posts) {
   renderRoute(`/blog/${post.slug}`, resolve(distDir, 'blog', post.slug, 'index.html'), {
     title: `${post.frontmatter.title} — LuchoLabs`,

@@ -39,7 +39,7 @@ export default function ProjectsCard() {
             {killedProjects.map(p => (
               <a
                 key={p.slug}
-                href={`${labPrefix}/archive`}
+                href={`${labPrefix}/archive#${p.slug}`}
                 translate="no"
                 style={{ ...pill('rgba(255,255,255,0.35)'), textDecoration: 'none', cursor: 'pointer' }}
               >

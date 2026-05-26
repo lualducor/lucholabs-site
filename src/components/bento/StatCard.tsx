@@ -1,14 +1,17 @@
+import { useLocation } from 'react-router-dom'
 import { card, mono } from './styles'
+import { getLocaleFromPath, t, type LocaleString } from '../../lib/locale'
 
 interface Props {
-  label: string
-  sub: string
+  label: LocaleString
+  sub: LocaleString
   subColor: string
-  category: string
+  category: LocaleString
   pulse?: boolean
 }
 
 export default function StatCard({ label, sub, subColor, category, pulse }: Props) {
+  const locale = getLocaleFromPath(useLocation().pathname)
   return (
     <div style={{ ...card, justifyContent: 'center', gap: '6px', position: 'relative' }}>
       {pulse && (
@@ -18,11 +21,11 @@ export default function StatCard({ label, sub, subColor, category, pulse }: Prop
           backgroundColor: '#22c55e', boxShadow: '0 0 8px rgba(34,197,94,0.6)',
         }} />
       )}
-      <p style={mono}>{category}</p>
+      <p style={mono}>{t(category, locale)}</p>
       <p style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.03em', margin: 0 }}>
-        {label}
+        {t(label, locale)}
       </p>
-      <p style={{ ...mono, color: subColor }}>{sub}</p>
+      <p style={{ ...mono, color: subColor }}>{t(sub, locale)}</p>
     </div>
   )
 }

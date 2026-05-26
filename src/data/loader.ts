@@ -16,9 +16,9 @@ export interface ImageObject {
 
 export interface IdentityContent {
   name: string
-  title: string
-  roleLine?: string
-  subtitle: string
+  title: LocaleString
+  roleLine?: LocaleString
+  subtitle: LocaleString
   cvUrl: string
   photo: string
   image: ImageObject
@@ -27,32 +27,32 @@ export interface IdentityContent {
 }
 
 export interface Stat {
-  label: string
-  sub: string
+  label: LocaleString
+  sub: LocaleString
   subColor: string
-  category: string
+  category: LocaleString
   pulse?: boolean
 }
 
 export interface BentExperienceEntry {
   company: string
-  role: string
+  role: LocaleString
   period: string
 }
 
 export interface SkillsContent {
-  core: string[]
-  tooling: string[]
+  core: LocaleString[]
+  tooling: LocaleString[]
 }
 
 export interface ThesisContent {
-  title: string
-  subtitle: string
-  institution: string
-  status: string
+  title: LocaleString
+  subtitle: LocaleString
+  institution: LocaleString
+  status: LocaleString
   adoptedBy: string[]
   stack: string[]
-  impact: string
+  impact: LocaleString
   publicationUrl?: string
   repoUrl?: string
 }
@@ -64,7 +64,7 @@ export interface SpeakingEntry {
   event: string
   location: string
   date: string
-  topic: string
+  topic: LocaleString
   photo?: string
   recapUrl?: string
   videoUrl?: string
@@ -73,10 +73,10 @@ export interface SpeakingEntry {
 
 export interface ExperienceEntry {
   company: string
-  role: string
-  period: string
-  description: string
-  tags: string[]
+  role: LocaleString
+  period: LocaleString
+  description: LocaleString
+  tags: LocaleString[]
 }
 
 export interface ProjectLinks {
@@ -88,36 +88,36 @@ export interface ProjectLinks {
 export interface ProjectContent {
   name: string
   slug: string
-  tagline: string
-  description: string
+  tagline: LocaleString
+  description: LocaleString
   stack: string[]
-  status: string
+  status: LocaleString
   statusColor: string
   featuredOnCv: boolean
   featuredOnLab: boolean
   isHeadline: boolean
   isArchived: boolean
   isKilled: boolean
-  cvTagline: string
-  cvDescription: string
-  labTagline: string
-  labDescription: string
-  labQuote: string
-  labFeatures: string[]
-  labVision: string
+  cvTagline: LocaleString
+  cvDescription: LocaleString
+  labTagline: LocaleString
+  labDescription: LocaleString
+  labQuote: LocaleString
+  labFeatures: LocaleString[]
+  labVision: LocaleString
   links: ProjectLinks
   repoUrl: string | null
 }
 
 export interface ManifestoEntry {
-  title: string
+  title: LocaleString
   body: LocaleString
   citationProjectSlug: string
 }
 
 export interface NowNext {
-  now: string[]
-  next: string[]
+  now: LocaleString[]
+  next: LocaleString[]
   recentCommits: string[]
 }
 
@@ -127,32 +127,32 @@ export interface ContactEntry {
 }
 
 export interface ContactMetaContent {
-  availability: string
-  cta: string
+  availability: LocaleString
+  cta: LocaleString
   calUrl?: string
-  hireHeadline?: string
-  speakingHeadline?: string
-  speakingCta?: string
-  freelanceLine?: string
+  hireHeadline?: LocaleString
+  speakingHeadline?: LocaleString
+  speakingCta?: LocaleString
+  freelanceLine?: LocaleString
   notForLine: LocaleString
 }
 
 export interface CertificateContent {
-  title: string
+  title: LocaleString
   issuer: string
   date: string
-  topics: string[]
+  topics: LocaleString[]
   credentialUrl: string | null
 }
 
 export interface TalkResource {
-  title: string
+  title: LocaleString
   url: string
 }
 
 export interface TalkGalleryItem {
   src: string
-  alt: string
+  alt: LocaleString
 }
 
 export interface TalkPageData {
@@ -161,16 +161,16 @@ export interface TalkPageData {
   location: string
   date: string
   absoluteDate?: string
-  title: string
-  subtitle?: string
-  format?: string
-  role?: string
-  abstract: string[]
+  title: LocaleString
+  subtitle?: LocaleString
+  format?: LocaleString
+  role?: LocaleString
+  abstract: LocaleString[]
   heroPhoto?: string
-  heroPhotoAlt?: string
+  heroPhotoAlt?: LocaleString
   videoUrl: string | null
   slidesUrl: string | null
-  keyTakeaways: string[]
+  keyTakeaways: LocaleString[]
   resources: TalkResource[]
   gallery: TalkGalleryItem[]
   relatedBlogSlug: string | null
@@ -178,14 +178,14 @@ export interface TalkPageData {
 }
 
 export interface FaqEntry {
-  question: string
-  answer: string
+  question: LocaleString
+  answer: LocaleString
 }
 
 export interface UrlNamespaceEntry {
-  title: string
-  tagline: string
-  body: string
+  title: LocaleString
+  tagline: LocaleString
+  body: LocaleString
 }
 
 export interface UrlNamespaces {
@@ -195,8 +195,8 @@ export interface UrlNamespaces {
 }
 
 export interface SeoEntry {
-  title: string
-  description: string
+  title: LocaleString
+  description: LocaleString
   ogImage?: string
 }
 
@@ -224,6 +224,17 @@ export interface MetricsContent {
   events: string[]
 }
 
+export interface LabCopy {
+  relatedKicker: LocaleString
+  relatedLabel: LocaleString
+  archiveTitle: LocaleString
+  archiveDescription: LocaleString
+}
+
+export interface LabContent {
+  copy?: LabCopy
+}
+
 export interface Content {
   $schema?: string
   meta: ContentMeta
@@ -247,6 +258,7 @@ export interface Content {
   urlNamespaces: UrlNamespaces
   seo: SeoMap
   metrics: MetricsContent
+  lab?: LabContent
 }
 
 export function loadContent(): Content {

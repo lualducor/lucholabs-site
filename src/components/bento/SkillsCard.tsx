@@ -1,7 +1,10 @@
+import { useLocation } from 'react-router-dom'
 import { card, mono, pill } from './styles'
 import { skills } from '../../data/resume'
+import { getLocaleFromPath, t } from '../../lib/locale'
 
 export default function SkillsCard() {
+  const locale = getLocaleFromPath(useLocation().pathname)
   return (
     <div id="skills" style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
       <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>Skills</h2>
@@ -10,18 +13,20 @@ export default function SkillsCard() {
         <div>
           <p style={{ ...mono, fontSize: '10px', marginBottom: '6px', color: 'rgba(255,255,255,0.3)' }}>Core</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {skills.core.map(s => (
-              <span key={s} translate="no" style={pill('rgba(34,197,94,0.5)')}>{s}</span>
-            ))}
+            {skills.core.map(skill => {
+              const text = t(skill, locale)
+              return <span key={text} translate="no" style={pill('rgba(34,197,94,0.5)')}>{text}</span>
+            })}
           </div>
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px' }}>
           <p style={{ ...mono, fontSize: '10px', marginBottom: '6px', color: 'rgba(255,255,255,0.3)' }}>Tooling</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {skills.tooling.map(s => (
-              <span key={s} translate="no" style={pill('rgba(255,255,255,0.35)')}>{s}</span>
-            ))}
+            {skills.tooling.map(skill => {
+              const text = t(skill, locale)
+              return <span key={text} translate="no" style={pill('rgba(255,255,255,0.35)')}>{text}</span>
+            })}
           </div>
         </div>
       </div>

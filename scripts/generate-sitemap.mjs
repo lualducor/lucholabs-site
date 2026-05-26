@@ -13,7 +13,9 @@ const formatDateOnly = value => value.slice(0, 10)
 
 const routes = [
   { url: '/', lastmod: siteLastmod },
+  { url: '/es/', lastmod: siteLastmod },
   { url: '/blog', lastmod: siteLastmod },
+  { url: '/es/blog', lastmod: siteLastmod },
   ...posts.map(post => ({
     url: `/blog/${post.slug}`,
     lastmod: post.frontmatter.date,
@@ -21,7 +23,7 @@ const routes = [
   ...tags.map(tag => ({
     url: `/blog/tag/${tag}`,
   })),
-  // do NOT add /es/ blog URLs (excluded until CONTENT session ships Spanish content).
+  // Individual /es/blog/<slug> URLs excluded until each post has a Spanish translation shipped.
   { url: '/lab', lastmod: siteLastmod },
   { url: '/es/lab', lastmod: siteLastmod },
   ...(contentJson.talks ?? []).flatMap(talk => ([

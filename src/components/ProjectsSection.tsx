@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { headlineProject, otherProjects } from '../data/resume'
-import { getLocaleFromPath } from '../lib/locale'
+import { getLocaleFromPath, t } from '../lib/locale'
 
 export default function ProjectsSection() {
   const heroProject = headlineProject && !headlineProject.isKilled ? headlineProject : undefined
@@ -61,16 +61,16 @@ export default function ProjectsSection() {
                   color: heroProject.statusColor,
                   whiteSpace: 'nowrap',
                 }}>
-                  {heroProject.status}
+                  {t(heroProject.status, locale)}
                 </span>
               </div>
 
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, margin: 0 }}>
-                {heroProject.cvTagline}
+                {t(heroProject.cvTagline, locale)}
               </p>
 
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.42)', lineHeight: 1.75, margin: 0, maxWidth: '72ch' }}>
-                {heroProject.cvDescription}
+                {t(heroProject.cvDescription, locale)}
               </p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -140,12 +140,12 @@ export default function ProjectsSection() {
                         whiteSpace: 'nowrap',
                         flexShrink: 0,
                       }}>
-                        {project.status}
+                        {t(project.status, locale)}
                       </span>
                     </div>
 
                     <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.48)', lineHeight: 1.6, margin: 0 }}>
-                      {project.cvTagline}
+                      {t(project.cvTagline, locale)}
                     </p>
                   </article>
                 </Link>

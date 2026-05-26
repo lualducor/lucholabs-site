@@ -9,6 +9,7 @@ import { NotFoundPage } from './pages/NotFoundPage'
 import { ServicesPage } from './pages/placeholders/ServicesPage'
 import { CaseStudiesIndexPage } from './pages/placeholders/CaseStudiesIndexPage'
 import { CaseStudyPage } from './pages/placeholders/CaseStudyPage'
+import { LocaleDocAttr } from './lib/locale'
 import { PrintPage } from './pages/placeholders/PrintPage'
 
 const BlogPostPage = React.lazy(() =>
@@ -37,6 +38,7 @@ export default function App() {
   return (
     <div style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
       <PageviewTracker />
+      <LocaleDocAttr />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/es" element={<HomePage />} />

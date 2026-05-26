@@ -1,8 +1,11 @@
+import { useLocation } from 'react-router-dom'
 import { card, mono } from './styles'
 import { speaking } from '../../data/resume'
+import { getLocaleFromPath, t } from '../../lib/locale'
 
 export default function SpeakingPhotoCard() {
-  const talk = speaking.find(t => t.status === 'past' && t.photo)
+  const locale = getLocaleFromPath(useLocation().pathname)
+  const talk = speaking.find(entry => entry.status === 'past' && entry.photo)
   if (!talk) return null
 
   return (
@@ -21,7 +24,7 @@ export default function SpeakingPhotoCard() {
       <div style={{ padding: '16px 20px' }}>
         <p style={{ ...mono, marginBottom: '6px' }}>Conference · {talk.date}</p>
         <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>
-          {talk.event} · {talk.location} · {talk.date} — {talk.topic}
+          {talk.event} · {talk.location} · {talk.date} — {t(talk.topic, locale)}
         </p>
       </div>
     </div>

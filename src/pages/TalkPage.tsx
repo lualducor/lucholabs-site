@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { TalkNav } from '../components/TalkNav'
 import { talks } from '../data/resume'
+import { getLocaleFromPath, t } from '../lib/locale'
 
 const containerStyle = {
   maxWidth: '860px',
@@ -44,11 +45,12 @@ const cardChromeStyle = {
 
 export function TalkPage() {
   const { slug } = useParams<{ slug: string }>()
-  const talk = slug ? talks.find(t => t.slug === slug) : undefined
+  const talk = slug ? talks.find(entry => entry.slug === slug) : undefined
+  const locale = getLocaleFromPath(useLocation().pathname)
 
   useEffect(() => {
-    if (talk) document.title = `${talk.title} — Talk @ ${talk.event} — LuchoLabs`
-  }, [talk])
+    if (talk) document.title = `${t(talk.title, locale)} — Talk @ ${talk.event} — LuchoLabs`
+  }, [talk, locale])
 
   if (!talk) {
     return (
@@ -72,20 +74,20 @@ export function TalkPage() {
           {/* Hero block */}
           <header style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             <p style={labelStyle}>
-              {talk.role ?? 'Speaker'} · {talk.event} · {talk.date}
+              {talk.role ? t(talk.role, locale) : 'Speaker'} · {talk.event} · {talk.date}
             </p>
             <h1 style={{
               fontSize: '52px', lineHeight: 0.98, letterSpacing: '-0.04em',
               margin: 0, fontWeight: 600, color: '#ffffff',
             }}>
-              {talk.title}
+              {t(talk.title, locale)}
             </h1>
             {talk.subtitle && (
               <p style={{
                 fontSize: '18px', color: 'rgba(255,255,255,0.55)',
                 lineHeight: 1.45, margin: 0,
               }}>
-                {talk.subtitle}
+                {t(talk.subtitle, locale)}
               </p>
             )}
             <div style={{
@@ -93,7 +95,7 @@ export function TalkPage() {
               fontFamily: 'ui-monospace, monospace', fontSize: '12px',
               color: 'rgba(255,255,255,0.4)',
             }}>
-              {talk.format && <span>{talk.format}</span>}
+              {talk.format && <span>{t(talk.format, locale)}</span>}
               {talk.format && <span style={{ opacity: 0.3 }}>·</span>}
               <span>{talk.location}</span>
               <span style={{ opacity: 0.3 }}>·</span>
@@ -106,7 +108,7 @@ export function TalkPage() {
             <figure style={{ margin: 0 }}>
               <img
                 src={talk.heroPhoto}
-                alt={talk.heroPhotoAlt ?? `${talk.event} ${talk.date}`}
+                alt={talk.heroPhotoAlt ? t(talk.heroPhotoAlt, locale) : `${talk.event} ${talk.date}`}
                 style={{
                   width: '100%', height: 'auto', display: 'block',
                   borderRadius: '12px',
@@ -121,7 +123,7 @@ export function TalkPage() {
             <section aria-label="Abstract">
               <h2 style={sectionTitleStyle}>Abstract</h2>
               {talk.abstract.map((para, i) => (
-                <p key={i} style={paragraphStyle}>{para}</p>
+                <p key={i} style={paragraphStyle}>{t(para, locale)}</p>
               ))}
             </section>
           )}
@@ -138,7 +140,7 @@ export function TalkPage() {
               }}>
                 <iframe
                   src={talk.videoUrl}
-                  title={`${talk.title} — recording`}
+                  title={`${t(talk.title, locale)} — recording`}
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -166,7 +168,7 @@ export function TalkPage() {
               <ul style={{ paddingLeft: '20px', margin: 0, color: 'rgba(255,255,255,0.72)' }}>
                 {talk.keyTakeaways.map((point, i) => (
                   <li key={i} style={{ fontSize: '16px', lineHeight: 1.7, margin: '0 0 10px 0' }}>
-                    {point}
+                    {t(point, locale)}
                   </li>
                 ))}
               </ul>
@@ -189,7 +191,7 @@ export function TalkPage() {
                         color: 'rgba(134,239,172,0.92)', textDecoration: 'none',
                       }}
                     >
-                      {r.title} ↗
+                      {t(r.title, locale)} ↗
                     </a>
                   </li>
                 ))}
@@ -231,7 +233,7 @@ export function TalkPage() {
                   <figure key={i} style={{ margin: 0 }}>
                     <img
                       src={img.src}
-                      alt={img.alt}
+                      alt={t(img.alt, locale)}
                       loading="lazy"
                       style={{
                         width: '100%', height: 'auto', display: 'block',

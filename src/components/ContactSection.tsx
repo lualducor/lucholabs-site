@@ -98,8 +98,8 @@ export default function ContactSection() {
         {/* RIGHT: dual CTA — HIRE ME + BOOK ME TO SPEAK + freelance line */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={cardBase}>
-            <p style={labelStyle}>{contactMeta.hireHeadline ?? 'HIRE ME'}</p>
-            <p style={headlineStyle}>{contactMeta.availability}</p>
+            <p style={labelStyle}>{contactMeta.hireHeadline ? t(contactMeta.hireHeadline, locale) : 'HIRE ME'}</p>
+            <p style={headlineStyle}>{t(contactMeta.availability, locale)}</p>
             <p style={bodyStyle}>Based in Bogotá, Colombia. Available for US & European time zones.</p>
             <a
               href={hireHref}
@@ -123,8 +123,8 @@ export default function ContactSection() {
           </div>
 
           <div style={cardBase}>
-            <p style={labelStyle}>{contactMeta.speakingHeadline ?? 'BOOK ME TO SPEAK'}</p>
-            <p style={headlineStyle}>{contactMeta.speakingCta ?? contactMeta.cta}</p>
+            <p style={labelStyle}>{contactMeta.speakingHeadline ? t(contactMeta.speakingHeadline, locale) : 'BOOK ME TO SPEAK'}</p>
+            <p style={headlineStyle}>{t(contactMeta.speakingCta ?? contactMeta.cta, locale)}</p>
             <a
               href={speakHref}
               onClick={() => track('cta_click_speak')}
@@ -168,7 +168,7 @@ export default function ContactSection() {
               margin: 0,
               fontFamily: 'ui-monospace, monospace',
             }}>
-              {contactMeta.freelanceLine}
+              {t(contactMeta.freelanceLine, locale)}
             </p>
           )}
 

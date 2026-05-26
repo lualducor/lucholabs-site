@@ -1,7 +1,10 @@
+import { useLocation } from 'react-router-dom'
 import { speaking } from '../data/resume'
 import { talkBadgeLabel, talkBadgeIsPulsing } from '../utils/format'
+import { getLocaleFromPath, t } from '../lib/locale'
 
 export default function SpeakingSection() {
+  const locale = getLocaleFromPath(useLocation().pathname)
   const featuredPastTalk = speaking.find(talk => talk.status === 'past' && talk.photo)
   const featuredUpcomingTalk = speaking.find(talk => talk.status === 'upcoming')
   const talks = speaking.filter(
@@ -87,7 +90,7 @@ export default function SpeakingSection() {
 
                 {/* Topic */}
                 <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
-                  {talk.topic}
+                  {t(talk.topic, locale)}
                 </p>
               </div>
             </div>

@@ -11,7 +11,8 @@ describe('t', () => {
   })
 
   it('falls back to en when es is missing', () => {
-    expect(t({ en: 'hi' }, 'es')).toBe('hi')
+    // Defensive: runtime accepts partial shapes even though the type now requires both branches.
+    expect(t({ en: 'hi' } as unknown as { en: string; es: string }, 'es')).toBe('hi')
   })
 
   it('returns an empty string for undefined', () => {

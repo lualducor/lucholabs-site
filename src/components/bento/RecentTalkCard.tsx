@@ -1,9 +1,12 @@
+import { useLocation } from 'react-router-dom'
 import { card, mono } from './styles'
 import { speaking } from '../../data/resume'
+import { getLocaleFromPath, t } from '../../lib/locale'
 
 export default function RecentTalkCard() {
+  const locale = getLocaleFromPath(useLocation().pathname)
   // Surface the most recent past talk (speaking array is ordered newest first).
-  const talk = speaking.find(t => t.status === 'past')
+  const talk = speaking.find(entry => entry.status === 'past')
   if (!talk) return null
 
   const inner = (
@@ -27,7 +30,7 @@ export default function RecentTalkCard() {
         {talk.event} · {talk.location}
       </p>
       <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, margin: 0 }}>
-        {talk.topic}
+        {t(talk.topic, locale)}
       </p>
     </div>
   )

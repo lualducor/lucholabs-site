@@ -41,7 +41,8 @@ describe('experience — required fields', () => {
 describe('identity', () => {
   it('title is non-empty and under 100 characters', () => {
     expect(identity.title).toBeTruthy()
-    expect(identity.title.length).toBeLessThan(100)
+    const titleEn = typeof identity.title === 'string' ? identity.title : identity.title.en
+    expect(titleEn.length).toBeLessThan(100)
   })
 
   it('cvUrl starts with / (self-hosted)', () => {
