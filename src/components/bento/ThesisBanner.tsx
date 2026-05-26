@@ -41,6 +41,24 @@ export default function ThesisBanner() {
           </span>
         ))}
       </div>
+
+      {thesis.publicationUrl !== undefined && (
+        <a
+          href={thesis.publicationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            marginTop: '20px',
+            fontSize: '13px',
+            fontFamily: 'ui-monospace, monospace',
+            color: '#22c55e',
+            textDecoration: 'none',
+          }}
+        >
+          Read ECCI Publication →
+        </a>
+      )}
     </div>
   )
 }

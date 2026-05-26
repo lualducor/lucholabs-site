@@ -53,6 +53,7 @@ export interface ThesisContent {
   adoptedBy: string[]
   stack: string[]
   impact: string
+  publicationUrl?: string
   repoUrl?: string
 }
 

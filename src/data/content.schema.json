@@ -167,6 +167,7 @@
         "adoptedBy": { "type": "array", "items": { "type": "string" } },
         "stack": { "type": "array", "items": { "type": "string" } },
         "impact": { "type": "string" },
+        "publicationUrl": { "type": "string" },
         "repoUrl": { "type": "string" }
       }
     },

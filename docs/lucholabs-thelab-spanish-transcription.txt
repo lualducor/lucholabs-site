@@ -129,17 +129,17 @@ ES: Tesis meritoria
 EN: Open-Source Live Captioning System for Hearing-Impaired Students
 ES: Sistema de subtitulado en vivo de código abierto para estudiantes con discapacidad auditiva
 
-EN: Live · In Use · 2024–Present
-ES: Activo · En uso · 2024–Presente
+EN: Meritorious · In Use
+ES: Meritoria · En uso
 
-EN: Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
-ES: Construido durante el semestre final después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
+EN: Built across 2022–2023 after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Completed before the 2024 graduation and awarded a Meritorious distinction. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
+ES: Construido entre 2022 y 2023 después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Se completó antes del grado de 2024 y recibió distinción meritoria. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
 
 EN: Adopted by
 ES: Adoptado por
 
-EN: View Repo →
-ES: Ver repositorio →
+EN: Read ECCI Publication →
+ES: Leer publicación ECCI →
 
 EXPERIENCE SECTION
 EN: Experience
@@ -529,11 +529,11 @@ ES: Subtitulado de clases.
 EN: Open-Source Live Captioning System for Hearing-Impaired Students
 ES: Sistema de subtitulado en vivo de código abierto para estudiantes con discapacidad auditiva
 
-EN: B.Sc. Systems Engineering · Universidad ECCI · 2024 · Meritorious
-ES: Ingeniería de Sistemas · Universidad ECCI · 2024 · Meritoria
+EN: Thesis work 2022–2023 · B.Sc. Systems Engineering · Universidad ECCI · Graduated 2024
+ES: Trabajo de tesis 2022–2023 · Ingeniería de Sistemas · Universidad ECCI · Grado 2024
 
-EN: Live · In Use · 2024–Present
-ES: Activo · En uso · 2024–Presente
+EN: Meritorious · In Use
+ES: Meritoria · En uso
 
 EN: Adopted by
 ES: Adoptado por
@@ -541,8 +541,14 @@ ES: Adoptado por
 EN: Stack
 ES: Stack
 
-EN: Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
-ES: Construido durante el semestre final después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
+EN: Publication
+ES: Publicación
+
+EN: ECCI institutional repository ↗
+ES: Repositorio institucional ECCI ↗
+
+EN: Built across 2022–2023 after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Completed before the 2024 graduation and awarded a Meritorious distinction. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.
+ES: Construido entre 2022 y 2023 después de que un compañero con discapacidad auditiva no tuviera forma de seguir las clases en tiempo real. El sistema genera subtítulos en vivo a partir de la voz del docente directamente en la pantalla del estudiante y guarda una transcripción completa para revisión posterior. Se completó antes del grado de 2024 y recibió distinción meritoria. Fue adoptado por dos instituciones académicas colombianas. Costo de licenciamiento cero. Desplegable por cualquier institución usando únicamente software de código abierto.
 
 EN: — the project that taught me what cross-domain plumbing really means.
 ES: — el proyecto que me enseñó lo que realmente significa conectar dominios distintos.
@@ -851,8 +857,8 @@ ES: rol → QA Tester · Funktronic Labs (Remoto) · 2024
 EN: cert → AI Automation Engineering · Coderhouse · 2025
 ES: cert → Ingeniería de automatización con IA · Coderhouse · 2025
 
-EN: thesis → Meritorious Thesis · Universidad ECCI · 2024 — adopted by SENA + ECCI
-ES: tesis → Tesis meritoria · Universidad ECCI · 2024 — adoptada por SENA + ECCI
+EN: thesis → Meritorious thesis project · built 2022–2023 · graduated 2024 — adopted by SENA + ECCI
+ES: tesis → proyecto de tesis meritoria · construido 2022–2023 · grado 2024 — adoptada por SENA + ECCI
 
 EN: full → View full CV ↗
 ES: completo → Ver CV completo ↗

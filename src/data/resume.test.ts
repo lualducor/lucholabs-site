@@ -78,6 +78,11 @@ describe('thesis', () => {
   it('impact does not contain stale "2025" date', () => {
     expect(thesis.impact).not.toContain('2025')
   })
+
+  it('publicationUrl is present and non-empty', () => {
+    expect(thesis.publicationUrl).toBeTruthy()
+    expect(thesis.publicationUrl).toContain('repositorio.ecci.edu.co')
+  })
 })
 
 describe('contact', () => {

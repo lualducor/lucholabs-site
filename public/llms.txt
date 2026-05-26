@@ -4,7 +4,7 @@
 ## About
 Luis Alberto Duarte Cortés is a Systems Engineer from Bogotá, Colombia specializing in automation workflows, REST API integrations, Python scripting, and AI-assisted tooling. C1 English (IELTS Academic 7.0, British Council). Remote-ready for US and LATAM timezones.
 
-Graduated with a Meritorious Thesis from Universidad ECCI (B.Sc. Systems Engineering, 2024). The thesis — an open-source voice-recognition accessibility tool for hearing-impaired users — was adopted by SENA Regional Amazonas and Universidad ECCI. Speaker on cybersecurity and AI security topics in Bogotá (2025, 2026).
+Built a Meritorious Thesis at Universidad ECCI across 2022–2023 and graduated in 2024 (B.Sc. Systems Engineering). The thesis — an open-source voice-recognition accessibility tool for hearing-impaired users — was adopted by SENA Regional Amazonas and Universidad ECCI. Thesis publication: https://repositorio.ecci.edu.co/entities/publication/7fd3d03e-a92f-4be0-8b53-f291f6337808. Speaker on cybersecurity and AI security topics in Bogotá (2025, 2026).
 
 ## Speaking
 - AI & Cybersecurity Forum, Bogotá (May 2026): Panelist on "Cybersecurity in the Golden Era of AI" — covered agent models, emerging threats, and prompt injection attacks. Conference URL: TBD.

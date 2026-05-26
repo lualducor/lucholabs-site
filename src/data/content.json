@@ -47,11 +47,12 @@
   "thesis": {
     "title": "Meritorious Thesis",
     "subtitle": "Open-Source Live Captioning System for Hearing-Impaired Students",
-    "institution": "Universidad ECCI — B.Sc. Systems Engineering",
-    "status": "Live · In Use · 2024–Present",
+    "institution": "Universidad ECCI — B.Sc. Systems Engineering · Thesis work: 2022–2023 · Graduated 2024",
+    "status": "Meritorious · In Use",
     "adoptedBy": ["SENA Regional Amazonas", "Universidad ECCI"],
     "stack": ["Node.js", "Mozilla DeepSpeech", "NGINX", "Custom Dictionary Engine"],
-    "impact": "Built during final semester after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone."
+    "impact": "Built across 2022–2023 after a hearing-impaired classmate had no way to follow lectures in real time. The system generates live subtitles from the teacher's voice directly to the student's screen and stores a full transcript for later review. Completed before the 2024 graduation and awarded a Meritorious distinction. Adopted by two Colombian academic institutions. Zero licensing cost. Deployable by any institution on open source software alone.",
+    "publicationUrl": "https://repositorio.ecci.edu.co/entities/publication/7fd3d03e-a92f-4be0-8b53-f291f6337808"
   },
   "speaking": [
     {
@@ -335,7 +336,7 @@
     },
     {
       "question": "What is the LuchoLabs meritorious thesis project?",
-      "answer": "Luis's undergraduate thesis at Universidad ECCI was a real-time captioning system for hearing-impaired university students. The system generates live subtitles from a lecturer's voice directly to a student's screen and stores a full session transcript for later review. It runs entirely on open-source software with no licensing cost. The thesis received a Meritorious distinction and has been adopted by two Colombian academic institutions: SENA Regional Amazonas and Universidad ECCI."
+      "answer": "Luis's undergraduate thesis at Universidad ECCI was a real-time captioning system for hearing-impaired university students. Built across 2022–2023 and completed before his 2024 graduation, the system generates live subtitles from a lecturer's voice directly to a student's screen and stores a full session transcript for later review. It runs entirely on open-source software with no licensing cost. The thesis received a Meritorious distinction and has been adopted by two Colombian academic institutions: SENA Regional Amazonas and Universidad ECCI."
     },
     {
       "question": "What speaking topics does Luis cover?",
