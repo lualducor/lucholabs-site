@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useLocale } from '../lib/locale'
 
 // Mirrors BlogNav layout/styling. Same chrome, different label.
 export function TalkNav() {
+  const locale = useLocale()
+
   return (
     <nav
       style={{
@@ -42,7 +45,7 @@ export function TalkNav() {
           textTransform: 'uppercase',
         }}
       >
-        Talk
+        {locale === 'es' ? 'Charla' : 'Talk'}
       </span>
 
       <Link

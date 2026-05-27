@@ -9,13 +9,13 @@ export default function ProjectsSection() {
   const labPrefix = locale === 'es' ? '/es/lab' : '/lab'
 
   return (
-    <section id="projects" aria-label="Projects" style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
+    <section id="projects" aria-label={locale === 'es' ? 'Proyectos' : 'Projects'} style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
         letterSpacing: '0.1em', fontWeight: 'normal', margin: '0 0 24px 0',
       }}>
-        Projects
+        {locale === 'es' ? 'Proyectos' : 'Projects'}
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -46,7 +46,7 @@ export default function ProjectsSection() {
                     letterSpacing: '0.08em',
                     margin: 0,
                   }}>
-                    Headline Project
+                    {locale === 'es' ? 'Proyecto Principal' : 'Headline Project'}
                   </p>
                   <h3 style={{ fontSize: '24px', fontWeight: 600, color: '#ffffff', letterSpacing: '-0.02em', margin: 0 }}>
                     {heroProject.name}
@@ -104,7 +104,7 @@ export default function ProjectsSection() {
               fontWeight: 'normal',
               margin: heroProject ? '8px 0 0 0' : '0',
             }}>
-              Other experiments
+              {locale === 'es' ? 'Otros experimentos' : 'Other experiments'}
             </h3>
 
             <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>

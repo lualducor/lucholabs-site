@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
-const anchorLinks = [
-  { label: 'Skills', href: '#skills' },
-  { label: 'Speaking', href: '#speaking' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLocale } from '../lib/locale'
 
 function getEsRoute(pathname: string): string {
   if (pathname === '/es' || pathname === '/es/') return '/es/'
@@ -26,6 +19,7 @@ function getEnRoute(pathname: string): string {
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
+  const locale = useLocale()
   const isSpanishRoute = pathname === '/es' || pathname.startsWith('/es/')
   const homeRoute = isSpanishRoute ? '/es/' : '/'
   const localeToggleLabel = isSpanishRoute ? 'EN' : 'ES'
@@ -33,6 +27,13 @@ export default function Nav() {
   const showAnchorSubnav = pathname === '/' || pathname === '/es/'
   const navChromeColor = scrolled ? 'rgba(10, 10, 10, 0.85)' : 'transparent'
   const navBorderColor = scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent'
+  const anchorLinks = [
+    { label: locale === 'es' ? 'Habilidades' : 'Skills', href: '#skills' },
+    { label: locale === 'es' ? 'Charlas' : 'Speaking', href: '#speaking' },
+    { label: locale === 'es' ? 'Experiencia' : 'Experience', href: '#experience' },
+    { label: locale === 'es' ? 'Proyectos' : 'Projects', href: '#projects' },
+    { label: locale === 'es' ? 'Contacto' : 'Contact', href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)

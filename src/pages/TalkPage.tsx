@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { TalkNav } from '../components/TalkNav'
 import { talks } from '../data/resume'
-import { getLocaleFromPath, t } from '../lib/locale'
+import { localePrefix, t, useLocale } from '../lib/locale'
 
 const containerStyle = {
   maxWidth: '860px',
@@ -46,7 +46,7 @@ const cardChromeStyle = {
 export function TalkPage() {
   const { slug } = useParams<{ slug: string }>()
   const talk = slug ? talks.find(entry => entry.slug === slug) : undefined
-  const locale = getLocaleFromPath(useLocation().pathname)
+  const locale = useLocale()
 
   useEffect(() => {
     if (talk) document.title = `${t(talk.title, locale)} — Talk @ ${talk.event} — LuchoLabs`
@@ -58,8 +58,10 @@ export function TalkPage() {
         <TalkNav />
         <main style={containerStyle}>
           <p style={{ color: 'rgba(255,255,255,0.72)' }}>
-            Talk not found.{' '}
-            <Link to="/" style={{ color: 'rgba(134,239,172,0.92)' }}>← Back to home</Link>
+            {locale === 'es' ? 'Charla no encontrada.' : 'Talk not found.'}{' '}
+            <Link to={localePrefix(locale) || '/'} style={{ color: 'rgba(134,239,172,0.92)' }}>
+              {locale === 'es' ? '← Volver al inicio' : '← Back to home'}
+            </Link>
           </p>
         </main>
       </>
@@ -74,7 +76,7 @@ export function TalkPage() {
           {/* Hero block */}
           <header style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             <p style={labelStyle}>
-              {talk.role ? t(talk.role, locale) : 'Speaker'} · {talk.event} · {talk.date}
+              {talk.role ? t(talk.role, locale) : locale === 'es' ? 'Ponente' : 'Speaker'} · {talk.event} · {talk.date}
             </p>
             <h1 style={{
               fontSize: '52px', lineHeight: 0.98, letterSpacing: '-0.04em',
@@ -120,8 +122,8 @@ export function TalkPage() {
 
           {/* Abstract */}
           {talk.abstract.length > 0 && (
-            <section aria-label="Abstract">
-              <h2 style={sectionTitleStyle}>Abstract</h2>
+            <section aria-label={locale === 'es' ? 'Resumen' : 'Abstract'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Resumen' : 'Abstract'}</h2>
               {talk.abstract.map((para, i) => (
                 <p key={i} style={paragraphStyle}>{t(para, locale)}</p>
               ))}
@@ -130,8 +132,8 @@ export function TalkPage() {
 
           {/* Video embed slot */}
           {talk.videoUrl ? (
-            <section aria-label="Recording">
-              <h2 style={sectionTitleStyle}>Recording</h2>
+            <section aria-label={locale === 'es' ? 'Grabación' : 'Recording'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Grabación' : 'Recording'}</h2>
               <div style={{
                 position: 'relative', width: '100%', aspectRatio: '16 / 9',
                 borderRadius: '12px', overflow: 'hidden',
@@ -149,13 +151,15 @@ export function TalkPage() {
               </div>
             </section>
           ) : (
-            <section aria-label="Recording">
-              <h2 style={sectionTitleStyle}>Recording</h2>
+            <section aria-label={locale === 'es' ? 'Grabación' : 'Recording'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Grabación' : 'Recording'}</h2>
               <div style={cardChromeStyle}>
                 <p style={{ ...paragraphStyle, fontSize: '14px', margin: 0 }}>
-                  Recording upload in progress. Check back shortly, or{' '}
-                  <Link to="/blog" style={{ color: 'rgba(134,239,172,0.92)' }}>read the recap</Link>{' '}
-                  when it lands on the blog.
+                  {locale === 'es' ? 'Subida de la grabación en curso. Vuelve más tarde, o ' : 'Recording upload in progress. Check back shortly, or '}
+                  <Link to={`${localePrefix(locale)}/blog`} style={{ color: 'rgba(134,239,172,0.92)' }}>
+                    {locale === 'es' ? 'lee el resumen' : 'read the recap'}
+                  </Link>{' '}
+                  {locale === 'es' ? 'cuando aparezca en el blog.' : 'when it lands on the blog.'}
                 </p>
               </div>
             </section>
@@ -163,8 +167,8 @@ export function TalkPage() {
 
           {/* Key takeaways */}
           {talk.keyTakeaways && talk.keyTakeaways.length > 0 && (
-            <section aria-label="Key takeaways">
-              <h2 style={sectionTitleStyle}>Key Takeaways</h2>
+            <section aria-label={locale === 'es' ? 'Puntos clave' : 'Key takeaways'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Puntos clave' : 'Key Takeaways'}</h2>
               <ul style={{ paddingLeft: '20px', margin: 0, color: 'rgba(255,255,255,0.72)' }}>
                 {talk.keyTakeaways.map((point, i) => (
                   <li key={i} style={{ fontSize: '16px', lineHeight: 1.7, margin: '0 0 10px 0' }}>
@@ -177,8 +181,8 @@ export function TalkPage() {
 
           {/* Resources */}
           {talk.resources && talk.resources.length > 0 && (
-            <section aria-label="Resources">
-              <h2 style={sectionTitleStyle}>Resources</h2>
+            <section aria-label={locale === 'es' ? 'Recursos' : 'Resources'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Recursos' : 'Resources'}</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {talk.resources.map((r, i) => (
                   <li key={i}>
@@ -201,8 +205,8 @@ export function TalkPage() {
 
           {/* Slides */}
           {talk.slidesUrl && (
-            <section aria-label="Slides">
-              <h2 style={sectionTitleStyle}>Slides</h2>
+            <section aria-label={locale === 'es' ? 'Diapositivas' : 'Slides'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Diapositivas' : 'Slides'}</h2>
               <a
                 href={talk.slidesUrl}
                 target="_blank"
@@ -215,15 +219,15 @@ export function TalkPage() {
                   border: '1px solid rgba(34,197,94,0.4)', borderRadius: '8px',
                 }}
               >
-                Download Slides (PDF) →
+                {locale === 'es' ? 'Descargar diapositivas (PDF) →' : 'Download Slides (PDF) →'}
               </a>
             </section>
           )}
 
           {/* Gallery */}
           {talk.gallery && talk.gallery.length > 0 && (
-            <section aria-label="Photo gallery">
-              <h2 style={sectionTitleStyle}>Photos</h2>
+            <section aria-label={locale === 'es' ? 'Fotos' : 'Photo gallery'}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Fotos' : 'Photos'}</h2>
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -249,16 +253,16 @@ export function TalkPage() {
 
           {/* Related */}
           {(talk.relatedBlogSlug || talk.labAnchorUrl) && (
-            <section aria-label="Related" style={{ marginTop: '8px' }}>
-              <h2 style={sectionTitleStyle}>Related</h2>
+            <section aria-label={locale === 'es' ? 'Relacionado' : 'Related'} style={{ marginTop: '8px' }}>
+              <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Relacionado' : 'Related'}</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {talk.relatedBlogSlug && (
                   <li>
                     <Link
-                      to={`/blog/${talk.relatedBlogSlug}`}
+                      to={`${localePrefix(locale)}/blog/${talk.relatedBlogSlug}`}
                       style={{ fontFamily: 'ui-monospace, monospace', fontSize: '14px', color: 'rgba(134,239,172,0.92)', textDecoration: 'none' }}
                     >
-                      Read the recap on the blog →
+                      {locale === 'es' ? 'Lee el resumen en el blog →' : 'Read the recap on the blog →'}
                     </Link>
                   </li>
                 )}
@@ -268,7 +272,7 @@ export function TalkPage() {
                       href={talk.labAnchorUrl}
                       style={{ fontFamily: 'ui-monospace, monospace', fontSize: '14px', color: 'rgba(134,239,172,0.92)', textDecoration: 'none' }}
                     >
-                      Explore the Lab context →
+                      {locale === 'es' ? 'Explorar el contexto del Lab →' : 'Explore the Lab context →'}
                     </a>
                   </li>
                 )}

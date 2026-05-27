@@ -276,14 +276,62 @@ function injectAppHtml(html, appHtml) {
   return htmlWithPreloads.replace('<div id="root"></div>', `<div id="root">${appMarkup}</div>`)
 }
 
+const NOSCRIPT_EN = `    <noscript>
+      <h1>Luis Alberto Duarte Cortés — AI Systems &amp; Automation Engineer</h1>
+      <p>I build AI-powered systems and automation infrastructure. Bogotá · Remote · C1 English (IELTS 7.0).</p>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Boveda</strong> — Personal finance dashboard for Colombian bank accounts (Python, FastAPI, SQLite, React)</li>
+        <li><strong>Anti-Phishing Shield</strong> — Open source phishing protection tool for elderly users</li>
+        <li><strong>SUPERFARM</strong> — Open agricultural intelligence infrastructure for modular farm agents</li>
+      </ul>
+      <h2>Experience</h2>
+      <ul>
+        <li>Freelance Automation Engineer — Apr 2024–Present</li>
+        <li>QA Tester, Funktronic Labs (Remote) — 2024</li>
+      </ul>
+      <h2>Contact</h2>
+      <p>Email: lualducor@gmail.com | LinkedIn: linkedin.com/in/luis-alberto-duarte-cortes-97748171 | GitHub: github.com/lualducor</p>
+    </noscript>`
+
+const NOSCRIPT_ES = `    <noscript>
+      <h1>Luis Alberto Duarte Cortés — Ingeniero de Sistemas IA y Automatización</h1>
+      <p>Construyo sistemas con IA e infraestructura de automatización. Bogotá · Remoto · Inglés C1 (IELTS 7.0).</p>
+      <h2>Proyectos</h2>
+      <ul>
+        <li><strong>Boveda</strong> — Panel de finanzas personales para cuentas bancarias colombianas (Python, FastAPI, SQLite, React)</li>
+        <li><strong>Anti-Phishing Shield</strong> — Herramienta open source de protección contra phishing para adultos mayores</li>
+        <li><strong>SUPERFARM</strong> — Infraestructura abierta de inteligencia agrícola para agentes de finca modulares</li>
+      </ul>
+      <h2>Experiencia</h2>
+      <ul>
+        <li>Ingeniero de Automatización Freelance — abr 2024–Presente</li>
+        <li>QA Tester, Funktronic Labs (Remoto) — 2024</li>
+      </ul>
+      <h2>Contacto</h2>
+      <p>Correo: lualducor@gmail.com | LinkedIn: linkedin.com/in/luis-alberto-duarte-cortes-97748171 | GitHub: github.com/lualducor</p>
+    </noscript>`
+
+function applyLocale(html, url) {
+  const isEs = url.startsWith('/es')
+  if (!isEs) return html
+  let next = html
+  next = next.replace('<html lang="en">', '<html lang="es">')
+  if (next.includes(NOSCRIPT_EN)) {
+    next = next.replace(NOSCRIPT_EN, NOSCRIPT_ES)
+  }
+  return next
+}
+
 function renderRoute(url, outputPath, meta, jsonLd = []) {
   const appHtml = render(url)
   const withAppHtml = injectAppHtml(template, appHtml)
   const withMetadata = injectMetadata(withAppHtml, meta)
   const withJsonLd = injectJsonLd(withMetadata, jsonLd)
+  const localized = applyLocale(withJsonLd, url)
 
   mkdirSync(dirname(outputPath), { recursive: true })
-  writeFileSync(outputPath, withJsonLd)
+  writeFileSync(outputPath, localized)
   console.log(`✓ Pre-rendered ${url} → ${outputPath}`)
 }
 

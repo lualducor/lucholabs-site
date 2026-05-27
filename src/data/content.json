@@ -252,7 +252,10 @@
         "en": "Personal finance dashboard for Colombian bank accounts",
         "es": "Panel de finanzas personales para cuentas bancarias colombianas"
       },
-      "labDescription": "Boveda started as a personal frustration: I wanted to track my finances but every tool required trusting a third party with my bank credentials or uploading statements to a cloud dashboard. The solution was to keep the data where it belongs — on the device. The core is a set of bank-specific statement parsers (Bancolombia, Nequi, Daviplata) that handle the quirks of each bank's export format: implicit credit/debit signs, inconsistent column names, encoding edge cases. Parsed transactions land in a local SQLite database served through a FastAPI REST API. The architecture is intentionally boring: Python 3.12, SQLAlchemy, Alembic, pytest. No AI, no cloud, no magic. The project is also a forcing function for understanding a real structural gap in Colombian fintech: banks don't expose APIs, which means users either share credentials or stay unaware of their spending. Local-first isn't a preference here — it's the only architecture that doesn't compromise user privacy.",
+      "labDescription": {
+        "en": "Boveda started as a personal frustration: I wanted to track my finances but every tool required trusting a third party with my bank credentials or uploading statements to a cloud dashboard. The solution was to keep the data where it belongs — on the device. The core is a set of bank-specific statement parsers (Bancolombia, Nequi, Daviplata) that handle the quirks of each bank's export format: implicit credit/debit signs, inconsistent column names, encoding edge cases. Parsed transactions land in a local SQLite database served through a FastAPI REST API. The architecture is intentionally boring: Python 3.12, SQLAlchemy, Alembic, pytest. No AI, no cloud, no magic. The project is also a forcing function for understanding a real structural gap in Colombian fintech: banks don't expose APIs, which means users either share credentials or stay unaware of their spending. Local-first isn't a preference here — it's the only architecture that doesn't compromise user privacy.",
+        "es": "Boveda nació de una frustración personal: quería llevar control de mis finanzas pero toda herramienta exigía confiarle mis credenciales bancarias a un tercero o subir extractos a un dashboard en la nube. La solución era dejar los datos donde pertenecen — en el dispositivo. El núcleo es un conjunto de parsers de extractos específicos por banco (Bancolombia, Nequi, Daviplata) que manejan las rarezas del formato de exportación de cada banco: signos implícitos de débito/crédito, nombres de columnas inconsistentes, casos borde de codificación. Las transacciones procesadas aterrizan en una base SQLite local servida por una REST API de FastAPI. La arquitectura es intencionalmente aburrida: Python 3.12, SQLAlchemy, Alembic, pytest. Sin IA, sin nube, sin magia. El proyecto también es una excusa funcional para entender una brecha estructural real del fintech colombiano: los bancos no exponen APIs, lo que significa que los usuarios comparten credenciales o se quedan sin conocer sus propios gastos. Local-first no es una preferencia aquí — es la única arquitectura que no compromete la privacidad del usuario."
+      },
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -294,12 +297,18 @@
         "en": "Open source email phishing protection for elderly users",
         "es": "Protección de phishing por correo, de código abierto, para adultos mayores"
       },
-      "cvDescription": "Anti-Phishing Shield is an open source phishing detection tool built specifically for elderly and non-technical users. Most security tools produce jargon-heavy output that the highest-risk population can't act on. This tool inverts that: analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The detection layer evaluates sender metadata, URL structure, urgency language patterns, and brand impersonation signals. Results are presented as a simple risk rating with a one-sentence explanation — no security vocabulary required. Designed for community deployment in elder care contexts, family networks, and NGOs working with digital literacy programs in Latin America. Open source, runs without cloud dependencies. Built with Python. Current status: functional prototype with analysis pipeline for email headers, link inspection, and urgency-language scoring. Outputs are available in Spanish and English to serve LATAM users directly.",
+      "cvDescription": {
+        "en": "Anti-Phishing Shield is an open source phishing detection tool built specifically for elderly and non-technical users. Most security tools produce jargon-heavy output that the highest-risk population can't act on. This tool inverts that: analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The detection layer evaluates sender metadata, URL structure, urgency language patterns, and brand impersonation signals. Results are presented as a simple risk rating with a one-sentence explanation — no security vocabulary required. Designed for community deployment in elder care contexts, family networks, and NGOs working with digital literacy programs in Latin America. Open source, runs without cloud dependencies. Built with Python. Current status: functional prototype with analysis pipeline for email headers, link inspection, and urgency-language scoring. Outputs are available in Spanish and English to serve LATAM users directly.",
+        "es": "Anti-Phishing Shield es una herramienta open source de detección de phishing construida específicamente para adultos mayores y usuarios no técnicos. La mayoría de las herramientas de seguridad producen una salida cargada de jerga que la población de mayor riesgo no puede accionar. Esta herramienta invierte eso: analiza un correo o enlace sospechoso y entrega una advertencia en lenguaje claro y una acción recomendada que un adulto de 70 años puede seguir de inmediato. La capa de detección evalúa metadata del remitente, estructura de URL, patrones de lenguaje de urgencia y señales de suplantación de marca. Los resultados se presentan como una clasificación simple de riesgo con una explicación de una sola línea — sin vocabulario de seguridad. Diseñada para despliegue comunitario en contextos de cuidado de adultos mayores, redes familiares y ONGs que trabajan con programas de alfabetización digital en Latinoamérica. Open source, corre sin dependencias en la nube. Construida con Python. Estado actual: prototipo funcional con pipeline de análisis para headers de correo, inspección de enlaces y puntaje de lenguaje de urgencia. Las salidas están disponibles en español e inglés para servir a usuarios LATAM directamente."
+      },
       "labTagline": {
         "en": "Open source email phishing protection for elderly users",
         "es": "Protección de phishing por correo, de código abierto, para adultos mayores"
       },
-      "labDescription": "Most phishing protection is built for enterprise IT teams — it lives in corporate email gateways that users never see. The population most targeted by phishing (elderly users, first-generation internet users, digitally underserved communities in LATAM) gets zero benefit from enterprise security tooling. Anti-Phishing Shield is built for that population. The tool analyzes suspicious emails and links and translates findings into plain language: not 'potential header spoofing detected' but 'this email is pretending to be from your bank — do not click the link.' Detection logic evaluates sender metadata, URL structure, urgency signals, and brand impersonation patterns. Output is a risk rating and a one-sentence action. The project is intentionally open source and designed for community deployment by NGOs, family networks, and local digital literacy programs. It was built because the problem is real, the risk is concentrated in under-served populations, and the existing solutions don't reach them.",
+      "labDescription": {
+        "en": "Most phishing protection is built for enterprise IT teams — it lives in corporate email gateways that users never see. The population most targeted by phishing (elderly users, first-generation internet users, digitally underserved communities in LATAM) gets zero benefit from enterprise security tooling. Anti-Phishing Shield is built for that population. The tool analyzes suspicious emails and links and translates findings into plain language: not 'potential header spoofing detected' but 'this email is pretending to be from your bank — do not click the link.' Detection logic evaluates sender metadata, URL structure, urgency signals, and brand impersonation patterns. Output is a risk rating and a one-sentence action. The project is intentionally open source and designed for community deployment by NGOs, family networks, and local digital literacy programs. It was built because the problem is real, the risk is concentrated in under-served populations, and the existing solutions don't reach them.",
+        "es": "La mayoría de la protección anti-phishing está construida para equipos de TI empresariales — vive en gateways corporativos de correo que los usuarios nunca ven. La población más golpeada por el phishing (adultos mayores, usuarios de primera generación en internet, comunidades digitalmente desatendidas en LATAM) recibe cero beneficio de las herramientas de seguridad enterprise. Anti-Phishing Shield está construido para esa población. La herramienta analiza correos y enlaces sospechosos y traduce los hallazgos a lenguaje claro: no 'posible spoofing de header detectado' sino 'este correo se está haciendo pasar por tu banco — no hagas clic en el enlace.' La lógica de detección evalúa metadata del remitente, estructura de URL, señales de urgencia y patrones de suplantación de marca. La salida es una clasificación de riesgo y una acción de una sola línea. El proyecto es intencionalmente open source y está diseñado para despliegue comunitario por ONGs, redes familiares y programas locales de alfabetización digital. Se construyó porque el problema es real, el riesgo está concentrado en poblaciones desatendidas y las soluciones existentes no las alcanzan."
+      },
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -317,7 +326,10 @@
         "en": "Open agricultural intelligence infrastructure",
         "es": "Infraestructura abierta de inteligencia agrícola"
       },
-      "description": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+      "description": {
+        "en": "An open-source runtime and orchestration harness for agricultural AI agents built around shared farm memory, pluggable model routing, telemetry, and modular specialist agents.",
+        "es": "Un runtime open source y harness de orquestación para agentes de IA agrícolas construido alrededor de memoria compartida de finca, ruteo de modelos conectable, telemetría y agentes especialistas modulares."
+      },
       "stack": [
         "Python",
         "Multi-Agent Systems",
@@ -340,12 +352,18 @@
         "en": "Open agricultural intelligence infrastructure",
         "es": "Infraestructura abierta de inteligencia agrícola"
       },
-      "cvDescription": "SUPERFARM is an open-source runtime and orchestration layer for agricultural AI agents. Modern precision agriculture generates constant sensor data — soil moisture, crop health, weather, equipment telemetry — but most AI tools treat each stream in isolation. SUPERFARM connects them through shared farm memory: a structured context layer that specialist agents read and write, enabling cross-domain reasoning between a soil moisture agent and a crop disease agent. The architecture supports pluggable model routing (swap LLM providers without rewiring agents), persistent telemetry for auditability, and modular specialist agents that extend without touching the core runtime. Designed for small and medium farms in LATAM that can't afford enterprise precision agriculture platforms but can run open-source tooling on affordable hardware. Built with Python, designed for edge deployment. Current status: research and architecture phase, core orchestration layer under development.",
+      "cvDescription": {
+        "en": "SUPERFARM is an open-source runtime and orchestration layer for agricultural AI agents. Modern precision agriculture generates constant sensor data — soil moisture, crop health, weather, equipment telemetry — but most AI tools treat each stream in isolation. SUPERFARM connects them through shared farm memory: a structured context layer that specialist agents read and write, enabling cross-domain reasoning between a soil moisture agent and a crop disease agent. The architecture supports pluggable model routing (swap LLM providers without rewiring agents), persistent telemetry for auditability, and modular specialist agents that extend without touching the core runtime. Designed for small and medium farms in LATAM that can't afford enterprise precision agriculture platforms but can run open-source tooling on affordable hardware. Built with Python, designed for edge deployment. Current status: research and architecture phase, core orchestration layer under development.",
+        "es": "SUPERFARM es un runtime open source y una capa de orquestación para agentes de IA agrícolas. La agricultura de precisión moderna genera datos constantes de sensores — humedad del suelo, salud de cultivos, clima, telemetría de equipos — pero la mayoría de herramientas de IA tratan cada flujo en aislamiento. SUPERFARM los conecta mediante memoria compartida de finca: una capa de contexto estructurado que los agentes especialistas leen y escriben, habilitando razonamiento entre dominios entre un agente de humedad del suelo y un agente de enfermedades de cultivos. La arquitectura soporta ruteo de modelos conectable (cambia proveedores de LLM sin recablear agentes), telemetría persistente para auditabilidad y agentes especialistas modulares que se extienden sin tocar el runtime core. Diseñada para fincas pequeñas y medianas en LATAM que no pueden costear plataformas enterprise de agricultura de precisión pero sí pueden correr tooling open source sobre hardware asequible. Construida con Python, diseñada para despliegue en el borde. Estado actual: fase de investigación y arquitectura; capa central de orquestación en desarrollo."
+      },
       "labTagline": {
         "en": "Open agricultural intelligence infrastructure",
         "es": "Infraestructura abierta de inteligencia agrícola"
       },
-      "labDescription": "Agriculture produces more data than almost any other sector and uses almost none of it well. SUPERFARM is an attempt to close that ratio for farmers who don't have enterprise budgets. The core insight is shared farm memory — a structured context layer that AI agents read and write, so specialist agents coordinate rather than operate in silos. A soil sensor agent, a pest detection agent, and a weather pattern agent all write to the same context. A planning agent reads all of it and reasons across domains. The orchestration layer handles model routing (swap the underlying LLM without rewiring your agents), telemetry (audit what the system decided and why), and module isolation (a broken agent doesn't take down the farm). The target user is a medium-scale farmer in LATAM with reasonable connectivity and a limited budget — not an enterprise with a dedicated data science team. The project asks what infrastructure-as-agricultural-intelligence looks like when built from the ground up for that user.",
+      "labDescription": {
+        "en": "Agriculture produces more data than almost any other sector and uses almost none of it well. SUPERFARM is an attempt to close that ratio for farmers who don't have enterprise budgets. The core insight is shared farm memory — a structured context layer that AI agents read and write, so specialist agents coordinate rather than operate in silos. A soil sensor agent, a pest detection agent, and a weather pattern agent all write to the same context. A planning agent reads all of it and reasons across domains. The orchestration layer handles model routing (swap the underlying LLM without rewiring your agents), telemetry (audit what the system decided and why), and module isolation (a broken agent doesn't take down the farm). The target user is a medium-scale farmer in LATAM with reasonable connectivity and a limited budget — not an enterprise with a dedicated data science team. The project asks what infrastructure-as-agricultural-intelligence looks like when built from the ground up for that user.",
+        "es": "La agricultura produce más datos que casi cualquier otro sector y usa bien casi ninguno de ellos. SUPERFARM es un intento de cerrar esa proporción para agricultores que no tienen presupuestos enterprise. La intuición central es la memoria compartida de la finca — una capa de contexto estructurado que los agentes de IA leen y escriben, para que los agentes especializados se coordinen en vez de operar en silos. Un agente de sensor de suelo, un agente de detección de plagas y un agente de patrones climáticos escriben todos sobre el mismo contexto. Un agente de planificación lee todo eso y razona a través de dominios. La capa de orquestación maneja el ruteo de modelos (cambia el LLM subyacente sin recablear tus agentes), telemetría (auditar qué decidió el sistema y por qué) y aislamiento de módulos (un agente roto no tumba la finca). El usuario objetivo es un agricultor mediano en LATAM con conectividad razonable y presupuesto limitado — no un enterprise con un equipo dedicado de data science. El proyecto pregunta cómo se ve la infraestructura-como-inteligencia-agrícola cuando se construye desde cero para ese usuario."
+      },
       "labQuote": "",
       "labFeatures": [],
       "labVision": "",
@@ -359,8 +377,14 @@
     {
       "name": "haycorte",
       "slug": "haycorte",
-      "tagline": "Urban disruption intelligence for Bogotá utility outages",
-      "description": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá.",
+      "tagline": {
+        "en": "Urban disruption intelligence for Bogotá utility outages",
+        "es": "Inteligencia sobre interrupciones urbanas para cortes de servicios en Bogotá"
+      },
+      "description": {
+        "en": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá.",
+        "es": "Inteligencia de infraestructura WhatsApp-first para cortes de servicios (agua/luz/gas) en Bogotá."
+      },
       "stack": [
         "Python",
         "WhatsApp API",
@@ -376,18 +400,48 @@
       "isHeadline": false,
       "isArchived": true,
       "isKilled": true,
-      "cvTagline": "Urban utility outage alerting for Bogotá — killed 2024",
-      "cvDescription": "Haycorte was a WhatsApp-first service that surfaced real-time water, electricity, and gas outage data for Bogotá neighborhoods by scraping public utility schedules. Built to solve a real communication gap. Killed after validating that the distribution problem — getting users to install a WhatsApp bot before they needed it, not after their water cut out — required a marketing investment inconsistent with the project's scope. The infrastructure worked; the business shape didn't.",
-      "labTagline": "Urban disruption intelligence for Bogotá utility outages.",
-      "labDescription": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá. Real communication problem; the gap is real. The distribution problem killed it: getting users to install a WhatsApp bot before they need it — not after their water cuts out — requires sustained marketing that wasn't justified by the project's scope. Archived as a validated insight, not a failure of execution.",
-      "labQuote": "Real communication problem; the gap is real. The business shape isn't.",
+      "cvTagline": {
+        "en": "Urban utility outage alerting for Bogotá — killed 2024",
+        "es": "Alertas de cortes de servicios urbanos para Bogotá — muerto 2024"
+      },
+      "cvDescription": {
+        "en": "Haycorte was a WhatsApp-first service that surfaced real-time water, electricity, and gas outage data for Bogotá neighborhoods by scraping public utility schedules. Built to solve a real communication gap. Killed after validating that the distribution problem — getting users to install a WhatsApp bot before they needed it, not after their water cut out — required a marketing investment inconsistent with the project's scope. The infrastructure worked; the business shape didn't.",
+        "es": "Haycorte era un servicio WhatsApp-first que mostraba en tiempo real datos de cortes de agua, luz y gas para barrios de Bogotá scrapeando los cronogramas oficiales. Construido para cerrar una brecha de comunicación real. Muerto tras validar que el problema de distribución — lograr que los usuarios instalaran un bot de WhatsApp antes de necesitarlo, no después de quedarse sin agua — exigía una inversión en marketing inconsistente con el alcance del proyecto. La infraestructura funcionaba; la forma de negocio no."
+      },
+      "labTagline": {
+        "en": "Urban disruption intelligence for Bogotá utility outages.",
+        "es": "Inteligencia sobre interrupciones urbanas para cortes de servicios en Bogotá."
+      },
+      "labDescription": {
+        "en": "WhatsApp-first infrastructure intelligence for utility outages (water/electricity/gas) in Bogotá. Real communication problem; the gap is real. The distribution problem killed it: getting users to install a WhatsApp bot before they need it — not after their water cuts out — requires sustained marketing that wasn't justified by the project's scope. Archived as a validated insight, not a failure of execution.",
+        "es": "Inteligencia de infraestructura WhatsApp-first para cortes de servicios (agua/luz/gas) en Bogotá. Problema de comunicación real; la brecha existe. El problema de distribución lo mató: lograr que los usuarios instalen un bot de WhatsApp antes de necesitarlo — no después de quedarse sin agua — exige marketing sostenido que no se justificaba con el alcance del proyecto. Archivado como un hallazgo validado, no como un fallo de ejecución."
+      },
+      "labQuote": {
+        "en": "Real communication problem; the gap is real. The business shape isn't.",
+        "es": "Problema de comunicación real; la brecha existe. La forma de negocio no."
+      },
       "labFeatures": [
-        "Infrastructure dependence",
-        "Business-structure mismatch",
-        "Episodic engagement",
-        "Capital vs. operational burden"
+        {
+          "en": "Infrastructure dependence",
+          "es": "Dependencia de infraestructura"
+        },
+        {
+          "en": "Business-structure mismatch",
+          "es": "Estructura de negocio incompatible"
+        },
+        {
+          "en": "Episodic engagement",
+          "es": "Uso episódico"
+        },
+        {
+          "en": "Capital vs. operational burden",
+          "es": "Capital vs. carga operativa"
+        }
       ],
-      "labVision": "strategically interesting as a future utility-data layer. for now: archived.",
+      "labVision": {
+        "en": "strategically interesting as a future utility-data layer. for now: archived.",
+        "es": "estratégicamente interesante como futura capa de datos de servicios. por ahora: archivado."
+      },
       "links": {
         "github": null,
         "demo": null,
@@ -398,8 +452,14 @@
     {
       "name": "klipper-copilot",
       "slug": "klipper-copilot",
-      "tagline": "3D-printing AI copilot for Klipper firmware",
-      "description": "AI-assisted optimization layer for 3D printing workflows.",
+      "tagline": {
+        "en": "3D-printing AI copilot for Klipper firmware",
+        "es": "Copilot de IA para impresión 3D sobre firmware Klipper"
+      },
+      "description": {
+        "en": "AI-assisted optimization layer for 3D printing workflows.",
+        "es": "Capa de optimización asistida por IA para workflows de impresión 3D."
+      },
       "stack": [
         "Python",
         "Klipper",
@@ -415,18 +475,48 @@
       "isHeadline": false,
       "isArchived": true,
       "isKilled": true,
-      "cvTagline": "AI copilot for Klipper 3D printer firmware — killed 2024",
-      "cvDescription": "Klipper Copilot was an AI-assisted optimization layer for 3D printing workflows on Klipper-based printers, automating calibration suggestions and slicer parameter tuning. Killed after discovering that the target user population — advanced 3D printing enthusiasts — had already developed strong manual workflows and actively resisted automation of the tuning process. The problem existed; the willingness to delegate it didn't.",
-      "labTagline": "3D-printing AI copilot for Klipper firmware.",
-      "labDescription": "AI-assisted optimization layer for 3D printing workflows on Klipper-based machines. Killed after discovering that advanced Klipper users had already built strong manual tuning workflows and actively resisted handing them off. The niche was real but the audience's relationship with that niche made automation feel like a loss of control, not a gain. Archived as a lesson in audience-problem fit.",
-      "labQuote": "Optimizing 3D prints is a small enough niche that maintaining the copilot costs more than the printers it helps.",
+      "cvTagline": {
+        "en": "AI copilot for Klipper 3D printer firmware — killed 2024",
+        "es": "Copilot de IA para firmware Klipper de impresoras 3D — muerto 2024"
+      },
+      "cvDescription": {
+        "en": "Klipper Copilot was an AI-assisted optimization layer for 3D printing workflows on Klipper-based printers, automating calibration suggestions and slicer parameter tuning. Killed after discovering that the target user population — advanced 3D printing enthusiasts — had already developed strong manual workflows and actively resisted automation of the tuning process. The problem existed; the willingness to delegate it didn't.",
+        "es": "Klipper Copilot era una capa de optimización asistida por IA para workflows de impresión 3D sobre impresoras Klipper, automatizando sugerencias de calibración y ajuste de parámetros del slicer. Muerto tras descubrir que la población objetivo — entusiastas avanzados de la impresión 3D — ya había desarrollado workflows manuales fuertes y se resistía activamente a automatizar el proceso de tuning. El problema existía; la disposición a delegarlo no."
+      },
+      "labTagline": {
+        "en": "3D-printing AI copilot for Klipper firmware.",
+        "es": "Copilot de IA para impresión 3D sobre firmware Klipper."
+      },
+      "labDescription": {
+        "en": "AI-assisted optimization layer for 3D printing workflows on Klipper-based machines. Killed after discovering that advanced Klipper users had already built strong manual tuning workflows and actively resisted handing them off. The niche was real but the audience's relationship with that niche made automation feel like a loss of control, not a gain. Archived as a lesson in audience-problem fit.",
+        "es": "Capa de optimización asistida por IA para workflows de impresión 3D sobre máquinas Klipper. Muerto tras descubrir que los usuarios avanzados de Klipper ya tenían workflows manuales de tuning fuertes y se resistían activamente a entregarlos. El nicho era real pero la relación de la audiencia con ese nicho hacía sentir la automatización como una pérdida de control, no como una ganancia. Archivado como lección de encaje audiencia-problema."
+      },
+      "labQuote": {
+        "en": "Optimizing 3D prints is a small enough niche that maintaining the copilot costs more than the printers it helps.",
+        "es": "Optimizar impresiones 3D es un nicho lo suficientemente pequeño como para que mantener el copilot cueste más que las impresoras a las que ayuda."
+      },
       "labFeatures": [
-        "Niche audience",
-        "Maintenance overhead",
-        "Hardware fragmentation",
-        "Limited willingness-to-pay"
+        {
+          "en": "Niche audience",
+          "es": "Audiencia de nicho"
+        },
+        {
+          "en": "Maintenance overhead",
+          "es": "Carga de mantenimiento"
+        },
+        {
+          "en": "Hardware fragmentation",
+          "es": "Fragmentación de hardware"
+        },
+        {
+          "en": "Limited willingness-to-pay",
+          "es": "Disposición a pagar limitada"
+        }
       ],
-      "labVision": "archived as a learning project. potential future revival if the 3D-print ecosystem consolidates.",
+      "labVision": {
+        "en": "archived as a learning project. potential future revival if the 3D-print ecosystem consolidates.",
+        "es": "archivado como proyecto de aprendizaje. potencial revival futuro si el ecosistema de impresión 3D se consolida."
+      },
       "links": {
         "github": null,
         "demo": null,

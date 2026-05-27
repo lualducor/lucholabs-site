@@ -1,7 +1,10 @@
 import { Rss } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { localePrefix, useLocale } from '../../lib/locale'
 
 export function BlogNav() {
+  const locale = useLocale()
+
   return (
     <nav
       style={{
@@ -19,7 +22,7 @@ export function BlogNav() {
       }}
     >
       <Link
-        to="/"
+        to={localePrefix(locale) || '/'}
         style={{
           justifySelf: 'start',
           color: '#ffffff',
@@ -46,7 +49,7 @@ export function BlogNav() {
       </span>
 
       <a
-        href="/blog/rss.xml"
+        href={`${localePrefix(locale)}/blog/rss.xml`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="RSS feed"

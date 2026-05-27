@@ -15,6 +15,7 @@ import { getPostBySlug, getSeriesByName, getAllPosts } from '../lib/blog/loader'
 import { getRelatedPosts } from '../lib/blog/related'
 import { initCopyButtons } from '../lib/blog/copyButtons'
 import { Comments } from '../components/blog/Comments'
+import { localePrefix, useLocale } from '../lib/locale'
 import '../styles/blog.css'
 
 const mdxModulesForSsr = import.meta.glob<{ default: ComponentType }>(
@@ -24,6 +25,7 @@ const mdxModulesForSsr = import.meta.glob<{ default: ComponentType }>(
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>()
+  const locale = useLocale()
   const post = slug ? getPostBySlug(slug) : undefined
   const seriesGroup = post?.frontmatter.series
     ? getSeriesByName(post.frontmatter.series)
@@ -51,9 +53,9 @@ export function BlogPostPage() {
         <BlogNav />
         <main style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 80px' }}>
           <p style={{ color: 'rgba(255,255,255,0.72)' }}>
-            Post not found.{' '}
-            <Link to="/blog" style={{ color: 'rgba(134,239,172,0.92)' }}>
-              ← Back to blog
+            {locale === 'es' ? 'Artículo no encontrado.' : 'Post not found.'}{' '}
+            <Link to={`${localePrefix(locale)}/blog`} style={{ color: 'rgba(134,239,172,0.92)' }}>
+              {locale === 'es' ? '← Volver al blog' : '← Back to blog'}
             </Link>
           </p>
         </main>

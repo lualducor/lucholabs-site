@@ -7,14 +7,14 @@ export default function ExperienceSection() {
   const locale = getLocaleFromPath(location.pathname)
 
   return (
-    <section id="experience" aria-label="Work experience" style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
+    <section id="experience" aria-label={locale === 'es' ? 'Experiencia laboral' : 'Work experience'} style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
         letterSpacing: '0.1em', marginBottom: '24px',
         fontWeight: 'normal', margin: '0 0 24px 0',
       }}>
-        Experience
+        {locale === 'es' ? 'Experiencia' : 'Experience'}
       </h2>
 
       <div>

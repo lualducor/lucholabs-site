@@ -117,7 +117,7 @@ export default function IdentityCard() {
           el.style.borderColor = 'rgba(34,197,94,0.4)'
         }}
       >
-        View Experience →
+        {locale === 'es' ? 'Ver experiencia →' : 'View Experience →'}
       </a>
     </div>
   )

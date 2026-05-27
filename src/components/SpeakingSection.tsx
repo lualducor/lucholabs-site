@@ -14,13 +14,13 @@ export default function SpeakingSection() {
   if (talks.length === 0) return null
 
   return (
-    <section id="speaking" aria-label="Speaking" style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
+    <section id="speaking" aria-label={locale === 'es' ? 'Charlas' : 'Speaking'} style={{ marginBottom: '48px', scrollMarginTop: '160px' }}>
       <h2 style={{
         fontFamily: 'ui-monospace, monospace', fontSize: '11px',
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
         letterSpacing: '0.1em', fontWeight: 'normal', margin: '0 0 24px 0',
       }}>
-        Speaking
+        {locale === 'es' ? 'Charlas' : 'Speaking'}
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

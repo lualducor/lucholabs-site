@@ -1,11 +1,14 @@
+import { useLocation } from 'react-router-dom'
 import { card, mono, pill } from './styles'
 import { currentlyBuilding } from '../../data/resume'
+import { getLocaleFromPath } from '../../lib/locale'
 
 export default function CurrentlyBuildingCard() {
+  const locale = getLocaleFromPath(useLocation().pathname)
   return (
     <div style={{ ...card, gap: '16px', justifyContent: 'space-between' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>Currently Building</h2>
+        <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>{locale === 'es' ? 'Construyendo ahora' : 'Currently Building'}</h2>
         <span style={{
           fontFamily: 'ui-monospace, monospace',
           fontSize: '10px',
@@ -20,7 +23,7 @@ export default function CurrentlyBuildingCard() {
             display: 'inline-block',
             animation: 'pulse-dot 2s ease-in-out infinite',
           }} />
-          Active
+          {locale === 'es' ? 'Activo' : 'Active'}
         </span>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -29,7 +32,7 @@ export default function CurrentlyBuildingCard() {
         ))}
       </div>
       <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)', margin: 0, lineHeight: 1.5 }}>
-        Side projects exploring fintech, automation pipelines, accessibility tooling, and AI-assisted developer tools.
+        {locale === 'es' ? 'Proyectos paralelos explorando fintech, pipelines de automatización, herramientas de accesibilidad y herramientas de desarrollo asistidas por IA.' : 'Side projects exploring fintech, automation pipelines, accessibility tooling, and AI-assisted developer tools.'}
       </p>
     </div>
   )

@@ -13,7 +13,7 @@ export default function CertificatesSection() {
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
         letterSpacing: '0.1em', fontWeight: 'normal', margin: '0 0 24px 0',
       }}>
-        Credentials
+        {locale === 'es' ? 'Credenciales' : 'Credentials'}
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -74,7 +74,7 @@ export default function CertificatesSection() {
                     borderRadius: '8px',
                   }}
                 >
-                  View Credential →
+                  {locale === 'es' ? 'Ver Credencial →' : 'View Credential →'}
                 </a>
               )}
             </div>

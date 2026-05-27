@@ -53,7 +53,7 @@ export default function ContactSection() {
         color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase',
         letterSpacing: '0.1em', fontWeight: 'normal', margin: '0 0 24px 0',
       }}>
-        Contact
+        {locale === 'es' ? 'Contacto' : 'Contact'}
       </h2>
 
       <div className="contact-grid">
@@ -100,7 +100,7 @@ export default function ContactSection() {
           <div style={cardBase}>
             <p style={labelStyle}>{contactMeta.hireHeadline ? t(contactMeta.hireHeadline, locale) : 'HIRE ME'}</p>
             <p style={headlineStyle}>{t(contactMeta.availability, locale)}</p>
-            <p style={bodyStyle}>Based in Bogotá, Colombia. Available for US & European time zones.</p>
+            <p style={bodyStyle}>{locale === 'es' ? 'Basado en Bogotá, Colombia. Disponible para zonas horarias de EE. UU. y Europa.' : 'Based in Bogotá, Colombia. Available for US & European time zones.'}</p>
             <a
               href={hireHref}
               onClick={() => track('cta_click_hire')}
@@ -118,7 +118,7 @@ export default function ContactSection() {
                 borderRadius: '999px',
               }}
             >
-              Hire →
+              {locale === 'es' ? 'Contratar →' : 'Hire →'}
             </a>
           </div>
 
@@ -142,7 +142,7 @@ export default function ContactSection() {
                 borderRadius: '999px',
               }}
             >
-              Speak →
+              {locale === 'es' ? 'Conferencias →' : 'Speak →'}
             </a>
           </div>
 
@@ -187,7 +187,7 @@ export default function ContactSection() {
                 alignSelf: 'flex-start',
               }}
             >
-              Schedule a Call →
+              {locale === 'es' ? 'Agendar una llamada →' : 'Schedule a Call →'}
             </a>
           )}
         </div>

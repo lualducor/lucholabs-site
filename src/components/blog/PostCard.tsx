@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Post } from '../../lib/blog/types'
+import { localePrefix, useLocale } from '../../lib/locale'
 import { PostDate } from './PostDate'
 import { ReadingTime } from './ReadingTime'
 import { TagBadge } from './TagBadge'
@@ -9,6 +10,8 @@ interface PostCardProps {
 }
 
 export function PostCard({ post }: PostCardProps) {
+  const locale = useLocale()
+
   return (
     <article
       style={{
@@ -35,13 +38,14 @@ export function PostCard({ post }: PostCardProps) {
               fontSize: '11px',
             }}
           >
-            Series: {post.frontmatter.series}
+            {locale === 'es' ? 'Serie: ' : 'Series: '}
+            {post.frontmatter.series}
           </span>
         )}
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <Link
-            to={`/blog/${post.slug}`}
+            to={`${localePrefix(locale)}/blog/${post.slug}`}
             style={{
               color: '#ffffff',
               fontSize: '28px',

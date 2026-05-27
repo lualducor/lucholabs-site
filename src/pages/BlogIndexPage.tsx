@@ -3,11 +3,14 @@ import { BlogNav } from '../components/blog/BlogNav'
 import { PostCard } from '../components/blog/PostCard'
 import { TagBadge } from '../components/blog/TagBadge'
 import { getAllPosts, getAllTags } from '../lib/blog/loader'
+import { useLocale } from '../lib/locale'
 
 const posts = getAllPosts()
 const tags = getAllTags()
 
 export function BlogIndexPage() {
+  const locale = useLocale()
+
   useEffect(() => {
     document.title = 'Blog — LuchoLabs'
   }, [])
@@ -27,13 +30,15 @@ export function BlogIndexPage() {
               margin: 0,
             }}
           >
-            Journal
+            {locale === 'es' ? 'Diario' : 'Journal'}
           </p>
           <h1 style={{ fontSize: '48px', lineHeight: 1, letterSpacing: '-0.05em', margin: 0 }}>
             Blog
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.68)', lineHeight: 1.75, maxWidth: '60ch', margin: 0 }}>
-            Build logs, automation deep-dives, and AI experiments.
+            {locale === 'es'
+              ? 'Build logs, análisis profundos de automatización y experimentos con IA.'
+              : 'Build logs, automation deep-dives, and AI experiments.'}
           </p>
         </header>
 

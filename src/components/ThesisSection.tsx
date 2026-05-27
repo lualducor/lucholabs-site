@@ -78,7 +78,7 @@ export default function ThesisSection() {
           fontFamily: 'ui-monospace, monospace', fontSize: '11px',
           color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.08em',
         }}>
-          Adopted by
+          {locale === 'es' ? 'Adoptado por' : 'Adopted by'}
         </span>
         {thesis.adoptedBy.map(institution => (
           <span key={institution} style={{
@@ -121,7 +121,7 @@ export default function ThesisSection() {
                 textDecoration: 'none',
               }}
             >
-              Read ECCI Publication →
+              {locale === 'es' ? 'Leer publicación ECCI →' : 'Read ECCI Publication →'}
             </a>
           )}
           {thesis.repoUrl !== undefined && (
@@ -137,7 +137,7 @@ export default function ThesisSection() {
                 textDecoration: 'none',
               }}
             >
-              View Repo →
+              {locale === 'es' ? 'Ver repositorio →' : 'View Repo →'}
             </a>
           )}
         </div>

@@ -1,4 +1,5 @@
 import { track } from '../lib/analytics'
+import { useLocale } from '../lib/locale'
 
 type EmailCaptureVariant = 'cv' | 'lab' | 'blog' | 'talk'
 
@@ -10,9 +11,13 @@ type EmailCaptureBlockProps = {
 
 export default function EmailCaptureBlock({
   variant = 'cv',
-  headline = 'Notified when I publish.',
-  subheadline = 'Build logs, postmortems, occasional rants. No spam.',
+  headline,
+  subheadline,
 }: EmailCaptureBlockProps) {
+  const locale = useLocale()
+  const resolvedHeadline = headline ?? (locale === 'es' ? 'Avísame cuando publiques.' : 'Notified when I publish.')
+  const resolvedSubheadline = subheadline ?? (locale === 'es' ? 'Build logs, postmortems, rants ocasionales. Sin spam.' : 'Build logs, postmortems, occasional rants. No spam.')
+
   return (
     <section
       aria-label="Email updates"
@@ -33,7 +38,7 @@ export default function EmailCaptureBlock({
           letterSpacing: '0.1em',
           margin: '0 0 12px 0',
         }}>
-          Updates
+          {locale === 'es' ? 'Actualizaciones' : 'Updates'}
         </p>
         <h2 style={{
           fontSize: '28px',
@@ -43,7 +48,7 @@ export default function EmailCaptureBlock({
           lineHeight: 1.2,
           margin: 0,
         }}>
-          {headline}
+          {resolvedHeadline}
         </h2>
         <p style={{
           fontSize: '14px',
@@ -51,7 +56,7 @@ export default function EmailCaptureBlock({
           lineHeight: 1.6,
           margin: '12px 0 0 0',
         }}>
-          {subheadline}
+          {resolvedSubheadline}
         </p>
       </div>
 
@@ -108,7 +113,7 @@ export default function EmailCaptureBlock({
             (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#ffffff'
           }}
         >
-          Subscribe
+          {locale === 'es' ? 'Suscribirse' : 'Subscribe'}
         </button>
       </form>
     </section>
