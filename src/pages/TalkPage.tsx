@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { TalkNav } from '../components/TalkNav'
 import { talks } from '../data/resume'
@@ -41,6 +41,71 @@ const cardChromeStyle = {
   borderRadius: '14px',
   backgroundColor: 'rgba(255,255,255,0.02)',
   border: '1px solid rgba(255,255,255,0.05)',
+}
+
+const videoFrameStyle = {
+  position: 'relative' as const,
+  width: '100%',
+  aspectRatio: '16 / 9',
+  borderRadius: '12px',
+  overflow: 'hidden',
+  border: '1px solid rgba(255,255,255,0.05)',
+  backgroundColor: 'rgba(255,255,255,0.02)',
+}
+
+// Click-to-load YouTube facade. Renders only a thumbnail + play button up front
+// (~20KB) instead of YouTube's ~500KB player JS + ad/tracking scripts. The real
+// iframe loads on click. With JS disabled the anchor still opens the video on
+// YouTube, so it never fully breaks.
+function YouTubeFacade({ videoUrl, title, locale }: { videoUrl: string; title: string; locale: string }) {
+  const [playing, setPlaying] = useState(false)
+  const id = videoUrl.split('/embed/')[1]?.split(/[?&]/)[0] ?? ''
+
+  if (playing) {
+    return (
+      <div style={videoFrameStyle}>
+        <iframe
+          src={`${videoUrl}?autoplay=1`}
+          title={`${title} — recording`}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <a
+      href={`https://www.youtube.com/watch?v=${id}`}
+      onClick={(e) => { e.preventDefault(); setPlaying(true) }}
+      aria-label={locale === 'es' ? `Reproducir grabación: ${title}` : `Play recording: ${title}`}
+      style={{ ...videoFrameStyle, display: 'block', cursor: 'pointer', textDecoration: 'none' }}
+    >
+      <img
+        src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+        alt=""
+        loading="lazy"
+        onError={(e) => { e.currentTarget.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg` }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+      />
+      <span style={{
+        position: 'absolute', inset: 0, display: 'flex', alignItems: 'center',
+        justifyContent: 'center', background: 'rgba(0,0,0,0.28)',
+      }}>
+        <span style={{
+          width: '68px', height: '48px', borderRadius: '14px',
+          background: 'rgba(0,0,0,0.7)', display: 'flex',
+          alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+      </span>
+    </a>
+  )
 }
 
 export function TalkPage() {
@@ -108,15 +173,18 @@ export function TalkPage() {
           {/* Hero photo */}
           {talk.heroPhoto && (
             <figure style={{ margin: 0 }}>
-              <img
-                src={talk.heroPhoto}
-                alt={talk.heroPhotoAlt ? t(talk.heroPhotoAlt, locale) : `${talk.event} ${talk.date}`}
-                style={{
-                  width: '100%', height: 'auto', display: 'block',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
-              />
+              <picture>
+                <source srcSet={talk.heroPhoto.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
+                <img
+                  src={talk.heroPhoto}
+                  alt={talk.heroPhotoAlt ? t(talk.heroPhotoAlt, locale) : `${talk.event} ${talk.date}`}
+                  style={{
+                    width: '100%', height: 'auto', display: 'block',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255,255,255,0.05)',
+                  }}
+                />
+              </picture>
             </figure>
           )}
 
@@ -134,21 +202,7 @@ export function TalkPage() {
           {talk.videoUrl ? (
             <section aria-label={locale === 'es' ? 'Grabación' : 'Recording'}>
               <h2 style={sectionTitleStyle}>{locale === 'es' ? 'Grabación' : 'Recording'}</h2>
-              <div style={{
-                position: 'relative', width: '100%', aspectRatio: '16 / 9',
-                borderRadius: '12px', overflow: 'hidden',
-                border: '1px solid rgba(255,255,255,0.05)',
-                backgroundColor: 'rgba(255,255,255,0.02)',
-              }}>
-                <iframe
-                  src={talk.videoUrl}
-                  title={`${t(talk.title, locale)} — recording`}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
-                />
-              </div>
+              <YouTubeFacade videoUrl={talk.videoUrl} title={t(talk.title, locale)} locale={locale} />
             </section>
           ) : (
             <section aria-label={locale === 'es' ? 'Grabación' : 'Recording'}>
@@ -235,16 +289,19 @@ export function TalkPage() {
               }}>
                 {talk.gallery.map((img, i) => (
                   <figure key={i} style={{ margin: 0 }}>
-                    <img
-                      src={img.src}
-                      alt={t(img.alt, locale)}
-                      loading="lazy"
-                      style={{
-                        width: '100%', height: 'auto', display: 'block',
-                        borderRadius: '10px',
-                        border: '1px solid rgba(255,255,255,0.05)',
-                      }}
-                    />
+                    <picture>
+                      <source srcSet={img.src.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
+                      <img
+                        src={img.src}
+                        alt={t(img.alt, locale)}
+                        loading="lazy"
+                        style={{
+                          width: '100%', height: 'auto', display: 'block',
+                          borderRadius: '10px',
+                          border: '1px solid rgba(255,255,255,0.05)',
+                        }}
+                      />
+                    </picture>
                   </figure>
                 ))}
               </div>
