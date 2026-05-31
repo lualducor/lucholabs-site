@@ -28,10 +28,13 @@ export default function ManifestoTeaserSection({ manifesto }: ManifestoTeaserSec
   // Hide entirely if manifesto data is missing (defensive — should always have data now that /lab is live)
   if (!manifesto?.length) return null
 
-  const citedProjects = manifesto.map(entry => {
-    const citedProject = projects.find(project => project.slug === entry.citationProjectSlug)
-    return citedProject?.name ?? entry.citationProjectSlug
-  })
+  const citedProjects = manifesto
+    // haycorte stays in the lab archive / Graveyard, just not surfaced as a pill here
+    .filter(entry => entry.citationProjectSlug !== 'haycorte')
+    .map(entry => {
+      const citedProject = projects.find(project => project.slug === entry.citationProjectSlug)
+      return citedProject?.name ?? entry.citationProjectSlug
+    })
 
   return (
     <section
