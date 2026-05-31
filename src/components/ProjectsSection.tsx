@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { headlineProject, otherProjects } from '../data/resume'
 import { getLocaleFromPath, t } from '../lib/locale'
 
@@ -20,8 +20,8 @@ export default function ProjectsSection() {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {heroProject && (
-          <Link
-            to={`${labPrefix}/${heroProject.slug}`}
+          <a
+            href={`${labPrefix}/${heroProject.slug}`}
             style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
           >
             <article
@@ -90,7 +90,7 @@ export default function ProjectsSection() {
                 ))}
               </div>
             </article>
-          </Link>
+          </a>
         )}
 
         {otherProjects.length > 0 && (
@@ -109,9 +109,9 @@ export default function ProjectsSection() {
 
             <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
               {otherProjects.map(project => (
-                <Link
+                <a
                   key={project.slug}
-                  to={`${labPrefix}/${project.slug}`}
+                  href={`${labPrefix}/${project.slug}`}
                   style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
                 >
                   <article
@@ -148,7 +148,7 @@ export default function ProjectsSection() {
                       {t(project.cvTagline, locale)}
                     </p>
                   </article>
-                </Link>
+                </a>
               ))}
             </div>
           </>
