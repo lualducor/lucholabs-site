@@ -131,7 +131,7 @@
       "location": "Bogotá",
       "date": "May 2026",
       "topic": "Panelist on \"Cybersecurity in the Golden Era of AI\" — agent models, emerging threats, and prompt injection attacks.",
-      "photo": "/talks/ai-cybersecurity-2026/hero.jpg",
+      "photo": "/talks/ai-cybersecurity-2026/hero.webp",
       "recapUrl": "/talks/ai-cybersecurity-2026"
     },
     {
@@ -655,7 +655,7 @@
           "es": "Esta página es el registro canónico de la participación. La grabación completa, las diapositivas y un recap escrito se añadirán a medida que estén listos."
         }
       ],
-      "heroPhoto": "/talks/ai-cybersecurity-2026/hero.jpg",
+      "heroPhoto": "/talks/ai-cybersecurity-2026/hero.webp",
       "heroPhotoAlt": {
         "en": "Luis Alberto Duarte Cortés on the panel at the AI & Cybersecurity Forum 2026 in Bogotá.",
         "es": "Luis Alberto Duarte Cortés en el panel del AI & Cybersecurity Forum 2026 en Bogotá."
@@ -687,35 +687,35 @@
       "resources": [],
       "gallery": [
         {
-          "src": "/talks/ai-cybersecurity-2026/speaking-proof.jpg",
+          "src": "/talks/ai-cybersecurity-2026/speaking-proof.webp",
           "alt": {
             "en": "Luis Alberto Duarte Cortés speaking on the panel, microphone in hand.",
             "es": "Luis Alberto Duarte Cortés hablando en el panel, con micrófono en mano."
           }
         },
         {
-          "src": "/talks/ai-cybersecurity-2026/speaking-alt.jpg",
+          "src": "/talks/ai-cybersecurity-2026/speaking-alt.webp",
           "alt": {
             "en": "Luis Alberto Duarte Cortés mid-answer with a hand gesture during the panel.",
             "es": "Luis Alberto Duarte Cortés en plena respuesta, gesticulando con la mano durante el panel."
           }
         },
         {
-          "src": "/talks/ai-cybersecurity-2026/humanizing.jpg",
+          "src": "/talks/ai-cybersecurity-2026/humanizing.webp",
           "alt": {
             "en": "Panel reacting with laughter after an answer.",
             "es": "El panel reaccionando con risas después de una respuesta."
           }
         },
         {
-          "src": "/talks/ai-cybersecurity-2026/gallery/02-event-in-motion.jpg",
+          "src": "/talks/ai-cybersecurity-2026/gallery/02-event-in-motion.webp",
           "alt": {
             "en": "Moderator standing while addressing the panel.",
             "es": "Moderador de pie mientras se dirige al panel."
           }
         },
         {
-          "src": "/talks/ai-cybersecurity-2026/gallery/05-audience-context.jpg",
+          "src": "/talks/ai-cybersecurity-2026/gallery/05-audience-context.webp",
           "alt": {
             "en": "Wider shot showing panel with audience members visible.",
             "es": "Toma más abierta del panel con público visible."

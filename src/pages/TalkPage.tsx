@@ -173,18 +173,15 @@ export function TalkPage() {
           {/* Hero photo */}
           {talk.heroPhoto && (
             <figure style={{ margin: 0 }}>
-              <picture>
-                <source srcSet={talk.heroPhoto.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
-                <img
-                  src={talk.heroPhoto}
-                  alt={talk.heroPhotoAlt ? t(talk.heroPhotoAlt, locale) : `${talk.event} ${talk.date}`}
-                  style={{
-                    width: '100%', height: 'auto', display: 'block',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(255,255,255,0.05)',
-                  }}
-                />
-              </picture>
+              <img
+                src={talk.heroPhoto}
+                alt={talk.heroPhotoAlt ? t(talk.heroPhotoAlt, locale) : `${talk.event} ${talk.date}`}
+                style={{
+                  width: '100%', height: 'auto', display: 'block',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                }}
+              />
             </figure>
           )}
 
@@ -289,19 +286,16 @@ export function TalkPage() {
               }}>
                 {talk.gallery.map((img, i) => (
                   <figure key={i} style={{ margin: 0 }}>
-                    <picture>
-                      <source srcSet={img.src.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
-                      <img
-                        src={img.src}
-                        alt={t(img.alt, locale)}
-                        loading="lazy"
-                        style={{
-                          width: '100%', height: 'auto', display: 'block',
-                          borderRadius: '10px',
-                          border: '1px solid rgba(255,255,255,0.05)',
-                        }}
-                      />
-                    </picture>
+                    <img
+                      src={img.src}
+                      alt={t(img.alt, locale)}
+                      loading="lazy"
+                      style={{
+                        width: '100%', height: 'auto', display: 'block',
+                        borderRadius: '10px',
+                        border: '1px solid rgba(255,255,255,0.05)',
+                      }}
+                    />
                   </figure>
                 ))}
               </div>
