@@ -52,9 +52,13 @@ export default function App() {
         <Route path="/talks/:slug" element={<TalkPage />} />
         <Route path="/es/talks/:slug" element={<TalkPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/es/services" element={<ServicesPage />} />
         <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
+        <Route path="/es/case-studies" element={<CaseStudiesIndexPage />} />
         <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+        <Route path="/es/case-studies/:slug" element={<CaseStudyPage />} />
         <Route path="/print" element={<PrintPage />} />
+        <Route path="/es/print" element={<PrintPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>

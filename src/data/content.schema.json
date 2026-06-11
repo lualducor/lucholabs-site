@@ -526,10 +526,19 @@
             "$ref": "#/$defs/LocaleString"
           },
           "labFeatures": {
-            "type": "array",
-            "items": {
-              "$ref": "#/$defs/LocaleString"
-            }
+            "oneOf": [
+              {
+                "const": []
+              },
+              {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/LocaleString"
+                }
+              }
+            ]
           },
           "labVision": {
             "$ref": "#/$defs/LocaleString"
@@ -628,6 +637,97 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "now": {
+      "type": "object",
+      "required": [
+        "updated",
+        "intro",
+        "focus",
+        "next"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "updated": {
+          "type": "string",
+          "format": "date"
+        },
+        "intro": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "focus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        },
+        "next": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocaleString"
+          }
+        }
+      }
+    },
+    "uses": {
+      "type": "object",
+      "required": [
+        "intro",
+        "categories"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "intro": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "items"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "$ref": "#/$defs/LocaleString"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "note"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "note": {
+                      "$ref": "#/$defs/LocaleString"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "printCv": {
+      "type": "object",
+      "required": [
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "$ref": "#/$defs/LocaleString"
         }
       }
     },
@@ -889,6 +989,148 @@
         },
         "print": {
           "$ref": "#/$defs/NamespacePage"
+        }
+      }
+    },
+    "servicesPage": {
+      "type": "object",
+      "required": [
+        "published",
+        "slots"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "published": {
+          "type": "boolean"
+        },
+        "slots": {
+          "type": "object",
+          "required": [
+            "heading",
+            "offers"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "heading": {
+              "$ref": "#/$defs/LocaleString"
+            },
+            "offers": {
+              "type": "array"
+            },
+            "intro": {
+              "$ref": "#/$defs/LocaleString"
+            },
+            "sections": {
+              "type": "array"
+            },
+            "faq": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "question",
+                  "answer"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "question": {
+                    "$ref": "#/$defs/LocaleString"
+                  },
+                  "answer": {
+                    "$ref": "#/$defs/LocaleString"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "caseStudiesPage": {
+      "type": "object",
+      "required": [
+        "published",
+        "entries"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "published": {
+          "type": "boolean"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "slug",
+              "published",
+              "title",
+              "sections"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "slug": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "published": {
+                "type": "boolean"
+              },
+              "title": {
+                "$ref": "#/$defs/LocaleString"
+              },
+              "sections": {
+                "type": "array"
+              },
+              "summary": {
+                "$ref": "#/$defs/LocaleString"
+              },
+              "faq": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "question",
+                    "answer"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "question": {
+                      "$ref": "#/$defs/LocaleString"
+                    },
+                    "answer": {
+                      "$ref": "#/$defs/LocaleString"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "heading": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "intro": {
+          "$ref": "#/$defs/LocaleString"
+        },
+        "faq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "question",
+              "answer"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "question": {
+                "$ref": "#/$defs/LocaleString"
+              },
+              "answer": {
+                "$ref": "#/$defs/LocaleString"
+              }
+            }
+          }
         }
       }
     },

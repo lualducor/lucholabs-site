@@ -26,6 +26,18 @@ const posts = JSON.parse(readFileSync(postsIndexPath, 'utf-8'))
   .filter(post => !post.frontmatter.draft)
 const tags = [...new Set(posts.flatMap(post => post.frontmatter.tags ?? []))].sort()
 const talks = contentJson.talks ?? []
+const prerenderedRoutes = new Set([
+  '/',
+  '/blog',
+  '/es/',
+  '/es/blog',
+  ...posts.map(post => `/blog/${post.slug}`),
+  ...tags.map(tag => `/blog/tag/${encodeURIComponent(tag)}`),
+  ...talks.flatMap(talk => [
+    `/talks/${talk.slug}`,
+    `/es/talks/${talk.slug}`,
+  ]),
+])
 
 const { render, profilePageSchema } = await import(resolve(ssrDir, 'entry-server.js'))
 
@@ -203,14 +215,43 @@ function truncateTitle(title, max = 60) {
   return slicedTitle
 }
 
+function alternateLinks(canonical) {
+  const canonicalPath = new URL(canonical).pathname
+  const isSpanish = canonicalPath.startsWith('/es/')
+  const englishPath = isSpanish
+    ? canonicalPath.replace(/^\/es(?=\/)/, '')
+    : canonicalPath
+  const spanishPath = isSpanish
+    ? canonicalPath
+    : englishPath === '/' ? '/es/' : `/es${englishPath}`
+
+  if (!prerenderedRoutes.has(englishPath) || !prerenderedRoutes.has(spanishPath)) {
+    return ''
+  }
+
+  const englishUrl = `${SITE_URL}${englishPath}`
+  const spanishUrl = `${SITE_URL}${spanishPath}`
+
+  return [
+    `    <link rel="alternate" hreflang="en" href="${escapeHtml(englishUrl)}" />`,
+    `    <link rel="alternate" hreflang="es" href="${escapeHtml(spanishUrl)}" />`,
+    `    <link rel="alternate" hreflang="x-default" href="${escapeHtml(englishUrl)}" />`,
+  ].join('\n')
+}
+
 function injectMetadata(html, meta) {
   const twitterTitle = truncateTitle(meta.title)
+  const alternates = alternateLinks(meta.canonical)
+  const htmlWithoutAlternates = html.replace(
+    /[ \t]*<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["'][^"']+["'])[^>]*\/?>[ \t]*(?:\r?\n)?/gi,
+    '',
+  )
 
-  return html
+  return htmlWithoutAlternates
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(meta.title)}</title>`)
     .replace(
       /<link rel="canonical" href="[^"]*" \/>/,
-      `<link rel="canonical" href="${escapeHtml(meta.canonical)}" />`,
+      `<link rel="canonical" href="${escapeHtml(meta.canonical)}" />${alternates ? `\n${alternates}` : ''}`,
     )
     .replace(
       /<meta name="description" content="[^"]*" \/>/,

@@ -20,9 +20,13 @@ const routes = [
     url: `/blog/${post.slug}`,
     lastmod: post.frontmatter.date,
   })),
-  ...tags.map(tag => ({
-    url: `/blog/tag/${tag}`,
-  })),
+  ...tags.flatMap(tag => {
+    const encodedTag = encodeURIComponent(tag)
+    return [
+      { url: `/blog/tag/${encodedTag}` },
+      { url: `/es/blog/tag/${encodedTag}` },
+    ]
+  }),
   // Individual /es/blog/<slug> URLs excluded until each post has a Spanish translation shipped.
   { url: '/lab', lastmod: siteLastmod },
   { url: '/es/lab', lastmod: siteLastmod },

@@ -1,0 +1,395 @@
+.print-cv-shell {
+  --print-accent: #22c55e;
+  --print-ink: #171717;
+  --print-muted: #5f6368;
+  --print-rule: #d9dedb;
+  min-height: 100vh;
+  padding: 40px 20px 64px;
+  background: #e8ebe9;
+  color: var(--print-ink);
+  color-scheme: light;
+}
+
+.print-cv-shell a {
+  color: inherit;
+}
+
+.print-cv-toolbar {
+  width: min(100%, 8.5in);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.print-cv-toolbar a {
+  color: #39413c;
+  text-decoration: none;
+}
+
+.print-cv-toolbar a:hover {
+  color: #111;
+}
+
+.print-cv-toolbar button {
+  border: 1px solid #16a34a;
+  border-radius: 999px;
+  padding: 10px 17px;
+  background: var(--print-accent);
+  color: #07150b;
+  font: 700 13px/1 Inter, system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgb(34 197 94 / 24%);
+}
+
+.print-cv-toolbar button:hover {
+  background: #20b957;
+}
+
+.print-cv-page {
+  width: min(100%, 8.5in);
+  min-height: 11in;
+  margin: 0 auto;
+  padding: 0.56in 0.58in 0.52in;
+  background: #fff;
+  color: var(--print-ink);
+  box-shadow: 0 24px 70px rgb(20 30 24 / 16%);
+  font: 400 10.5px/1.5 Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.print-cv-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--print-accent);
+}
+
+.print-cv-kicker,
+.print-cv-date,
+.print-cv-list-label,
+.print-cv-meta {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.print-cv-kicker {
+  margin-bottom: 7px;
+  color: #17883d;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.print-cv-identity h1 {
+  max-width: 540px;
+  font-size: 30px;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.print-cv-role {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.print-cv-location {
+  margin-top: 3px;
+  color: var(--print-muted);
+}
+
+.print-cv-contact {
+  display: grid;
+  gap: 5px;
+  font-style: normal;
+  text-align: right;
+}
+
+.print-cv-contact a {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  color: #343a36;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.print-cv-contact span {
+  color: #17883d;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.print-cv-summary {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--print-rule);
+}
+
+.print-cv-summary h2,
+.print-cv-section > h2 {
+  color: #16843b;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.print-cv-summary p {
+  max-width: 670px;
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+.print-cv-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.58fr) minmax(190px, 0.78fr);
+  gap: 32px;
+  padding-top: 22px;
+}
+
+.print-cv-primary,
+.print-cv-secondary,
+.print-cv-stack {
+  display: grid;
+  align-content: start;
+}
+
+.print-cv-primary {
+  gap: 25px;
+}
+
+.print-cv-secondary {
+  gap: 23px;
+  padding-left: 22px;
+  border-left: 1px solid var(--print-rule);
+}
+
+.print-cv-section > h2 {
+  margin-bottom: 12px;
+}
+
+.print-cv-stack {
+  gap: 18px;
+}
+
+.print-cv-entry {
+  break-inside: avoid;
+}
+
+.print-cv-entry-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 7px;
+}
+
+.print-cv-entry h3 {
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.print-cv-organization {
+  margin-top: 2px;
+  color: #17883d;
+  font-weight: 750;
+}
+
+.print-cv-date {
+  color: var(--print-muted);
+  font-size: 8.5px;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.print-cv-meta {
+  margin: 3px 0 7px;
+  color: var(--print-muted);
+  font-size: 8.5px;
+  line-height: 1.4;
+}
+
+.print-cv-tags,
+.print-cv-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+}
+
+.print-cv-tags {
+  margin-top: 9px;
+}
+
+.print-cv-tags li,
+.print-cv-skill-list li {
+  border: 1px solid #b9dfc5;
+  border-radius: 999px;
+  padding: 2px 7px;
+  background: #f1faf4;
+  color: #165f2f;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.print-cv-adoption {
+  margin-top: 8px;
+}
+
+.print-cv-list-label {
+  margin: 10px 0 7px;
+  color: var(--print-muted);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.print-cv-list-label:first-of-type {
+  margin-top: 0;
+}
+
+.print-cv-compact .print-cv-stack {
+  gap: 15px;
+}
+
+.print-cv-compact .print-cv-entry h3 {
+  font-size: 10.5px;
+}
+
+.print-cv-compact .print-cv-entry p:not(.print-cv-meta) {
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+  .print-cv-shell {
+    padding: 20px 0 0;
+  }
+
+  .print-cv-toolbar {
+    padding: 0 18px;
+  }
+
+  .print-cv-page {
+    min-height: 0;
+    padding: 36px 24px;
+    box-shadow: none;
+  }
+
+  .print-cv-header,
+  .print-cv-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .print-cv-contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    text-align: left;
+  }
+
+  .print-cv-contact a {
+    display: block;
+  }
+
+  .print-cv-contact span {
+    display: block;
+  }
+
+  .print-cv-summary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .print-cv-secondary {
+    padding: 24px 0 0;
+    border-top: 1px solid var(--print-rule);
+    border-left: 0;
+  }
+}
+
+@media print {
+  @page {
+    size: auto;
+    margin: 11mm 12mm;
+  }
+
+  body:has(.print-cv-shell) nav,
+  body:has(.print-cv-shell) [data-print-hidden] {
+    display: none !important;
+  }
+
+  .print-cv-shell {
+    min-height: 0;
+    padding: 0;
+    background: #fff !important;
+    color: #171717 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-cv-page {
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    box-shadow: none;
+    font-size: 9pt;
+    line-height: 1.42;
+  }
+
+  .print-cv-header {
+    padding-bottom: 4mm;
+  }
+
+  .print-cv-identity h1 {
+    font-size: 23pt;
+  }
+
+  .print-cv-summary {
+    padding: 4mm 0;
+  }
+
+  .print-cv-columns {
+    grid-template-columns: minmax(0, 1.58fr) minmax(48mm, 0.78fr);
+    gap: 7mm;
+    padding-top: 5mm;
+  }
+
+  .print-cv-primary {
+    gap: 5mm;
+  }
+
+  .print-cv-secondary {
+    gap: 4.5mm;
+    padding-left: 5mm;
+  }
+
+  .print-cv-stack {
+    gap: 4mm;
+  }
+
+  .print-cv-section > h2 {
+    margin-bottom: 2.5mm;
+  }
+
+  .print-cv-thesis {
+    break-before: auto;
+  }
+
+  .print-cv-entry,
+  .print-cv-compact,
+  .print-cv-header,
+  .print-cv-summary {
+    break-inside: avoid;
+  }
+
+  .print-cv-shell a {
+    text-decoration: none;
+  }
+}
