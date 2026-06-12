@@ -15,7 +15,7 @@ export default function SkillsCard() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
             {skills.core.map(skill => {
               const text = t(skill, locale)
-              return <span key={text} translate="no" style={pill('rgba(34,197,94,0.5)')}>{text}</span>
+              return <span key={text} translate="no" style={pill('rgba(34,197,94,0.9)')}>{text}</span>
             })}
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function SkillsCard() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
             {skills.tooling.map(skill => {
               const text = t(skill, locale)
-              return <span key={text} translate="no" style={pill('rgba(255,255,255,0.35)')}>{text}</span>
+              return <span key={text} translate="no" style={pill('rgba(255,255,255,0.55)')}>{text}</span>
             })}
           </div>
         </div>

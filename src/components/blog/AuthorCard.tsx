@@ -30,7 +30,7 @@ export function AuthorCard() {
           <div style={{ color: 'rgba(255,255,255,0.92)', fontWeight: 600, fontSize: '0.9rem' }}>
             Luis Alberto Duarte Cortés
           </div>
-          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', marginTop: '2px' }}>
+          <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', marginTop: '2px' }}>
             {labels.role}
           </div>
           <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem', marginTop: '2px' }}>

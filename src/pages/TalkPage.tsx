@@ -13,7 +13,7 @@ const containerStyle = {
 const labelStyle = {
   fontFamily: 'ui-monospace, monospace',
   fontSize: '11px',
-  color: 'rgba(255,255,255,0.45)',
+  color: 'rgba(255,255,255,0.5)',
   textTransform: 'uppercase' as const,
   letterSpacing: '0.1em',
   margin: '0 0 12px 0',
@@ -22,7 +22,7 @@ const labelStyle = {
 const sectionTitleStyle = {
   fontFamily: 'ui-monospace, monospace',
   fontSize: '11px',
-  color: 'rgba(255,255,255,0.45)',
+  color: 'rgba(255,255,255,0.5)',
   textTransform: 'uppercase' as const,
   letterSpacing: '0.1em',
   margin: '0 0 16px 0',

@@ -43,34 +43,37 @@ export default function App() {
 
   return (
     <div style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
+      <a href="#main" className="skip-link">Skip to content</a>
       <PageviewTracker />
       <LocaleDocAttr />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/es" element={<HomePage />} />
-        <Route path="/es/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogIndexPage />} />
-        <Route path="/es/blog" element={<BlogIndexPage />} />
-        <Route path="/blog/:slug" element={<BlogPostRoute />} />
-        <Route path="/es/blog/:slug" element={<BlogPostRoute />} />
-        <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
-        <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
-        <Route path="/talks/:slug" element={<TalkPage />} />
-        <Route path="/es/talks/:slug" element={<TalkPage />} />
-        <Route path="/now" element={<NowPage />} />
-        <Route path="/es/now" element={<NowPage />} />
-        <Route path="/uses" element={<UsesPage />} />
-        <Route path="/es/uses" element={<UsesPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/es/services" element={<ServicesPage />} />
-        <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
-        <Route path="/es/case-studies" element={<CaseStudiesIndexPage />} />
-        <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
-        <Route path="/es/case-studies/:slug" element={<CaseStudyPage />} />
-        <Route path="/print" element={<PrintPage />} />
-        <Route path="/es/print" element={<PrintPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div id="main">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/es" element={<HomePage />} />
+          <Route path="/es/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogIndexPage />} />
+          <Route path="/es/blog" element={<BlogIndexPage />} />
+          <Route path="/blog/:slug" element={<BlogPostRoute />} />
+          <Route path="/es/blog/:slug" element={<BlogPostRoute />} />
+          <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
+          <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
+          <Route path="/talks/:slug" element={<TalkPage />} />
+          <Route path="/es/talks/:slug" element={<TalkPage />} />
+          <Route path="/now" element={<NowPage />} />
+          <Route path="/es/now" element={<NowPage />} />
+          <Route path="/uses" element={<UsesPage />} />
+          <Route path="/es/uses" element={<UsesPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/es/services" element={<ServicesPage />} />
+          <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
+          <Route path="/es/case-studies" element={<CaseStudiesIndexPage />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+          <Route path="/es/case-studies/:slug" element={<CaseStudyPage />} />
+          <Route path="/print" element={<PrintPage />} />
+          <Route path="/es/print" element={<PrintPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
     </div>
   )
 }

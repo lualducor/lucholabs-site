@@ -54,7 +54,7 @@ export default function BentoGrid() {
         .bento-label {
           display: block;
           margin-bottom: 16px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-family: ui-monospace, 'SF Mono', 'Fira Code', monospace;
           font-size: 11px;
           letter-spacing: 0.14em;
@@ -96,7 +96,7 @@ export default function BentoGrid() {
           padding: 40px;
         }
         .bento-kicker {
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-family: ui-monospace, 'SF Mono', 'Fira Code', monospace;
           font-size: 12px;
           letter-spacing: 0.14em;
@@ -113,7 +113,7 @@ export default function BentoGrid() {
         .bento-sub {
           max-width: 48ch;
           margin-top: 16px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-size: 16px;
           line-height: 1.6;
         }
@@ -171,7 +171,7 @@ export default function BentoGrid() {
           font-weight: 600;
         }
         .bento-meta {
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-family: ui-monospace, 'SF Mono', 'Fira Code', monospace;
           font-size: 12px;
           line-height: 1.9;
@@ -198,7 +198,7 @@ export default function BentoGrid() {
         .bento-featured p {
           max-width: 54ch;
           margin-top: 12px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-size: 15px;
           line-height: 1.6;
         }
@@ -221,7 +221,7 @@ export default function BentoGrid() {
         }
         .bento-event-meta {
           margin-top: 6px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-family: ui-monospace, 'SF Mono', 'Fira Code', monospace;
           font-size: 11px;
         }
@@ -251,7 +251,7 @@ export default function BentoGrid() {
         }
         .bento-project p {
           margin-top: 8px;
-          color: rgba(255,255,255,0.45);
+          color: rgba(255,255,255,0.5);
           font-size: 14px;
           line-height: 1.55;
         }

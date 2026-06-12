@@ -396,6 +396,8 @@ renderRoute('/blog', resolve(distDir, 'blog', 'index.html'), blogIndexMeta)
 
 renderRoute('/es/', resolve(distDir, 'es', 'index.html'), {
   ...homeMeta,
+  title: 'Luis Alberto Duarte Cortés — Ingeniero de Sistemas de IA y Automatización | lucholabs.dev',
+  description: 'Construyo sistemas impulsados por IA e infraestructura de automatización. Bogotá · Remoto · Inglés C1.',
   canonical: `${SITE_URL}/es/`,
 }, [
   personSchema(contentJson.identity),
@@ -406,6 +408,8 @@ renderRoute('/es/', resolve(distDir, 'es', 'index.html'), {
 ])
 renderRoute('/es/blog', resolve(distDir, 'es', 'blog', 'index.html'), {
   ...blogIndexMeta,
+  title: 'Blog — LuchoLabs (ES)',
+  description: 'Bitácoras de construcción, automatización a fondo y experimentos de IA por Luis Alberto Duarte Cortés.',
   canonical: `${SITE_URL}/es/blog`,
 })
 
@@ -445,48 +449,41 @@ for (const tag of tags) {
   ])
 }
 
+const pickLocale = (localeString, locale) =>
+  typeof localeString === 'string' ? localeString : (localeString?.[locale] ?? localeString?.en ?? '')
+
 for (const talk of talks) {
-  const description = talk.abstract?.[0] ?? talk.subtitle ?? ''
   const ogImage = talk.heroPhoto ? toAbsoluteUrl(talk.heroPhoto) : DEFAULT_OG_IMAGE
   const englishUrl = `${SITE_URL}/talks/${talk.slug}`
   const spanishUrl = `${SITE_URL}/es/talks/${talk.slug}`
 
-  renderRoute(`/talks/${talk.slug}`, resolve(distDir, 'talks', talk.slug, 'index.html'), {
-    title: `${talk.title} — LuchoLabs`,
-    description,
-    canonical: englishUrl,
-    ogImage,
-    ogType: 'article',
-  }, [
-    eventSchema(talk, englishUrl),
-    breadcrumbSchema([
-      { name: 'Home', url: SITE_URL },
-      { name: 'Talks', url: `${SITE_URL}/talks` },
-      { name: talk.title, url: englishUrl },
-    ]),
-  ])
+  for (const locale of ['en', 'es']) {
+    const url = locale === 'es' ? spanishUrl : englishUrl
+    const title = pickLocale(talk.title, locale)
+    const description = pickLocale(talk.abstract?.[0] ?? talk.subtitle ?? '', locale)
+    const outPath = locale === 'es'
+      ? resolve(distDir, 'es', 'talks', talk.slug, 'index.html')
+      : resolve(distDir, 'talks', talk.slug, 'index.html')
 
-  renderRoute(`/es/talks/${talk.slug}`, resolve(distDir, 'es', 'talks', talk.slug, 'index.html'), {
-    title: `${talk.title} — LuchoLabs`,
-    description,
-    canonical: spanishUrl,
-    ogImage,
-    ogType: 'article',
-  }, [
-    eventSchema(talk, spanishUrl),
-    breadcrumbSchema([
-      { name: 'Home', url: `${SITE_URL}/es/` },
-      { name: 'Talks', url: `${SITE_URL}/es/talks` },
-      { name: talk.title, url: spanishUrl },
-    ]),
-  ])
+    renderRoute(`${locale === 'es' ? '/es' : ''}/talks/${talk.slug}`, outPath, {
+      title: `${title} — LuchoLabs`,
+      description,
+      canonical: url,
+      ogImage,
+      ogType: 'article',
+    }, [
+      { ...eventSchema(talk, url), name: title, description },
+      breadcrumbSchema([
+        { name: 'Home', url: locale === 'es' ? `${SITE_URL}/es/` : SITE_URL },
+        { name: 'Talks', url: `${SITE_URL}${locale === 'es' ? '/es' : ''}/talks` },
+        { name: title, url },
+      ]),
+    ])
+  }
 }
 
 const nowContent = contentJson.now
 const usesContent = contentJson.uses
-
-const pickLocale = (localeString, locale) =>
-  typeof localeString === 'string' ? localeString : (localeString?.[locale] ?? localeString?.en ?? '')
 
 for (const locale of ['en', 'es']) {
   const prefix = locale === 'es' ? '/es' : ''

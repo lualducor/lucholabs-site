@@ -58,7 +58,7 @@ export default function EmailCaptureBlock({
         <p style={{
           fontFamily: 'ui-monospace, monospace',
           fontSize: '11px',
-          color: 'rgba(255,255,255,0.45)',
+          color: 'rgba(255,255,255,0.5)',
           textTransform: 'uppercase',
           letterSpacing: '0.1em',
           margin: '0 0 12px 0',
@@ -86,14 +86,16 @@ export default function EmailCaptureBlock({
       </div>
 
       {status === 'success' ? (
-        <p style={{
-          fontSize: '14px',
-          color: 'rgba(255,255,255,0.6)',
-          lineHeight: 1.6,
-          margin: '24px 0 0 0',
-        }}>
-          {locale === 'es' ? 'Listo. Te aviso cuando publique.' : 'Done. You will hear from me when I publish.'}
-        </p>
+        <div aria-live="polite">
+          <p style={{
+            fontSize: '14px',
+            color: 'rgba(255,255,255,0.6)',
+            lineHeight: 1.6,
+            margin: '24px 0 0 0',
+          }}>
+            {locale === 'es' ? 'Listo. Te aviso cuando publique.' : 'Done. You will hear from me when I publish.'}
+          </p>
+        </div>
       ) : (
         <>
           <form
@@ -110,9 +112,16 @@ export default function EmailCaptureBlock({
               type="email"
               name="email"
               required
+              aria-label={locale === 'es' ? 'Correo electrónico' : 'Email address'}
               placeholder="you@company.com"
               value={email}
               onChange={event => setEmail(event.target.value)}
+              onFocus={event => {
+                event.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'
+              }}
+              onBlur={event => {
+                event.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+              }}
               style={{
                 flex: '1 1 240px',
                 minHeight: '44px',
@@ -122,7 +131,6 @@ export default function EmailCaptureBlock({
                 backgroundColor: 'rgba(0,0,0,0.25)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '12px',
-                outline: 'none',
               }}
             />
             <input

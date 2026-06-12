@@ -28,7 +28,7 @@ export function SeriesBanner({ series, currentSlug }: SeriesBannerProps) {
           fontSize: '11px',
           letterSpacing: '0.08em',
           textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.45)',
+          color: 'rgba(255,255,255,0.5)',
           margin: 0,
         }}
       >

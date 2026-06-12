@@ -12,7 +12,7 @@ export const card: CSSProperties = {
 export const mono: CSSProperties = {
   fontFamily: 'ui-monospace, monospace',
   fontSize: '11px',
-  color: 'rgba(255,255,255,0.45)',
+  color: 'rgba(255,255,255,0.5)',
   textTransform: 'uppercase' as const,
   letterSpacing: '0.08em',
 }
