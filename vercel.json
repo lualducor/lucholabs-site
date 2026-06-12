@@ -46,6 +46,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/config.yml", "destination": "/admin/config.yml" },
     { "source": "/lab", "destination": "https://thelab-six.vercel.app/" },
     { "source": "/lab/(.*)", "destination": "https://thelab-six.vercel.app/$1" },
     { "source": "/es/lab", "destination": "https://thelab-six.vercel.app/es" },
