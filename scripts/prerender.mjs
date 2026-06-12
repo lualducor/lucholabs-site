@@ -159,6 +159,17 @@ function eventSchema(talk, url = toSectionUrl('talks', talk.slug)) {
     startDate: talk.absoluteDate,
     description,
     image: talk.heroPhoto ? toAbsoluteUrl(talk.heroPhoto) : undefined,
+    recordedIn: talk.videoUrl
+      ? {
+          '@type': 'VideoObject',
+          name: typeof talk.title === 'string' ? talk.title : talk.title?.en,
+          embedUrl: talk.videoUrl,
+          thumbnailUrl: talk.videoUrl.includes('youtube.com/embed/')
+            ? `https://i.ytimg.com/vi/${talk.videoUrl.split('/embed/')[1].split(/[?&]/)[0]}/hqdefault.jpg`
+            : undefined,
+          uploadDate: talk.absoluteDate,
+        }
+      : undefined,
     performer: { '@id': PERSON_ID },
     organizer: { '@id': PERSON_ID },
     location: locationSchema(talk.location),
