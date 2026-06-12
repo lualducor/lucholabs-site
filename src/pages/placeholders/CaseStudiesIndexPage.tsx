@@ -172,11 +172,6 @@ export function CaseStudiesIndexPage() {
       />
       <Nav />
       <main className="scaffold-page min-h-screen overflow-hidden bg-[#0a0a0a] text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_50%_-10%,rgba(125,211,252,0.11),transparent_58%)]"
-        />
-
         {!published ? (
           <InProgressState />
         ) : (

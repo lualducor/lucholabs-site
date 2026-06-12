@@ -6,7 +6,7 @@ import { getLocaleFromPath, t } from '../../lib/locale'
 export default function SkillsCard() {
   const locale = getLocaleFromPath(useLocation().pathname)
   return (
-    <div id="skills" style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
+    <div id="skills" data-reveal style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
       <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>{locale === 'es' ? 'Habilidades' : 'Skills'}</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

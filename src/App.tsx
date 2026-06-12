@@ -13,6 +13,8 @@ import { LocaleDocAttr } from './lib/locale'
 import { PrintPage } from './pages/placeholders/PrintPage'
 import { NowPage } from './pages/NowPage'
 import { UsesPage } from './pages/UsesPage'
+import { useRevealObserver } from './hooks/useRevealObserver'
+import './styles/motion.css'
 
 const BlogPostPage = React.lazy(() =>
   import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })),
@@ -37,6 +39,8 @@ function PageviewTracker() {
 }
 
 export default function App() {
+  useRevealObserver()
+
   return (
     <div style={{ backgroundColor: '#0a0a0a', color: '#ffffff', minHeight: '100vh' }}>
       <PageviewTracker />

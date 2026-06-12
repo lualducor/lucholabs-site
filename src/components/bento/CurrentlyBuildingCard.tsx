@@ -6,7 +6,7 @@ import { getLocaleFromPath } from '../../lib/locale'
 export default function CurrentlyBuildingCard() {
   const locale = getLocaleFromPath(useLocation().pathname)
   return (
-    <div style={{ ...card, gap: '16px', justifyContent: 'space-between' }}>
+    <div data-reveal style={{ ...card, gap: '16px', justifyContent: 'space-between' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>{locale === 'es' ? 'Construyendo ahora' : 'Currently Building'}</h2>
         <span style={{
@@ -21,7 +21,6 @@ export default function CurrentlyBuildingCard() {
             width: '6px', height: '6px', borderRadius: '50%',
             backgroundColor: 'rgba(34,197,94,0.7)',
             display: 'inline-block',
-            animation: 'pulse-dot 2s ease-in-out infinite',
           }} />
           {locale === 'es' ? 'Activo' : 'Active'}
         </span>

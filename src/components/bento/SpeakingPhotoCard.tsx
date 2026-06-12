@@ -9,7 +9,7 @@ export default function SpeakingPhotoCard() {
   if (!talk) return null
 
   return (
-    <div style={{ ...card, padding: 0, overflow: 'hidden', gap: 0 }}>
+    <div data-reveal style={{ ...card, padding: 0, overflow: 'hidden', gap: 0 }}>
       <div
         className="aspect-[4/3]"
         style={{ position: 'relative', width: '100%', overflow: 'hidden' }}

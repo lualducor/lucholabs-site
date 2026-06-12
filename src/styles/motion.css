@@ -1,0 +1,65 @@
+/* Route transitions (View Transitions API, RR7 native) */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (view-transition-name: root) {
+    ::view-transition-old(root) {
+      animation: vt-fade-out 180ms ease forwards;
+    }
+    ::view-transition-new(root) {
+      animation: vt-fade-in 180ms ease forwards;
+    }
+  }
+}
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
+
+/* Bento card staggered load fade (first paint — NOT scroll-driven) */
+@media (prefers-reduced-motion: no-preference) {
+  .card:nth-child(1) { animation: card-appear 400ms ease-out 0ms both; }
+  .card:nth-child(2) { animation: card-appear 400ms ease-out 60ms both; }
+  .card:nth-child(3) { animation: card-appear 400ms ease-out 120ms both; }
+  .card:nth-child(4) { animation: card-appear 400ms ease-out 180ms both; }
+  .card:nth-child(5) { animation: card-appear 400ms ease-out 240ms both; }
+  .card:nth-child(6) { animation: card-appear 400ms ease-out 300ms both; }
+  .card:nth-child(7) { animation: card-appear 400ms ease-out 360ms both; }
+}
+@keyframes card-appear { from { opacity: 0; } to { opacity: 1; } }
+
+/* Scroll-driven section reveals (CSS path).
+   .card is excluded — bento cards already run the first-paint stagger above. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal]:not(.card) {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: reveal-rise 400ms ease-out forwards;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+@keyframes reveal-rise { to { opacity: 1; transform: none; } }
+
+/* IO fallback (JS toggles .is-visible) — only hides content once JS has
+   tagged <html class="js">, so no-JS / SSR-only renders stay visible.
+   Skipped when the CSS scroll-timeline path above is active. */
+@supports not (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html.js [data-reveal]:not(.card):not(.is-visible) {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 400ms ease-out, transform 400ms ease-out;
+    }
+  }
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced-motion kill-switch — MUST be last rule */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

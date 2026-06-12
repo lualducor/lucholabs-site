@@ -88,6 +88,7 @@ export default function Nav() {
         </div>
 
         <Link
+          viewTransition
           to={homeRoute}
           style={{
             fontFamily: 'ui-monospace, monospace',
@@ -103,6 +104,7 @@ export default function Nav() {
         </Link>
 
         <Link
+          viewTransition
           to={localeToggleRoute}
           style={{
             justifySelf: 'end',
@@ -125,9 +127,11 @@ export default function Nav() {
         </Link>
       </div>
 
+      {/* Single row, horizontal scroll on narrow screens — must never wrap (w4 audit #2).
+          margin auto on the inner row keeps both edges reachable when it overflows. */}
       {showAnchorSubnav && (
-        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', width: '100%', overflowX: 'auto', scrollbarWidth: 'none' }}>
+          <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '10px', margin: '0 auto' }}>
             {anchorLinks.map(link => (
               <a
                 key={link.href}
@@ -146,6 +150,8 @@ export default function Nav() {
                   borderRadius: '999px',
                   textDecoration: 'none',
                   backgroundColor: 'rgba(255,255,255,0.02)',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
                 {link.label}

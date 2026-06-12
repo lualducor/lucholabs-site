@@ -19,14 +19,6 @@ export default function ThesisSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Subtle top-left glow accent */}
-      <div style={{
-        position: 'absolute', top: 0, left: 0,
-        width: '200px', height: '200px',
-        background: 'radial-gradient(circle at top left, rgba(34,197,94,0.07) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
       {/* Header */}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: '16px', marginBottom: '8px' }}>
         <div style={{ flex: 1, minWidth: '240px' }}>

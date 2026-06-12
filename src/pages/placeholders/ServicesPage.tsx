@@ -127,7 +127,7 @@ function InProgressState() {
   return (
     <section className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
       <div>
-        <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300/70">
+        <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
           {copy.label}
         </p>
         <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl">
@@ -137,7 +137,7 @@ function InProgressState() {
           {copy.body}
         </p>
         <Link
-          className="mt-9 inline-flex min-h-11 items-center rounded-full border border-emerald-300/25 bg-emerald-300/[0.06] px-5 font-mono text-xs text-emerald-200 transition hover:border-emerald-300/50 hover:bg-emerald-300/[0.1]"
+          className="mt-9 inline-flex min-h-11 items-center rounded-full border border-[#22c55e]/25 bg-[#22c55e]/[0.06] px-5 font-mono text-xs text-[#22c55e] transition hover:border-[#22c55e]/50 hover:bg-[#22c55e]/[0.1]"
           to={homeHref}
         >
           {copy.cta} →
@@ -146,7 +146,7 @@ function InProgressState() {
 
       <div className="rounded-3xl border border-white/10 bg-white/[0.025] p-6">
         <div className="mb-6 flex items-center gap-3">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-amber-300" />
+          <span className="h-2 w-2 animate-pulse rounded-full bg-[#22c55e]" />
           <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/35">
             build status
           </span>
@@ -184,17 +184,12 @@ export function ServicesPage() {
       />
       <Nav />
       <main className="scaffold-page min-h-screen overflow-hidden bg-[#0a0a0a] text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_50%_-10%,rgba(52,211,153,0.12),transparent_58%)]"
-        />
-
         {!published ? (
           <InProgressState />
         ) : (
           <div className="mx-auto max-w-5xl">
             <header className="max-w-3xl border-b border-white/10 pb-12">
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300/70">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
                 LuchoLabs · {locale === 'es' ? 'Servicios' : 'Services'}
               </p>
               <h1 className="mt-5 text-5xl font-semibold tracking-[-0.055em] sm:text-7xl">

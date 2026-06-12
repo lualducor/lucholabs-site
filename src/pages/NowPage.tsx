@@ -65,14 +65,9 @@ export function NowPage() {
       <PageHead title={`${copy.title} — LuchoLabs`} description={description} />
       <Nav />
       <main className="min-h-screen overflow-hidden bg-[#0a0a0a] px-6 pb-24 pt-36 text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_50%_-10%,rgba(52,211,153,0.12),transparent_58%)]"
-        />
-
         <div className="relative mx-auto max-w-5xl">
           <header className="max-w-3xl border-b border-white/10 pb-12">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300/70">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
               {copy.label}
             </p>
             <h1 className="mt-5 text-5xl font-semibold tracking-[-0.055em] sm:text-7xl">
@@ -92,7 +87,8 @@ export function NowPage() {
               className="rounded-3xl border border-white/10 bg-white/[0.025] p-7"
             >
               <h2
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300/70"
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45"
+                data-reveal
                 id="now-focus"
               >
                 {copy.focus}
@@ -115,6 +111,7 @@ export function NowPage() {
             >
               <h2
                 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/35"
+                data-reveal
                 id="now-next"
               >
                 {copy.next}
@@ -134,7 +131,7 @@ export function NowPage() {
 
           <nav aria-label={locale === 'es' ? 'Más de LuchoLabs' : 'More from LuchoLabs'} className="flex flex-wrap gap-3">
             <a
-              className="inline-flex min-h-11 items-center rounded-full border border-emerald-300/25 bg-emerald-300/[0.06] px-5 font-mono text-xs text-emerald-200 transition hover:border-emerald-300/50 hover:bg-emerald-300/[0.1]"
+              className="inline-flex min-h-11 items-center rounded-full border border-[#22c55e]/25 bg-[#22c55e]/[0.06] px-5 font-mono text-xs text-[#22c55e] transition hover:border-[#22c55e]/50 hover:bg-[#22c55e]/[0.1]"
               href={`${prefix}/lab`}
             >
               {copy.lab} →

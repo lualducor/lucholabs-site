@@ -13,7 +13,7 @@ export default function ProjectsCard() {
   const deadLabel = locale === 'es' ? 'Muertos' : 'Dead'
 
   return (
-    <div style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
+    <div data-reveal style={{ ...card, gap: '14px', scrollMarginTop: '160px' }}>
       <h2 style={{ ...mono, fontWeight: 'normal', margin: 0 }}>{heading}</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

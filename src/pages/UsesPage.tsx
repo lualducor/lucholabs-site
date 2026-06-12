@@ -66,14 +66,9 @@ export function UsesPage() {
       <PageHead title={`${copy.title} — LuchoLabs`} description={description} />
       <Nav />
       <main className="min-h-screen overflow-hidden bg-[#0a0a0a] px-6 pb-24 pt-36 text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-x-0 top-0 h-[460px] bg-[radial-gradient(circle_at_50%_-10%,rgba(52,211,153,0.12),transparent_58%)]"
-        />
-
         <div className="relative mx-auto max-w-5xl">
           <header className="max-w-3xl border-b border-white/10 pb-12">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300/70">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
               {copy.label}
             </p>
             <h1 className="mt-5 text-5xl font-semibold tracking-[-0.055em] sm:text-7xl">
@@ -92,11 +87,12 @@ export function UsesPage() {
                 key={t(category.title, locale)}
               >
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/25">
+                  <p data-reveal className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/25">
                     {copy.categoryLabel} · {String(categoryIndex + 1).padStart(2, '0')}
                   </p>
                   <h2
                     className="mt-3 text-3xl font-medium tracking-[-0.04em]"
+                    data-reveal
                     id={`uses-category-${categoryIndex}`}
                   >
                     {t(category.title, locale)}
@@ -118,7 +114,7 @@ export function UsesPage() {
                         {externalUrl && (
                           <a
                             aria-label={`${copy.externalLink} ${item.name}`}
-                            className="font-mono text-sm text-emerald-300/70 transition hover:text-emerald-200"
+                            className="font-mono text-sm text-white/60 transition hover:text-white"
                             href={externalUrl}
                             rel="noreferrer"
                             target="_blank"
