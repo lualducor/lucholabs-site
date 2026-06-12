@@ -28,6 +28,13 @@ const routes = [
     ]
   }),
   // Individual /es/blog/<slug> URLs excluded until each post has a Spanish translation shipped.
+  { url: '/now', lastmod: contentJson.now?.updated ?? siteLastmod },
+  { url: '/es/now', lastmod: contentJson.now?.updated ?? siteLastmod },
+  { url: '/uses', lastmod: siteLastmod },
+  { url: '/es/uses', lastmod: siteLastmod },
+  { url: '/print', lastmod: siteLastmod },
+  { url: '/es/print', lastmod: siteLastmod },
+  // /services and /case-studies stay out until their content.json published flag flips (they prerender noindexed).
   { url: '/lab', lastmod: siteLastmod },
   { url: '/es/lab', lastmod: siteLastmod },
   ...(contentJson.talks ?? []).flatMap(talk => ([

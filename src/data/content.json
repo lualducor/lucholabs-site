@@ -864,5 +864,167 @@
       "talk_slides_download",
       "talk_to_services_click"
     ]
+  },
+  "now": {
+    "updated": "2026-06-11",
+    "intro": {
+      "en": "What I'm actually working on right now — updated when reality changes, not on a schedule.",
+      "es": "En qué estoy trabajando ahora mismo — se actualiza cuando la realidad cambia, no por calendario."
+    },
+    "focus": [
+      {
+        "en": "Boveda — backend complete, building the React dashboard next",
+        "es": "Boveda — backend terminado, ahora viene el dashboard en React"
+      },
+      {
+        "en": "Shipping the lucholabs.dev restructure: lab deck, talks, bilingual SEO",
+        "es": "Lanzando la reestructura de lucholabs.dev: lab deck, charlas, SEO bilingüe"
+      },
+      {
+        "en": "Anti-Phishing Shield — prototype phase, detection tuned for elderly users",
+        "es": "Anti-Phishing Shield — fase de prototipo, detección pensada para adultos mayores"
+      },
+      {
+        "en": "Automation work for clients — agent pipelines and API integrations",
+        "es": "Automatización para clientes — pipelines de agentes e integraciones de API"
+      }
+    ],
+    "next": [
+      {
+        "en": "First cornerstone blog post — the Boveda build log",
+        "es": "Primer artículo pilar del blog — la bitácora de construcción de Boveda"
+      },
+      {
+        "en": "SUPERFARM node: offline-first farm intelligence infrastructure",
+        "es": "Nodo SUPERFARM: infraestructura de inteligencia agrícola offline-first"
+      },
+      {
+        "en": "Open services page once the first case study is documented",
+        "es": "Abrir la página de servicios cuando el primer caso de estudio esté documentado"
+      }
+    ]
+  },
+  "uses": {
+    "intro": {
+      "en": "The tools I actually use daily. No affiliate links, no aspirational gear.",
+      "es": "Las herramientas que uso a diario. Sin enlaces de afiliado, sin equipo aspiracional."
+    },
+    "categories": [
+      {
+        "title": {
+          "en": "Hardware",
+          "es": "Hardware"
+        },
+        "items": [
+          {
+            "name": "Linux workstation",
+            "note": {
+              "en": "Ubuntu — daily driver for everything",
+              "es": "Ubuntu — máquina principal para todo"
+            }
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Development",
+          "es": "Desarrollo"
+        },
+        "items": [
+          {
+            "name": "Python + FastAPI",
+            "note": {
+              "en": "Backend of choice — Boveda runs on it",
+              "es": "Mi backend de cabecera — Boveda corre sobre esto"
+            }
+          },
+          {
+            "name": "TypeScript + React + Vite",
+            "note": {
+              "en": "This site, and most frontends I build",
+              "es": "Este sitio, y casi todos los frontends que construyo"
+            }
+          },
+          {
+            "name": "Tailwind CSS",
+            "note": {
+              "en": "Utility-first styling without the bikeshedding",
+              "es": "Estilos utility-first sin discusiones eternas"
+            }
+          },
+          {
+            "name": "SQLite",
+            "note": {
+              "en": "Local-first storage — boring, durable, perfect",
+              "es": "Almacenamiento local-first — aburrido, duradero, perfecto"
+            }
+          },
+          {
+            "name": "Git + GitHub",
+            "note": {
+              "en": "Manual commits, reviewed diffs",
+              "es": "Commits manuales, diffs revisados"
+            }
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "AI / Agents",
+          "es": "IA / Agentes"
+        },
+        "items": [
+          {
+            "name": "Claude Code",
+            "note": {
+              "en": "Primary agent harness — design, orchestration, review",
+              "es": "Mi harness de agentes principal — diseño, orquestación, revisión"
+            }
+          },
+          {
+            "name": "OpenAI Codex CLI",
+            "note": {
+              "en": "Second pair of hands for delegated implementation",
+              "es": "Segundo par de manos para implementación delegada"
+            }
+          },
+          {
+            "name": "n8n",
+            "note": {
+              "en": "Workflow automation for client pipelines",
+              "es": "Automatización de flujos para pipelines de clientes"
+            }
+          }
+        ]
+      },
+      {
+        "title": {
+          "en": "Services",
+          "es": "Servicios"
+        },
+        "items": [
+          {
+            "name": "Vercel",
+            "note": {
+              "en": "Hosting and deploys for every public surface",
+              "es": "Hosting y deploys de todas las superficies públicas"
+            }
+          },
+          {
+            "name": "Plausible",
+            "note": {
+              "en": "Privacy-first analytics — no cookies, no consent banner",
+              "es": "Analítica que respeta la privacidad — sin cookies ni banner de consentimiento"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "printCv": {
+    "summary": {
+      "en": "Systems Engineer in Bogotá building AI systems, automation pipelines, and API integrations. Local-first by conviction. Open to remote Solutions / Forward-Deployed Engineer roles.",
+      "es": "Ingeniero de Sistemas en Bogotá: sistemas de IA, pipelines de automatización e integraciones de API. Local-first por convicción. Abierto a roles remotos de Solutions / Forward-Deployed Engineer."
+    }
   }
 }

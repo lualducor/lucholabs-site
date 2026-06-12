@@ -31,6 +31,12 @@ const prerenderedRoutes = new Set([
   '/blog',
   '/es/',
   '/es/blog',
+  '/now',
+  '/es/now',
+  '/uses',
+  '/es/uses',
+  '/print',
+  '/es/print',
   ...posts.map(post => `/blog/${post.slug}`),
   ...tags.map(tag => `/blog/tag/${encodeURIComponent(tag)}`),
   ...talks.flatMap(talk => [
@@ -241,7 +247,9 @@ function alternateLinks(canonical) {
 
 function injectMetadata(html, meta) {
   const twitterTitle = truncateTitle(meta.title)
-  const alternates = alternateLinks(meta.canonical)
+  // noindex pages get no hreflang pair (a noindexed alternate only confuses crawlers)
+  const alternates = meta.noindex ? '' : alternateLinks(meta.canonical)
+  const robotsTag = meta.noindex ? '\n    <meta name="robots" content="noindex" />' : ''
   const htmlWithoutAlternates = html.replace(
     /[ \t]*<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["'][^"']+["'])[^>]*\/?>[ \t]*(?:\r?\n)?/gi,
     '',
@@ -251,7 +259,7 @@ function injectMetadata(html, meta) {
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(meta.title)}</title>`)
     .replace(
       /<link rel="canonical" href="[^"]*" \/>/,
-      `<link rel="canonical" href="${escapeHtml(meta.canonical)}" />${alternates ? `\n${alternates}` : ''}`,
+      `<link rel="canonical" href="${escapeHtml(meta.canonical)}" />${robotsTag}${alternates ? `\n${alternates}` : ''}`,
     )
     .replace(
       /<meta name="description" content="[^"]*" \/>/,
@@ -472,6 +480,67 @@ for (const talk of talks) {
       { name: talk.title, url: spanishUrl },
     ]),
   ])
+}
+
+const nowContent = contentJson.now
+const usesContent = contentJson.uses
+
+const pickLocale = (localeString, locale) =>
+  typeof localeString === 'string' ? localeString : (localeString?.[locale] ?? localeString?.en ?? '')
+
+for (const locale of ['en', 'es']) {
+  const prefix = locale === 'es' ? '/es' : ''
+
+  renderRoute(`${prefix}/now`, resolve(distDir, ...(locale === 'es' ? ['es'] : []), 'now', 'index.html'), {
+    title: locale === 'es' ? 'Ahora — LuchoLabs' : 'Now — LuchoLabs',
+    description: pickLocale(nowContent?.intro, locale),
+    canonical: `${SITE_URL}${prefix}/now`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: 'website',
+  })
+
+  renderRoute(`${prefix}/uses`, resolve(distDir, ...(locale === 'es' ? ['es'] : []), 'uses', 'index.html'), {
+    title: locale === 'es' ? 'Herramientas — LuchoLabs' : 'Uses — LuchoLabs',
+    description: pickLocale(usesContent?.intro, locale),
+    canonical: `${SITE_URL}${prefix}/uses`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: 'website',
+  })
+
+  renderRoute(`${prefix}/print`, resolve(distDir, ...(locale === 'es' ? ['es'] : []), 'print', 'index.html'), {
+    title: locale === 'es' ? 'CV imprimible — LuchoLabs' : 'Print CV — LuchoLabs',
+    description: pickLocale(contentJson.printCv?.summary, locale),
+    canonical: `${SITE_URL}${prefix}/print`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: 'profile',
+  })
+
+  // Unpublished scaffolds: prerendered for parity but noindexed and kept out
+  // of prerenderedRoutes so they never emit hreflang or sitemap entries.
+  const servicesPublished = contentJson.servicesPage?.published === true
+  const caseStudiesPublished = contentJson.caseStudiesPage?.published === true
+
+  renderRoute(`${prefix}/services`, resolve(distDir, ...(locale === 'es' ? ['es'] : []), 'services', 'index.html'), {
+    title: locale === 'es' ? 'Servicios — LuchoLabs' : 'Services — LuchoLabs',
+    description: locale === 'es'
+      ? 'Servicios de automatización e IA — en preparación.'
+      : 'Automation and AI services — in the works.',
+    canonical: `${SITE_URL}${prefix}/services`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: 'website',
+    noindex: !servicesPublished,
+  })
+
+  renderRoute(`${prefix}/case-studies`, resolve(distDir, ...(locale === 'es' ? ['es'] : []), 'case-studies', 'index.html'), {
+    title: locale === 'es' ? 'Casos de estudio — LuchoLabs' : 'Case Studies — LuchoLabs',
+    description: locale === 'es'
+      ? 'Casos de estudio de ingeniería — en documentación.'
+      : 'Engineering case studies — being documented.',
+    canonical: `${SITE_URL}${prefix}/case-studies`,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: 'website',
+    noindex: !caseStudiesPublished,
+  })
 }
 
 rmSync(ssrDir, { recursive: true, force: true })

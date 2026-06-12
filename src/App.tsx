@@ -11,6 +11,8 @@ import { CaseStudiesIndexPage } from './pages/placeholders/CaseStudiesIndexPage'
 import { CaseStudyPage } from './pages/placeholders/CaseStudyPage'
 import { LocaleDocAttr } from './lib/locale'
 import { PrintPage } from './pages/placeholders/PrintPage'
+import { NowPage } from './pages/NowPage'
+import { UsesPage } from './pages/UsesPage'
 
 const BlogPostPage = React.lazy(() =>
   import('./pages/BlogPostPage').then(module => ({ default: module.BlogPostPage })),
@@ -51,6 +53,10 @@ export default function App() {
         <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
         <Route path="/talks/:slug" element={<TalkPage />} />
         <Route path="/es/talks/:slug" element={<TalkPage />} />
+        <Route path="/now" element={<NowPage />} />
+        <Route path="/es/now" element={<NowPage />} />
+        <Route path="/uses" element={<UsesPage />} />
+        <Route path="/es/uses" element={<UsesPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/es/services" element={<ServicesPage />} />
         <Route path="/case-studies" element={<CaseStudiesIndexPage />} />
