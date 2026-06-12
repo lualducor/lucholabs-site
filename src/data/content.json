@@ -12,8 +12,8 @@
       "es": "Construyo infraestructura de accesibilidad y confianza para usuarios hispanohablantes."
     },
     "roleLine": {
-      "en": "Systems engineer · AI security speaker · Open-source author",
-      "es": "Ingeniero de sistemas · conferencista en seguridad de IA · autor de código abierto"
+      "en": "Systems engineer · AI security panelist · Local-first builder",
+      "es": "Ingeniero de sistemas · Panelista en seguridad de IA · Constructor local-first"
     },
     "subtitle": {
       "en": "Bogotá · Remote · C1 English",
@@ -298,8 +298,8 @@
         "es": "Protección contra phishing para adultos mayores — concepto de código abierto"
       },
       "cvDescription": {
-        "en": "Anti-Phishing Shield is a planned open-source phishing detection tool aimed at elderly and non-technical users. It is currently at the concept and design stage — no code has shipped yet, and this page describes the design intent. The problem is well defined: most security tools produce jargon-heavy output that the highest-risk population can't act on. The design inverts that — analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The planned detection layer evaluates sender metadata, URL structure, urgency-language patterns, and brand impersonation signals, presented as a simple risk rating with a one-sentence explanation and no security vocabulary. Target deployment contexts are elder care, family networks, and NGOs running digital literacy programs in Latin America, with outputs in Spanish and English. It will be open source and designed to run without cloud dependencies, so families can operate it themselves.",
-        "es": "Anti-Phishing Shield es una herramienta de detección de phishing de código abierto, planeada para adultos mayores y usuarios no técnicos. Está en etapa de concepto y diseño — todavía no hay código publicado; esta página describe la intención de diseño. El problema está bien definido: la mayoría de las herramientas de seguridad producen jerga que la población de mayor riesgo no puede usar. El diseño invierte eso — analizar un correo o enlace sospechoso y entregar una advertencia en lenguaje claro con una acción recomendada que una persona de 70 años pueda seguir de inmediato. La capa de detección planeada evalúa metadatos del remitente, estructura de URLs, patrones de lenguaje de urgencia y señales de suplantación de marca, presentados como una calificación simple de riesgo con una explicación de una frase. Los contextos de despliegue objetivo son cuidado de adultos mayores, redes familiares y ONG con programas de alfabetización digital en América Latina, con salidas en español e inglés. Será de código abierto y diseñada para funcionar sin dependencias de nube, de modo que las familias puedan operarla por sí mismas."
+        "en": "Anti-Phishing Shield is a planned open-source phishing detection tool aimed at elderly and non-technical users. It is currently at the concept and design stage — no code has shipped yet, and this page describes the design intent. Most security tools produce jargon-heavy output that the highest-risk population can't act on. The design goal: analyze a suspicious email or link, then output a plain-language warning and a recommended action that a 70-year-old can follow immediately. The planned detection layer evaluates sender metadata, URL structure, urgency-language patterns, and brand impersonation signals, presented as a simple risk rating with a one-sentence explanation and no security vocabulary. Target deployment contexts are elder care, family networks, and NGOs running digital literacy programs in Latin America, with outputs in Spanish and English. It will be open source and designed to run without cloud dependencies, so families can operate it themselves.",
+        "es": "Anti-Phishing Shield es una herramienta de detección de phishing de código abierto, planeada para adultos mayores y usuarios no técnicos. Está en etapa de concepto y diseño — todavía no hay código publicado; esta página describe la intención de diseño. La mayoría de las herramientas de seguridad producen jerga que la población de mayor riesgo no puede usar. La meta de diseño: analizar un correo o enlace sospechoso y entregar una advertencia en lenguaje claro con una acción recomendada que una persona de 70 años pueda seguir de inmediato. La capa de detección planeada evalúa metadatos del remitente, estructura de URLs, patrones de lenguaje de urgencia y señales de suplantación de marca, presentados como una calificación simple de riesgo con una explicación de una frase. Los contextos de despliegue objetivo son cuidado de adultos mayores, redes familiares y ONG con programas de alfabetización digital en América Latina, con salidas en español e inglés. Será de código abierto y diseñada para funcionar sin dependencias de nube, de modo que las familias puedan operarla por sí mismas."
       },
       "labTagline": {
         "en": "Planned open-source phishing protection for elderly users",
@@ -405,8 +405,8 @@
         "es": "Alertas de cortes de servicios urbanos para Bogotá — muerto 2024"
       },
       "cvDescription": {
-        "en": "Haycorte was a WhatsApp-first service that surfaced real-time water, electricity, and gas outage data for Bogotá neighborhoods by scraping public utility schedules. Built to solve a real communication gap. Killed after validating that the distribution problem — getting users to install a WhatsApp bot before they needed it, not after their water cut out — required a marketing investment inconsistent with the project's scope. The infrastructure worked; the business shape didn't.",
-        "es": "Haycorte era un servicio WhatsApp-first que mostraba en tiempo real datos de cortes de agua, luz y gas para barrios de Bogotá scrapeando los cronogramas oficiales. Construido para cerrar una brecha de comunicación real. Muerto tras validar que el problema de distribución — lograr que los usuarios instalaran un bot de WhatsApp antes de necesitarlo, no después de quedarse sin agua — exigía una inversión en marketing inconsistente con el alcance del proyecto. La infraestructura funcionaba; la forma de negocio no."
+        "en": "Haycorte was a WhatsApp-first service that surfaced real-time water, electricity, and gas outage data for Bogotá neighborhoods by scraping public utility schedules. Built to solve a real communication gap. Killed at the distribution wall: people only wanted the bot after their water cut out, and reaching them before that moment needed marketing spend the project couldn't justify. The scraper worked; the business didn't.",
+        "es": "Haycorte era un servicio WhatsApp-first que mostraba en tiempo real datos de cortes de agua, luz y gas para barrios de Bogotá scrapeando los cronogramas oficiales. Construido para cerrar una brecha de comunicación real. Muerto contra el muro de distribución: la gente solo quería el bot después de quedarse sin agua, y llegarles antes de ese momento exigía un gasto en marketing que el proyecto no justificaba. El scraper funcionaba; el negocio no."
       },
       "labTagline": {
         "en": "Urban disruption intelligence for Bogotá utility outages.",
@@ -480,7 +480,7 @@
         "es": "Copilot de IA para firmware Klipper de impresoras 3D — muerto 2024"
       },
       "cvDescription": {
-        "en": "Klipper Copilot was an AI-assisted optimization layer for 3D printing workflows on Klipper-based printers, automating calibration suggestions and slicer parameter tuning. Killed after discovering that the target user population — advanced 3D printing enthusiasts — had already developed strong manual workflows and actively resisted automation of the tuning process. The problem existed; the willingness to delegate it didn't.",
+        "en": "Klipper Copilot was an AI-assisted optimization layer for 3D printing workflows on Klipper-based printers, automating calibration suggestions and slicer parameter tuning. Killed after discovering that the target user population — advanced 3D printing enthusiasts — had already developed strong manual workflows and actively resisted automation of the tuning process. It turned out the fiddling was the hobby — automating it removed the part they enjoyed.",
         "es": "Klipper Copilot era una capa de optimización asistida por IA para workflows de impresión 3D sobre impresoras Klipper, automatizando sugerencias de calibración y ajuste de parámetros del slicer. Muerto tras descubrir que la población objetivo — entusiastas avanzados de la impresión 3D — ya había desarrollado workflows manuales fuertes y se resistía activamente a automatizar el proceso de tuning. El problema existía; la disposición a delegarlo no."
       },
       "labTagline": {
@@ -528,17 +528,17 @@
   "manifesto": [
     {
       "title": "Systems Thinking",
-      "body": "I build infrastructure, not interfaces. Backend-first thinking applied to AI, automation, and data systems. Local-first by default — see Boveda.",
+      "body": "The durable value sits under the interface: parsers, pipelines, data layers. Backend-first, local-first by default — see Boveda.",
       "citationProjectSlug": "boveda"
     },
     {
       "title": "AI as Infrastructure",
-      "body": "AI agents need adversarial-tested guardrails before they touch users. Threat modeling and prompt-injection defense are first-class concerns — see Anti-Phishing Shield.",
+      "body": "AI agents need prompt-injection testing and red-teamed input handling before they touch users. Security is a design input, not a patch — see the AI & Cybersecurity Forum panel.",
       "citationProjectSlug": "anti-phishing-shield"
     },
     {
       "title": "Cross-Domain Vision",
-      "body": "Fintech, cybersecurity, agriculture — the same systems-thinking compounds across verticals — see SUPERFARM.",
+      "body": "The same pattern repeats everywhere: parse messy real-world data, add a rule layer, keep it local. Bank statements, phishing emails, farm telemetry — see SUPERFARM.",
       "citationProjectSlug": "superfarm"
     },
     {
@@ -896,8 +896,8 @@
         "es": "Lanzando la reestructura de lucholabs.dev: lab deck, charlas, SEO bilingüe"
       },
       {
-        "en": "Anti-Phishing Shield — prototype phase, detection tuned for elderly users",
-        "es": "Anti-Phishing Shield — fase de prototipo, detección pensada para adultos mayores"
+        "en": "Anti-Phishing Shield — design stage: spec written, build not started",
+        "es": "Anti-Phishing Shield — etapa de diseño: spec escrita, desarrollo sin iniciar"
       },
       {
         "en": "Automation work for clients — agent pipelines and API integrations",
