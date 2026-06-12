@@ -8,6 +8,7 @@ import CertificatesSection from '../components/CertificatesSection'
 import ExperienceSection from '../components/ExperienceSection'
 import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
+import EmailCaptureBlock from '../components/EmailCaptureBlock'
 import { loadContent } from '../data/loader'
 
 const { manifesto } = loadContent()
@@ -32,6 +33,7 @@ export function HomePage() {
         <SpeakingSection />
         <CertificatesSection />
         <ManifestoTeaserSection manifesto={manifesto} />
+        <EmailCaptureBlock variant="cv" />
         <ContactSection />
       </main>
 

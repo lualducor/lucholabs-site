@@ -1,7 +1,9 @@
+import { useState, type FormEvent } from 'react'
 import { track } from '../lib/analytics'
 import { useLocale } from '../lib/locale'
 
 type EmailCaptureVariant = 'cv' | 'lab' | 'blog' | 'talk'
+type EmailCaptureStatus = 'idle' | 'pending' | 'success' | 'error'
 
 type EmailCaptureBlockProps = {
   variant?: EmailCaptureVariant
@@ -15,8 +17,31 @@ export default function EmailCaptureBlock({
   subheadline,
 }: EmailCaptureBlockProps) {
   const locale = useLocale()
+  const [status, setStatus] = useState<EmailCaptureStatus>('idle')
+  const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const resolvedHeadline = headline ?? (locale === 'es' ? 'Avísame cuando publiques.' : 'Notified when I publish.')
   const resolvedSubheadline = subheadline ?? (locale === 'es' ? 'Build logs, postmortems, rants ocasionales. Sin spam.' : 'Build logs, postmortems, occasional rants. No spam.')
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    track('email_capture', { variant, location: window.location.pathname })
+    setStatus('pending')
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, website }),
+      })
+
+      setStatus(response.ok ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <section
@@ -60,62 +85,116 @@ export default function EmailCaptureBlock({
         </p>
       </div>
 
-      <form
-        action="mailto:lualducor@gmail.com?subject=Subscribe&body=Subscribe%20me%20to%20updates%20at%20lucholabs.dev"
-        method="post"
-        encType="text/plain"
-        style={{
-          marginTop: '24px',
-          display: 'flex',
-          flexDirection: 'row',
-          gap: '12px',
-          flexWrap: 'wrap',
-        }}
-        onSubmit={() => {
-          track('email_capture', { variant, location: window.location.pathname })
-        }}
-      >
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@company.com"
-          style={{
-            flex: '1 1 240px',
-            minHeight: '44px',
-            padding: '12px 16px',
-            fontSize: '14px',
-            color: '#ffffff',
-            backgroundColor: 'rgba(0,0,0,0.25)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            borderRadius: '12px',
-            outline: 'none',
-          }}
-        />
-        <button
-          type="submit"
-          style={{
-            minHeight: '44px',
-            padding: '12px 24px',
-            fontSize: '14px',
-            fontWeight: 500,
-            color: '#0a0a0a',
-            backgroundColor: '#ffffff',
-            border: '1px solid rgba(255,255,255,0.12)',
-            borderRadius: '12px',
-            cursor: 'pointer',
-            transition: 'background-color 0.15s',
-          }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.9)'
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#ffffff'
-          }}
-        >
-          {locale === 'es' ? 'Suscribirse' : 'Subscribe'}
-        </button>
-      </form>
+      {status === 'success' ? (
+        <p style={{
+          fontSize: '14px',
+          color: 'rgba(255,255,255,0.6)',
+          lineHeight: 1.6,
+          margin: '24px 0 0 0',
+        }}>
+          {locale === 'es' ? 'Listo. Te aviso cuando publique.' : 'Done. You will hear from me when I publish.'}
+        </p>
+      ) : (
+        <>
+          <form
+            style={{
+              marginTop: '24px',
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '12px',
+              flexWrap: 'wrap',
+            }}
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@company.com"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+              style={{
+                flex: '1 1 240px',
+                minHeight: '44px',
+                padding: '12px 16px',
+                fontSize: '14px',
+                color: '#ffffff',
+                backgroundColor: 'rgba(0,0,0,0.25)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                outline: 'none',
+              }}
+            />
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={event => setWebsite(event.target.value)}
+              aria-hidden="true"
+              tabIndex={-1}
+              autoComplete="off"
+              style={{
+                position: 'absolute',
+                left: '-10000px',
+                width: '1px',
+                height: '1px',
+                overflow: 'hidden',
+              }}
+            />
+            <button
+              type="submit"
+              disabled={status === 'pending'}
+              style={{
+                minHeight: '44px',
+                padding: '12px 24px',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#0a0a0a',
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: '12px',
+                cursor: status === 'pending' ? 'default' : 'pointer',
+                transition: 'background-color 0.15s',
+              }}
+              onMouseEnter={event => {
+                if (status !== 'pending') {
+                  event.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.9)'
+                }
+              }}
+              onMouseLeave={event => {
+                event.currentTarget.style.backgroundColor = '#ffffff'
+              }}
+            >
+              {status === 'pending'
+                ? locale === 'es' ? 'Enviando…' : 'Subscribing…'
+                : locale === 'es' ? 'Suscribirse' : 'Subscribe'}
+            </button>
+          </form>
+          {status === 'error' && (
+            <p
+              role="alert"
+              style={{
+                fontSize: '14px',
+                color: 'rgba(255,255,255,0.6)',
+                lineHeight: 1.6,
+                margin: '12px 0 0 0',
+              }}
+            >
+              {locale === 'es' ? 'No pude suscribirte. Intenta de nuevo o ' : 'I could not subscribe you. Try again or '}
+              <a
+                href="mailto:lualducor@gmail.com"
+                style={{
+                  color: '#ffffff',
+                  textDecoration: 'underline',
+                }}
+              >
+                {locale === 'es' ? 'escríbeme' : 'email me'}
+              </a>
+              .
+            </p>
+          )}
+        </>
+      )}
     </section>
   )
 }
