@@ -78,7 +78,20 @@ export default function SpeakingSection() {
                 {/* Event + meta */}
                 <div>
                   <p style={{ fontSize: '16px', fontWeight: 600, color: '#ffffff', margin: '0 0 4px 0', letterSpacing: '-0.01em' }}>
-                    {talk.event}
+                    {talk.recapUrl ? (
+                      <a
+                        href={talk.recapUrl.startsWith('http') || locale !== 'es' ? talk.recapUrl : `/es${talk.recapUrl}`}
+                        {...(talk.recapUrl.startsWith('http')
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        style={{ color: 'inherit', textDecoration: 'none' }}
+                        className="speaking-link"
+                      >
+                        {talk.event} ↗
+                      </a>
+                    ) : (
+                      talk.event
+                    )}
                   </p>
                   <p style={{
                     fontFamily: 'ui-monospace, monospace', fontSize: '11px',
@@ -103,6 +116,7 @@ export default function SpeakingSection() {
           .speaking-card { grid-template-columns: 1fr !important; }
           .speaking-card img { max-height: 180px; }
         }
+        .speaking-link:hover, .speaking-link:focus-visible { color: #22c55e !important; }
       `}</style>
     </section>
   )

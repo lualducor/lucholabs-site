@@ -127,6 +127,17 @@
   "speaking": [
     {
       "status": "past",
+      "event": "AI Tinkerers Bogotá",
+      "location": "Cámara de Comercio de Bogotá",
+      "date": "May 2026",
+      "topic": {
+        "en": "Lightning talk: before AI can create real value inside an organization, it needs a usable context layer — context, knowledge graphs, and operational memory as the missing infrastructure for practical AI adoption. Event organized by Tribu IA.",
+        "es": "Charla relámpago: antes de que la IA pueda crear valor real dentro de una organización, esta necesita una capa de contexto usable — contexto, grafos de conocimiento y memoria operativa como la infraestructura faltante para la adopción práctica de IA. Evento organizado por Tribu IA."
+      },
+      "recapUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7466208866335313920/"
+    },
+    {
+      "status": "past",
       "event": "AI & Cybersecurity Forum",
       "location": "Bogotá",
       "date": "May 2026",

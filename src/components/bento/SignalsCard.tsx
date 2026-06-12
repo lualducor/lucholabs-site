@@ -8,11 +8,12 @@ interface SignalsCardProps {
 
 export default function SignalsCard({ locale }: SignalsCardProps) {
   const isSpanish = locale === 'es'
-  const talk = speaking[0]
+  const talk = speaking.find(entry => entry.photo && entry.recapUrl) ?? speaking[0]
+  const isExternal = talk?.recapUrl?.startsWith('http')
   const recapUrl = talk?.recapUrl
-    ? isSpanish
-      ? `/es${talk.recapUrl}`
-      : talk.recapUrl
+    ? isExternal || !isSpanish
+      ? talk.recapUrl
+      : `/es${talk.recapUrl}`
     : undefined
 
   return (
