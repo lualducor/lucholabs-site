@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: lualducor/lucholabs-site
+  branch: main
+  base_url: https://lucholabs.dev
+  auth_endpoint: /api/auth
+
+site_url: https://lucholabs.dev
+
+media_folder: /public/images
+public_folder: /images
+
+locale: en
+
+collections:
+  - label: "Blog Posts"
+    name: "posts"
+    folder: "content/posts"
+    create: true
+    format: frontmatter
+    extension: mdx
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL-safe identifier (use filename without .mdx)" }
+      - { label: "Description", name: "description", widget: "string", hint: "50-155 characters, used in previews" }
+      - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", widget: "string" } }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - label: "Site Content"
+    name: "content"
+    format: json
+    files:
+      - label: "Now/Next"
+        name: "now_next"
+        file: "src/data/content.json"
+        fields:
+          - label: "Now"
+            name: "now"
+            widget: "object"
+            fields:
+              - { label: "Intro EN", name: "introEn", widget: "text" }
+              - { label: "Intro ES", name: "introEs", widget: "text" }
+              - label: "Focus"
+                name: "focusEn"
+                widget: "list"
+                field: { label: "Item", widget: "string" }
+              - label: "Focus (ES)"
+                name: "focusEs"
+                widget: "list"
+                field: { label: "Item", widget: "string" }
+              - label: "Next"
+                name: "nextEn"
+                widget: "list"
+                field: { label: "Item", widget: "string" }
+              - label: "Next (ES)"
+                name: "nextEs"
+                widget: "list"
+                field: { label: "Item", widget: "string" }
+              - { label: "Updated Date", name: "updated", widget: "datetime", format: "YYYY-MM-DD" }
+          - label: "Uses"
+            name: "uses"
+            widget: "object"
+            fields:
+              - label: "Categories"
+                name: "categories"
+                widget: "list"
+                fields:
+                  - { label: "Category Name EN", name: "nameEn", widget: "string" }
+                  - { label: "Category Name ES", name: "nameEs", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Note EN", name: "noteEn", widget: "text", required: false }
+                      - { label: "Note ES", name: "noteEs", widget: "text", required: false }
+                      - { label: "URL", name: "url", widget: "string", required: false }
