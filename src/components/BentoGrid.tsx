@@ -209,6 +209,24 @@ export default function BentoGrid() {
           flex-direction: column;
           gap: 18px;
         }
+        .bento-signals-photo {
+          display: block;
+          margin-bottom: 14px;
+          border: 1px solid rgba(255,255,255,0.08);
+          overflow: hidden;
+        }
+        .bento-signals-photo img {
+          display: block;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+          filter: saturate(0.9);
+          transition: filter 160ms ease;
+        }
+        .bento-signals-photo:hover img,
+        .bento-signals-photo:focus-visible img {
+          filter: saturate(1);
+        }
         .bento-event {
           color: #ffffff;
           font-size: 15px;

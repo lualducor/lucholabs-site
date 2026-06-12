@@ -20,6 +20,20 @@ export default function SignalsCard({ locale }: SignalsCardProps) {
       <span className="bento-label">{isSpanish ? 'Charlas y señales' : 'Speaking & signals'}</span>
       {talk && (
         <div>
+          {talk.photo && (
+            <Link
+              to={recapUrl ?? '#'}
+              tabIndex={recapUrl ? undefined : -1}
+              aria-hidden={recapUrl ? undefined : true}
+              className="bento-signals-photo"
+            >
+              <img
+                src={talk.photo}
+                alt={`${talk.event} · ${talk.location}`}
+                loading="lazy"
+              />
+            </Link>
+          )}
           {recapUrl ? (
             <Link to={recapUrl} className="bento-event">
               {talk.event} — {talk.location}
@@ -39,7 +53,7 @@ export default function SignalsCard({ locale }: SignalsCardProps) {
           {isSpanish ? 'Inglés ' : 'English '}
           <strong>C1</strong>
         </span>
-        <span className="bento-chip">{isSpanish ? 'Autor open source' : 'Open-source author'}</span>
+        <span className="bento-chip">{isSpanish ? 'Constructor local-first' : 'Local-first builder'}</span>
         <span className="bento-chip">
           {isSpanish ? 'Conferencista en seguridad de IA' : 'AI security speaker'}
         </span>
